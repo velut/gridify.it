@@ -1,7 +1,16 @@
 {
 	"name": "pic-to-grid",
+	"description": "A website to add a grid over images with customizable options",
 	"version": "0.0.1",
 	"private": true,
+	"author": {
+		"name": "Edoardo Scibona",
+		"url": "https://github.com/velut"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/velut/pic-to-grid.git"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
