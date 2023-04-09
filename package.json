@@ -2,6 +2,7 @@
 	"name": "pic-to-grid",
 	"description": "A website to add a grid over images with customizable options",
 	"version": "0.0.1",
+	"license": "AGPL-3.0-or-later",
 	"private": true,
 	"author": {
 		"name": "Edoardo Scibona",
