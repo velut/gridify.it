@@ -5,7 +5,7 @@
 <Metadata title="Privacy Policy" description="Privacy policy for pic2grid" path="privacy" />
 
 <div class="flex justify-center p-8 items-center">
-	<article class="prose lg:prose-lg">
+	<article class="prose">
 		<h2>Privacy Policy</h2>
 		<p>Last updated on April 13, 2023.</p>
 
