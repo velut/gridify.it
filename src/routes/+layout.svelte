@@ -4,6 +4,12 @@
 	import Navbar from './Navbar.svelte';
 </script>
 
-<Navbar />
-<slot />
-<Footer />
+<div class="flex flex-col h-screen">
+	<Navbar />
+
+	<div class="grow">
+		<slot />
+	</div>
+
+	<Footer />
+</div>
