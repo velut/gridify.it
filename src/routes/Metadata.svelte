@@ -3,7 +3,7 @@
 
 	export let title: string;
 	export let description: string;
-	export let path: string;
+	export let path = '';
 
 	$: title = pageTitle(title);
 	$: url = pageUrl(path);
