@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { pageTitle, pageUrl } from '../lib/metadata';
+	import { pageTitle, pageUrl } from '$lib/metadata';
 
 	export let title: string;
 	export let description: string;
