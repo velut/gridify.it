@@ -4,7 +4,7 @@ export type RenderOptions = {
 		strokeSize: number;
 		strokeColor: string;
 	};
-	block: {
+	cell: {
 		size: number;
 		scale: number;
 		radius: number;
