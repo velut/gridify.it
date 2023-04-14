@@ -4,7 +4,7 @@
 	import Navbar from './Navbar.svelte';
 </script>
 
-<div class="flex flex-col h-screen">
+<div class="flex h-screen flex-col">
 	<Navbar />
 
 	<div class="grow">
