@@ -9,7 +9,7 @@ export const renderOptionsFormSchema = z.object({
 				const number = parseInt(value, 10);
 				return !isNaN(number) && number >= 1;
 			},
-			{ message: 'Stroke size must be an integer number like 1, 2, 3' }
+			{ message: 'Grid stroke size must be an integer number like 1, 2, 3' }
 		),
 		strokeColor: z.string().regex(hexColorRegex)
 	}),
@@ -26,7 +26,7 @@ export const renderOptionsFormSchema = z.object({
 				const number = parseInt(value, 10);
 				return !isNaN(number) && number >= 1;
 			},
-			{ message: 'Cell scale must be an integer number like 1, 2, 3' }
+			{ message: 'Cell scale multiplier must be an integer number like 1, 2, 3' }
 		),
 		radius: z.string().refine(
 			(value) => {
