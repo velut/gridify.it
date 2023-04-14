@@ -1,5 +1,22 @@
 lockfileVersion: '6.0'
 
+dependencies:
+  '@felte/reporter-tippy':
+    specifier: ^1.1.5
+    version: 1.1.5(tippy.js@6.3.7)
+  '@felte/validator-zod':
+    specifier: ^1.0.13
+    version: 1.0.13(zod@3.21.4)
+  felte:
+    specifier: ^1.2.7
+    version: 1.2.7(svelte@3.58.0)
+  tippy.js:
+    specifier: ^6.3.7
+    version: 6.3.7
+  zod:
+    specifier: ^3.21.4
+    version: 3.21.4
+
 devDependencies:
   '@sveltejs/adapter-auto':
     specifier: ^2.0.0
@@ -302,6 +319,38 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
+  /@felte/common@1.1.4:
+    resolution: {integrity: sha512-4jNB4EwRpaGZppwV/YqbGF7SVRwehWw+hyTGmw2N+pL86LuqVTTSrgVOGXwPaLTju1BxAptcoAXjxZbBf0XB4Q==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: false
+
+  /@felte/core@1.3.7:
+    resolution: {integrity: sha512-/AkIEZu/Yg/K+YEdnup5c3Bb0xyr9ONdZnS0us6V/b9DgfiEqbcm1xgglD/mtwh+IH7KOhIuQecjBdPQfpNViQ==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      '@felte/common': 1.1.4
+    dev: false
+
+  /@felte/reporter-tippy@1.1.5(tippy.js@6.3.7):
+    resolution: {integrity: sha512-boCEXGOkqTXRQa1l0t2Whjw/7wJHy16fA1Q3TNNj7XOiDAKYyzGfwbQn0kMR1jdzJTpSteB/xGb+ue1PenRDEQ==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    peerDependencies:
+      tippy.js: ^6.0.0
+    dependencies:
+      '@felte/common': 1.1.4
+      tippy.js: 6.3.7
+    dev: false
+
+  /@felte/validator-zod@1.0.13(zod@3.21.4):
+    resolution: {integrity: sha512-qrKUbXm/zqZq+307VwGvhSZlps/Pbx3mpdEg8PVR6RDGpgg0sSOOuPZc5d6C2kJszlmSkA98uHWiIcw3U9O8CQ==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    peerDependencies:
+      zod: ^3.2.0
+    dependencies:
+      '@felte/common': 1.1.4
+      zod: 3.21.4
+    dev: false
+
   /@humanwhocodes/config-array@0.11.8:
     resolution: {integrity: sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g==}
     engines: {node: '>=10.10.0'}
@@ -380,6 +429,10 @@ packages:
   /@polka/url@1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
+
+  /@popperjs/core@2.11.7:
+    resolution: {integrity: sha512-Cr4OjIkipTtcXKjAsm8agyleBuDHvxzeBoa1v543lbv1YaIwQjESsVcmjiWiPEbC1FIeHOG/Op9kdCmAmiS3Kw==}
+    dev: false
 
   /@sveltejs/adapter-auto@2.0.0(@sveltejs/kit@1.15.2):
     resolution: {integrity: sha512-b+gkHFZgD771kgV3aO4avHFd7y1zhmMYy9i6xOK7m/rwmwaRO8gnF5zBc0Rgca80B2PMU1bKNxyBTHA14OzUAQ==}
@@ -1219,6 +1272,16 @@ packages:
     dependencies:
       reusify: 1.0.4
     dev: true
+
+  /felte@1.2.7(svelte@3.58.0):
+    resolution: {integrity: sha512-VfCkYBODReCUrYeRMmJ9lRs7O/pC4PYKMTT7E2K6m9UzmTGpm3Ql3C518J3gUVVG5ZeEeSEifUaqmrAcaWB89w==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    peerDependencies:
+      svelte: ^3.31.0
+    dependencies:
+      '@felte/core': 1.3.7
+      svelte: 3.58.0
+    dev: false
 
   /file-entry-cache@6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}
@@ -2246,7 +2309,6 @@ packages:
   /svelte@3.58.0:
     resolution: {integrity: sha512-brIBNNB76mXFmU/Kerm4wFnkskBbluBDCjx/8TcpYRb298Yh2dztS2kQ6bhtjMcvUhd5ynClfwpz5h2gnzdQ1A==}
     engines: {node: '>= 8'}
-    dev: true
 
   /tailwindcss@3.3.1(postcss@8.4.21):
     resolution: {integrity: sha512-Vkiouc41d4CEq0ujXl6oiGFQ7bA3WEhUZdTgXAhtKxSy49OmKs8rEfQmupsfF0IGW8fv2iQkp1EVUuapCFrZ9g==}
@@ -2325,6 +2387,12 @@ packages:
     resolution: {integrity: sha512-7eORpyqImoOvkQJCSkL0d0mB4NHHIFAy4b1u8PHdDa7SjGS2njzl6/lyGoZLm+eyYEtlUmFGE0rFj66SWxZgQQ==}
     engines: {node: '>=14.0.0'}
     dev: true
+
+  /tippy.js@6.3.7:
+    resolution: {integrity: sha512-E1d3oP2emgJ9dRQZdf3Kkn0qJgI6ZLpyS5z6ZkY1DF3kaQaBsGZsndEpHwx+eC+tYM41HaSNvNtLx8tU57FzTQ==}
+    dependencies:
+      '@popperjs/core': 2.11.7
+    dev: false
 
   /to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
@@ -2596,3 +2664,7 @@ packages:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
     dev: true
+
+  /zod@3.21.4:
+    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
+    dev: false
