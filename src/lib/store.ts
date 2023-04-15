@@ -14,7 +14,20 @@ const createStore = () => {
 		outputImages: []
 	});
 
-	return { subscribe };
+	const setLoading = (value: boolean) => {
+		update((state) => {
+			state.loading = value;
+			return state;
+		});
+	};
+
+	const loadImages = async (files: File[]) => {
+		setLoading(true);
+		console.log(files);
+		setLoading(false);
+	};
+
+	return { subscribe, loadImages };
 };
 
 export const store = createStore();
