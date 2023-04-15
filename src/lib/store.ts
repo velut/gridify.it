@@ -1,9 +1,10 @@
+import type { Image } from '$lib/image';
 import { writable } from 'svelte/store';
 
 export type Store = {
 	loading: boolean;
-	inputImages: string[];
-	outputImages: string[];
+	inputImages: Image[];
+	outputImages: Image[];
 };
 
 const createStore = () => {
