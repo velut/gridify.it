@@ -1,1 +1,7 @@
-<button class="btn-outline btn">Download Images</button>
+<script lang="ts">
+	import { store } from '$lib/store';
+
+	$: disabled = $store.outputImages.length === 0;
+</script>
+
+<button class="btn-outline btn" {disabled}>Download Images</button>
