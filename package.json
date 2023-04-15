@@ -25,7 +25,9 @@
 	"dependencies": {
 		"@felte/reporter-tippy": "^1.1.5",
 		"@felte/validator-zod": "^1.0.13",
+		"attr-accept": "^2.2.2",
 		"felte": "^1.2.7",
+		"file-selector": "^0.6.0",
 		"tippy.js": "^6.3.7",
 		"zod": "^3.21.4"
 	},
