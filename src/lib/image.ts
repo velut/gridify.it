@@ -3,5 +3,5 @@ export type Image = {
 	data: Blob;
 	width: number;
 	height: number;
-	url?: string;
+	url: string;
 };
