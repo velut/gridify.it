@@ -1,17 +1,21 @@
 <script lang="ts">
-	import { store } from '$lib/store';
-
-	$: images = $store.outputImages;
+	import { inputImages, inputImagesState } from '$lib/stores';
+	import GalleryImage from './GalleryImage.svelte';
+	import GalleryText from './GalleryText.svelte';
 </script>
 
 <div class="card card-compact grow bg-base-300 shadow">
 	<div class="card-body gap-4">
-		{#each images as image}
-			<div>{image}</div>
-		{:else}
-			<div class="flex justify-center items-center h-full">
-				<div class="btn btn-disabled btn-lg bg-base-300">No Images</div>
-			</div>
-		{/each}
+		{#if $inputImagesState?.isPending}
+			<GalleryText text="Loading images..." />
+		{:else if $inputImagesState?.isLoaded}
+			{#each $inputImages as image}
+				<GalleryImage {image} />
+			{:else}
+				<GalleryText text="No images" />
+			{/each}
+		{:else if $inputImagesState?.isError}
+			<GalleryText text="Error loading images" />
+		{/if}
 	</div>
 </div>

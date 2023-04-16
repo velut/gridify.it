@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { getFiles } from '$lib/get-files';
-	import { store } from '$lib/store';
+	import { files } from '$lib/stores';
 
 	const inputId = 'files-input';
 	const accept = 'image/*';
 
-	const loadImages = async (event: Event) => {
-		const files = await getFiles(event, accept);
-		await store.loadImages(files);
+	const setFiles = async (event: Event) => {
+		$files = await getFiles(event, accept);
 	};
 </script>
 
@@ -19,7 +18,7 @@
 		type="file"
 		multiple
 		{accept}
-		on:change={loadImages}
+		on:change={setFiles}
 		class="file-input w-full"
 	/>
 </div>

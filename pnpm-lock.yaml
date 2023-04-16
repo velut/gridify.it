@@ -7,6 +7,9 @@ dependencies:
   '@felte/validator-zod':
     specifier: ^1.0.13
     version: 1.0.13(zod@3.21.4)
+  '@square/svelte-store':
+    specifier: ^1.0.15
+    version: 1.0.15
   attr-accept:
     specifier: ^2.2.2
     version: 2.2.2
@@ -438,6 +441,13 @@ packages:
 
   /@popperjs/core@2.11.7:
     resolution: {integrity: sha512-Cr4OjIkipTtcXKjAsm8agyleBuDHvxzeBoa1v543lbv1YaIwQjESsVcmjiWiPEbC1FIeHOG/Op9kdCmAmiS3Kw==}
+    dev: false
+
+  /@square/svelte-store@1.0.15:
+    resolution: {integrity: sha512-m6y+jY2fFUJvQUKvxT7we/fN8V+zOcY/OAtoCBFExXN0lMWsgmlCw7VaFXd9EEWaDd5/gMlQ0ozCOCwe4FNPvQ==}
+    dependencies:
+      cookie-storage: 6.1.0
+      svelte: 3.58.0
     dev: false
 
   /@sveltejs/adapter-auto@2.0.0(@sveltejs/kit@1.15.2):
@@ -958,6 +968,10 @@ packages:
       semver: 7.3.8
       well-known-symbols: 2.0.0
     dev: true
+
+  /cookie-storage@6.1.0:
+    resolution: {integrity: sha512-HeVqbVy8BjXhAAuFtL6MTG+witHoLbxfky2jgVh9FmxmyL6IKa9gSSyPNjevXCCCxPu6Tzd9J8+eXTRQzYU/cg==}
+    dev: false
 
   /cookie@0.5.0:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
