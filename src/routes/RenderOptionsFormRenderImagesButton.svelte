@@ -1,1 +1,1 @@
-<button type="submit" class="btn-outline btn">Render Images</button>
+<button type="submit" class="btn-outline btn w-full">Render Images</button>
