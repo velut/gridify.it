@@ -22,7 +22,7 @@
 	});
 </script>
 
-<form use:form class="flex grow flex-col justify-between">
+<form use:form>
 	<RenderOptionsFormGridInputs />
 	<RenderOptionsFormCellInputs />
 	<RenderOptionsFormPixelInputs />
