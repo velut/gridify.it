@@ -4,7 +4,7 @@
 	import RenderOptionsForm from './RenderOptionsForm.svelte';
 </script>
 
-<div class="flex w-full flex-col gap-4 rounded-xl bg-base-300 p-4 shadow md:w-1/2 lg:w-96">
+<div class="flex w-full flex-col gap-4 rounded-xl bg-base-300 p-4 shadow sm:w-1/2 lg:w-96">
 	<FilesInput />
 	<RenderOptionsForm />
 	<DownloadImagesButton />
