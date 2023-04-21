@@ -1,21 +1,24 @@
 <script lang="ts">
 	import { inputImages, inputImagesState } from '$lib/stores';
-	import GalleryImage from './GalleryImage.svelte';
+	import GalleryImages from './GalleryImages.svelte';
 	import GalleryText from './GalleryText.svelte';
+
+	$: ({ isPending, isLoaded, isError } = $inputImagesState);
+	$: images = $inputImages;
+	$: hasNoImages = isLoaded && images.length === 0;
+	$: hasImages = isLoaded && images.length > 0;
 </script>
 
-<div class="card card-compact grow bg-base-300 shadow">
-	<div class="card-body gap-4">
-		{#if $inputImagesState?.isPending}
-			<GalleryText text="Loading images..." />
-		{:else if $inputImagesState?.isLoaded}
-			{#each $inputImages as image}
-				<GalleryImage {image} />
-			{:else}
-				<GalleryText text="No images" />
-			{/each}
-		{:else if $inputImagesState?.isError}
-			<GalleryText text="Error loading images" />
-		{/if}
-	</div>
+<div class="h-full w-full grow rounded-xl bg-base-300 p-4 shadow">
+	{#if isPending}
+		<GalleryText text="Loading images..." />
+	{:else if hasNoImages}
+		<GalleryText text="No images" />
+	{:else if hasImages}
+		<GalleryImages {images} />
+	{:else if isError}
+		<GalleryText text="Error loading images" />
+	{:else}
+		<GalleryText text="Unknown state" />
+	{/if}
 </div>
