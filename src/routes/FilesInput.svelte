@@ -12,7 +12,7 @@
 </script>
 
 <div class="form-control w-full">
-	<label for={inputId} class="sr-only">Choose image files</label>
+	<label for={inputId} class="btn-outline btn w-full">Select or drop images</label>
 	<input
 		use:handleFileDrop
 		id={inputId}
@@ -21,6 +21,6 @@
 		multiple
 		{accept}
 		on:change={setFiles}
-		class="file-input w-full"
+		class="h-0 opacity-0"
 	/>
 </div>
