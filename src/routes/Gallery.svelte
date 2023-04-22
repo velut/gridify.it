@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { inputImages, inputImagesState } from '$lib/stores';
+	import { outputImages, outputImagesState } from '$lib/stores';
 	import GalleryImages from './GalleryImages.svelte';
 	import GalleryText from './GalleryText.svelte';
 
-	$: ({ isPending, isLoaded, isError } = $inputImagesState);
-	$: images = $inputImages;
+	$: ({ isPending, isLoaded, isError } = $outputImagesState);
+	$: images = $outputImages;
 	$: hasNoImages = isLoaded && images.length === 0;
 	$: hasImages = isLoaded && images.length > 0;
 </script>

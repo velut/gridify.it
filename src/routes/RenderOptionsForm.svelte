@@ -1,5 +1,10 @@
 <script lang="ts">
-	import { renderOptionsFormSchema, type RenderOptionsForm } from '$lib/render-options-form';
+	import {
+		renderOptionsFormSchema,
+		renderOptionsFormValuesSchema,
+		type RenderOptionsForm
+	} from '$lib/render-options-form';
+	import { renderOptions } from '$lib/stores';
 	import reporter from '@felte/reporter-tippy';
 	import { validator } from '@felte/validator-zod';
 	import { createForm } from 'felte';
@@ -8,15 +13,14 @@
 	import RenderOptionsFormPixelInputs from './RenderOptionsFormPixelInputs.svelte';
 	import RenderOptionsFormRenderImagesButton from './RenderOptionsFormRenderImagesButton.svelte';
 
-	const { form, data } = createForm<RenderOptionsForm>({
+	const { form } = createForm<RenderOptionsForm>({
 		initialValues: {
 			grid: { type: 'none', strokeSize: '1', strokeColor: '#000000' },
 			cell: { size: '1', scale: '1', radius: '0' },
 			pixel: { fullyOpaque: false }
 		},
 		onSubmit: (values) => {
-			console.log('onSubmit');
-			console.log(JSON.stringify(values, null, 2));
+			$renderOptions = renderOptionsFormValuesSchema.parse(values);
 		},
 		extend: [validator({ schema: renderOptionsFormSchema }), reporter()]
 	});
@@ -28,5 +32,3 @@
 	<RenderOptionsFormPixelInputs />
 	<RenderOptionsFormRenderImagesButton />
 </form>
-
-<!-- <pre>{JSON.stringify($data, null, 2)}</pre> -->
