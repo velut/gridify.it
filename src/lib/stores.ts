@@ -3,7 +3,7 @@ import { renderImages } from '$lib/render-images';
 import type { RenderOptions } from '$lib/render-options';
 import { revokeObjectUrls } from '$lib/revoke-object-urls';
 import { urlOf } from '$lib/url-of';
-import { asyncDerived, get, writable, type LoadState, type Readable } from '@square/svelte-store';
+import { asyncDerived, get, writable } from '@square/svelte-store';
 
 export const files = writable<File[]>([]);
 
@@ -20,7 +20,7 @@ const _inputImages = asyncDerived(
 );
 
 export const inputImages = _inputImages.store;
-export const inputImagesState = _inputImages.state as Readable<LoadState>;
+export const inputImagesState = _inputImages.state!;
 
 // Use `null` instead of `undefined` so that the `_outputImages` store can resolve on initialization.
 export const renderOptions = writable<RenderOptions | null>(null);
@@ -38,4 +38,4 @@ const _outputImages = asyncDerived(
 );
 
 export const outputImages = _outputImages.store;
-export const outputImagesState = _outputImages.state as Readable<LoadState>;
+export const outputImagesState = _outputImages.state!;
