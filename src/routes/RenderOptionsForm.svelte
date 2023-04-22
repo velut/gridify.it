@@ -12,8 +12,9 @@
 	import RenderOptionsFormGridInputs from './RenderOptionsFormGridInputs.svelte';
 	import RenderOptionsFormPixelInputs from './RenderOptionsFormPixelInputs.svelte';
 	import RenderOptionsFormRenderImagesButton from './RenderOptionsFormRenderImagesButton.svelte';
+	import RenderOptionsFormResetOptionsButton from './RenderOptionsFormResetOptionsButton.svelte';
 
-	const { form } = createForm<RenderOptionsForm>({
+	const { form, isDirty, reset } = createForm<RenderOptionsForm>({
 		initialValues: {
 			grid: { type: 'none', strokeSize: '1', strokeColor: '#000000' },
 			cell: { size: '1', scale: '1', radius: '0' },
@@ -30,5 +31,8 @@
 	<RenderOptionsFormGridInputs />
 	<RenderOptionsFormCellInputs />
 	<RenderOptionsFormPixelInputs />
-	<RenderOptionsFormRenderImagesButton />
+	<div class="space-y-4">
+		<RenderOptionsFormResetOptionsButton isDirty={$isDirty} {reset} />
+		<RenderOptionsFormRenderImagesButton />
+	</div>
 </form>
