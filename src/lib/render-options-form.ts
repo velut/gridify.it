@@ -17,7 +17,7 @@ const gridTypeSchema = z.enum(['none', 'inner', 'outer', 'full']);
 
 const gridStrokeSizeSchema = z
 	.string()
-	.refine(isOneOrMore, { message: 'Grid stroke size must be an integer number like 1, 2, 3' });
+	.refine(isOneOrMore, { message: 'Grid stroke size must be an integer number like 1, 2, 3.' });
 
 const gridStrokeColorSchema = z.string().regex(hexColorRegex);
 
@@ -35,14 +35,14 @@ const gridValuesSchema = z.object({
 
 const cellSizeSchema = z
 	.string()
-	.refine(isOneOrMore, { message: 'Cell size must be an integer number like 1, 2, 3' });
+	.refine(isOneOrMore, { message: 'Cell size must be an integer number like 1, 2, 3.' });
 
-const cellScaleSchema = z
-	.string()
-	.refine(isOneOrMore, { message: 'Cell scale multiplier must be an integer number like 1, 2, 3' });
+const cellScaleSchema = z.string().refine(isOneOrMore, {
+	message: 'Cell scale multiplier must be an integer number like 1, 2, 3.'
+});
 
 const cellRadiusSchema = z.string().refine(isZeroOrMore, {
-	message: 'Cell border radius must be an integer number like 0, 1, 2, 3'
+	message: 'Cell border radius must be an integer number like 0, 1, 2, 3.'
 });
 
 const cellSchema = z.object({
