@@ -9,7 +9,7 @@
 	$: hasImages = isLoaded && images.length > 0;
 </script>
 
-<div class="h-full w-full grow rounded-xl bg-base-300 p-4 shadow">
+<div class="h-96 w-full grow rounded-xl bg-base-300 p-4 shadow sm:h-full">
 	{#if isPending}
 		<GalleryText text="Loading images..." />
 	{:else if hasNoImages}
