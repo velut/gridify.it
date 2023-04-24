@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Metadata from '../Metadata.svelte';
+	import Metadata from '$lib/components/Metadata.svelte';
 </script>
 
 <Metadata title="Privacy Policy" description="Privacy policy for pic2grid" path="privacy" />

@@ -1,4 +1,9 @@
 <script lang="ts">
+	import RenderOptionsFormCellInputs from '$lib/components/RenderOptionsFormCellInputs.svelte';
+	import RenderOptionsFormGridInputs from '$lib/components/RenderOptionsFormGridInputs.svelte';
+	import RenderOptionsFormPixelInputs from '$lib/components/RenderOptionsFormPixelInputs.svelte';
+	import RenderOptionsFormRenderImagesButton from '$lib/components/RenderOptionsFormRenderImagesButton.svelte';
+	import RenderOptionsFormResetOptionsButton from '$lib/components/RenderOptionsFormResetOptionsButton.svelte';
 	import {
 		renderOptionsFormSchema,
 		renderOptionsFormValuesSchema,
@@ -8,11 +13,6 @@
 	import reporter from '@felte/reporter-tippy';
 	import { validator } from '@felte/validator-zod';
 	import { createForm } from 'felte';
-	import RenderOptionsFormCellInputs from './RenderOptionsFormCellInputs.svelte';
-	import RenderOptionsFormGridInputs from './RenderOptionsFormGridInputs.svelte';
-	import RenderOptionsFormPixelInputs from './RenderOptionsFormPixelInputs.svelte';
-	import RenderOptionsFormRenderImagesButton from './RenderOptionsFormRenderImagesButton.svelte';
-	import RenderOptionsFormResetOptionsButton from './RenderOptionsFormResetOptionsButton.svelte';
 
 	const { form, isDirty, reset } = createForm<RenderOptionsForm>({
 		initialValues: {

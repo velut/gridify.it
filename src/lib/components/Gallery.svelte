@@ -1,7 +1,7 @@
 <script lang="ts">
+	import GalleryImages from '$lib/components/GalleryImages.svelte';
+	import GalleryText from '$lib/components/GalleryText.svelte';
 	import { outputImages, outputImagesState } from '$lib/stores';
-	import GalleryImages from './GalleryImages.svelte';
-	import GalleryText from './GalleryText.svelte';
 
 	$: ({ isPending, isLoaded, isError } = $outputImagesState);
 	$: images = $outputImages;
