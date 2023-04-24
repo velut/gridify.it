@@ -8,7 +8,7 @@
 
 {#if images.length === 1}
 	<div class="flex h-full justify-center">
-		<a href={singleImage.url} target="_blank" class="block">
+		<a href={singleImage.url} target="_blank" class="block" title={singleImage.file.name}>
 			<img
 				src={singleImage.url}
 				alt={singleImage.file.name}
@@ -19,7 +19,7 @@
 {:else}
 	<div class="grid grid-cols-3 gap-4 lg:grid-cols-5 xl:grid-cols-7">
 		{#each images as image (image.url)}
-			<a href={image.url} target="_blank" class="block">
+			<a href={image.url} target="_blank" class="block" title={image.file.name}>
 				<img
 					src={image.url}
 					alt={image.file.name}
