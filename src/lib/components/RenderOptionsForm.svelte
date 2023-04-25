@@ -1,9 +1,9 @@
 <script lang="ts">
+	import RenderImagesButton from '$lib/components/RenderImagesButton.svelte';
 	import RenderOptionsFormCellInputs from '$lib/components/RenderOptionsFormCellInputs.svelte';
 	import RenderOptionsFormGridInputs from '$lib/components/RenderOptionsFormGridInputs.svelte';
 	import RenderOptionsFormPixelInputs from '$lib/components/RenderOptionsFormPixelInputs.svelte';
-	import RenderOptionsFormRenderImagesButton from '$lib/components/RenderOptionsFormRenderImagesButton.svelte';
-	import RenderOptionsFormResetOptionsButton from '$lib/components/RenderOptionsFormResetOptionsButton.svelte';
+	import ResetRenderOptionsButton from '$lib/components/ResetRenderOptionsButton.svelte';
 	import {
 		renderOptionsFormSchema,
 		renderOptionsFormValuesSchema,
@@ -32,7 +32,7 @@
 	<RenderOptionsFormCellInputs />
 	<RenderOptionsFormPixelInputs />
 	<div class="space-y-4">
-		<RenderOptionsFormResetOptionsButton isDirty={$isDirty} {reset} />
-		<RenderOptionsFormRenderImagesButton />
+		<ResetRenderOptionsButton isDirty={$isDirty} {reset} />
+		<RenderImagesButton />
 	</div>
 </form>
