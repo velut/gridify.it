@@ -14,7 +14,7 @@
 	import { validator } from '@felte/validator-zod';
 	import { createForm } from 'felte';
 
-	const { form, isDirty, reset } = createForm({
+	const { form, data, isDirty, reset } = createForm({
 		initialValues: {
 			grid: { type: 'none', stroke: { size: '1', color: '#000000' } },
 			cell: { size: '1', scale: '1', radius: '0' },
@@ -25,12 +25,14 @@
 		},
 		extend: [validator({ schema: renderOptionsSchema }), reporter()]
 	});
+
+	$: gridDisabled = $data.grid.type === 'none';
 </script>
 
 <form use:form>
 	<GridTypeInput />
-	<GridStrokeSizeInput />
-	<GridStrokeColorInput />
+	<GridStrokeSizeInput disabled={gridDisabled} />
+	<GridStrokeColorInput disabled={gridDisabled} />
 
 	<CellSizeInput />
 	<CellScaleInput />

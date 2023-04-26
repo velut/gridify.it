@@ -1,4 +1,6 @@
 <script lang="ts">
+	export let disabled = false;
+
 	const inputId = 'grid.stroke.size';
 </script>
 
@@ -14,5 +16,6 @@
 		pattern="[0-9]*"
 		placeholder="1"
 		class="input-bordered input input-sm w-full"
+		{disabled}
 	/>
 </div>
