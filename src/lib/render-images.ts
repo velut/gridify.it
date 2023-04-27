@@ -19,7 +19,7 @@ const renderImage = async (
 		canvas = setCanvasFullAlpha(canvas);
 	}
 
-	if (grid.type === 'none' && cell.scale > 1) {
+	if (grid.type === 'none' && cell.scale > 1 && cell.radius === 0) {
 		canvas = scaleCanvas(canvas, cell.scale);
 	}
 
