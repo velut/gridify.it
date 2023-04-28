@@ -1,9 +1,9 @@
+import { addGridToCanvas } from '$lib/add-grid-to-canvas';
 import { canvasToImage } from '$lib/canvas-to-image';
 import { fileToImage } from '$lib/file-to-image';
 import type { Image } from '$lib/image';
 import { newCanvas } from '$lib/new-canvas';
 import type { RenderOptions } from '$lib/render-options';
-import { scaleCanvas } from '$lib/scale-canvas';
 import { setCanvasFullAlpha } from '$lib/set-canvas-full-alpha';
 import pLimit from 'p-limit';
 
@@ -19,9 +19,7 @@ const renderImage = async (
 		canvas = setCanvasFullAlpha(canvas);
 	}
 
-	if (grid.type === 'none' && cell.scale > 1 && cell.radius === 0) {
-		canvas = scaleCanvas(canvas, cell.scale);
-	}
+	canvas = addGridToCanvas(canvas, { grid, cell });
 
 	return canvasToImage(canvas, inputImage);
 };
