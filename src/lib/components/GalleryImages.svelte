@@ -7,13 +7,8 @@
 </script>
 
 {#if images.length === 1}
-	<div class="flex h-full justify-center">
-		<a
-			href={singleImage.url}
-			target="_blank"
-			class="block h-full w-full"
-			title={singleImage.file.name}
-		>
+	<div class="flex h-full items-center justify-center">
+		<a href={singleImage.url} target="_blank" class="block w-2/3" title={singleImage.file.name}>
 			<img
 				src={singleImage.url}
 				alt={singleImage.file.name}
