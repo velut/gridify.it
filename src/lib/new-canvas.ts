@@ -10,6 +10,7 @@ export const newCanvas = async (imageUrl: string) => {
 	// Draw image on canvas.
 	canvas.width = img.width;
 	canvas.height = img.height;
+	context.imageSmoothingEnabled = false;
 	context.drawImage(img, 0, 0);
 
 	return canvas;
