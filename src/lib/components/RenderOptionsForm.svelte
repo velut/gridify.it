@@ -32,7 +32,7 @@
 <form use:form>
 	<GridTypeInput />
 	<GridStrokeSizeInput disabled={gridDisabled} />
-	<GridStrokeColorInput disabled={gridDisabled} />
+	<GridStrokeColorInput />
 
 	<CellSizeInput />
 	<CellScaleInput />
