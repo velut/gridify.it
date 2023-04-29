@@ -30,6 +30,8 @@
 </script>
 
 <form use:form>
+	<ResetRenderOptionsButton isDirty={$isDirty} {reset} />
+
 	<GridTypeInput />
 	<GridStrokeSizeInput disabled={gridDisabled} />
 	<GridStrokeColorInput />
@@ -40,8 +42,5 @@
 
 	<PixelFullyOpaqueInput />
 
-	<div class="space-y-4">
-		<ResetRenderOptionsButton isDirty={$isDirty} {reset} />
-		<RenderImagesButton />
-	</div>
+	<RenderImagesButton />
 </form>
