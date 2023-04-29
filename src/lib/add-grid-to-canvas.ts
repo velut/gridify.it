@@ -58,6 +58,32 @@ export const addGridToCanvas = (
 	// Size of a destination cell plus its associated inner line.
 	const dCellAndLineSize = dCellSize + innerStrokeSize;
 
+	// If cells are rounded, set clipping mask.
+	if (cell.radius) {
+		// Begin clipping path.
+		// See https://stackoverflow.com/a/33625559/16109047.
+		gridContext.beginPath();
+
+		// Add cells clipping paths.
+		for (let sy = 0; sy < canvas.height; sy += sCellSize) {
+			for (let sx = 0; sx < canvas.width; sx += sCellSize) {
+				// Current cell indexes.
+				const indexCellX = sx / sCellSize;
+				const indexCellY = sy / sCellSize;
+
+				// Top left corner coordinates of a destination cell on grid canvas.
+				const dx = indexCellX * dCellAndLineSize + outerStrokeSize;
+				const dy = indexCellY * dCellAndLineSize + outerStrokeSize;
+
+				// Add rounded rectangle to clipping path.
+				gridContext.roundRect(dx, dy, dCellSize, dCellSize, cell.radius);
+			}
+		}
+
+		// Finalize clipping path.
+		gridContext.clip();
+	}
+
 	// Transfer source image cells to grid canvas.
 	for (let sy = 0; sy < canvas.height; sy += sCellSize) {
 		for (let sx = 0; sx < canvas.width; sx += sCellSize) {
