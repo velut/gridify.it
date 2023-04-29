@@ -59,7 +59,7 @@ export const addGridToCanvas = (
 	const dCellAndLineSize = dCellSize + innerStrokeSize;
 
 	// If cells are rounded, set clipping mask.
-	if (cell.radius) {
+	if (cell.radius > 0) {
 		// Begin clipping path.
 		// See https://stackoverflow.com/a/33625559/16109047.
 		gridContext.beginPath();
