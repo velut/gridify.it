@@ -29,7 +29,7 @@ const _outputImagesUrls = writable<string[]>([]);
 const _outputImages = asyncDerived(
 	[inputImages, renderOptions],
 	async ([$inputImages, $renderOptions]) => {
-		const images = await renderImages($inputImages, $renderOptions);
+		const images = await renderImages($inputImages, $renderOptions ?? undefined);
 		revokeObjectUrls(get(_outputImagesUrls));
 		_outputImagesUrls.set(images.map(urlOf));
 		return images;
