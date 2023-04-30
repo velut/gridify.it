@@ -1,4 +1,8 @@
 export const scaleCanvas = (canvas: HTMLCanvasElement, scale: number) => {
+	if (scale === 1) {
+		return canvas;
+	}
+
 	const scaledCanvas = document.createElement('canvas');
 	const scaledContext = scaledCanvas.getContext('2d')!;
 

@@ -14,6 +14,4 @@ export const setCanvasFullAlpha = (canvas: HTMLCanvasElement) => {
 
 	// Replace original data with updated data.
 	context.putImageData(imageData, 0, 0);
-
-	return canvas;
 };
