@@ -6,13 +6,15 @@
 
 <div class="flex items-center justify-center p-8">
 	<article class="prose">
-		<h2>Privacy Policy</h2>
-		<p>Last updated on April 13, 2023.</p>
+		<hgroup>
+			<h1>Privacy Policy</h1>
+			<p>Last updated on April 13, 2023.</p>
+		</hgroup>
 
-		<h3>First Party</h3>
+		<h2>First Party</h2>
 		<p>On this website, we do not directly collect personal information from our visitors.</p>
 
-		<h3>Hosting</h3>
+		<h2>Hosting</h2>
 		<p>
 			This website is hosted by <a href="https://vercel.com/">Vercel</a>
 			, which may collect some data to provide its services. To learn more about the data collected by
@@ -21,13 +23,13 @@
 			.
 		</p>
 
-		<h3>External Websites</h3>
+		<h2>External Websites</h2>
 		<p>
 			This website may contain links to external websites not operated by us and thus with different
 			privacy policies. We recommend you to review the privacy policy of any website you may visit.
 		</p>
 
-		<h3>Contact Information</h3>
+		<h2>Contact Information</h2>
 		<p>
 			You can contact the website owner on{' '}
 			<a href="https://github.com/velut">Github</a> or by{' '}
