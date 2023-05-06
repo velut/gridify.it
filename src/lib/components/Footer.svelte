@@ -14,5 +14,6 @@
 	<div>
 		<span class="footer-title">Legal</span>
 		<a href="/privacy" class="link-hover link">Privacy Policy</a>
+		<a href="/licenses" class="link-hover link">Licenses</a>
 	</div>
 </footer>
