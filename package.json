@@ -39,6 +39,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.1",
+		"@sveltejs/adapter-static": "^2.0.2",
 		"@sveltejs/kit": "^1.16.2",
 		"@tailwindcss/typography": "^0.5.9",
 		"@types/file-saver": "^2.0.5",
