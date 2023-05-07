@@ -1,7 +1,11 @@
 <footer class="footer bg-base-200 p-8 text-base text-base-content">
 	<div>
+		<div class="flex items-center gap-2">
+			<img class="h-5 w-5" src="./favicon.svg" alt="pic2grid logo" />
+			<div class="text-lg font-bold">pic2grid</div>
+		</div>
 		<p>
-			Website created by <a href="https://github.com/velut" class="link">Edoardo Scibona</a>.
+			Created by <a href="https://www.edoardoscibona.com" class="link">Edoardo Scibona</a>.
 		</p>
 	</div>
 
