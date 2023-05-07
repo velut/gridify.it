@@ -29,7 +29,7 @@
 	$: gridDisabled = $data.grid.type === 'none';
 </script>
 
-<form use:form>
+<form use:form class="flex flex-col gap-1">
 	<ResetRenderOptionsButton isDirty={$isDirty} {reset} />
 
 	<GridTypeInput />
