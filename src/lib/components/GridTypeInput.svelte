@@ -3,7 +3,7 @@
 </script>
 
 <div class="form-control w-full">
-	<label for={inputId} class="label">
+	<label for={inputId} class="label pt-0">
 		<span class="label-text">Select grid type</span>
 	</label>
 	<select id={inputId} name={inputId} class="select-bordered select select-sm">

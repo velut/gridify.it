@@ -13,10 +13,15 @@ export const renderOptionsSchema = z.object({
 		})
 	}),
 	cell: z.object({
-		size: z.coerce
-			.number({ invalid_type_error: 'Cell size must be a number.' })
-			.int({ message: 'Cell size must be an integer number.' })
-			.min(1, { message: 'Cell size must be greater than or equal to 1.' }),
+		squareAspectRatio: z.boolean(),
+		width: z.coerce
+			.number({ invalid_type_error: 'Cell width must be a number.' })
+			.int({ message: 'Cell width must be an integer number.' })
+			.min(1, { message: 'Cell width must be greater than or equal to 1.' }),
+		height: z.coerce
+			.number({ invalid_type_error: 'Cell height must be a number.' })
+			.int({ message: 'Cell height must be an integer number.' })
+			.min(1, { message: 'Cell height must be greater than or equal to 1.' }),
 		scale: z.coerce
 			.number({ invalid_type_error: 'Cell scale must be a number.' })
 			.int({ message: 'Cell scale must be an integer number.' })

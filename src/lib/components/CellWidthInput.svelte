@@ -1,10 +1,10 @@
 <script lang="ts">
-	const inputId = 'cell.size';
+	const inputId = 'cell.width';
 </script>
 
 <div class="form-control w-full">
 	<label for={inputId} class="label">
-		<span class="label-text">Cell size in pixels</span>
+		<span class="label-text">Cell width in pixels</span>
 	</label>
 	<input
 		id={inputId}
