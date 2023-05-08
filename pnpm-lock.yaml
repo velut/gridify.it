@@ -14,8 +14,8 @@ dependencies:
     specifier: ^2.2.2
     version: 2.2.2
   client-zip:
-    specifier: ^2.3.1
-    version: 2.3.1
+    specifier: ^2.4.1
+    version: 2.4.1
   felte:
     specifier: ^1.2.7
     version: 1.2.7(svelte@3.59.0)
@@ -853,7 +853,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.5
-      caniuse-lite: 1.0.30001485
+      caniuse-lite: 1.0.30001486
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -893,7 +893,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001485
+      caniuse-lite: 1.0.30001486
       electron-to-chromium: 1.4.385
       node-releases: 2.0.10
       update-browserslist-db: 1.0.11(browserslist@4.21.5)
@@ -925,8 +925,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /caniuse-lite@1.0.30001485:
-    resolution: {integrity: sha512-8aUpZ7sjhlOyiNsg+pgcrTTPUXKh+rg544QYHSvQErljVEKJzvkYkCR/hUFeeVoEfTToUtY9cUKNRC7+c45YkA==}
+  /caniuse-lite@1.0.30001486:
+    resolution: {integrity: sha512-uv7/gXuHi10Whlj0pp5q/tsK/32J2QSqVRKQhs2j8VsDCjgyruAh/eEXHF822VqO9yT6iZKw3nRwZRSPBE9OQg==}
     dev: true
 
   /chai@4.3.7:
@@ -969,8 +969,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /client-zip@2.3.1:
-    resolution: {integrity: sha512-iRSvLjnKWXln/Q3m4thNe7IQWHBZg1fYjnuFXjLOgXg7GQYTFdVfHJ3n1J7qpgFpGbfXYt8pfngfIl/FVDYPqg==}
+  /client-zip@2.4.1:
+    resolution: {integrity: sha512-0xuPlgKc7RCxh9l0sUBJCT4MGY4fWxLTklWLAqemIztpERwo4PeeUviBTgHDWpGdoiVwPhEHh8MNcQTHKSzkJw==}
     dev: false
 
   /color-convert@2.0.1:

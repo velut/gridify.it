@@ -28,7 +28,7 @@
 		"@felte/validator-zod": "^1.0.13",
 		"@square/svelte-store": "^1.0.15",
 		"attr-accept": "^2.2.2",
-		"client-zip": "^2.3.1",
+		"client-zip": "^2.4.1",
 		"felte": "^1.2.7",
 		"file-saver": "^2.0.5",
 		"file-selector": "^0.6.0",
