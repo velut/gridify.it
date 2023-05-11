@@ -8,7 +8,7 @@ import { scaleCanvas } from '$lib/scale-canvas';
 import { setCanvasFullAlpha } from '$lib/set-canvas-full-alpha';
 import pLimit from 'p-limit';
 
-const limit = pLimit(10);
+const limit = pLimit(4);
 
 const skipRenderImage = (renderOptions?: RenderOptions): renderOptions is undefined => {
 	if (!renderOptions) {
