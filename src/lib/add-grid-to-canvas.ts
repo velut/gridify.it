@@ -58,6 +58,8 @@ export const addGridToCanvas = (
 	// Determine destination cell dimensions.
 	const dCellWidth = cell.scale * cellWidth;
 	const dCellHeight = cell.scale * cellHeight;
+	const dCellWidthAndStroke = dCellWidth + innerStrokeSize;
+	const dCellHeightAndStroke = dCellHeight + innerStrokeSize;
 
 	// If cells are rounded, set clipping mask.
 	if (cell.radius > 0) {
@@ -67,14 +69,15 @@ export const addGridToCanvas = (
 
 		// Add cells clipping paths.
 		for (let sy = 0; sy < canvas.height; sy += cellHeight) {
+			const indexCellY = sy / cellHeight;
+			const dy = indexCellY * dCellHeightAndStroke + outerStrokeSize;
+
 			for (let sx = 0; sx < canvas.width; sx += cellWidth) {
-				// Current cell indexes.
+				// Current cell indexes (see also above).
 				const indexCellX = sx / cellWidth;
-				const indexCellY = sy / cellHeight;
 
 				// Top left corner coordinates of a destination cell on grid canvas.
-				const dx = indexCellX * (dCellWidth + innerStrokeSize) + outerStrokeSize;
-				const dy = indexCellY * (dCellHeight + innerStrokeSize) + outerStrokeSize;
+				const dx = indexCellX * dCellWidthAndStroke + outerStrokeSize;
 
 				// Add rounded rectangle to clipping path.
 				gridContext.roundRect(dx, dy, dCellWidth, dCellHeight, cell.radius);
@@ -87,14 +90,15 @@ export const addGridToCanvas = (
 
 	// Transfer source image cells to grid canvas.
 	for (let sy = 0; sy < canvas.height; sy += cellHeight) {
+		const indexCellY = sy / cellHeight;
+		const dy = indexCellY * dCellHeightAndStroke + outerStrokeSize;
+
 		for (let sx = 0; sx < canvas.width; sx += cellWidth) {
-			// Current cell indexes.
+			// Current cell indexes (see also above).
 			const indexCellX = sx / cellWidth;
-			const indexCellY = sy / cellHeight;
 
 			// Top left corner coordinates of a destination cell on grid canvas.
-			const dx = indexCellX * (dCellWidth + innerStrokeSize) + outerStrokeSize;
-			const dy = indexCellY * (dCellHeight + innerStrokeSize) + outerStrokeSize;
+			const dx = indexCellX * dCellWidthAndStroke + outerStrokeSize;
 
 			// Transfer source cell to destination cell.
 			gridContext.drawImage(canvas, sx, sy, cellWidth, cellHeight, dx, dy, dCellWidth, dCellHeight);
