@@ -12,7 +12,7 @@
 			<img
 				src={singleImage.url}
 				alt={singleImage.file.name}
-				class="pixelated h-full w-full rounded object-contain"
+				class="pixelated h-full w-full rounded bg-white object-contain"
 			/>
 		</a>
 	</div>
@@ -23,7 +23,7 @@
 				<img
 					src={image.url}
 					alt={image.file.name}
-					class="aspect-square h-full w-full rounded object-cover"
+					class="aspect-square h-full w-full rounded bg-white object-cover"
 				/>
 			</a>
 		{/each}
