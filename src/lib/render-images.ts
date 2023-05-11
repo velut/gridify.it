@@ -26,7 +26,7 @@ const renderImage = async (inputImage: Image, renderOptions?: RenderOptions): Pr
 		return fileToImage(inputImage.file);
 	}
 
-	const canvas = await newCanvas(inputImage.url);
+	const canvas = await newCanvas(inputImage);
 	const { grid, cell, pixel } = renderOptions;
 
 	if (pixel.fullyOpaque) {

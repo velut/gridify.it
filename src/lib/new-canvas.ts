@@ -1,10 +1,12 @@
-export const newCanvas = async (imageUrl: string) => {
+import type { Image } from '$lib/image';
+
+export const newCanvas = async (image: Image) => {
 	const canvas = document.createElement('canvas');
 	const context = canvas.getContext('2d')!;
 
-	// Load image.
+	// Load image. TODO: Use createImageBitmap().
 	const img = document.createElement('img');
-	img.src = imageUrl;
+	img.src = image.url;
 	await img.decode();
 
 	// Draw image on canvas.
