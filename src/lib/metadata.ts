@@ -1,10 +1,11 @@
-const name = 'pic2grid';
+export const projectName = 'pic2grid';
+export const baseUrl = `https://${projectName}.vercel.app`;
+export const githubUrl = `https://github.com/velut/${projectName}`;
 
 export const pageTitle = (title: string) => {
-	return `${title} | ${name}`;
+	return `${title} | ${projectName}`;
 };
 
 export const pageUrl = (path: string) => {
-	const baseUrl = `https://${name}.vercel.app`;
 	return path === '' ? baseUrl : `${baseUrl}/${path}`;
 };

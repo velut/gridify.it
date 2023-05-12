@@ -1,8 +1,9 @@
 <script lang="ts">
 	import Metadata from '$lib/components/Metadata.svelte';
+	import { projectName } from '$lib/metadata';
 </script>
 
-<Metadata title="Privacy Policy" description="Privacy policy for pic2grid" path="privacy" />
+<Metadata title="Privacy Policy" description={`Privacy policy for ${projectName}`} path="privacy" />
 
 <div class="flex items-center justify-center p-8">
 	<article class="prose">

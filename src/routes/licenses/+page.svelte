@@ -1,11 +1,12 @@
 <script lang="ts">
 	import Metadata from '$lib/components/Metadata.svelte';
 	import { licenses } from '$lib/licenses';
+	import { projectName } from '$lib/metadata';
 </script>
 
 <Metadata
 	title="Licenses for Third Party Software"
-	description="Licenses for third party software used on pic2grid"
+	description={`Licenses for third party software used on ${projectName}`}
 	path="licenses"
 />
 
@@ -13,7 +14,7 @@
 	<article class="prose">
 		<hgroup>
 			<h1>Licenses for Third Party Software</h1>
-			<p>This is a list of third party software used on pic2grid.</p>
+			<p>This is a list of third party software used on {projectName}.</p>
 		</hgroup>
 
 		{#each licenses as license}
