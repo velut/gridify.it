@@ -6,7 +6,7 @@
 <Metadata title="Privacy Policy" description={`Privacy policy for ${projectName}`} path="privacy" />
 
 <div class="flex items-center justify-center p-8">
-	<article class="prose">
+	<article class="prose mb-24">
 		<hgroup>
 			<h1>Privacy Policy</h1>
 			<p>Last updated on April 13, 2023.</p>
