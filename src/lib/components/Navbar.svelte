@@ -7,4 +7,9 @@
 		<img class="h-6 w-6" src="./favicon.svg" alt={`${projectName} logo`} />
 		{projectName}
 	</a>
+	<div class="divider divider-horizontal" />
+	<a href="/faq" class="btn-ghost btn flex items-center gap-2 text-xl">
+		<img class="h-6 w-6" src="./faq.svg" alt={`${projectName} logo`} />
+		FAQ
+	</a>
 </div>
