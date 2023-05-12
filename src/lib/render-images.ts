@@ -26,11 +26,11 @@ const renderImage = async (inputImage: Image, renderOptions?: RenderOptions): Pr
 		return fileToImage(inputImage.file);
 	}
 
-	const canvas = await newCanvas(inputImage);
+	let canvas = await newCanvas(inputImage);
 	const { grid, cell, pixel } = renderOptions;
 
 	if (pixel.fullyOpaque) {
-		setCanvasFullAlpha(canvas);
+		canvas = setCanvasFullAlpha(canvas);
 	}
 
 	// Just scale if necessary.

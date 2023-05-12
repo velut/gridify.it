@@ -14,4 +14,14 @@ export const setCanvasFullAlpha = (canvas: HTMLCanvasElement) => {
 
 	// Replace original data with updated data.
 	context.putImageData(imageData, 0, 0);
+
+	// Transfer image to canvas that did not use `getImageData`,
+	// which may force CPU canvas rendering.
+	const outCanvas = document.createElement('canvas');
+	const outContext = outCanvas.getContext('2d')!;
+	outCanvas.width = canvas.width;
+	outCanvas.height = canvas.height;
+	outContext.drawImage(canvas, 0, 0);
+
+	return outCanvas;
 };
