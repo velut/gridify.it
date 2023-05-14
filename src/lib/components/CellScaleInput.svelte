@@ -1,5 +1,7 @@
 <script lang="ts">
 	const inputId = 'cell.scale';
+
+	export let value: string;
 </script>
 
 <div class="form-control w-full">
@@ -12,7 +14,7 @@
 		type="text"
 		inputMode="numeric"
 		pattern="[0-9]*"
-		placeholder="1"
 		class="input-bordered input input-sm w-full"
+		bind:value
 	/>
 </div>

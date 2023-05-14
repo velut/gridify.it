@@ -1,4 +1,12 @@
 {
-	"cSpell.ignoreWords": ["Edoardo", "Scibona", "daisyui", "felte", "pathe", "tailwindcss"],
+	"cSpell.ignoreWords": [
+		"Edoardo",
+		"Scibona",
+		"daisyui",
+		"felte",
+		"pathe",
+		"superforms",
+		"tailwindcss"
+	],
 	"typescript.preferences.importModuleSpecifier": "non-relative"
 }

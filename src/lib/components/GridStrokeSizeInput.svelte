@@ -1,7 +1,8 @@
 <script lang="ts">
-	export let disabled = false;
-
 	const inputId = 'grid.stroke.size';
+
+	export let value: string;
+	export let disabled = false;
 </script>
 
 <div class="form-control w-full">
@@ -14,8 +15,8 @@
 		type="text"
 		inputMode="numeric"
 		pattern="[0-9]*"
-		placeholder="1"
 		class="input-bordered input input-sm w-full"
+		bind:value
 		{disabled}
 	/>
 </div>

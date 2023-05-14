@@ -1,9 +1,12 @@
 import { fileToImage } from '$lib/file-to-image';
+import type { RenderOptionsSuperForm } from '$lib/load-render-options-super-form';
 import { renderImages } from '$lib/render-images';
 import type { RenderOptions } from '$lib/render-options';
 import { revokeObjectUrls } from '$lib/revoke-object-urls';
 import { urlOf } from '$lib/url-of';
 import { asyncDerived, get, writable } from '@square/svelte-store';
+
+export const renderOptionsSuperForm = writable<RenderOptionsSuperForm>(undefined);
 
 export const files = writable<File[]>([]);
 

@@ -1,20 +1,20 @@
 <script lang="ts">
 	import { renderOptions } from '$lib/stores';
 
-	export let isDirty: boolean;
-	export let reset: () => void;
+	export let isFormTainted: boolean;
+	export let resetForm: () => void;
 
-	const resetOptions = () => {
-		reset();
+	const resetFormAndRenderOptions = () => {
+		resetForm();
 		$renderOptions = null;
 	};
 
-	$: disabled = !isDirty && $renderOptions === null;
+	$: disabled = !isFormTainted && $renderOptions === null;
 </script>
 
 <button
 	type="button"
 	class="btn-outline btn-sm btn w-full hover:btn-error"
-	on:click={resetOptions}
+	on:click={resetFormAndRenderOptions}
 	{disabled}>Reset Options</button
 >

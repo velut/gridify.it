@@ -11,54 +11,71 @@
 	import RenderImagesButton from '$lib/components/RenderImagesButton.svelte';
 	import ResetRenderOptionsButton from '$lib/components/ResetRenderOptionsButton.svelte';
 	import { renderOptionsSchema } from '$lib/render-options';
-	import { renderOptions } from '$lib/stores';
-	import reporter from '@felte/reporter-tippy';
-	import { validator } from '@felte/validator-zod';
-	import { createForm } from 'felte';
+	import { renderOptions, renderOptionsSuperForm } from '$lib/stores';
+	import type { Writable } from 'svelte/store';
+	import { intProxy, superForm } from 'sveltekit-superforms/client';
 
-	const { form, data, isDirty, reset, resetField } = createForm({
-		initialValues: {
-			grid: { type: 'none', stroke: { size: '1', color: '#000000' } },
-			cell: { squareAspectRatio: true, width: '1', height: '1', scale: '1', radius: '0' },
-			pixel: { fullyOpaque: false }
-		},
-		onSubmit: (values) => {
-			$renderOptions = renderOptionsSchema.parse(values);
-		},
-		extend: [validator({ schema: renderOptionsSchema }), reporter()]
+	const {
+		form,
+		errors, // TODO: use errors
+		tainted,
+		reset: resetForm,
+		enhance
+	} = superForm($renderOptionsSuperForm, {
+		SPA: true,
+		dataType: 'json',
+		validators: renderOptionsSchema,
+		taintedMessage: null,
+		onUpdate({ form }) {
+			if (form.valid) {
+				$renderOptions = renderOptionsSchema.parse(form.data);
+			}
+		}
 	});
 
-	$: gridDisabled = $data.grid.type === 'none';
-	$: cellSquareAspectRatio = $data.cell.squareAspectRatio;
-	$: if (cellSquareAspectRatio) {
-		resetField('cell.height');
+	const gridStrokeSizeIntProxy = intProxy(form, ['grid', 'stroke', 'size']) as Writable<string>;
+	const cellWidthIntProxy = intProxy(form, ['cell', 'width']) as Writable<string>;
+	const cellHeightIntProxy = intProxy(form, ['cell', 'height']) as Writable<string>;
+	const cellScaleIntProxy = intProxy(form, ['cell', 'scale']) as Writable<string>;
+	const cellRadiusIntProxy = intProxy(form, ['cell', 'radius']) as Writable<string>;
+
+	$: isFormTainted = Boolean($tainted);
+	$: isGridDisabled = $form.grid.type === 'none';
+	$: isCellSquareAspectRatio = $form.cell.squareAspectRatio;
+	$: if (isGridDisabled) {
+		$gridStrokeSizeIntProxy = 'reset-trigger';
+		$gridStrokeSizeIntProxy = '1';
+	}
+	$: if (isCellSquareAspectRatio) {
+		$cellHeightIntProxy = 'reset-trigger';
+		$cellHeightIntProxy = '1';
 	}
 </script>
 
-<form use:form>
-	<ResetRenderOptionsButton isDirty={$isDirty} {reset} />
+<form method="POST" use:enhance>
+	<ResetRenderOptionsButton {isFormTainted} {resetForm} />
 
 	<div class="divider" />
 
 	<div class="space-y-2">
-		<GridTypeInput />
-		<GridStrokeSizeInput disabled={gridDisabled} />
-		<GridStrokeColorInput />
+		<GridTypeInput bind:value={$form.grid.type} />
+		<GridStrokeSizeInput bind:value={$gridStrokeSizeIntProxy} disabled={isGridDisabled} />
+		<GridStrokeColorInput bind:value={$form.grid.stroke.color} />
 	</div>
 
 	<div class="divider" />
 
 	<div class="space-y-2">
-		<CellSquareAspectRatioInput />
-		<CellWidthInput />
-		<CellHeightInput disabled={cellSquareAspectRatio} />
-		<CellScaleInput />
-		<CellRadiusInput />
+		<CellSquareAspectRatioInput bind:checked={$form.cell.squareAspectRatio} />
+		<CellWidthInput bind:value={$cellWidthIntProxy} />
+		<CellHeightInput bind:value={$cellHeightIntProxy} disabled={isCellSquareAspectRatio} />
+		<CellScaleInput bind:value={$cellScaleIntProxy} />
+		<CellRadiusInput bind:value={$cellRadiusIntProxy} />
 	</div>
 
 	<div class="divider" />
 
-	<PixelFullyOpaqueInput />
+	<PixelFullyOpaqueInput bind:checked={$form.pixel.fullyOpaque} />
 
 	<div class="divider" />
 
