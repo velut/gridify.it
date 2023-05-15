@@ -17,7 +17,7 @@
 
 	const {
 		form,
-		errors, // TODO: use errors
+		errors,
 		tainted,
 		reset: resetForm,
 		enhance
