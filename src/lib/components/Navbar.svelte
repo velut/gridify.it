@@ -1,15 +1,30 @@
 <script lang="ts">
+	import NotFirefoxWarning from '$lib/components/NotFirefoxWarning.svelte';
 	import { projectName } from '$lib/metadata';
 </script>
 
 <div class="navbar bg-base-200">
-	<a href="/" class="btn-ghost btn flex items-center gap-2 text-xl normal-case">
-		<img class="h-6 w-6" src="./favicon.svg" alt={`${projectName} logo`} />
+	<a
+		href="/"
+		title="Homepage"
+		class="btn-ghost btn flex items-center gap-2 text-lg font-bold normal-case"
+	>
+		<img class="h-5 w-5" src="./favicon.svg" alt={`${projectName} logo, a chequered flag`} />
 		{projectName}
 	</a>
+
 	<div class="divider divider-horizontal" />
-	<a href="/faq" class="btn-ghost btn flex items-center gap-2 text-xl">
-		<img class="h-6 w-6" src="./faq.svg" alt={`${projectName} logo`} />
+
+	<a
+		href="/faq"
+		title="Frequently Asked Questions"
+		class="btn-ghost btn flex items-center gap-2 text-lg"
+	>
+		<img class="h-5 w-5" src="./faq.svg" alt="Open book emoji" />
 		FAQ
 	</a>
+
+	<div class="divider divider-horizontal" />
+
+	<NotFirefoxWarning />
 </div>

@@ -1,8 +1,7 @@
 <script lang="ts">
 	import Metadata from '$lib/components/Metadata.svelte';
+	import { firefoxDesktopUrl } from '$lib/firefox-desktop-url';
 	import { githubIssuesUrl, projectName } from '$lib/metadata';
-
-	const firefoxUrl = 'https://www.mozilla.org/en-US/firefox/new/';
 </script>
 
 <Metadata title="FAQ" description={`Frequently asked questions for ${projectName}`} path="faq" />
@@ -37,8 +36,8 @@
 			the images natively supported by your browser.
 		</p>
 		<p>
-			We suggest using the desktop version of <a href={firefoxUrl}>Mozilla Firefox</a> as in our testing
-			it supported most available image formats and also had the best processing speed.
+			We suggest using the desktop version of <a href={firefoxDesktopUrl}>Mozilla Firefox</a> as in our
+			testing it supported most available image formats and also had the best processing speed.
 		</p>
 
 		<h2>How many images can I process?</h2>
