@@ -14,4 +14,9 @@
 	};
 </script>
 
-<button class="btn-outline btn w-full" on:click={downloadImages} {disabled}>Download Images</button>
+<button
+	title="Click to download all images"
+	class="btn-outline btn w-full"
+	on:click={downloadImages}
+	{disabled}>Download Images</button
+>

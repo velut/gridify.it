@@ -10,7 +10,7 @@
 
 <button
 	use:handleRenderImagesHotkey
-	title="Render Images [Ctrl+Enter]"
+	title="Click to render all images (Hotkey: Ctrl+Enter)"
 	type="submit"
 	class="btn-outline btn w-full"
 	{disabled}>Render Images</button
