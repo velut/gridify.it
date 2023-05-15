@@ -2,6 +2,7 @@
 	const inputId = 'cell.height';
 
 	export let value: string;
+	export let errors: string[] | undefined = undefined;
 	export let disabled = false;
 </script>
 
@@ -16,7 +17,16 @@
 		inputMode="numeric"
 		pattern="[0-9]*"
 		class="input-bordered input input-sm w-full"
+		class:input-error={errors}
+		data-invalid={errors}
 		bind:value
 		{disabled}
 	/>
+	{#if errors}
+		<div class="label">
+			<div class="label-text text-error" role="alert">
+				{errors}
+			</div>
+		</div>
+	{/if}
 </div>

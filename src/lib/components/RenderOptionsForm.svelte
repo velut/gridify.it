@@ -59,7 +59,11 @@
 
 	<div class="space-y-2">
 		<GridTypeInput bind:value={$form.grid.type} />
-		<GridStrokeSizeInput bind:value={$gridStrokeSizeIntProxy} disabled={isGridDisabled} />
+		<GridStrokeSizeInput
+			bind:value={$gridStrokeSizeIntProxy}
+			errors={$errors.grid?.stroke?.size}
+			disabled={isGridDisabled}
+		/>
 		<GridStrokeColorInput bind:value={$form.grid.stroke.color} />
 	</div>
 
@@ -67,10 +71,14 @@
 
 	<div class="space-y-2">
 		<CellSquareAspectRatioInput bind:checked={$form.cell.squareAspectRatio} />
-		<CellWidthInput bind:value={$cellWidthIntProxy} />
-		<CellHeightInput bind:value={$cellHeightIntProxy} disabled={isCellSquareAspectRatio} />
-		<CellScaleInput bind:value={$cellScaleIntProxy} />
-		<CellRadiusInput bind:value={$cellRadiusIntProxy} />
+		<CellWidthInput bind:value={$cellWidthIntProxy} errors={$errors.cell?.width} />
+		<CellHeightInput
+			bind:value={$cellHeightIntProxy}
+			errors={$errors.cell?.height}
+			disabled={isCellSquareAspectRatio}
+		/>
+		<CellScaleInput bind:value={$cellScaleIntProxy} errors={$errors.cell?.scale} />
+		<CellRadiusInput bind:value={$cellRadiusIntProxy} errors={$errors.cell?.radius} />
 	</div>
 
 	<div class="divider" />
