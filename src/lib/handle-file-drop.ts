@@ -14,12 +14,12 @@ export const handleFileDrop = (_: HTMLElement) => {
 		files.set(await getFiles(event, accept));
 	};
 
-	document.addEventListener('dragover', handleDragOver, true);
-	document.addEventListener('drop', handleDrop, true);
+	window.addEventListener('dragover', handleDragOver, true);
+	window.addEventListener('drop', handleDrop, true);
 
 	const destroy = () => {
-		document.removeEventListener('dragover', handleDragOver, true);
-		document.removeEventListener('drop', handleDrop, true);
+		window.removeEventListener('dragover', handleDragOver, true);
+		window.removeEventListener('drop', handleDrop, true);
 	};
 
 	return { destroy };
