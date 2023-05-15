@@ -11,7 +11,7 @@
 />
 
 <div class="flex items-center justify-center p-8">
-	<article class="prose">
+	<article class="prose mb-24">
 		<hgroup>
 			<h1>Licenses for Third Party Software</h1>
 			<p>This is a list of third party software used on {projectName}.</p>
