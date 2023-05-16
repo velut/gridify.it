@@ -9,7 +9,9 @@
 			<div class="text-lg font-bold">{projectName}</div>
 		</div>
 		<p>
-			Created by <a href="https://www.edoardoscibona.com" class="link">Edoardo Scibona</a>.
+			Created by <a href="https://www.edoardoscibona.com" target="_blank" class="link"
+				>Edoardo Scibona</a
+			>.
 		</p>
 	</div>
 
@@ -17,7 +19,7 @@
 		<span class="footer-title">Links</span>
 		<a href="/" class="link-hover link">Homepage</a>
 		<a href="/faq" class="link-hover link">FAQ</a>
-		<a href={githubUrl} class="link-hover link">GitHub Project</a>
+		<a href={githubUrl} target="_blank" class="link-hover link">GitHub Project</a>
 	</div>
 
 	<div>

@@ -17,10 +17,10 @@
 
 		<h2>Hosting</h2>
 		<p>
-			This website is hosted by <a href="https://vercel.com/">Vercel</a>
+			This website is hosted by <a href="https://vercel.com/" target="_blank">Vercel</a>
 			, which may collect some data to provide its services. To learn more about the data collected by
 			Vercel, you can read their{' '}
-			<a href="https://vercel.com/legal/privacy-policy">privacy policy</a>
+			<a href="https://vercel.com/legal/privacy-policy" target="_blank">privacy policy</a>
 			.
 		</p>
 
@@ -33,7 +33,7 @@
 		<h2>Contact Information</h2>
 		<p>
 			You can contact the website owner on{' '}
-			<a href="https://github.com/velut">Github</a> or by{' '}
+			<a href="https://github.com/velut" target="_blank">Github</a> or by{' '}
 			<a href="mailto:info@jsdocs.io">email</a>.
 		</p>
 	</article>

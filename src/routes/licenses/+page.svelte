@@ -19,7 +19,7 @@
 
 		{#each licenses as license}
 			<h2>
-				<a href={license.url} class="link-hover link text-lg">
+				<a href={license.url} target="_blank" class="link-hover link text-lg">
 					{license.name}
 				</a>
 			</h2>

@@ -36,8 +36,10 @@
 			the images natively supported by your browser.
 		</p>
 		<p>
-			We suggest using the desktop version of <a href={firefoxDesktopUrl}>Mozilla Firefox</a> as in our
-			testing it supported most available image formats and also had the best processing speed.
+			We suggest using the desktop version of <a href={firefoxDesktopUrl} target="_blank"
+				>Mozilla Firefox</a
+			> as in our testing it supported most available image formats and also had the best processing
+			speed.
 		</p>
 
 		<h2>How many images can I process?</h2>
@@ -51,8 +53,8 @@
 
 		<h2>I found an error / I want to ask another question.</h2>
 		<p>
-			Please <a href={githubIssuesUrl}>open an issue on Github</a>, it's the fastest way to have
-			your question seen.
+			Please <a href={githubIssuesUrl} target="_blank">open an issue on Github</a>, it's the fastest
+			way to have your question seen.
 		</p>
 	</article>
 </div>
