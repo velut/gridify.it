@@ -7,54 +7,253 @@
 <Metadata title="FAQ" description={`Frequently asked questions for ${projectName}`} path="faq" />
 
 <div class="flex items-center justify-center p-8">
-	<article class="prose mb-24">
+	<article class="prose">
 		<hgroup>
 			<h1>FAQ</h1>
-			<p>This is a list of frequently asked questions about this website.</p>
-			<p>Last updated on May 12, 2023.</p>
+			<p>
+				This is a list of frequently asked questions about {projectName}.
+				<br />
+				Last updated on May 16, 2023.
+			</p>
 		</hgroup>
 
-		<h2>What can I use this tool for?</h2>
-		<p>
-			You can use this tool to easily <b>add a customizable grid</b> to your images or pixel art creations.
-		</p>
-		<p>See the pictures below for some examples of what you can do.</p>
-		<p>TODO: pictures</p>
+		<div class="divider" />
 
-		<h2>Is this tool free to use?</h2>
-		<p><strong>Yes.</strong> This tool is completely free to use.</p>
+		<ul>
+			<li>
+				<p><strong>What can I use this app for?</strong></p>
+				<p>
+					You can use {projectName} to easily <b>add a customizable grid</b> to your images or pixel
+					art creations. You can also apply transformations such as scaling the image or rounding the
+					corners of grid cells.
+				</p>
+				<p>See the pictures below for some examples of what you can do.</p>
+				<p>TODO: pictures</p>
+			</li>
 
-		<h2>Are my images kept private?</h2>
-		<p>
-			<strong>Yes.</strong> This tool works entirely inside your browser and no file ever leaves your
-			device.
-		</p>
+			<li>
+				<p><strong>Is this app free to use?</strong></p>
+				<p><strong>Yes.</strong> This app is completely free to use.</p>
+			</li>
 
-		<h2>Which images can I process?</h2>
-		<p>
-			<strong>It depends.</strong> As this tool runs inside your browser, you should be able to process
-			the images natively supported by your browser.
-		</p>
-		<p>
-			We suggest using the desktop version of <a href={firefoxDesktopUrl} target="_blank"
-				>Mozilla Firefox</a
-			> as in our testing it supported most available image formats and also had the best processing
-			speed.
-		</p>
+			<li>
+				<p><strong>Are my images kept private?</strong></p>
+				<p>
+					<strong>Yes.</strong> This app works entirely inside your browser and no file ever leaves your
+					device.
+				</p>
+			</li>
 
-		<h2>How many images can I process?</h2>
-		<p>
-			<strong>As many as you want.</strong> You can process one image at a time or many images together.
-		</p>
-		<p>
-			Note, however, that the more images you process together the slower the tool will be,
-			especially on less powerful devices. The same applies to high resolution images.
-		</p>
+			<li>
+				<p><strong>Which image formats are supported by the app?</strong></p>
+				<p>
+					<strong>It depends.</strong> As this app runs inside your browser, you should be able to process
+					the image formats natively supported by your browser. In practice, most common images formats
+					should work with this app.
+				</p>
+			</li>
 
-		<h2>I found an error / I want to ask another question.</h2>
-		<p>
-			Please <a href={githubIssuesUrl} target="_blank">open an issue on Github</a>, it's the fastest
-			way to have your question seen.
-		</p>
+			<li>
+				<p><strong> How many images can I process?</strong></p>
+				<p>
+					<strong>As many as you want.</strong> You can process one image at a time or many images together.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>How do I load images into the app?</strong>
+				</p>
+				<p>
+					Either click on the <strong>Select or Drop Images</strong> button to open a file picker
+					dialog or directly <strong>drag and drop</strong> the images on the page.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>How do I remove loaded images?</strong>
+				</p>
+				<p>
+					Click on the <strong>Remove Images</strong> button to discard all images.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>How do I reset the rendering options?</strong>
+				</p>
+				<p>
+					Click on the <strong>Reset Options</strong> button to reset the rendering options to their
+					default values.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>How do I apply the rendering options to my images?</strong>
+				</p>
+				<p>
+					Either click on the <strong>Render Images</strong> button or use the keyboard hotkey by
+					pressing
+					<strong>Ctrl</strong>
+					and <strong>Enter</strong> together.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>How dow I download the rendered images?</strong>
+				</p>
+				<p>
+					Click on the <strong>Download Images</strong> button to save to your device a zip file containing
+					the rendered images.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>Why do the images in the preview look wrong?</strong>
+				</p>
+				<p>
+					This graphical glitch can happen if images are too small or too big or if they have too
+					many grid lines. Always click on the preview to open a new tab and see the real rendered
+					image.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>Which grid type should I choose?</strong>
+				</p>
+				<p>
+					Use <strong>None</strong> if you don't want any type of grid lines; use
+					<strong>Inner lines only</strong> if you want just the horizontal and vertical bars
+					dividing the image; use <strong>Outer border only</strong> if you just want a frame around
+					your image; use <strong>Full grid</strong> if you want both the frame around your image and
+					the horizontal and vertical bars dividing the image.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>Which grid stroke size should I choose?</strong>
+				</p>
+				<p>
+					Use 1 if you want grid lines that are 1 pixel in size; use higher values if you want
+					thicker grid lines. For example, use 25 for grid lines that are 25 pixels thick.
+				</p>
+			</li>
+
+			<li>
+				<p><strong>How do I change the color of the grid?</strong></p>
+				<p>
+					Click on the <strong>Grid stroke color</strong> input to choose a different color for the
+					grid. The selected color is also used to round cell corners even if the grid type is
+					<strong>None</strong>.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>What are grid cells?</strong>
+				</p>
+				<p>
+					Grid cells are the parts of your image created by dividing it with grid lines. In other
+					words, a cell is a part of your image surrounded by grid lines. They are like the pieces
+					of a puzzle that together form a complete image.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>How do I change the aspect ratio of cells?</strong>
+				</p>
+				<p>
+					Toggle on (default) or off the <strong>Square cells</strong> switch if you want square cells
+					or rectangular cells.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>How do I change cell dimensions?</strong>
+				</p>
+				<p>
+					Use the <strong>Cell width</strong> input (and/or the <strong>Cell height</strong> input
+					if the
+					<strong>Square cells</strong> switch is off) to change the dimensions in pixels of the cells.
+					All cells in the grid will have the same dimensions except for the ones that do not fit in
+					the image which instead will take up the smaller remaining space.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>Which cell scale multiplier should I use?</strong>
+				</p>
+				<p>
+					Use 1 if you want the cells to keep the same size they have in the original image; use
+					higher values if you want to scale up the cells. For example, a 2x3 pixels cell with a
+					scale value of 5 becomes a 10x15 pixels cell in the rendered image.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>Which cell border radius should I use?</strong>
+				</p>
+				<p>
+					Use 0 if you want cells to have square corners; use higher values to round cell corners
+					more and more; use really high values like 1000 to turn square cells into circles. You may
+					need to scale up cells if they are too small to see round corners correctly.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>When should I use the fully opaque pixels option?</strong>
+				</p>
+				<p>
+					Toggle on the <strong>Fully opaque pixels</strong> switch only if your original image contains
+					transparent pixels that you don't want to be altered when applying the grid color.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>Why is the app becoming slow and unresponsive?</strong>
+				</p>
+				<p>
+					The app performance is influenced by your browser and device. If you are processing a high
+					number of images or even a single image with large dimensions, you should expect some
+					slowdowns.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>Why does it say that "This app works best on Firefox"?</strong>
+				</p>
+				<p>
+					We suggest using the desktop version of <a href={firefoxDesktopUrl} target="_blank"
+						>Mozilla Firefox</a
+					> because it is significantly faster than other browsers when processing images with large
+					dimensions.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>I found an error / I want to ask another question.</strong>
+				</p>
+				<p>
+					Please <a href={githubIssuesUrl} target="_blank">open an issue on Github</a>, it's the
+					fastest way to have your question seen.
+				</p>
+			</li>
+		</ul>
+
+		<div class="divider" />
 	</article>
 </div>
