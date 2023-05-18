@@ -6,14 +6,14 @@
 
 <Metadata title="FAQ" description={`Frequently asked questions for ${projectName}`} path="faq" />
 
-<div class="flex items-center justify-center p-8">
+<div class="flex items-center justify-center p-4 sm:p-8">
 	<article class="prose">
 		<hgroup>
 			<h1>FAQ</h1>
 			<p>
 				This is a list of frequently asked questions about {projectName}.
 				<br />
-				Last updated on May 16, 2023.
+				Last updated on May 18, 2023.
 			</p>
 		</hgroup>
 
@@ -23,11 +23,11 @@
 			<li>
 				<p><strong>What can I use this app for?</strong></p>
 				<p>
-					You can use {projectName} to easily <b>add a customizable grid</b> to your images or pixel
-					art creations. You can also apply transformations such as scaling the image or rounding the
-					corners of grid cells.
+					With {projectName} you can easily <strong>add a customizable grid</strong> to your images or
+					pixel art creations. You can use different grid types and line colors, resize images, and round
+					the corners of grid cells.
 				</p>
-				<p>See the pictures below for some examples of what you can do.</p>
+				<p>The pictures below show some examples of what you can do.</p>
 				<p>TODO: pictures</p>
 			</li>
 
@@ -94,7 +94,7 @@
 					<strong>How do I apply the rendering options to my images?</strong>
 				</p>
 				<p>
-					Either click on the <strong>Render Images</strong> button or use the keyboard hotkey by
+					Either click on the <strong>Render Images</strong> button or use the keyboard shortcut by
 					pressing
 					<strong>Ctrl</strong>
 					and <strong>Enter</strong> together.
@@ -116,9 +116,8 @@
 					<strong>Why do the images in the preview look wrong?</strong>
 				</p>
 				<p>
-					This graphical glitch can happen if images are too small or too big or if they have too
-					many grid lines. Always click on the preview to open a new tab and see the real rendered
-					image.
+					A graphical glitch may happen if images are too small or too big or if they have too many
+					grid lines. Always click on the image preview to see the real rendered image in a new tab.
 				</p>
 			</li>
 
@@ -170,8 +169,8 @@
 					<strong>How do I change the aspect ratio of cells?</strong>
 				</p>
 				<p>
-					Toggle on (default) or off the <strong>Square cells</strong> switch if you want square cells
-					or rectangular cells.
+					Toggle on (default) or off the <strong>Square cells</strong> switch to change between square
+					cells and rectangular cells.
 				</p>
 			</li>
 
@@ -184,7 +183,7 @@
 					if the
 					<strong>Square cells</strong> switch is off) to change the dimensions in pixels of the cells.
 					All cells in the grid will have the same dimensions except for the ones that do not fit in
-					the image which instead will take up the smaller remaining space.
+					the image which instead will fill the remaining space.
 				</p>
 			</li>
 
@@ -216,7 +215,7 @@
 				</p>
 				<p>
 					Toggle on the <strong>Fully opaque pixels</strong> switch only if your original image contains
-					transparent pixels that you don't want to be altered when applying the grid color.
+					transparent pixels that you don't want to be mixed with the grid color.
 				</p>
 			</li>
 
@@ -238,8 +237,8 @@
 				<p>
 					We suggest using the desktop version of <a href={firefoxDesktopUrl} target="_blank"
 						>Mozilla Firefox</a
-					> because it is significantly faster than other browsers when processing images with large
-					dimensions.
+					> because we found it significantly faster than other browsers when processing images with
+					large dimensions.
 				</p>
 			</li>
 
