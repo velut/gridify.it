@@ -6,7 +6,7 @@
 
 <div class="form-control w-full">
 	<label for={inputId} class="label">
-		<span class="label-text">Grid stroke color</span>
+		<span class="label-text">Grid color</span>
 	</label>
 	<input
 		id={inputId}
