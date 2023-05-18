@@ -103,7 +103,7 @@
 
 			<li>
 				<p>
-					<strong>How dow I download the rendered images?</strong>
+					<strong>How do I download the rendered images?</strong>
 				</p>
 				<p>
 					Click on the <strong>Download Images</strong> button to save to your device a zip file containing
@@ -147,8 +147,8 @@
 			<li>
 				<p><strong>How do I change the color of the grid?</strong></p>
 				<p>
-					Click on the <strong>Grid stroke color</strong> input to choose a different color for the
-					grid. The selected color is also used to round cell corners even if the grid type is
+					Click on the <strong>Grid color</strong> input to choose a different color for the grid.
+					The selected color is also used to round cell corners even if the grid type is
 					<strong>None</strong>.
 				</p>
 			</li>
@@ -205,7 +205,7 @@
 				<p>
 					Use 0 if you want cells to have square corners; use higher values to round cell corners
 					more and more; use really high values like 1000 to turn square cells into circles. You may
-					need to scale up cells if they are too small to see round corners correctly.
+					need to scale up cells if they are too small to see the rounded corners correctly.
 				</p>
 			</li>
 
@@ -216,6 +216,17 @@
 				<p>
 					Toggle on the <strong>Fully opaque pixels</strong> switch only if your original image contains
 					transparent pixels that you don't want to be mixed with the grid color.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>Are the original image colors exactly preserved in the rendered images?</strong>
+				</p>
+				<p>
+					<strong>Probably not.</strong> Depending on the browser that you are using, you should expect
+					some slight differences between the colors in a rendered image and the original image colors.
+					In general, rendering images should be considered a lossy operation.
 				</p>
 			</li>
 
