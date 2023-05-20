@@ -10,33 +10,37 @@
 	path="licenses"
 />
 
-<div class="flex items-center justify-center p-8">
-	<article class="prose mb-24">
+<div class="flex items-center justify-center p-4 sm:p-8">
+	<article class="prose">
 		<hgroup>
 			<h1>Licenses for Third Party Software</h1>
-			<p>This is a list of third party software used on {projectName}.</p>
+			<p>This is a list of third party software and libraries used on {projectName}.</p>
 		</hgroup>
 
-		{#each licenses as license}
-			<h2>
-				<a href={license.url} target="_blank" class="link-hover link text-lg">
-					{license.name}
-				</a>
-			</h2>
+		<div class="divider" />
 
-			<p>
-				Version: {license.version}
-				<br />
-				License: {license.license}
-			</p>
+		<ul>
+			{#each licenses as license}
+				<li>
+					<a href={license.url} target="_blank" class="link-hover link font-bold">
+						{license.name}
+					</a>
 
-			{#if license.licenseText}
-				<pre class="w-screen sm:w-full">
-					<code>
-						{license.licenseText}
-					</code>
-				</pre>
-			{/if}
-		{/each}
+					<p>
+						Version: {license.version}
+						<br />
+						License: {license.license}
+					</p>
+
+					{#if license.licenseText}
+						<pre class="w-64 sm:w-full">
+							{license.licenseText}
+						</pre>
+					{/if}
+				</li>
+			{/each}
+		</ul>
+
+		<div class="divider" />
 	</article>
 </div>
