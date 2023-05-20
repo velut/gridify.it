@@ -5,7 +5,7 @@
 <footer class="footer bg-base-200 p-8 text-base text-base-content">
 	<div>
 		<div class="flex items-center gap-2">
-			<img class="h-5 w-5" src="./favicon.svg" alt={`${projectName} logo, a chequered flag`} />
+			<img class="h-5 w-5" src="./favicon.svg" alt="{projectName} logo, a chequered flag" />
 			<div class="text-lg font-bold">{projectName}</div>
 		</div>
 		<p>

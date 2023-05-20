@@ -4,7 +4,7 @@
 	import { githubIssuesUrl, projectName } from '$lib/metadata';
 </script>
 
-<Metadata title="FAQ" description={`Frequently asked questions for ${projectName}`} path="faq" />
+<Metadata title="FAQ" description="Frequently asked questions for {projectName}" path="faq" />
 
 <div class="flex items-center justify-center p-4 sm:p-8">
 	<article class="prose">

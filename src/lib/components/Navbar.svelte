@@ -9,7 +9,7 @@
 		title="Homepage"
 		class="btn-ghost btn flex items-center gap-2 text-lg font-bold normal-case"
 	>
-		<img class="h-5 w-5" src="./favicon.svg" alt={`${projectName} logo, a chequered flag`} />
+		<img class="h-5 w-5" src="./favicon.svg" alt="{projectName} logo, a chequered flag" />
 		{projectName}
 	</a>
 

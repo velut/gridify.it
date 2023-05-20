@@ -6,7 +6,7 @@
 
 <Metadata
 	title="Licenses for Third Party Software"
-	description={`Licenses for third party software used on ${projectName}`}
+	description="Licenses for third party software used on {projectName}"
 	path="licenses"
 />
 
