@@ -13,7 +13,7 @@
 			<p>
 				This is a list of frequently asked questions about {projectName}.
 				<br />
-				Last updated on May 18, 2023.
+				Last updated on May 20, 2023.
 			</p>
 		</hgroup>
 
@@ -117,7 +117,8 @@
 				</p>
 				<p>
 					A graphical glitch may happen if images are too small or too big or if they have too many
-					grid lines. Always click on the image preview to see the real rendered image in a new tab.
+					grid lines. Always click on the image preview to see the real rendered image in a new
+					page.
 				</p>
 			</li>
 
@@ -205,7 +206,7 @@
 				<p>
 					Use 0 if you want cells to have square corners; use higher values to round cell corners
 					more and more; use really high values like 1000 to turn square cells into circles. You may
-					need to scale up cells if they are too small to see the rounded corners correctly.
+					need to scale up cells if they are too small to be rounded correctly.
 				</p>
 			</li>
 
