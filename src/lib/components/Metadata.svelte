@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { pageTitle, pageUrl, projectName } from '$lib/metadata';
 
-	const twitterCardImageUrl = '/twitter_card_image.png';
+	const twitterCardImageUrl = '/twitter_card_image.jpg';
 	const twitterCardImageAlt = `Promotional image for ${projectName}`;
 	const twitterCreator = '@EdoardoScibona';
 
