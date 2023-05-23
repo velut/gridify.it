@@ -14,7 +14,8 @@
 	},
 	"scripts": {
 		"dev": "tsx scripts/ensure-licenses-json.ts && vite dev",
-		"build": "tsx scripts/ensure-licenses-json.ts && cross-env GENERATE_LICENSES=true vite build && vite build",
+		"build": "vite build",
+		"build:all": "tsx scripts/ensure-licenses-json.ts && cross-env GENERATE_LICENSES=true vite build && vite build",
 		"start": "tsx scripts/ensure-licenses-json.ts && vite build && vite preview",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -22,7 +23,8 @@
 		"test:unit": "vitest",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"generate:licenses": "cross-env GENERATE_LICENSES=true vite build"
+		"licenses:ensure": "tsx scripts/ensure-licenses-json.ts",
+		"licenses:generate": "cross-env GENERATE_LICENSES=true vite build"
 	},
 	"dependencies": {
 		"@square/svelte-store": "^1.0.15",

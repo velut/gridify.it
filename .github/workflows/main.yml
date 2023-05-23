@@ -22,8 +22,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Ensure license.json exists
+        run: pnpm licenses:ensure
+
       - name: Lint
         run: pnpm lint
+
+      - name: Generate real license.json
+        run: pnpm licenses:generate
 
       - name: Build
         run: pnpm build
