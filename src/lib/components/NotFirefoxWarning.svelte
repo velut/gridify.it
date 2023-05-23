@@ -18,7 +18,7 @@
 			title="If you need to render large images with small cell sizes, Firefox for Desktop is faster than other browsers in our tests"
 			class="btn-ghost btn flex items-center gap-2 normal-case"
 		>
-			<img class="h-5 w-5" src="./fox.svg" alt="Fox emoji" />
+			<img class="h-5 w-5" src="/fox.svg" alt="Fox emoji" />
 			This app works best on Firefox
 		</a>
 	</div>
