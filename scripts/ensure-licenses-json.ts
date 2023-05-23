@@ -6,7 +6,7 @@ const filePath = join(process.cwd(), 'src/licenses.json');
 
 const ensureLicensesJson = () => {
 	if (!existsSync(filePath)) {
-		writeFileSync(filePath, '{}', 'utf8');
+		writeFileSync(filePath, '{}\n', 'utf8');
 	}
 };
 
