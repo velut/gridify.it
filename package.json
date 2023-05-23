@@ -13,6 +13,7 @@
 		"url": "https://github.com/velut/pic-to-grid.git"
 	},
 	"scripts": {
+		"prepare": "svelte-kit sync",
 		"dev": "tsx scripts/ensure-licenses-json.ts && vite dev",
 		"build": "vite build",
 		"build:all": "tsx scripts/ensure-licenses-json.ts && cross-env GENERATE_LICENSES=true vite build && vite build",
