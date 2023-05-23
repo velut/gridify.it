@@ -42,15 +42,10 @@
 
 				<blockquote class="text-sm">
 					<p>
-						Photo by <a
-							href="https://unsplash.com/@cedric_photography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-							target="_blank">Cédric VT</a
+						Photo by <a href="https://unsplash.com/@cedric_photography" target="_blank">Cédric VT</a
 						>
 						on
-						<a
-							href="https://unsplash.com/photos/IuJc2qh2TcA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-							target="_blank">Unsplash</a
-						>
+						<a href="https://unsplash.com/photos/IuJc2qh2TcA" target="_blank">Unsplash</a>
 					</p>
 				</blockquote>
 			</li>
