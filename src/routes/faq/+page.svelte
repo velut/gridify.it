@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Metadata from '$lib/components/Metadata.svelte';
-	import { firefoxDesktopUrl } from '$lib/firefox-desktop-url';
 	import { githubIssuesUrl, projectName } from '$lib/metadata';
 </script>
 
@@ -258,18 +257,6 @@
 					The app performance is influenced by your browser and device. If you are processing a high
 					number of images or even a single image with large dimensions, you should expect some
 					slowdowns.
-				</p>
-			</li>
-
-			<li>
-				<p>
-					<strong>Why does it say that "This app works best on Firefox"?</strong>
-				</p>
-				<p>
-					We suggest using the desktop version of <a href={firefoxDesktopUrl} target="_blank"
-						>Mozilla Firefox</a
-					> because we found it significantly faster than other browsers when processing images with
-					large dimensions.
 				</p>
 			</li>
 

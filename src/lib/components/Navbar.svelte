@@ -1,5 +1,4 @@
 <script lang="ts">
-	import NotFirefoxWarning from '$lib/components/NotFirefoxWarning.svelte';
 	import { projectName } from '$lib/metadata';
 </script>
 
@@ -25,6 +24,4 @@
 	</a>
 
 	<div class="divider divider-horizontal" />
-
-	<NotFirefoxWarning />
 </div>
