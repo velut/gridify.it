@@ -4,7 +4,7 @@ export const newCanvas = async (image: Image) => {
 	const canvas = document.createElement('canvas');
 	const context = canvas.getContext('2d')!;
 
-	// Load image. TODO: Use createImageBitmap().
+	// Load image.
 	const img = document.createElement('img');
 	img.src = image.url;
 	await img.decode();
