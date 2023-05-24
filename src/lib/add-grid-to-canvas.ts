@@ -61,31 +61,25 @@ export const addGridToCanvas = (
 	const dCellWidthAndStroke = dCellWidth + innerStrokeSize;
 	const dCellHeightAndStroke = dCellHeight + innerStrokeSize;
 
-	// If cells are rounded, set clipping mask.
+	// Create canvas with rounded corners cutout.
+	const roundCornersCanvas = document.createElement('canvas');
+	const roundCornersContext = roundCornersCanvas.getContext('2d')!;
 	if (cell.radius > 0) {
-		// Begin clipping path.
-		// See https://stackoverflow.com/a/33625559/16109047.
-		gridContext.beginPath();
+		// Resize to destination cell dimensions.
+		roundCornersCanvas.width = dCellWidth;
+		roundCornersCanvas.height = dCellHeight;
 
-		// Add cells clipping paths.
-		for (let sy = 0; sy < canvas.height; sy += cellHeight) {
-			const indexCellY = sy / cellHeight;
-			const dy = indexCellY * dCellHeightAndStroke + outerStrokeSize;
+		// Paint whole canvas with grid color.
+		roundCornersContext.fillStyle = grid.stroke.color;
+		roundCornersContext.fillRect(0, 0, gridCanvas.width, gridCanvas.height);
 
-			for (let sx = 0; sx < canvas.width; sx += cellWidth) {
-				// Current cell indexes (see also above).
-				const indexCellX = sx / cellWidth;
+		// Clip with rounded rectangle.
+		roundCornersContext.beginPath();
+		roundCornersContext.roundRect(0, 0, dCellWidth, dCellHeight, cell.radius);
+		roundCornersContext.clip();
 
-				// Top left corner coordinates of a destination cell on grid canvas.
-				const dx = indexCellX * dCellWidthAndStroke + outerStrokeSize;
-
-				// Add rounded rectangle to clipping path.
-				gridContext.roundRect(dx, dy, dCellWidth, dCellHeight, cell.radius);
-			}
-		}
-
-		// Finalize clipping path.
-		gridContext.clip();
+		// Clear canvas to keep only the color outside of the clipped rectangle.
+		roundCornersContext.clearRect(0, 0, roundCornersCanvas.width, roundCornersCanvas.height);
 	}
 
 	// Transfer source image cells to grid canvas.
@@ -102,6 +96,11 @@ export const addGridToCanvas = (
 
 			// Transfer source cell to destination cell.
 			gridContext.drawImage(canvas, sx, sy, cellWidth, cellHeight, dx, dy, dCellWidth, dCellHeight);
+
+			// If rounded corners are enabled, paste the rounded corners cutout on the destination cell.
+			if (cell.radius > 0) {
+				gridContext.drawImage(roundCornersCanvas, dx, dy);
+			}
 		}
 	}
 
