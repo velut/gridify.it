@@ -41,10 +41,10 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.1.0",
 		"@sveltejs/adapter-static": "^2.0.2",
-		"@sveltejs/kit": "^1.18.0",
+		"@sveltejs/kit": "^1.19.0",
 		"@tailwindcss/typography": "^0.5.9",
 		"@types/file-saver": "^2.0.5",
-		"@types/node": "^20.2.3",
+		"@types/node": "^20.2.4",
 		"@typescript-eslint/eslint-plugin": "^5.59.7",
 		"@typescript-eslint/parser": "^5.59.7",
 		"autoprefixer": "^10.4.14",
@@ -60,12 +60,12 @@
 		"prettier-plugin-tailwindcss": "^0.3.0",
 		"rollup-plugin-license": "^3.0.1",
 		"svelte": "^3.59.1",
-		"svelte-check": "^3.3.2",
+		"svelte-check": "^3.4.2",
 		"tailwindcss": "^3.3.2",
 		"tslib": "^2.5.2",
 		"tsx": "^3.12.7",
 		"typescript": "^5.0.4",
-		"vite": "^4.3.8",
+		"vite": "^4.3.9",
 		"vitest": "^0.31.1"
 	},
 	"type": "module"
