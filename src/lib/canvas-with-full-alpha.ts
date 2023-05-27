@@ -1,4 +1,4 @@
-export const setCanvasFullAlpha = (canvas: HTMLCanvasElement) => {
+export const canvasWithFullAlpha = (canvas: HTMLCanvasElement) => {
 	const context = canvas.getContext('2d')!;
 
 	// NOTE: Browsers don't return the exact original pixel colors.

@@ -9,7 +9,7 @@ import type { RenderOptions } from '$lib/render-options';
 // aaaaa|      1 0
 // aaaaa |     0 5
 
-export const addGridToCanvas = (
+export const canvasWithGrid = (
 	canvas: HTMLCanvasElement,
 	{ grid, cell }: Pick<RenderOptions, 'grid' | 'cell'>
 ) => {

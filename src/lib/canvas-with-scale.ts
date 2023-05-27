@@ -1,4 +1,4 @@
-export const scaleCanvas = (canvas: HTMLCanvasElement, scale: number) => {
+export const canvasWithScale = (canvas: HTMLCanvasElement, scale: number) => {
 	const scaledCanvas = document.createElement('canvas');
 	const scaledContext = scaledCanvas.getContext('2d')!;
 
