@@ -71,7 +71,7 @@ export const canvasWithGrid = (
 
 		// Paint whole canvas with grid color.
 		roundCornersContext.fillStyle = grid.stroke.color;
-		roundCornersContext.fillRect(0, 0, gridCanvas.width, gridCanvas.height);
+		roundCornersContext.fillRect(0, 0, roundCornersCanvas.width, roundCornersCanvas.height);
 
 		// Clip with rounded rectangle.
 		roundCornersContext.beginPath();
