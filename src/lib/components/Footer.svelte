@@ -4,10 +4,10 @@
 
 <footer class="footer bg-base-200 p-8 text-base text-base-content">
 	<div>
-		<div class="flex items-center gap-2">
+		<a href="/" class="link-hover link flex items-center gap-2">
 			<img class="h-5 w-5" src="/favicon.svg" alt="{projectName} logo, a chequered flag" />
 			<div class="text-lg font-bold">{projectName}</div>
-		</div>
+		</a>
 		<p>
 			Created by <a href="https://www.edoardoscibona.com" target="_blank" class="link"
 				>Edoardo Scibona</a
