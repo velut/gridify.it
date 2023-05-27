@@ -1,3 +1,4 @@
+import { canvasWithRoundCornersClipping } from '$lib/canvas-with-round-corners-clipping';
 import type { RenderOptions } from '$lib/render-options';
 
 // Example grids with width equal to 5 and cell sizes increasing from 1 to 6.
@@ -61,26 +62,10 @@ export const canvasWithGrid = (
 	const dCellWidthAndStroke = dCellWidth + innerStrokeSize;
 	const dCellHeightAndStroke = dCellHeight + innerStrokeSize;
 
-	// Create canvas with rounded corners cutout.
-	const roundCornersCanvas = document.createElement('canvas');
-	const roundCornersContext = roundCornersCanvas.getContext('2d')!;
-	if (cell.radius > 0) {
-		// Resize to destination cell dimensions.
-		roundCornersCanvas.width = dCellWidth;
-		roundCornersCanvas.height = dCellHeight;
-
-		// Paint whole canvas with grid color.
-		roundCornersContext.fillStyle = grid.stroke.color;
-		roundCornersContext.fillRect(0, 0, roundCornersCanvas.width, roundCornersCanvas.height);
-
-		// Clip with rounded rectangle.
-		roundCornersContext.beginPath();
-		roundCornersContext.roundRect(0, 0, dCellWidth, dCellHeight, cell.radius);
-		roundCornersContext.clip();
-
-		// Clear canvas to keep only the color outside of the clipped rectangle.
-		roundCornersContext.clearRect(0, 0, roundCornersCanvas.width, roundCornersCanvas.height);
-	}
+	const roundCornersClipCanvas =
+		cell.radius > 0
+			? canvasWithRoundCornersClipping(dCellWidth, dCellHeight, { grid, cell })
+			: undefined;
 
 	// Transfer source image cells to grid canvas.
 	for (let sy = 0; sy < canvas.height; sy += cellHeight) {
@@ -98,8 +83,8 @@ export const canvasWithGrid = (
 			gridContext.drawImage(canvas, sx, sy, cellWidth, cellHeight, dx, dy, dCellWidth, dCellHeight);
 
 			// If rounded corners are enabled, paste the rounded corners cutout on the destination cell.
-			if (cell.radius > 0) {
-				gridContext.drawImage(roundCornersCanvas, dx, dy);
+			if (cell.radius > 0 && roundCornersClipCanvas) {
+				gridContext.drawImage(roundCornersClipCanvas, dx, dy);
 			}
 		}
 	}
