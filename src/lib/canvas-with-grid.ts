@@ -13,16 +13,19 @@ const gridStrokeSizes = ({ grid }: RenderOptionsGrid) => {
 	return { gridInnerStrokeSize, gridOuterStrokeSize };
 };
 
-const srcCellDimensions = ({ cell }: RenderOptionsCell) => {
+const srcCellDimensions = (canvas: HTMLCanvasElement, { grid, cell }: RenderOptionsGridAndCell) => {
 	// Determine dimensions of source cells that partition the input image.
-	const srcCellWidth = cell.width;
-	const srcCellHeight = cell.squareAspectRatio ? cell.width : cell.height;
+	const onlyOuterBorder = grid.type === 'outer' && cell.radius === 0;
+	const useRealDimensions = !onlyOuterBorder;
+	const cellHeight = cell.squareAspectRatio ? cell.width : cell.height;
+	const srcCellWidth = useRealDimensions ? cell.width : canvas.width;
+	const srcCellHeight = useRealDimensions ? cellHeight : canvas.height;
 	return { srcCellWidth, srcCellHeight };
 };
 
-const dstCellDimensions = ({ grid, cell }: RenderOptionsGridAndCell) => {
+const dstCellDimensions = (canvas: HTMLCanvasElement, { grid, cell }: RenderOptionsGridAndCell) => {
 	// Determine dimensions of destination cells that form the output image.
-	const { srcCellWidth, srcCellHeight } = srcCellDimensions({ cell });
+	const { srcCellWidth, srcCellHeight } = srcCellDimensions(canvas, { grid, cell });
 	const { gridInnerStrokeSize } = gridStrokeSizes({ grid });
 	const dstCellWidth = cell.scale * srcCellWidth;
 	const dstCellHeight = cell.scale * srcCellHeight;
@@ -54,7 +57,7 @@ const gridInnerLinesDimensions = (
 	// aaaaa|   ; 1; 0;
 	// aaaaa |  ; 0; 5;
 	//
-	const { srcCellWidth, srcCellHeight } = srcCellDimensions({ cell });
+	const { srcCellWidth, srcCellHeight } = srcCellDimensions(canvas, { grid, cell });
 	const { gridInnerStrokeSize } = gridStrokeSizes({ grid });
 
 	// Determine number of source cells that partition the image.
@@ -120,9 +123,9 @@ export const canvasWithGrid = (
 	const { gridOuterStrokeSize } = gridStrokeSizes({ grid });
 
 	// Determine source and destination cell dimensions.
-	const { srcCellWidth, srcCellHeight } = srcCellDimensions({ cell });
+	const { srcCellWidth, srcCellHeight } = srcCellDimensions(canvas, { grid, cell });
 	const { dstCellWidth, dstCellHeight, dstCellAndInnerLineWidth, dstCellAndInnerLineHeight } =
-		dstCellDimensions({ grid, cell });
+		dstCellDimensions(canvas, { grid, cell });
 
 	// Create round corners clipping canvas.
 	const roundCornersClipCanvas =
