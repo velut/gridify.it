@@ -7,7 +7,7 @@
 
 <div class="form-control w-full">
 	<label for={inputId} class="label">
-		<span class="label-text">Cell border radius in pixels</span>
+		<span class="label-text">Cell corner radius in pixels</span>
 	</label>
 	<input
 		id={inputId}

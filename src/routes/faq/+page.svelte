@@ -219,7 +219,7 @@
 
 			<li>
 				<p>
-					<strong>Which cell border radius should I use?</strong>
+					<strong>Which cell corner radius should I use?</strong>
 				</p>
 				<p>
 					Use 0 if you want cells to have square corners; use higher values to round cell corners
