@@ -1,16 +1,16 @@
 import type { RenderOptions } from '$lib/render-options';
 
 export const canvasWithRoundCornersClipping = (
-	dCellWidth: number,
-	dCellHeight: number,
+	dstCellWidth: number,
+	dstCellHeight: number,
 	{ grid, cell }: Pick<RenderOptions, 'grid' | 'cell'>
 ) => {
 	const canvas = document.createElement('canvas');
 	const context = canvas.getContext('2d')!;
 
 	// Resize to destination cell dimensions.
-	canvas.width = dCellWidth;
-	canvas.height = dCellHeight;
+	canvas.width = dstCellWidth;
+	canvas.height = dstCellHeight;
 
 	// Paint whole canvas with grid color.
 	context.fillStyle = grid.stroke.color;
