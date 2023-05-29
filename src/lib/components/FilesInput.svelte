@@ -8,6 +8,7 @@
 
 	const setFiles = async (event: Event) => {
 		$files = await getFiles(event, accept);
+		(event.target as HTMLInputElement).value = '';
 	};
 </script>
 
