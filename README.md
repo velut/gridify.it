@@ -1,4 +1,4 @@
-# 🏁 [pic2grid](TODO:)
+# 🏁 [pic2grid]
 
 [![Build status](https://img.shields.io/github/actions/workflow/status/velut/pic2grid/main.yml?branch=main)](https://github.com/velut/pic2grid/actions?query=workflow%3ACI)
 ![Language](https://img.shields.io/github/languages/top/velut/pic2grid)
@@ -14,7 +14,15 @@
 
 ## 📖 About
 
-TODO:
+With [pic2grid] you can easily add a customizable grid to your images or pixel art creations.
+You can use different grid types and line colors, you can also resize images and round the corners of grid cells.
+The images below show some examples of what you can do with pic2grid.
+
+For more information, please read the [FAQ page] on the website.
+
+| <img width="256" src="images/examples/01.png?raw=true" alt=""> | <img width="256" src="images/examples/02.png?raw=true" alt=""> | <img width="256" src="images/examples/03.png?raw=true" alt=""> |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| <img width="256" src="images/examples/04.png?raw=true" alt=""> | <img width="256" src="images/examples/05.png?raw=true" alt=""> | <img width="256" src="images/examples/06.png?raw=true" alt=""> |
 
 ## 💬 Feedback
 
@@ -38,3 +46,6 @@ GNU Affero General Public License for more details.
 
 You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+[pic2grid]: TODO:
+[FAQ page]: TODO:
