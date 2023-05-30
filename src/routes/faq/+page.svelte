@@ -142,6 +142,17 @@
 
 			<li>
 				<p>
+					<strong>Why have the images been rendered incorrectly?</strong>
+				</p>
+				<p>
+					Incorrectly rendered images may be the result of bugs in browsers or graphical drivers.
+					Try changing the rendering options and then render the images again. Alternatively, try
+					using different browsers or devices to render the images.
+				</p>
+			</li>
+
+			<li>
+				<p>
 					<strong>Which grid type should I choose?</strong>
 				</p>
 				<p>
