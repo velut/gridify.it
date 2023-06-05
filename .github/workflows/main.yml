@@ -28,6 +28,9 @@ jobs:
       - name: Lint
         run: pnpm lint
 
+      - name: Svelte check
+        run: pnpm check
+
       - name: Generate real license.json
         run: pnpm licenses:generate
 
