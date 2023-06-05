@@ -17,7 +17,7 @@
 		pattern="[0-9]*"
 		class="input-bordered input input-sm w-full"
 		class:input-error={errors}
-		data-invalid={errors}
+		aria-invalid={errors ? 'true' : undefined}
 		bind:value
 	/>
 	{#if errors}

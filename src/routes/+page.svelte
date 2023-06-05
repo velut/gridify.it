@@ -3,12 +3,6 @@
 	import Metadata from '$lib/components/Metadata.svelte';
 	import Sidebar from '$lib/components/Sidebar.svelte';
 	import { projectName } from '$lib/metadata';
-	import { renderOptionsSuperForm } from '$lib/stores';
-	import type { PageData } from './$types';
-
-	export let data: PageData;
-
-	$: $renderOptionsSuperForm = data.renderOptionsSuperForm;
 </script>
 
 <Metadata

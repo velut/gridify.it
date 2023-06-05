@@ -11,17 +11,18 @@
 	import RenderImagesButton from '$lib/components/RenderImagesButton.svelte';
 	import ResetRenderOptionsButton from '$lib/components/ResetRenderOptionsButton.svelte';
 	import { renderOptionsSchema } from '$lib/render-options';
-	import { renderOptions, renderOptionsSuperForm } from '$lib/stores';
+	import { renderOptions } from '$lib/stores';
 	import type { Writable } from 'svelte/store';
-	import { intProxy, superForm } from 'sveltekit-superforms/client';
+	import { intProxy, superForm, superValidateSync } from 'sveltekit-superforms/client';
 
+	const validation = superValidateSync(renderOptionsSchema);
 	const {
 		form,
 		errors,
 		tainted,
 		reset: resetForm,
 		enhance
-	} = superForm($renderOptionsSuperForm, {
+	} = superForm(validation, {
 		SPA: true,
 		dataType: 'json',
 		validators: renderOptionsSchema,
@@ -33,11 +34,11 @@
 		}
 	});
 
-	const gridStrokeSizeIntProxy = intProxy(form, ['grid', 'stroke', 'size']) as Writable<string>;
-	const cellWidthIntProxy = intProxy(form, ['cell', 'width']) as Writable<string>;
-	const cellHeightIntProxy = intProxy(form, ['cell', 'height']) as Writable<string>;
-	const cellScaleIntProxy = intProxy(form, ['cell', 'scale']) as Writable<string>;
-	const cellRadiusIntProxy = intProxy(form, ['cell', 'radius']) as Writable<string>;
+	const gridStrokeSizeIntProxy = intProxy(form, 'grid.stroke.size') as Writable<string>;
+	const cellWidthIntProxy = intProxy(form, 'cell.width') as Writable<string>;
+	const cellHeightIntProxy = intProxy(form, 'cell.height') as Writable<string>;
+	const cellScaleIntProxy = intProxy(form, 'cell.scale') as Writable<string>;
+	const cellRadiusIntProxy = intProxy(form, 'cell.radius') as Writable<string>;
 
 	$: isFormTainted = Boolean($tainted);
 	$: isGridDisabled = $form.grid.type === 'none';
