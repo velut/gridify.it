@@ -31,9 +31,9 @@ export const renderOptionsSchema = z.object({
 			.min(1, { message: 'Cell scale multiplier must be 1 or more.' })
 			.default(1),
 		radius: z.coerce
-			.number({ invalid_type_error: 'Cell border radius must be an integer number.' })
-			.int({ message: 'Cell border radius must be an integer number.' })
-			.min(0, { message: 'Cell border radius must be 0 pixels or more.' })
+			.number({ invalid_type_error: 'Cell corner radius must be an integer number.' })
+			.int({ message: 'Cell corner radius must be an integer number.' })
+			.min(0, { message: 'Cell corner radius must be 0 pixels or more.' })
 			.default(0)
 	}),
 	pixel: z.object({
