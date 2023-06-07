@@ -23,8 +23,8 @@ dependencies:
     specifier: ^1.1.1
     version: 1.1.1
   sveltekit-superforms:
-    specifier: 1.0.0-rc.2
-    version: 1.0.0-rc.2(@sveltejs/kit@1.20.2)(svelte@3.59.1)(zod@3.21.4)
+    specifier: 1.0.0-rc.3
+    version: 1.0.0-rc.3(@sveltejs/kit@1.20.2)(svelte@3.59.1)(zod@3.21.4)
   zod:
     specifier: ^3.21.4
     version: 3.21.4
@@ -61,8 +61,8 @@ devDependencies:
     specifier: ^7.0.3
     version: 7.0.3
   daisyui:
-    specifier: ^3.0.3
-    version: 3.0.3(postcss@8.4.24)
+    specifier: ^3.0.5
+    version: 3.0.5(postcss@8.4.24)
   eslint:
     specifier: ^8.42.0
     version: 8.42.0
@@ -89,7 +89,7 @@ devDependencies:
     version: 0.3.0(prettier-plugin-svelte@2.10.1)(prettier@2.8.8)
   rollup-plugin-license:
     specifier: ^3.0.1
-    version: 3.0.1(rollup@3.23.1)
+    version: 3.0.1(rollup@3.24.0)
   svelte:
     specifier: ^3.59.1
     version: 3.59.1
@@ -864,7 +864,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001495
-      electron-to-chromium: 1.4.422
+      electron-to-chromium: 1.4.423
       node-releases: 2.0.12
       update-browserslist-db: 1.0.11(browserslist@4.21.7)
     dev: true
@@ -1026,8 +1026,8 @@ packages:
     hasBin: true
     dev: true
 
-  /daisyui@3.0.3(postcss@8.4.24):
-    resolution: {integrity: sha512-RSbXsEBj2LonvjOKEI0I64F5xFJrFrthPgxRNeAZKmACQ3NoIoP45lO6UXLW3bm8PVOUGpKf1Br2SWwc1NqnHQ==}
+  /daisyui@3.0.5(postcss@8.4.24):
+    resolution: {integrity: sha512-sAAyloS/gRgdD+irNWcOaOI6G985bJ3MS+UsloAott4Csx/h0PPeDueFhWdJex9q1i7F8Oacw6Q0wpPQnnhkJQ==}
     peerDependencies:
       postcss: ^8
     dependencies:
@@ -1103,8 +1103,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /electron-to-chromium@1.4.422:
-    resolution: {integrity: sha512-OQMid0IRbJv27BhlPiBK8CfGzjeq4ZCBSmpwNi1abyS8w17/BajOUu7hBI49ptDTBCz9NRFbORhWvt41dF7dwg==}
+  /electron-to-chromium@1.4.423:
+    resolution: {integrity: sha512-y4A7YfQcDGPAeSWM1IuoWzXpg9RY1nwHzHSwRtCSQFp9FgAVDgdWlFf0RbdWfLWQ2WUI+bddUgk5RgTjqRE6FQ==}
     dev: true
 
   /es6-promise@3.3.1:
@@ -2118,7 +2118,7 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup-plugin-license@3.0.1(rollup@3.23.1):
+  /rollup-plugin-license@3.0.1(rollup@3.24.0):
     resolution: {integrity: sha512-/lec6Y94Y3wMfTDeYTO/jSXII0GQ/XkDZCiqkMKxyU5D5nGPaxr/2JNYvAgYsoCYuOLGOanKDPjCCQiTT96p7A==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -2131,13 +2131,13 @@ packages:
       mkdirp: 1.0.4
       moment: 2.29.4
       package-name-regex: 2.0.6
-      rollup: 3.23.1
+      rollup: 3.24.0
       spdx-expression-validate: 2.0.0
       spdx-satisfies: 5.0.1
     dev: true
 
-  /rollup@3.23.1:
-    resolution: {integrity: sha512-ybRdFVHOoljGEFILHLd2g/qateqUdjE6YS41WXq4p3C/WwD3xtWxV4FYWETA1u9TeXQc5K8L8zHE5d/scOvrOQ==}
+  /rollup@3.24.0:
+    resolution: {integrity: sha512-OgraHOIg2YpHQTjl0/ymWfFNBEyPucB7lmhXrQUh38qNOegxLapSPFs9sNr0qKR75awW41D93XafoR2QfhBdUQ==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -2426,8 +2426,8 @@ packages:
     resolution: {integrity: sha512-pKj8fEBmqf6mq3/NfrB9SLtcJcUvjYSWyePlfCqN9gujLB25RitWK8PvFzlwim6hD/We35KbPlRteuA6rnPGcQ==}
     engines: {node: '>= 8'}
 
-  /sveltekit-superforms@1.0.0-rc.2(@sveltejs/kit@1.20.2)(svelte@3.59.1)(zod@3.21.4):
-    resolution: {integrity: sha512-ooIAhEi/QTo9bMiL+UD1vRHNxlSUnqwW8SDImkvLKo2aCtwRLPTu6JRWnGjypdxyL+IYNEhYgirO/eooqWTKbA==}
+  /sveltekit-superforms@1.0.0-rc.3(@sveltejs/kit@1.20.2)(svelte@3.59.1)(zod@3.21.4):
+    resolution: {integrity: sha512-QffCIbcwyqWqFA08N/rLTN6SJXvyfI07oPXpOas65FiQ4chYviQcDbtvW9WFiphhqBmvn9/+n9ka+RtazdRxfA==}
     peerDependencies:
       '@sveltejs/kit': 1.x
       svelte: 3.x
@@ -2658,7 +2658,7 @@ packages:
       '@types/node': 20.2.5
       esbuild: 0.17.19
       postcss: 8.4.24
-      rollup: 3.23.1
+      rollup: 3.24.0
     optionalDependencies:
       fsevents: 2.3.2
 
