@@ -2,7 +2,7 @@
 	import { projectName } from '$lib/metadata';
 </script>
 
-<div class="navbar bg-base-200">
+<div class="navbar overflow-x-auto bg-base-200">
 	<a href="/" title="Homepage" class="btn-ghost btn text-lg font-bold normal-case">
 		<img class="h-5 w-5" src="/favicon.svg" alt="{projectName} logo, a chequered flag" />
 		{projectName}
