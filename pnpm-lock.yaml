@@ -61,8 +61,8 @@ devDependencies:
     specifier: ^7.0.3
     version: 7.0.3
   daisyui:
-    specifier: ^3.0.5
-    version: 3.0.5(postcss@8.4.24)
+    specifier: ^3.0.20
+    version: 3.0.20(postcss@8.4.24)
   eslint:
     specifier: ^8.42.0
     version: 8.42.0
@@ -864,7 +864,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001495
-      electron-to-chromium: 1.4.423
+      electron-to-chromium: 1.4.425
       node-releases: 2.0.12
       update-browserslist-db: 1.0.11(browserslist@4.21.7)
     dev: true
@@ -1026,8 +1026,9 @@ packages:
     hasBin: true
     dev: true
 
-  /daisyui@3.0.5(postcss@8.4.24):
-    resolution: {integrity: sha512-sAAyloS/gRgdD+irNWcOaOI6G985bJ3MS+UsloAott4Csx/h0PPeDueFhWdJex9q1i7F8Oacw6Q0wpPQnnhkJQ==}
+  /daisyui@3.0.20(postcss@8.4.24):
+    resolution: {integrity: sha512-EQ0ryTM/+YfkTaRPdUvolsA8pThYnrjjvj2IEXQg31dRVxrEh+ovx5iBknKPXO6XJh2auYYfPonHBN7P88DNeQ==}
+    engines: {node: '>=16.9.0'}
     peerDependencies:
       postcss: ^8
     dependencies:
@@ -1103,8 +1104,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /electron-to-chromium@1.4.423:
-    resolution: {integrity: sha512-y4A7YfQcDGPAeSWM1IuoWzXpg9RY1nwHzHSwRtCSQFp9FgAVDgdWlFf0RbdWfLWQ2WUI+bddUgk5RgTjqRE6FQ==}
+  /electron-to-chromium@1.4.425:
+    resolution: {integrity: sha512-wv1NufHxu11zfDbY4fglYQApMswleE9FL/DSeyOyauVXDZ+Kco96JK/tPfBUaDqfRarYp2WH2hJ/5UnVywp9Jg==}
     dev: true
 
   /es6-promise@3.3.1:
