@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ThemeSwitch from '$lib/components/ThemeSwitch.svelte';
 	import { githubUrl, projectName } from '$lib/metadata';
 </script>
 
@@ -26,5 +27,10 @@
 		<span class="footer-title">Legal</span>
 		<a href="/privacy" class="link-hover link">Privacy Policy</a>
 		<a href="/licenses" class="link-hover link">Licenses</a>
+	</div>
+
+	<div>
+		<span class="footer-title">Theme</span>
+		<ThemeSwitch />
 	</div>
 </footer>
