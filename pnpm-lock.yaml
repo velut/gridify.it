@@ -23,8 +23,8 @@ dependencies:
     specifier: ^1.1.1
     version: 1.1.1
   sveltekit-superforms:
-    specifier: 1.0.0-rc.3
-    version: 1.0.0-rc.3(@sveltejs/kit@1.20.2)(svelte@3.59.1)(zod@3.21.4)
+    specifier: 1.0.0-rc.4
+    version: 1.0.0-rc.4(@sveltejs/kit@1.20.2)(svelte@3.59.1)(zod@3.21.4)
   zod:
     specifier: ^3.21.4
     version: 3.21.4
@@ -61,8 +61,8 @@ devDependencies:
     specifier: ^7.0.3
     version: 7.0.3
   daisyui:
-    specifier: ^3.0.20
-    version: 3.0.20(postcss@8.4.24)
+    specifier: ^3.0.22
+    version: 3.0.22(postcss@8.4.24)
   eslint:
     specifier: ^8.42.0
     version: 8.42.0
@@ -823,7 +823,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.7
-      caniuse-lite: 1.0.30001495
+      caniuse-lite: 1.0.30001497
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -863,8 +863,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001495
-      electron-to-chromium: 1.4.425
+      caniuse-lite: 1.0.30001497
+      electron-to-chromium: 1.4.426
       node-releases: 2.0.12
       update-browserslist-db: 1.0.11(browserslist@4.21.7)
     dev: true
@@ -898,8 +898,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /caniuse-lite@1.0.30001495:
-    resolution: {integrity: sha512-F6x5IEuigtUfU5ZMQK2jsy5JqUUlEFRVZq8bO2a+ysq5K7jD6PPc9YXZj78xDNS3uNchesp1Jw47YXEqr+Viyg==}
+  /caniuse-lite@1.0.30001497:
+    resolution: {integrity: sha512-I4/duVK4wL6rAK/aKZl3HXB4g+lIZvaT4VLAn2rCgJ38jVLb0lv2Xug6QuqmxXFVRJMF74SPPWPJ/1Sdm3vCzw==}
     dev: true
 
   /chai@4.3.7:
@@ -1026,8 +1026,8 @@ packages:
     hasBin: true
     dev: true
 
-  /daisyui@3.0.20(postcss@8.4.24):
-    resolution: {integrity: sha512-EQ0ryTM/+YfkTaRPdUvolsA8pThYnrjjvj2IEXQg31dRVxrEh+ovx5iBknKPXO6XJh2auYYfPonHBN7P88DNeQ==}
+  /daisyui@3.0.22(postcss@8.4.24):
+    resolution: {integrity: sha512-2xdRxQUUB+O0Mcww65QMwwo0fjnos4JmyLhX6F4WxWTngjy9eYyxdQChtsJB3GUl0jNYdZfmnK48gJNyhMBX8Q==}
     engines: {node: '>=16.9.0'}
     peerDependencies:
       postcss: ^8
@@ -1104,8 +1104,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /electron-to-chromium@1.4.425:
-    resolution: {integrity: sha512-wv1NufHxu11zfDbY4fglYQApMswleE9FL/DSeyOyauVXDZ+Kco96JK/tPfBUaDqfRarYp2WH2hJ/5UnVywp9Jg==}
+  /electron-to-chromium@1.4.426:
+    resolution: {integrity: sha512-dWuNH+XUT9hdFHASfMpcZGW5kUyJvllumJkXaXiswuCkoaFIFI89aykBPuHEi1YUWQGRCqvIO0BUdmeFJ4W4Ww==}
     dev: true
 
   /es6-promise@3.3.1:
@@ -2427,8 +2427,8 @@ packages:
     resolution: {integrity: sha512-pKj8fEBmqf6mq3/NfrB9SLtcJcUvjYSWyePlfCqN9gujLB25RitWK8PvFzlwim6hD/We35KbPlRteuA6rnPGcQ==}
     engines: {node: '>= 8'}
 
-  /sveltekit-superforms@1.0.0-rc.3(@sveltejs/kit@1.20.2)(svelte@3.59.1)(zod@3.21.4):
-    resolution: {integrity: sha512-QffCIbcwyqWqFA08N/rLTN6SJXvyfI07oPXpOas65FiQ4chYviQcDbtvW9WFiphhqBmvn9/+n9ka+RtazdRxfA==}
+  /sveltekit-superforms@1.0.0-rc.4(@sveltejs/kit@1.20.2)(svelte@3.59.1)(zod@3.21.4):
+    resolution: {integrity: sha512-uePmY4G+TL5UMb31qDkrSpbsnhWCrJ1OCi61Un34POwmLHEUWR3nzC9c9OoTGKoT+pcMkqKvJLhG1SlP4QvrPg==}
     peerDependencies:
       '@sveltejs/kit': 1.x
       svelte: 3.x
