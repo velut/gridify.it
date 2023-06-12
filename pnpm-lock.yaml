@@ -25,6 +25,9 @@ dependencies:
   sveltekit-superforms:
     specifier: 1.0.0-rc.6
     version: 1.0.0-rc.6(@sveltejs/kit@1.20.2)(svelte@3.59.1)(zod@3.21.4)
+  vanilla-cookieconsent:
+    specifier: ^2.9.1
+    version: 2.9.1
   zod:
     specifier: ^3.21.4
     version: 3.21.4
@@ -2609,6 +2612,10 @@ packages:
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
+
+  /vanilla-cookieconsent@2.9.1:
+    resolution: {integrity: sha512-53SFENm1+nSOvuH8nEYRVB21gsYHnoglKD7Py9q1f9RSC4nkOOY5v3IE9rXh7g1vBLFnCtzlaFmJLm8/Y94iOQ==}
+    dev: false
 
   /vite-node@0.32.0(@types/node@20.3.0):
     resolution: {integrity: sha512-220P/y8YacYAU+daOAqiGEFXx2A8AwjadDzQqos6wSukjvvTWNqleJSwoUn0ckyNdjHIKoxn93Nh1vWBqEKr3Q==}

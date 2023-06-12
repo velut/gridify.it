@@ -26,7 +26,8 @@
 	<div>
 		<span class="footer-title">Legal</span>
 		<a href="/privacy" class="link-hover link">Privacy Policy</a>
-		<a href="/licenses" class="link-hover link">Licenses</a>
+		<button type="button" class="link-hover link" data-cc="c-settings">Cookie Preferences</button>
+		<a href="/licenses" class="link-hover link">Software Licenses</a>
 	</div>
 
 	<div>
