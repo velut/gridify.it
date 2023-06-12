@@ -1,19 +1,11 @@
-<script lang="ts" context="module">
-	declare global {
-		interface Window {
-			CC: CookieConsent;
-		}
-	}
-</script>
-
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import 'vanilla-cookieconsent';
 
 	onMount(() => {
 		if (!document.querySelector('#cc--main')) {
-			window.CC = window.initCookieConsent();
-			window.CC.run({
+			window.cc = window.initCookieConsent();
+			window.cc.run({
 				current_lang: 'en',
 				page_scripts: true,
 				autoclear_cookies: true,
