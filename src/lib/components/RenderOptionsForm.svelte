@@ -14,14 +14,13 @@
 	import { renderOptions } from '$lib/stores';
 	import { intProxy, superForm, superValidateSync } from 'sveltekit-superforms/client';
 
-	const validation = superValidateSync(renderOptionsSchema);
 	const {
 		form,
 		errors,
 		tainted,
 		reset: resetForm,
 		enhance
-	} = superForm(validation, {
+	} = superForm(superValidateSync(renderOptionsSchema), {
 		SPA: true,
 		dataType: 'json',
 		validators: renderOptionsSchema,
