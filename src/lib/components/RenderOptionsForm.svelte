@@ -12,7 +12,6 @@
 	import ResetRenderOptionsButton from '$lib/components/ResetRenderOptionsButton.svelte';
 	import { renderOptionsSchema } from '$lib/render-options';
 	import { renderOptions } from '$lib/stores';
-	import type { Writable } from 'svelte/store';
 	import { intProxy, superForm, superValidateSync } from 'sveltekit-superforms/client';
 
 	const validation = superValidateSync(renderOptionsSchema);
@@ -34,11 +33,11 @@
 		}
 	});
 
-	const gridStrokeSizeIntProxy = intProxy(form, 'grid.stroke.size') as Writable<string>;
-	const cellWidthIntProxy = intProxy(form, 'cell.width') as Writable<string>;
-	const cellHeightIntProxy = intProxy(form, 'cell.height') as Writable<string>;
-	const cellScaleIntProxy = intProxy(form, 'cell.scale') as Writable<string>;
-	const cellRadiusIntProxy = intProxy(form, 'cell.radius') as Writable<string>;
+	const gridStrokeSizeIntProxy = intProxy(form, 'grid.stroke.size');
+	const cellWidthIntProxy = intProxy(form, 'cell.width');
+	const cellHeightIntProxy = intProxy(form, 'cell.height');
+	const cellScaleIntProxy = intProxy(form, 'cell.scale');
+	const cellRadiusIntProxy = intProxy(form, 'cell.radius');
 
 	$: isFormTainted = Boolean($tainted);
 	$: isGridDisabled = $form.grid.type === 'none';
