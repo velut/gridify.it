@@ -1,6 +1,6 @@
 {
-	"name": "pic2grid",
-	"description": "A website to add a grid over images with customizable options",
+	"name": "gridify.it",
+	"description": "A web app to add a grid over images with customizable options",
 	"version": "0.0.1",
 	"license": "AGPL-3.0-or-later",
 	"private": true,
@@ -10,7 +10,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/velut/pic2grid.git"
+		"url": "https://github.com/velut/gridify.it.git"
 	},
 	"scripts": {
 		"prepare": "svelte-kit sync",

@@ -1,7 +1,7 @@
-export const projectName = 'pic2grid';
-export const baseUrl = `https://${projectName}.vercel.app`;
+export const projectName = 'gridify.it';
+export const baseUrl = `https://www.gridify.it`;
 export const githubUrl = `https://github.com/velut/${projectName}`;
-export const githubIssuesUrl = `https://github.com/velut/${projectName}/issues`;
+export const githubIssuesUrl = `${githubUrl}/issues`;
 
 export const pageTitle = (title: string) => {
 	return `${title} | ${projectName}`;
