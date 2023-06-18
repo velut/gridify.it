@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ThemeSwitch from '$lib/components/ThemeSwitch.svelte';
-	import { githubUrl, projectName } from '$lib/metadata';
+	import { githubCommitShort, githubCommitUrl, githubUrl, projectName } from '$lib/metadata';
 </script>
 
 <footer class="footer bg-base-200 p-8 text-base text-base-content">
@@ -10,9 +10,16 @@
 			<div class="text-lg font-bold">{projectName}</div>
 		</a>
 		<p>
-			Created by <a href="https://www.edoardoscibona.com" target="_blank" class="link"
-				>Edoardo Scibona</a
-			>.
+			Created by <a
+				href="https://www.edoardoscibona.com"
+				target="_blank"
+				class="link-hover link font-bold">Edoardo Scibona</a
+			>
+		</p>
+		<p class="text-sm">
+			Commit: <a href={githubCommitUrl} target="_blank" class="link-hover link">
+				{githubCommitShort}
+			</a>
 		</p>
 	</div>
 
