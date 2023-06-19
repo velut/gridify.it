@@ -12,7 +12,7 @@
 			<p>
 				This is a list of frequently asked questions about {projectName}.
 				<br />
-				Last updated on May 20, 2023.
+				Last updated on June 20, 2023.
 			</p>
 		</hgroup>
 
@@ -134,7 +134,7 @@
 					<strong>Why do the images in the preview look wrong?</strong>
 				</p>
 				<p>
-					A graphical glitch may happen if images are too small or too big or if they have too many
+					A graphical glitch may happen if images are too small, too big, or if they have too many
 					grid lines. Always click on the image preview to see the real rendered image in a new
 					page.
 				</p>
