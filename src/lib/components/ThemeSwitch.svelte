@@ -1,6 +1,6 @@
 <script lang="ts">
 	const changeTheme = () => {
-		if (localStorage.theme === 'dark') {
+		if (document.documentElement.getAttribute('data-theme') === 'dark') {
 			localStorage.theme = 'light';
 			document.documentElement.setAttribute('data-theme', 'light');
 			document.documentElement.classList.remove('c_darkmode');
