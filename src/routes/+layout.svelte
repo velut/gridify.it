@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CookieConsent from '$lib/components/CookieConsent.svelte';
+	// import CookieConsent from '$lib/components/CookieConsent.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import 'vanilla-cookieconsent/dist/cookieconsent.css';
@@ -16,4 +16,4 @@
 	<Footer />
 </div>
 
-<CookieConsent />
+<!-- <CookieConsent /> -->
