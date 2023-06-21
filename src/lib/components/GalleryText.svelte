@@ -3,5 +3,7 @@
 </script>
 
 <div class="flex h-full items-center justify-center">
-	<div class="btn-disabled btn-lg btn animate-none bg-base-300">{text}</div>
+	<div class="select-none text-lg font-semibold uppercase text-base-content text-opacity-80">
+		{text}
+	</div>
 </div>
