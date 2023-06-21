@@ -21,7 +21,7 @@
 		<ul>
 			<li>
 				<p>
-					<strong> First Party </strong>
+					<strong>First Party</strong>
 				</p>
 				<p>On this website, we do not directly collect personal information from our visitors.</p>
 			</li>

@@ -72,7 +72,7 @@
 			</li>
 
 			<li>
-				<p><strong> How many images can I process?</strong></p>
+				<p><strong>How many images can I process?</strong></p>
 				<p>
 					<strong>As many as you want.</strong> You can process one image at a time or many images together.
 				</p>
