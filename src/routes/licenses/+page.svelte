@@ -10,7 +10,7 @@
 	path="licenses"
 />
 
-<div class="flex items-center justify-center p-4 sm:p-8">
+<main class="flex items-center justify-center p-4 sm:p-8">
 	<article class="prose">
 		<hgroup>
 			<h1>Licenses for Third Party Software</h1>
@@ -43,4 +43,4 @@
 
 		<div class="divider" />
 	</article>
-</div>
+</main>

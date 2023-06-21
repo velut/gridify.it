@@ -5,7 +5,7 @@
 
 <Metadata title="Privacy Policy" description="Privacy policy for {projectName}" path="privacy" />
 
-<div class="flex items-center justify-center p-4 sm:p-8">
+<main class="flex items-center justify-center p-4 sm:p-8">
 	<article class="prose">
 		<hgroup>
 			<h1>Privacy Policy</h1>
@@ -62,4 +62,4 @@
 
 		<div class="divider" />
 	</article>
-</div>
+</main>

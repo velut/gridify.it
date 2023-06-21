@@ -10,7 +10,7 @@
 	description="With {projectName} you can easily add a customizable grid to your images or pixel art creations. You can use different grid types and line colors, resize images, and round the corners of grid cells."
 />
 
-<div class="container mx-auto flex h-full flex-col gap-6 p-6 sm:flex-row sm:items-start">
+<main class="container mx-auto flex h-full flex-col gap-6 p-6 sm:flex-row sm:items-start">
 	<Sidebar />
 	<Gallery />
-</div>
+</main>
