@@ -10,7 +10,7 @@
 
 	<div class="divider divider-horizontal" />
 
-	<a href="/faq" title="Frequently Asked Questions" class="btn-ghost btn text-lg">
+	<a href="/faq/" title="Frequently Asked Questions" class="btn-ghost btn text-lg">
 		<img class="h-5 w-5" src="/faq.svg" alt="Open book emoji" />
 		FAQ
 	</a>

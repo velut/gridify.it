@@ -11,5 +11,5 @@ export const pageTitle = (title: string) => {
 };
 
 export const pageUrl = (path: string) => {
-	return path === '' ? baseUrl : `${baseUrl}/${path}`;
+	return path === '' ? baseUrl : `${baseUrl}/${path}/`;
 };

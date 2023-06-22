@@ -26,15 +26,15 @@
 	<div>
 		<span class="footer-title opacity-80">Links</span>
 		<a href="/" class="link-hover link">Homepage</a>
-		<a href="/faq" class="link-hover link">FAQ</a>
+		<a href="/faq/" class="link-hover link">FAQ</a>
 		<a href={githubUrl} target="_blank" class="link-hover link">GitHub Project</a>
 	</div>
 
 	<div>
 		<span class="footer-title opacity-80">Legal</span>
-		<a href="/privacy" class="link-hover link">Privacy Policy</a>
+		<a href="/privacy/" class="link-hover link">Privacy Policy</a>
 		<!-- <button type="button" class="link-hover link" data-cc="c-settings">Cookie Preferences</button> -->
-		<a href="/licenses" class="link-hover link">Software Licenses</a>
+		<a href="/licenses/" class="link-hover link">Software Licenses</a>
 	</div>
 
 	<div>
