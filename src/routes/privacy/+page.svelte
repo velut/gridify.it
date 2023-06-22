@@ -12,7 +12,7 @@
 			<p>
 				This is the privacy policy for {projectName}.
 				<br />
-				Last updated on May 20, 2023.
+				Last updated on June 22, 2023.
 			</p>
 		</hgroup>
 
@@ -21,9 +21,28 @@
 		<ul>
 			<li>
 				<p>
-					<strong>First Party</strong>
+					<strong>Information We Collect</strong>
 				</p>
-				<p>On this website, we do not directly collect personal information from our visitors.</p>
+				<p>On this website, we do not collect personal information from our visitors.</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>Image Processing</strong>
+				</p>
+				<p>All images are processed locally on your device and are never sent to us.</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>Necessary Cookies</strong>
+				</p>
+				<p>
+					We save your theme preference in <code>localStorage.theme</code> with a value of
+					<code>light</code>
+					or <code>dark</code> when you explicitly click on the <strong>Change Theme</strong> switch
+					present in the footer.
+				</p>
 			</li>
 
 			<li>
@@ -31,10 +50,10 @@
 					<strong>Hosting</strong>
 				</p>
 				<p>
-					This website is hosted by <a href="https://vercel.com/" target="_blank">Vercel</a>
-					, which may collect some data to provide its services. To learn more about the data collected
-					by Vercel, you can read their{' '}
-					<a href="https://vercel.com/legal/privacy-policy" target="_blank">privacy policy</a>
+					This website is hosted by <a href="https://bunny.net/" target="_blank">Bunny.net</a>
+					, an EU based company, which may collect some data to provide its services. To learn more about
+					the data collected by Bunny.net, you can read their{' '}
+					<a href="https://bunny.net/privacy" target="_blank">privacy policy</a>
 					.
 				</p>
 			</li>
@@ -53,7 +72,7 @@
 			<li>
 				<p><strong>Contact Information</strong></p>
 				<p>
-					You can contact the website owner on{' '}
+					You can contact the website owner, Edoardo Scibona, on{' '}
 					<a href={githubIssuesUrl} target="_blank">Github</a> or by{' '}
 					<a href="mailto:info@jsdocs.io">email</a>.
 				</p>
