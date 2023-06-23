@@ -42,7 +42,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.1.0",
 		"@sveltejs/adapter-static": "^2.0.2",
-		"@sveltejs/kit": "^1.20.4",
+		"@sveltejs/kit": "^1.20.5",
 		"@tailwindcss/typography": "^0.5.9",
 		"@types/file-saver": "^2.0.5",
 		"@types/html-minifier": "^4.0.2",
@@ -51,7 +51,7 @@
 		"@typescript-eslint/parser": "^5.60.0",
 		"autoprefixer": "^10.4.14",
 		"cross-env": "^7.0.3",
-		"daisyui": "^3.1.5",
+		"daisyui": "^3.1.6",
 		"eslint": "^8.43.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-svelte3": "^4.0.0",
