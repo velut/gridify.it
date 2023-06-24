@@ -16,7 +16,7 @@ const deploy = async () => {
 	const pullZoneName = process.env.BUNNY_PULL_ZONE_NAME!;
 	const buildDir = path.join(process.cwd(), 'build');
 
-	console.log('Deploying...');
+	console.log('Deploying to Bunny.net...');
 
 	const clearStorageZone = async () => {
 		const endpoint = `https://${storageZoneHostname}/${storageZoneName}/`;
@@ -47,6 +47,7 @@ const deploy = async () => {
 	await clearStorageZone();
 
 	const uploadFilesToStorageZone = async () => {
+		let numFiles = 0;
 		for await (const file of klaw(buildDir)) {
 			if (file.stats.isDirectory()) {
 				continue;
@@ -68,8 +69,9 @@ const deploy = async () => {
 				throw new Error(`uploadFilesToStorageZone: failed to upload file: ${targetPath}`);
 			}
 			console.log(`uploadFilesToStorageZone: uploaded file: ${targetPath}`);
+			numFiles += 1;
 		}
-		console.log('uploadFilesToStorageZone: uploaded all files');
+		console.log(`uploadFilesToStorageZone: uploaded ${numFiles} files`);
 	};
 
 	await uploadFilesToStorageZone();
