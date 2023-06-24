@@ -1,5 +1,5 @@
 name: CI
-on: [push]
+on: push
 
 jobs:
   build:
@@ -33,3 +33,19 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+  # See https://stackoverflow.com/a/73624365/16109047
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.repository == 'velut/gridify.it' && github.ref == 'refs/heads/main'
+    environment: production
+    steps:
+      - name: Deploy to Bunny.net
+        run: pnpm bunny:deploy
+        env:
+          BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
+          BUNNY_STORAGE_ZONE_HOSTNAME: ${{ secrets.BUNNY_STORAGE_ZONE_HOSTNAME }}
+          BUNNY_STORAGE_ZONE_NAME: ${{ secrets.BUNNY_STORAGE_ZONE_NAME }}
+          BUNNY_STORAGE_ZONE_PASSWORD: ${{ secrets.BUNNY_STORAGE_ZONE_PASSWORD }}
+          BUNNY_PULL_ZONE_NAME: ${{ secrets.BUNNY_PULL_ZONE_NAME }}
