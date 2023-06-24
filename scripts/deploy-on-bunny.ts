@@ -4,6 +4,8 @@ import klaw from 'klaw';
 import fs from 'node:fs';
 import path from 'pathe';
 
+// Run this script from the root of the project.
+
 type PullZonesList = { Items: { Id: string; Name: string }[] };
 
 const deploy = async () => {
@@ -37,9 +39,9 @@ const deploy = async () => {
 		const data = await res.json();
 		const isEmptyArray = Array.isArray(data) && data.length === 0;
 		if (!isEmptyArray) {
-			throw new Error(`clearStorageZone: failed to clear storage zone: ${storageZoneName}`);
+			throw new Error('clearStorageZone: failed to clear storage zone');
 		}
-		console.log(`clearStorageZone: cleared storage zone: ${storageZoneName}`);
+		console.log('clearStorageZone: cleared storage zone');
 	};
 
 	await clearStorageZone();
@@ -53,7 +55,6 @@ const deploy = async () => {
 			const targetPath = filePath.replace(`${buildDir}/`, '');
 			const fileData = fs.readFileSync(file.path);
 			const fileHash = hasha(fileData, { algorithm: 'sha256' }).toUpperCase();
-
 			const res = await fetch(`https://${storageZoneHostname}/${storageZoneName}/${targetPath}`, {
 				method: 'PUT',
 				headers: {
@@ -61,16 +62,14 @@ const deploy = async () => {
 					'content-type': 'application/octet-stream',
 					AccessKey: storageZonePassword
 				},
-				body: fileData.toString()
+				body: fileData
 			});
 			if (res.status >= 400) {
-				throw new Error(
-					`uploadFilesToStorageZone: failed to upload file to storage zone: ${storageZoneName}`
-				);
+				throw new Error(`uploadFilesToStorageZone: failed to upload file: ${targetPath}`);
 			}
-			console.log(`uploaded file: ${targetPath}`);
+			console.log(`uploadFilesToStorageZone: uploaded file: ${targetPath}`);
 		}
-		console.log(`uploadFilesToStorageZone: uploaded all files`);
+		console.log('uploadFilesToStorageZone: uploaded all files');
 	};
 
 	await uploadFilesToStorageZone();
@@ -84,14 +83,14 @@ const deploy = async () => {
 			}
 		);
 		if (res.status >= 400) {
-			throw new Error(`getPullZoneId: failed to get id for pull zone: ${pullZoneName}`);
+			throw new Error('getPullZoneId: failed to get id for pull zone');
 		}
 		const pullZones = (await res.json()) as PullZonesList;
 		const pullZoneId = pullZones.Items.find((item) => item.Name === pullZoneName)?.Id;
 		if (!pullZoneId) {
-			throw new Error(`getPullZoneId: cannot find pull zone in list: ${pullZoneName}`);
+			throw new Error('getPullZoneId: cannot find pull zone in list');
 		}
-		console.log(`getPullZoneId: name: ${pullZoneName}, id: ${pullZoneId}`);
+		console.log('getPullZoneId: found pull zone id');
 		return pullZoneId;
 	};
 
@@ -103,7 +102,7 @@ const deploy = async () => {
 			headers: { 'content-type': 'application/json', AccessKey: apiKey }
 		});
 		if (res.status >= 400) {
-			throw new Error(`purgePullZoneCache: failed to purge pull zone cache`);
+			throw new Error('purgePullZoneCache: failed to purge pull zone cache');
 		}
 		console.log('purgePullZoneCache: purged pull zone cache');
 	};
