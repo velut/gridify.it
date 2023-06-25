@@ -25,6 +25,8 @@
 	<meta property="og:description" content={description} />
 	<meta property="og:url" content={url} />
 	<meta property="og:image" content={twitterCardImageUrl} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="628" />
 	<meta property="og:image:alt" content={twitterCardImageAlt} />
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:site_name" content={projectName} />
