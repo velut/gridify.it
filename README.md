@@ -10,19 +10,23 @@
     </a>
 </p>
 
-> Photo by <a href="https://unsplash.com/@cedric_photography" target="_blank">Cédric VT</a> on <a href="https://unsplash.com/photos/IuJc2qh2TcA" target="_blank">Unsplash</a>.
-
 ## 📖 About
 
 With **[gridify.it]** you can easily add a customizable grid to your images or pixel art creations.
 You can use different grid types and line colors, you can also resize images and round the corners of grid cells.
-The images below show some examples of what you can do with gridify.it.
+The video and images below show some examples of what you can do with gridify.it.
 
 For more information, please read the **[FAQ page]** on the website.
+
+[gridify.it_video.webm](https://github.com/velut/gridify.it/assets/12040076/bcb791bb-8d6a-4cdb-98bc-28c274af11f6)
+
+> Emoji pack by <a href="https://actuallykron.itch.io" target="_blank">actuallyKron</a> on <a href="https://actuallykron.itch.io/free-emoji-pack" target="_blank">Itch.io</a>.
 
 | <img width="256" src="images/examples/01.png?raw=true" alt=""> | <img width="256" src="images/examples/02.png?raw=true" alt=""> | <img width="256" src="images/examples/03.png?raw=true" alt=""> |
 | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
 | <img width="256" src="images/examples/04.png?raw=true" alt=""> | <img width="256" src="images/examples/05.png?raw=true" alt=""> | <img width="256" src="images/examples/06.png?raw=true" alt=""> |
+
+> Photo by <a href="https://unsplash.com/@cedric_photography" target="_blank">Cédric VT</a> on <a href="https://unsplash.com/photos/IuJc2qh2TcA" target="_blank">Unsplash</a>.
 
 ## 💬 Feedback
 
