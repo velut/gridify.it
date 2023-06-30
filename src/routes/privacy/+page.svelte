@@ -12,7 +12,7 @@
 			<p>
 				This is the privacy policy for {projectName}.
 				<br />
-				Last updated on June 22, 2023.
+				Last updated on June 30, 2023.
 			</p>
 		</hgroup>
 
@@ -35,19 +35,18 @@
 
 			<li>
 				<p>
-					<strong>Necessary Cookies</strong>
+					<strong>First-party Cookies</strong>
 				</p>
 				<p>
-					We save your theme preference in <code>localStorage.theme</code> with a value of
-					<code>light</code>
-					or <code>dark</code> when you explicitly click on the <strong>Change Theme</strong> switch
-					present in the footer.
+					We save your application theme preference in <code>localStorage.theme</code> with a value
+					of <code>light</code> or <code>dark</code> when you explicitly click on the
+					<strong>Change Theme</strong> switch present in the footer.
 				</p>
 			</li>
 
 			<li>
 				<p>
-					<strong>Hosting</strong>
+					<strong>Server Provider</strong>
 				</p>
 				<p>
 					This website is hosted by <a href="https://bunny.net/" target="_blank">Bunny.net</a>
@@ -55,6 +54,18 @@
 					the data collected by Bunny.net, you can read their{' '}
 					<a href="https://bunny.net/privacy" target="_blank">privacy policy</a>
 					.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					<strong>Server Logs</strong>
+				</p>
+				<p>
+					Our host, <a href="https://bunny.net/" target="_blank">Bunny.net</a>, provides us with
+					<a href="https://docs.bunny.net/docs/cdn-log-format" target="_blank">server logs</a> that
+					contain information about requests made to this website. Every IP address present in the
+					logs is automatically anonymized to <code>0.0.0.0</code> to prevent storing personal data.
 				</p>
 			</li>
 
