@@ -53,7 +53,7 @@
 		"@typescript-eslint/parser": "^5.61.0",
 		"autoprefixer": "^10.4.14",
 		"cross-env": "^7.0.3",
-		"daisyui": "^3.1.9",
+		"daisyui": "^3.2.1",
 		"dotenv": "^16.3.1",
 		"eslint": "^8.44.0",
 		"eslint-config-prettier": "^8.8.0",
@@ -73,7 +73,7 @@
 		"tslib": "^2.6.0",
 		"tsx": "^3.12.7",
 		"typescript": "^5.1.6",
-		"vite": "^4.4.1",
+		"vite": "^4.4.2",
 		"vitest": "^0.32.4"
 	},
 	"type": "module"
