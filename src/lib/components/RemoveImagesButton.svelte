@@ -10,7 +10,7 @@
 
 <button
 	title="Click to remove all images"
-	class="btn-outline btn-sm btn w-full hover:btn-error"
+	class="btn btn-outline btn-sm w-full hover:btn-error"
 	on:click={resetFiles}
 	{disabled}>Remove Images</button
 >

@@ -12,7 +12,7 @@
 		id={inputId}
 		name={inputId}
 		type="color"
-		class="input-bordered input input-sm w-full"
+		class="input input-bordered input-sm w-full"
 		bind:value
 	/>
 </div>

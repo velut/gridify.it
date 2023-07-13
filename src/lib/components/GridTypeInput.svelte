@@ -8,7 +8,7 @@
 	<label for={inputId} class="label pt-0">
 		<span class="label-text">Grid type</span>
 	</label>
-	<select id={inputId} name={inputId} class="select-bordered select select-sm" bind:value>
+	<select id={inputId} name={inputId} class="select select-bordered select-sm" bind:value>
 		<option value="none">None</option>
 		<option value="inner">Inner lines only</option>
 		<option value="outer">Outer border only</option>

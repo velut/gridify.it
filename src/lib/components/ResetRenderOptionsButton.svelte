@@ -15,7 +15,7 @@
 <button
 	title="Click to reset all rendering options"
 	type="button"
-	class="btn-outline btn-sm btn w-full hover:btn-error"
+	class="btn btn-outline btn-sm w-full hover:btn-error"
 	on:click={resetFormAndRenderOptions}
 	{disabled}>Reset Options</button
 >

@@ -12,6 +12,6 @@
 	use:handleRenderImagesHotkey
 	title="Click to render all images (Hotkey: Ctrl+Enter)"
 	type="submit"
-	class="btn-outline btn w-full"
+	class="btn btn-outline w-full"
 	{disabled}>Render Images</button
 >
