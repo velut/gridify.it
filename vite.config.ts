@@ -1,5 +1,5 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import { execSync } from 'child_process';
+import { execSync } from 'node:child_process';
 import { defineConfig } from 'vitest/config';
 import { licenses } from './vite-plugin-licenses';
 
