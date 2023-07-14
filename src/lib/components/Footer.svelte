@@ -1,13 +1,14 @@
 <script lang="ts">
+	import ChequeredFlagIcon from '$lib/components/ChequeredFlagIcon.svelte';
 	import ThemeSwitch from '$lib/components/ThemeSwitch.svelte';
 	import { githubCommitShort, githubCommitUrl, githubUrl, projectName } from '$lib/metadata';
 </script>
 
 <footer class="footer bg-base-200 p-8 text-base text-base-content">
 	<div>
-		<a href="/" class="link-hover link flex items-center gap-2">
-			<img class="h-5 w-5" src="/favicon.svg" alt="{projectName} logo, a chequered flag" />
-			<div class="text-lg font-bold">{projectName}</div>
+		<a href="/" class="link-hover link flex items-center gap-2 text-lg font-bold">
+			<ChequeredFlagIcon class="h-6 w-6" />
+			{projectName}
 		</a>
 		<p>
 			Created by <a

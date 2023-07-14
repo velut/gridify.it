@@ -1,17 +1,19 @@
 <script lang="ts">
+	import ChequeredFlagIcon from '$lib/components/ChequeredFlagIcon.svelte';
+	import MemoIcon from '$lib/components/MemoIcon.svelte';
 	import { projectName } from '$lib/metadata';
 </script>
 
 <div class="navbar overflow-x-auto bg-base-200">
-	<a href="/" title="Homepage" class="btn btn-ghost text-lg font-bold normal-case">
-		<img class="h-5 w-5" src="/favicon.svg" alt="{projectName} logo, a chequered flag" />
+	<a href="/" title="Homepage" class="btn btn-ghost text-xl font-bold normal-case">
+		<ChequeredFlagIcon class="h-6 w-6" />
 		{projectName}
 	</a>
 
 	<div class="divider divider-horizontal" />
 
 	<a href="/faq/" title="Frequently Asked Questions" class="btn btn-ghost text-lg">
-		<img class="h-5 w-5" src="/faq.svg" alt="Open book emoji" />
+		<MemoIcon class="h-6 w-6" />
 		FAQ
 	</a>
 
