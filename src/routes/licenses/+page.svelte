@@ -12,12 +12,11 @@
 
 <main class="flex items-center justify-center p-4 sm:p-8">
 	<article class="prose">
-		<hgroup>
-			<h1>Licenses for Third Party Software</h1>
-			<p>This is a list of third party software and libraries used on {projectName}.</p>
-		</hgroup>
-
 		<div class="divider" />
+		<h1 class="my-0 text-center">Software Licenses</h1>
+		<div class="divider" />
+
+		<p>This is a list of third-party software and libraries used on {projectName}.</p>
 
 		<ul>
 			{#each licenses as license}

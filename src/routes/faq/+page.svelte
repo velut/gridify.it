@@ -7,24 +7,23 @@
 
 <main class="flex items-center justify-center p-4 sm:p-8">
 	<article class="prose">
-		<hgroup>
-			<h1>FAQ</h1>
-			<p>
-				This is a list of frequently asked questions about {projectName}.
-				<br />
-				Last updated on June 20, 2023.
-			</p>
-		</hgroup>
-
 		<div class="divider" />
+		<h1 class="my-0 text-center">FAQ &amp; Instructions</h1>
+		<div class="divider" />
+
+		<p>
+			This is a list of frequently asked questions about {projectName}.
+			<br />
+			Last updated on July 15, 2023.
+		</p>
 
 		<ul>
 			<li>
 				<p><strong>What can I use this app for?</strong></p>
 				<p>
-					With {projectName} you can easily <strong>add a customizable grid</strong> to your images or
-					pixel art creations. You can use different grid types and line colors, resize images, and round
-					the corners of grid cells.
+					With {projectName} you can easily <strong>add a customizable grid</strong> to your images,
+					photos, reference pictures, or pixel art creations. You can use different grid types and line
+					colors, resize images, and round the corners of grid cells.
 				</p>
 				<p>
 					The pictures below show some examples of what you can do. Click on the previews to see the
