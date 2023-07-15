@@ -27,7 +27,7 @@
 	<div>
 		<span class="footer-title opacity-80">Links</span>
 		<a href="/" class="link-hover link">Homepage</a>
-		<a href="/faq/" class="link-hover link">FAQ</a>
+		<a href="/faq/" class="link-hover link">FAQ &amp; Instructions</a>
 		<a href={githubUrl} target="_blank" class="link-hover link">GitHub Project</a>
 	</div>
 
