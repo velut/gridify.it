@@ -19,6 +19,9 @@
 	<meta name="title" content={title} />
 	<meta name="description" content={description} />
 
+	<!-- Canonical URL -->
+	<link rel="canonical" href={url} />
+
 	<!-- OpenGraph -->
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content={title} />
