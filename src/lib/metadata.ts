@@ -1,4 +1,5 @@
 export const projectName = 'gridify.it';
+export const projectNameEscaped = 'gridify_it';
 export const baseUrl = `https://www.gridify.it`;
 export const githubUrl = `https://github.com/velut/${projectName}`;
 export const githubIssuesUrl = `${githubUrl}/issues`;

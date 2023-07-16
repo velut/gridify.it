@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { projectName } from '$lib/metadata';
+	import { projectNameEscaped } from '$lib/metadata';
 	import { outputImages, outputImagesState } from '$lib/stores';
 	import { downloadZip } from 'client-zip';
 	import { saveAs } from 'file-saver';
@@ -10,7 +10,7 @@
 
 	const downloadImages = async () => {
 		const archive = await downloadZip(images.map((image) => image.file)).blob();
-		saveAs(archive, `${projectName}_images.zip`);
+		saveAs(archive, `${projectNameEscaped}_images.zip`);
 	};
 </script>
 
