@@ -48,7 +48,7 @@
 		"@types/file-saver": "^2.0.5",
 		"@types/html-minifier": "^4.0.2",
 		"@types/klaw": "^3.0.3",
-		"@types/node": "^20.4.2",
+		"@types/node": "^20.4.4",
 		"@typescript-eslint/eslint-plugin": "^6.1.0",
 		"@typescript-eslint/parser": "^6.1.0",
 		"autoprefixer": "^10.4.14",
