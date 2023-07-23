@@ -2,6 +2,7 @@
 	"cSpell.ignoreWords": [
 		"Cédric",
 		"Edoardo",
+		"Kron",
 		"Scibona",
 		"autoclear",
 		"cookiecategory",
@@ -16,7 +17,8 @@
 		"pathe",
 		"superforms",
 		"tailwindcss",
-		"velut"
+		"velut",
+		"webm"
 	],
 	"typescript.preferences.importModuleSpecifier": "non-relative",
 	"typescript.tsdk": "node_modules/typescript/lib"
