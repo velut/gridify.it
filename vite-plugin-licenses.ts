@@ -18,36 +18,35 @@ const manualLicenses: License[] = [
 		name: '@tailwindcss/typography',
 		version: packageJson.devDependencies['@tailwindcss/typography'].replace('^', ''),
 		license: 'MIT',
-		licenseText: fs.readFileSync(`./node_modules/@tailwindcss/typography/LICENSE`).toString(),
+		licenseText: fs.readFileSync('./node_modules/@tailwindcss/typography/LICENSE').toString(),
 		url: 'https://github.com/tailwindlabs/tailwindcss-typography'
 	},
 	{
 		name: 'daisyui',
 		version: packageJson.devDependencies['daisyui'].replace('^', ''),
 		license: 'MIT',
-		licenseText: fs.readFileSync(`./node_modules/daisyui/LICENSE`).toString(),
+		licenseText: fs.readFileSync('./node_modules/daisyui/LICENSE').toString(),
 		url: 'https://daisyui.com'
 	},
 	{
 		name: 'modern-normalize',
 		version: packageJson.devDependencies['modern-normalize'].replace('^', ''),
 		license: 'MIT',
-		licenseText: fs.readFileSync(`./node_modules/modern-normalize/license`).toString(),
+		licenseText: fs.readFileSync('./node_modules/modern-normalize/license').toString(),
 		url: 'https://github.com/sindresorhus/modern-normalize'
 	},
 	{
 		name: 'tailwindcss',
 		version: packageJson.devDependencies['tailwindcss'].replace('^', ''),
 		license: 'MIT',
-		licenseText: fs.readFileSync(`./node_modules/tailwindcss/LICENSE`).toString(),
+		licenseText: fs.readFileSync('./node_modules/tailwindcss/LICENSE').toString(),
 		url: 'https://tailwindcss.com'
 	},
 	{
 		name: 'twemoji',
 		version: '14.0.2',
 		license: 'MIT, CC-BY-4.0',
-		licenseText:
-			'Copyright 2020 Twitter, Inc and other contributors\nCode licensed under the MIT License: http://opensource.org/licenses/MIT\nGraphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/',
+		licenseText: fs.readFileSync('./third-party-licenses/twemoji/license.txt').toString(),
 		url: 'https://twemoji.twitter.com/'
 	}
 ];
