@@ -50,7 +50,7 @@
 		"@types/klaw": "^3.0.3",
 		"@types/node": "^20.4.5",
 		"@typescript-eslint/eslint-plugin": "^6.2.1",
-		"@typescript-eslint/parser": "^6.2.0",
+		"@typescript-eslint/parser": "^6.2.1",
 		"autoprefixer": "^10.4.14",
 		"cross-env": "^7.0.3",
 		"daisyui": "^3.5.0",
@@ -73,7 +73,7 @@
 		"tslib": "^2.6.1",
 		"tsx": "^3.12.7",
 		"typescript": "^5.1.6",
-		"vite": "^4.4.7",
+		"vite": "^4.4.8",
 		"vitest": "^0.33.0"
 	},
 	"type": "module"
