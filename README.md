@@ -1,8 +1,9 @@
 # 🏁 [gridify.it]
 
-[![Build status](https://img.shields.io/github/actions/workflow/status/velut/gridify.it/main.yml?branch=main)](https://github.com/velut/gridify.it/actions?query=workflow%3ACI)
+[![Build status](https://img.shields.io/github/actions/workflow/status/velut/gridify.it/main.yml?branch=main)](https://github.com/velut/gridify.it/actions/workflows/main.yml?query=workflow%3ACI)
+[![TypeScript](https://img.shields.io/badge/%3C/%3E-TypeScript-blue)](https://www.typescriptlang.org/)
 ![Language](https://img.shields.io/github/languages/top/velut/gridify.it)
-[![License](https://img.shields.io/github/license/velut/gridify.it)](https://github.com/velut/gridify.it/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/velut/gridify.it)](LICENSE)
 
 <p align="center">
     <a href="https://www.gridify.it">
@@ -37,7 +38,7 @@ To report bugs, leave suggestions, or ask questions, please [open an issue](http
 
     AGPL-3.0-or-later
 
-Copyright (C) 2023 Edoardo Scibona. See [LICENSE](https://github.com/velut/gridify.it/blob/main/LICENSE).
+Copyright (C) 2023 Edoardo Scibona. See [LICENSE](LICENSE).
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
