@@ -37,7 +37,7 @@
 		"p-limit": "^4.0.0",
 		"pathe": "^1.1.1",
 		"sveltekit-superforms": "1.5.0",
-		"vanilla-cookieconsent": "^2.9.1",
+		"vanilla-cookieconsent": "^2.9.2",
 		"zod": "^3.21.4"
 	},
 	"devDependencies": {
@@ -48,9 +48,9 @@
 		"@types/file-saver": "^2.0.5",
 		"@types/html-minifier": "^4.0.2",
 		"@types/klaw": "^3.0.3",
-		"@types/node": "^20.4.8",
-		"@typescript-eslint/eslint-plugin": "^6.2.1",
-		"@typescript-eslint/parser": "^6.2.1",
+		"@types/node": "^20.4.9",
+		"@typescript-eslint/eslint-plugin": "^6.3.0",
+		"@typescript-eslint/parser": "^6.3.0",
 		"autoprefixer": "^10.4.14",
 		"cross-env": "^7.0.3",
 		"daisyui": "^3.5.1",
@@ -73,7 +73,7 @@
 		"tslib": "^2.6.1",
 		"tsx": "^3.12.7",
 		"typescript": "^5.1.6",
-		"vite": "^4.4.8",
+		"vite": "^4.4.9",
 		"vitest": "^0.33.0"
 	},
 	"type": "module"
