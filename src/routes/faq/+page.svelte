@@ -22,8 +22,8 @@
 				<p><strong>What can I use this app for?</strong></p>
 				<p>
 					With {projectName} you can easily <strong>add a customizable grid</strong> to your images,
-					photos, reference pictures, or pixel art creations. You can use different grid types and line
-					colors, resize images, and round the corners of grid cells.
+					photos, reference pictures, or pixel art designs. You can use various grid types and line colors,
+					resize images, and round the corners of grid cells.
 				</p>
 				<p>
 					The pictures below show some examples of what you can do. Click on the previews to see the

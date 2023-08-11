@@ -15,7 +15,7 @@
 
 With **[gridify.it]** you can easily add a customizable grid to your images,
 photos, reference pictures, or pixel art creations.
-You can use different grid types and line colors, you can also resize images and round the corners of grid cells.
+You can use various grid types and line colors, you can also resize images and round the corners of grid cells.
 The video and images below show some examples of what you can do with gridify.it.
 
 For more information, please read the **[FAQ page]** on the website.
