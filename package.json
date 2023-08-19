@@ -38,7 +38,7 @@
 		"pathe": "^1.1.1",
 		"sveltekit-superforms": "1.5.0",
 		"vanilla-cookieconsent": "^2.9.2",
-		"zod": "^3.22.1"
+		"zod": "^3.22.2"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.1.0",
@@ -48,7 +48,7 @@
 		"@types/file-saver": "^2.0.5",
 		"@types/html-minifier": "^4.0.2",
 		"@types/klaw": "^3.0.3",
-		"@types/node": "^20.5.0",
+		"@types/node": "^20.5.1",
 		"@typescript-eslint/eslint-plugin": "^6.4.0",
 		"@typescript-eslint/parser": "^6.4.0",
 		"autoprefixer": "^10.4.15",
@@ -70,7 +70,7 @@
 		"svelte": "^3.59.2",
 		"svelte-check": "^3.5.0",
 		"tailwindcss": "^3.3.3",
-		"tslib": "^2.6.1",
+		"tslib": "^2.6.2",
 		"tsx": "^3.12.7",
 		"typescript": "^5.1.6",
 		"vite": "^4.4.9",
