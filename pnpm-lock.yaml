@@ -27,8 +27,8 @@ dependencies:
     specifier: ^1.1.1
     version: 1.1.1
   sveltekit-superforms:
-    specifier: 1.5.0
-    version: 1.5.0(@sveltejs/kit@1.23.0)(svelte@3.59.2)(zod@3.22.2)
+    specifier: 1.6.1
+    version: 1.6.1(@sveltejs/kit@1.23.0)(svelte@3.59.2)(zod@3.22.2)
   vanilla-cookieconsent:
     specifier: ^2.9.2
     version: 2.9.2
@@ -2738,8 +2738,8 @@ packages:
     resolution: {integrity: sha512-vzSyuGr3eEoAtT/A6bmajosJZIUWySzY2CzB3w2pgPvnkUjGqlDnsNnA0PMO+mMAhuyMul6C2uuZzY6ELSkzyA==}
     engines: {node: '>= 8'}
 
-  /sveltekit-superforms@1.5.0(@sveltejs/kit@1.23.0)(svelte@3.59.2)(zod@3.22.2):
-    resolution: {integrity: sha512-c/2v6zN9rtIAsOfsd6rBV7Kf0lB2+/o6sAFaOuMrYPlTBro5lpbz3iN/3nM5D3EuLE2Xt/iDdZYpkQdH8rq4nQ==}
+  /sveltekit-superforms@1.6.1(@sveltejs/kit@1.23.0)(svelte@3.59.2)(zod@3.22.2):
+    resolution: {integrity: sha512-85whZdnytMFStDY1PI3ycr5BoTb57XjkEJqZ2Mt8HT06y/CKlQBws5Cx/AxPxA3WHhGfC26yfXqLYqEQz1oGfw==}
     peerDependencies:
       '@sveltejs/kit': 1.x
       svelte: 3.x || 4.x
