@@ -50,7 +50,7 @@
 		"@types/klaw": "^3.0.3",
 		"@types/node": "^20.5.6",
 		"@typescript-eslint/eslint-plugin": "^6.4.1",
-		"@typescript-eslint/parser": "^6.4.1",
+		"@typescript-eslint/parser": "^6.5.0",
 		"autoprefixer": "^10.4.15",
 		"cross-env": "^7.0.3",
 		"daisyui": "^3.6.3",
