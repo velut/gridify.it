@@ -43,17 +43,17 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.1.0",
 		"@sveltejs/adapter-static": "^2.0.3",
-		"@sveltejs/kit": "^1.24.0",
-		"@tailwindcss/typography": "^0.5.9",
+		"@sveltejs/kit": "^1.24.1",
+		"@tailwindcss/typography": "^0.5.10",
 		"@types/file-saver": "^2.0.5",
 		"@types/html-minifier": "^4.0.2",
 		"@types/klaw": "^3.0.3",
-		"@types/node": "^20.5.8",
-		"@typescript-eslint/eslint-plugin": "^6.5.0",
-		"@typescript-eslint/parser": "^6.5.0",
+		"@types/node": "^20.5.9",
+		"@typescript-eslint/eslint-plugin": "^6.6.0",
+		"@typescript-eslint/parser": "^6.6.0",
 		"autoprefixer": "^10.4.15",
 		"cross-env": "^7.0.3",
-		"daisyui": "^3.6.4",
+		"daisyui": "^3.7.3",
 		"dotenv": "^16.3.1",
 		"eslint": "^8.48.0",
 		"eslint-config-prettier": "^9.0.0",
@@ -66,7 +66,7 @@
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
 		"prettier-plugin-tailwindcss": "^0.4.1",
-		"rollup-plugin-license": "^3.0.1",
+		"rollup-plugin-license": "^3.1.0",
 		"svelte": "^3.59.2",
 		"svelte-check": "^3.5.1",
 		"tailwindcss": "^3.3.3",
@@ -74,7 +74,7 @@
 		"tsx": "^3.12.8",
 		"typescript": "^5.2.2",
 		"vite": "^4.4.9",
-		"vitest": "^0.34.3"
+		"vitest": "^0.34.4"
 	},
 	"type": "module"
 }
