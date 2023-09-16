@@ -41,6 +41,7 @@
 		"zod": "^3.22.2"
 	},
 	"devDependencies": {
+		"@iconify-json/twemoji": "^1.1.12",
 		"@sveltejs/adapter-auto": "^2.1.0",
 		"@sveltejs/adapter-static": "^2.0.3",
 		"@sveltejs/kit": "^1.25.0",
@@ -73,6 +74,7 @@
 		"tslib": "^2.6.2",
 		"tsx": "^3.12.10",
 		"typescript": "^5.2.2",
+		"unplugin-icons": "^0.17.0",
 		"vite": "^4.4.9",
 		"vitest": "^0.34.4"
 	},
