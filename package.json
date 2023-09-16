@@ -78,5 +78,10 @@
 		"vite": "^4.4.9",
 		"vitest": "^0.34.4"
 	},
+	"overrides": {
+		"@square/svelte-store": {
+			"svelte": ">= 3.0.0 < 5.0.0"
+		}
+	},
 	"type": "module"
 }
