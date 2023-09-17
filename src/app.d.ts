@@ -1,7 +1,4 @@
-/// <reference types="svelte" />
-/// <reference types="vite/client" />
-/// <reference types="unplugin-icons/types/svelte3" />
-// import 'unplugin-icons/types/svelte';
+import 'unplugin-icons/types/svelte';
 
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
