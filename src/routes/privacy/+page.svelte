@@ -84,7 +84,7 @@
 				<p>
 					You can contact the website owner, Edoardo Scibona, on{' '}
 					<a href={githubIssuesUrl} target="_blank">Github</a> or by{' '}
-					<a href="mailto:info@jsdocs.io">email</a>.
+					<a href="mailto:scibona.edoardo@proton.me">email</a>.
 				</p>
 			</li>
 		</ul>
