@@ -34,7 +34,7 @@
 		"client-zip": "^2.4.4",
 		"file-saver": "^2.0.5",
 		"file-selector": "^0.6.0",
-		"p-limit": "^4.0.0",
+		"p-limit": "^5.0.0",
 		"pathe": "^1.1.1",
 		"sveltekit-superforms": "^1.9.0",
 		"vanilla-cookieconsent": "^2.9.2",
