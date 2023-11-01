@@ -113,8 +113,8 @@ devDependencies:
     specifier: ^0.4.1
     version: 0.4.1(prettier-plugin-svelte@2.10.1)(prettier@2.8.8)
   rollup-plugin-license:
-    specifier: 3.1.0
-    version: 3.1.0(rollup@3.29.4)
+    specifier: 3.2.0
+    version: 3.2.0(rollup@3.29.4)
   svelte:
     specifier: ^4.2.2
     version: 4.2.2
@@ -2393,11 +2393,11 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup-plugin-license@3.1.0(rollup@3.29.4):
-    resolution: {integrity: sha512-Cny2H2hJ7K+VdcJkH1pNcYRVhqIhZNu/fPusedW53fNZQOIwpXiznJ220EFvDkJbFUEkLqIDsDB5bEr/N9qfqw==}
+  /rollup-plugin-license@3.2.0(rollup@3.29.4):
+    resolution: {integrity: sha512-gLtSOTE3hZ/mDgxg1HvYz87timTpLlyWXnV7OTyYMhn+Esek+xKxAOjtTsYnfMFGtsBWX+hvqC4b2Ct5ABpE6A==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
-      rollup: ^1.0.0 || ^2.0.0 || ^3.0.0
+      rollup: ^1.0.0 || ^2.0.0 || ^3.0.0 || ^4.0.0
     dependencies:
       commenting: 1.1.0
       glob: 7.2.3
