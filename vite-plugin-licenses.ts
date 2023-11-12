@@ -51,7 +51,7 @@ const manualLicenses: License[] = [
 	}
 ];
 
-export const licenses = () => {
+export const licenses = (): PluginOption => {
 	// "Falsy plugins will be ignored, which can be used to easily activate or deactivate plugins."
 	// See https://vitejs.dev/guide/api-plugin.html#plugins-config.
 	if (process.env.GENERATE_LICENSES !== 'true') {
@@ -90,5 +90,5 @@ export const licenses = () => {
 				}
 			}
 		})
-	} satisfies PluginOption;
+	} as unknown as PluginOption;
 };
