@@ -5,7 +5,7 @@
 </script>
 
 <div class="navbar overflow-x-auto bg-base-200">
-	<a href="/" title="Homepage" class="btn btn-ghost text-xl font-bold normal-case">
+	<a href="/" title="Homepage" class="btn btn-ghost text-xl font-bold">
 		<IconChequeredFlag class="h-6 w-6" />
 		{projectName}
 	</a>

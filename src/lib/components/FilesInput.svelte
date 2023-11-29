@@ -16,7 +16,7 @@
 	<label
 		title="Click to open the files selection dialog (Drag and drop on the page is also available)"
 		for={inputId}
-		class="btn btn-outline w-full">Select or drop images</label
+		class="btn btn-outline w-full">Select or Drop Images</label
 	>
 	<input
 		use:handleFileDrop
