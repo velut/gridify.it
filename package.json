@@ -58,7 +58,7 @@
 		"eslint": "^8.54.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-svelte": "^2.35.1",
-		"hasha": "^5.2.2",
+		"hasha": "^6.0.0",
 		"html-minifier": "^4.0.0",
 		"klaw": "^4.1.0",
 		"modern-normalize": "^2.0.0",
