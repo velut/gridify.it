@@ -21,6 +21,7 @@
 		"tailwindcss",
 		"unplugin",
 		"velut",
+		"vite",
 		"webm"
 	],
 	"typescript.preferences.importModuleSpecifier": "non-relative",
