@@ -42,8 +42,9 @@
 	},
 	"devDependencies": {
 		"@iconify-json/twemoji": "^1.1.15",
-		"@sveltejs/adapter-static": "^2.0.3",
-		"@sveltejs/kit": "^1.30.3",
+		"@sveltejs/adapter-static": "^3.0.1",
+		"@sveltejs/kit": "^2.0.6",
+		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@tailwindcss/typography": "^0.5.10",
 		"@types/file-saver": "^2.0.7",
 		"@types/html-minifier": "^4.0.5",
@@ -75,7 +76,7 @@
 		"typescript": "^5.3.3",
 		"unplugin-icons": "^0.18.1",
 		"vite": "^5.0.10",
-		"vitest": "^0.34.6"
+		"vitest": "^1.1.0"
 	},
 	"pnpm": {
 		"peerDependencyRules": {
