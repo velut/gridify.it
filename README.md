@@ -38,7 +38,7 @@ To report bugs, leave suggestions, or ask questions, please [open an issue](http
 
     AGPL-3.0-or-later
 
-Copyright (C) 2023 Edoardo Scibona. See [LICENSE](LICENSE).
+Copyright (C) 2024 Edoardo Scibona. See [LICENSE](LICENSE).
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
