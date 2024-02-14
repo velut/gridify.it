@@ -3,7 +3,7 @@ import { z } from 'zod';
 
 export const renderOptionsSchema = z.object({
 	grid: z.object({
-		type: z.enum(['none', 'inner', 'outer', 'full']).default('none'),
+		type: z.enum(['none', 'inner', 'outer', 'full']).default('full'),
 		stroke: z.object({
 			size: z.coerce
 				.number({ invalid_type_error: 'Stroke size must be an integer number.' })
