@@ -2,7 +2,9 @@
 	import { projectNameEscaped } from '$lib/metadata';
 	import { outputImages, outputImagesState } from '$lib/stores';
 	import { downloadZip } from 'client-zip';
-	import { saveAs } from 'file-saver';
+	import fileSaver from 'file-saver';
+
+	const { saveAs } = fileSaver;
 
 	$: ({ isLoaded } = $outputImagesState);
 	$: images = $outputImages;
