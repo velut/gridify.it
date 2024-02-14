@@ -15,7 +15,7 @@
 		type="text"
 		inputMode="numeric"
 		pattern="[0-9]*"
-		class="input input-bordered input-sm w-full"
+		class="input input-sm input-bordered w-full"
 		class:input-error={errors}
 		aria-invalid={errors ? 'true' : undefined}
 		bind:value
