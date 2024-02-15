@@ -11,9 +11,7 @@ declare global {
 		// interface PageData {}
 		// interface Platform {}
 	}
-	interface Window {
-		cc: CookieConsent;
-	}
+	interface Window {}
 }
 
 export {};
