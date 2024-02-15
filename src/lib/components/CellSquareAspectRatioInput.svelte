@@ -1,7 +1,7 @@
 <script lang="ts">
 	const inputId = 'cell.squareAspectRatio';
 
-	export let checked: boolean;
+	export let checked: boolean | undefined;
 </script>
 
 <div class="form-control w-full">

@@ -36,7 +36,7 @@
 		"file-selector": "^0.6.0",
 		"p-limit": "^5.0.0",
 		"pathe": "^1.1.2",
-		"sveltekit-superforms": "^1.13.4",
+		"sveltekit-superforms": "^2.2.0",
 		"vanilla-cookieconsent": "^2.9.2",
 		"zod": "^3.22.4"
 	},

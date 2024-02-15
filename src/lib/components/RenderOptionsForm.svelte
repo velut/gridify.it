@@ -12,19 +12,21 @@
 	import ResetRenderOptionsButton from '$lib/components/ResetRenderOptionsButton.svelte';
 	import { renderOptionsSchema } from '$lib/render-options';
 	import { renderOptions } from '$lib/stores';
-	import { intProxy, superForm, superValidateSync } from 'sveltekit-superforms/client';
+	import { defaults, intProxy, superForm } from 'sveltekit-superforms';
+	import { zod } from 'sveltekit-superforms/adapters';
 
 	const {
 		form,
 		errors,
 		tainted,
+		isTainted,
 		reset: resetForm,
 		enhance
-	} = superForm(superValidateSync(renderOptionsSchema), {
+	} = superForm(defaults(zod(renderOptionsSchema)), {
 		SPA: true,
 		dataType: 'json',
-		validators: renderOptionsSchema,
-		taintedMessage: null,
+		validators: zod(renderOptionsSchema),
+		resetForm: false,
 		onUpdate({ form }) {
 			if (form.valid) {
 				$renderOptions = renderOptionsSchema.parse(form.data);
@@ -38,7 +40,7 @@
 	const cellScaleIntProxy = intProxy(form, 'cell.scale');
 	const cellRadiusIntProxy = intProxy(form, 'cell.radius');
 
-	$: isFormTainted = Boolean($tainted);
+	$: isFormTainted = isTainted($tainted);
 	$: isGridDisabled = $form.grid.type === 'none';
 	$: isCellSquareAspectRatio = $form.cell.squareAspectRatio;
 	$: if (isGridDisabled) {

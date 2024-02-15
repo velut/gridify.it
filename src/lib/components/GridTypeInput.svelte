@@ -1,7 +1,7 @@
 <script lang="ts">
 	const inputId = 'grid.type';
 
-	export let value: string;
+	export let value: string | undefined;
 </script>
 
 <div class="form-control w-full">

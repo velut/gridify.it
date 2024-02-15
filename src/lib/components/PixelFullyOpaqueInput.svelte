@@ -1,7 +1,7 @@
 <script lang="ts">
 	const inputId = 'pixel.fullyOpaque';
 
-	export let checked: boolean;
+	export let checked: boolean | undefined;
 </script>
 
 <div class="form-control w-full">
