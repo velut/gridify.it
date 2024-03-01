@@ -29,7 +29,7 @@
 		"bunny:deploy": "tsx scripts/deploy-on-bunny.ts"
 	},
 	"dependencies": {
-		"@square/svelte-store": "^1.0.17",
+		"@square/svelte-store": "^1.0.18",
 		"attr-accept": "^2.2.2",
 		"client-zip": "^2.4.4",
 		"file-saver": "^2.0.5",

@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@square/svelte-store':
-    specifier: ^1.0.17
-    version: 1.0.17(svelte@4.2.11)
+    specifier: ^1.0.18
+    version: 1.0.18(svelte@4.2.11)
   attr-accept:
     specifier: ^2.2.2
     version: 2.2.2
@@ -891,10 +891,10 @@ packages:
     dev: false
     optional: true
 
-  /@square/svelte-store@1.0.17(svelte@4.2.11):
-    resolution: {integrity: sha512-DZ6cnPMvxNzSAphgUlrOu6IBntihHq05FOSW7Qm8bA2+x/ZoviAumErFQUvtKiftCOjkQvxbKYXfzBnALiCSyQ==}
+  /@square/svelte-store@1.0.18(svelte@4.2.11):
+    resolution: {integrity: sha512-BCiUhDlF2XSY6P+MLvJTA7mh15yAXcuNDtf/GTG0XWSjatW0+4wQv++uijz14L0Bc+KKAGXz4T6/9N+JrTfAAA==}
     peerDependencies:
-      svelte: ^3.0.0 || 4
+      svelte: '>= 3.0.0 < 5.0.0 || 4'
     dependencies:
       cookie-storage: 6.1.0
       svelte: 4.2.11
