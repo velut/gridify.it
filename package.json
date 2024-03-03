@@ -36,7 +36,7 @@
 		"file-selector": "^0.6.0",
 		"p-limit": "^5.0.0",
 		"pathe": "^1.1.2",
-		"sveltekit-superforms": "^2.6.2",
+		"sveltekit-superforms": "^2.7.0",
 		"zod": "^3.22.4"
 	},
 	"devDependencies": {
@@ -51,7 +51,7 @@
 		"@types/node": "^20.11.24",
 		"@typescript-eslint/eslint-plugin": "^7.1.0",
 		"@typescript-eslint/parser": "^7.1.0",
-		"autoprefixer": "^10.4.17",
+		"autoprefixer": "^10.4.18",
 		"cross-env": "^7.0.3",
 		"daisyui": "^4.7.2",
 		"dotenv": "^16.4.5",
