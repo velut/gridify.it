@@ -36,7 +36,7 @@
 		"file-selector": "^0.6.0",
 		"p-limit": "^5.0.0",
 		"pathe": "^1.1.2",
-		"sveltekit-superforms": "^2.12.0",
+		"sveltekit-superforms": "^2.12.2",
 		"zod": "^3.22.4"
 	},
 	"devDependencies": {
@@ -74,7 +74,7 @@
 		"tsx": "^4.7.1",
 		"typescript": "^5.4.3",
 		"unplugin-icons": "^0.18.5",
-		"vite": "^5.2.6",
+		"vite": "^5.2.7",
 		"vitest": "^1.4.0"
 	},
 	"pnpm": {
