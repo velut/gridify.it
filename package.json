@@ -53,7 +53,7 @@
 		"@typescript-eslint/parser": "^7.7.1",
 		"autoprefixer": "^10.4.19",
 		"cross-env": "^7.0.3",
-		"daisyui": "^4.10.2",
+		"daisyui": "^4.10.3",
 		"dotenv": "^16.4.5",
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
