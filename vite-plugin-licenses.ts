@@ -67,7 +67,9 @@ export const licenses = (): PluginOption => {
 				includePrivate: false,
 				allow: {
 					test: 'MIT OR ISC OR 0BSD',
-					failOnUnlicensed: true,
+					// Disabled because `sveltekit-superforms` requires `@arktype/util`
+					// which has no license in package.json but is MIT licensed as a project.
+					// failOnUnlicensed: true,
 					failOnViolation: true
 				},
 				output: {
