@@ -26,7 +26,8 @@
 		"format": "prettier --write .",
 		"licenses:ensure": "tsx scripts/ensure-licenses-json.ts",
 		"licenses:generate": "cross-env GENERATE_LICENSES=true vite build",
-		"bunny:deploy": "tsx scripts/deploy-on-bunny.ts"
+		"bunny:deploy": "tsx scripts/deploy-on-bunny.ts",
+		"pre-push": "pnpm i && pnpm licenses:ensure && pnpm lint && pnpm check && pnpm build"
 	},
 	"dependencies": {
 		"@square/svelte-store": "^1.0.18",
