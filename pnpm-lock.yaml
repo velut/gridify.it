@@ -88,8 +88,8 @@ importers:
         specifier: ^9.1.0
         version: 9.1.0(eslint@8.57.0)
       eslint-plugin-svelte:
-        specifier: ^2.41.0
-        version: 2.41.0(eslint@8.57.0)(svelte@4.2.18)
+        specifier: ^2.42.0
+        version: 2.42.0(eslint@8.57.0)(svelte@4.2.18)
       hasha:
         specifier: ^6.0.0
         version: 6.0.0
@@ -106,14 +106,14 @@ importers:
         specifier: ^8.4.39
         version: 8.4.39
       prettier:
-        specifier: ^3.3.2
-        version: 3.3.2
+        specifier: ^3.3.3
+        version: 3.3.3
       prettier-plugin-svelte:
         specifier: ^3.2.5
-        version: 3.2.5(prettier@3.3.2)(svelte@4.2.18)
+        version: 3.2.5(prettier@3.3.3)(svelte@4.2.18)
       prettier-plugin-tailwindcss:
         specifier: ^0.6.5
-        version: 0.6.5(prettier-plugin-svelte@3.2.5(prettier@3.3.2)(svelte@4.2.18))(prettier@3.3.2)
+        version: 0.6.5(prettier-plugin-svelte@3.2.5(prettier@3.3.3)(svelte@4.2.18))(prettier@3.3.3)
       rollup-plugin-license:
         specifier: ^3.5.2
         version: 3.5.2(rollup@4.18.1)
@@ -170,8 +170,8 @@ packages:
   '@arktype/util@0.0.48':
     resolution: {integrity: sha512-U5FO5EUAJ4LoYtLSyAMmTf6CEVgslObfSQuua2zoK5Tv2FB3aESVQ3rdLfhuz+coRhlzlynbkmimyoQWwQT+aQ==}
 
-  '@babel/runtime@7.24.7':
-    resolution: {integrity: sha512-UwgBRMjJP+xv857DCngvqXI3Iq6J4v0wXmwc6sapg+zyhbwmQX67LUEFrkK5tbyJ30jGuG3ZvWpBiB9LCy1kWw==}
+  '@babel/runtime@7.24.8':
+    resolution: {integrity: sha512-5F7SDGs1T72ZczbRwbGO9lQi0NLjQxzl6i4lJxLxfW9U5UluCSyEJeniWvnhl3/euNiqQVbo8zruhsDfid0esA==}
     engines: {node: '>=6.9.0'}
 
   '@esbuild/aix-ppc64@0.21.5':
@@ -1097,8 +1097,8 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  electron-to-chromium@1.4.823:
-    resolution: {integrity: sha512-4h+oPeAiGQOHFyUJOqpoEcPj/xxlicxBzOErVeYVMMmAiXUXsGpsFd0QXBMaUUbnD8hhSfLf9uw+MlsoIA7j5w==}
+  electron-to-chromium@1.4.827:
+    resolution: {integrity: sha512-VY+J0e4SFcNfQy19MEoMdaIcZLmDCprqvBtkii1WTCTQHpRvf5N8+3kTYCgL/PcntvwQvmMJWTuDPsq+IlhWKQ==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -1145,12 +1145,12 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-plugin-svelte@2.41.0:
-    resolution: {integrity: sha512-gjU9Q/psxbWG1VNwYbEb0Q6U4W5PBGaDpYmO2zlQ+zlAMVS3Qt0luAK0ACi/tMSwRK6JENiySvMyJbO0YWmXSg==}
+  eslint-plugin-svelte@2.42.0:
+    resolution: {integrity: sha512-mHP6z0DWq97KZvoQcApZHdF9m9epcDV/ICKufeEH18Vh+8vl7S+gwt8WdUohEqKNVMuXRkbvy1suMcVvUDiOGw==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0-0 || ^9.0.0-0
-      svelte: ^3.37.0 || ^4.0.0 || ^5.0.0-next.155
+      svelte: ^3.37.0 || ^4.0.0 || ^5.0.0-next.181
     peerDependenciesMeta:
       svelte:
         optional: true
@@ -1782,8 +1782,8 @@ packages:
     resolution: {integrity: sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==}
     engines: {node: '>=4'}
 
-  postcss-selector-parser@6.1.0:
-    resolution: {integrity: sha512-UMz42UD0UY0EApS0ZL9o1XnLhSTtvvvLe5Dc2H2O56fvRZi+KulDyf5ctDhhtYJBGKStV2FL1fy6253cmLgqVQ==}
+  postcss-selector-parser@6.1.1:
+    resolution: {integrity: sha512-b4dlw/9V8A71rLIDsSwVmak9z2DuBUB7CA1/wSdelNEzqsjoSPeADTWNO09lpH49Diy3/JIZ2bSPB1dI3LJCHg==}
     engines: {node: '>=4'}
 
   postcss-value-parser@4.2.0:
@@ -1855,8 +1855,8 @@ packages:
       prettier-plugin-svelte:
         optional: true
 
-  prettier@3.3.2:
-    resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
+  prettier@3.3.3:
+    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2075,11 +2075,11 @@ packages:
     peerDependencies:
       svelte: ^3.55.0 || ^4.0.0-next.0 || ^4.0.0 || ^5.0.0-next.0
 
-  svelte-eslint-parser@0.39.2:
-    resolution: {integrity: sha512-87UwLuWTtDIuzWOhOi1zBL5wYVd07M5BK1qZ57YmXJB5/UmjUNJqGy3XSOhPqjckY1dATNV9y+mx+nI0WH6HPA==}
+  svelte-eslint-parser@0.40.0:
+    resolution: {integrity: sha512-M+v1HhC5T1WKYVxWexUCS4o6oIBS88XKzOZuhl2ew+eGxol7eC21e+VE8TC4rXJ3iT3iXT0qlZsZcpKjVo5/zQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
-      svelte: ^3.37.0 || ^4.0.0 || ^5.0.0-next.115
+      svelte: ^3.37.0 || ^4.0.0 || ^5.0.0-next.181
     peerDependenciesMeta:
       svelte:
         optional: true
@@ -2446,7 +2446,7 @@ snapshots:
   '@arktype/util@0.0.48':
     optional: true
 
-  '@babel/runtime@7.24.7':
+  '@babel/runtime@7.24.8':
     dependencies:
       regenerator-runtime: 0.14.1
     optional: true
@@ -3105,7 +3105,7 @@ snapshots:
   browserslist@4.23.2:
     dependencies:
       caniuse-lite: 1.0.30001641
-      electron-to-chromium: 1.4.823
+      electron-to-chromium: 1.4.827
       node-releases: 2.0.14
       update-browserslist-db: 1.1.0(browserslist@4.23.2)
 
@@ -3269,7 +3269,7 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  electron-to-chromium@1.4.823: {}
+  electron-to-chromium@1.4.827: {}
 
   emoji-regex@8.0.0: {}
 
@@ -3351,7 +3351,7 @@ snapshots:
     dependencies:
       eslint: 8.57.0
 
-  eslint-plugin-svelte@2.41.0(eslint@8.57.0)(svelte@4.2.18):
+  eslint-plugin-svelte@2.42.0(eslint@8.57.0)(svelte@4.2.18):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.0)
       '@jridgewell/sourcemap-codec': 1.5.0
@@ -3362,9 +3362,9 @@ snapshots:
       postcss: 8.4.39
       postcss-load-config: 3.1.4(postcss@8.4.39)
       postcss-safe-parser: 6.0.0(postcss@8.4.39)
-      postcss-selector-parser: 6.1.0
+      postcss-selector-parser: 6.1.1
       semver: 7.6.2
-      svelte-eslint-parser: 0.39.2(svelte@4.2.18)
+      svelte-eslint-parser: 0.40.0(svelte@4.2.18)
     optionalDependencies:
       svelte: 4.2.18
     transitivePeerDependencies:
@@ -3690,7 +3690,7 @@ snapshots:
 
   json-schema-to-ts@3.1.0:
     dependencies:
-      '@babel/runtime': 7.24.7
+      '@babel/runtime': 7.24.8
       ts-algebra: 2.0.0
     optional: true
 
@@ -3956,7 +3956,7 @@ snapshots:
   postcss-nested@6.0.1(postcss@8.4.39):
     dependencies:
       postcss: 8.4.39
-      postcss-selector-parser: 6.1.0
+      postcss-selector-parser: 6.1.1
 
   postcss-safe-parser@6.0.0(postcss@8.4.39):
     dependencies:
@@ -3971,7 +3971,7 @@ snapshots:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
 
-  postcss-selector-parser@6.1.0:
+  postcss-selector-parser@6.1.1:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
@@ -3986,18 +3986,18 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-svelte@3.2.5(prettier@3.3.2)(svelte@4.2.18):
+  prettier-plugin-svelte@3.2.5(prettier@3.3.3)(svelte@4.2.18):
     dependencies:
-      prettier: 3.3.2
+      prettier: 3.3.3
       svelte: 4.2.18
 
-  prettier-plugin-tailwindcss@0.6.5(prettier-plugin-svelte@3.2.5(prettier@3.3.2)(svelte@4.2.18))(prettier@3.3.2):
+  prettier-plugin-tailwindcss@0.6.5(prettier-plugin-svelte@3.2.5(prettier@3.3.3)(svelte@4.2.18))(prettier@3.3.3):
     dependencies:
-      prettier: 3.3.2
+      prettier: 3.3.3
     optionalDependencies:
-      prettier-plugin-svelte: 3.2.5(prettier@3.3.2)(svelte@4.2.18)
+      prettier-plugin-svelte: 3.2.5(prettier@3.3.3)(svelte@4.2.18)
 
-  prettier@3.3.2: {}
+  prettier@3.3.3: {}
 
   pretty-format@29.7.0:
     dependencies:
@@ -4245,7 +4245,7 @@ snapshots:
       - stylus
       - sugarss
 
-  svelte-eslint-parser@0.39.2(svelte@4.2.18):
+  svelte-eslint-parser@0.40.0(svelte@4.2.18):
     dependencies:
       eslint-scope: 7.2.2
       eslint-visitor-keys: 3.4.3
@@ -4333,7 +4333,7 @@ snapshots:
       postcss-js: 4.0.1(postcss@8.4.39)
       postcss-load-config: 4.0.2(postcss@8.4.39)
       postcss-nested: 6.0.1(postcss@8.4.39)
-      postcss-selector-parser: 6.1.0
+      postcss-selector-parser: 6.1.1
       resolve: 1.22.8
       sucrase: 3.35.0
     transitivePeerDependencies:
