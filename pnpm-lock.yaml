@@ -115,8 +115,8 @@ importers:
         specifier: ^0.6.6
         version: 0.6.6(prettier-plugin-svelte@3.2.6(prettier@3.3.3)(svelte@4.2.19))(prettier@3.3.3)
       rollup-plugin-license:
-        specifier: ^3.5.2
-        version: 3.5.2(rollup@4.21.1)
+        specifier: ^3.5.3
+        version: 3.5.3(rollup@4.21.1)
       svelte:
         specifier: ^4.2.19
         version: 4.2.19
@@ -1205,10 +1205,10 @@ packages:
   fastq@1.17.1:
     resolution: {integrity: sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w==}
 
-  fdir@6.1.1:
-    resolution: {integrity: sha512-QfKBVg453Dyn3mr0Q0O+Tkr1r79lOTAKSi9f/Ot4+qVEwxWhav2Z+SudrG9vQjM2aYRMQQZ2/Q1zdA8ACM1pDg==}
+  fdir@6.3.0:
+    resolution: {integrity: sha512-QOnuT+BOtivR77wYvCWHfGt9s4Pz1VIMbD463vegT5MLqNXy8rYFT/lPVEqf/bhYeT6qmqrNHhsX+rWwe3rOCQ==}
     peerDependencies:
-      picomatch: 3.x
+      picomatch: ^3 || ^4
     peerDependenciesMeta:
       picomatch:
         optional: true
@@ -1849,8 +1849,8 @@ packages:
     deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
-  rollup-plugin-license@3.5.2:
-    resolution: {integrity: sha512-NNeXBcE6RyQdZdSC8Vxe8Cheax2aUa/K0Ok6JDZwr9isjkSDer4aMg0sovas1Ua76ojLZX1BrNQ6ZFspztKkZQ==}
+  rollup-plugin-license@3.5.3:
+    resolution: {integrity: sha512-r3wImZSo2d6sEk9BRJtlzeI/upjyjnpthy06Fdl0EzqRrlg3ULb9KQR7xHJI0zuayW/8bchEXSF5dO6dha4OyA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^1.0.0 || ^2.0.0 || ^3.0.0 || ^4.0.0
@@ -3366,7 +3366,7 @@ snapshots:
     dependencies:
       reusify: 1.0.4
 
-  fdir@6.1.1: {}
+  fdir@6.3.0: {}
 
   file-entry-cache@6.0.1:
     dependencies:
@@ -3885,10 +3885,10 @@ snapshots:
     dependencies:
       glob: 7.2.3
 
-  rollup-plugin-license@3.5.2(rollup@4.21.1):
+  rollup-plugin-license@3.5.3(rollup@4.21.1):
     dependencies:
       commenting: 1.1.0
-      fdir: 6.1.1
+      fdir: 6.3.0
       lodash: 4.17.21
       magic-string: 0.30.11
       moment: 2.30.1
