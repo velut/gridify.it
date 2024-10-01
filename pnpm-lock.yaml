@@ -100,8 +100,8 @@ importers:
         specifier: ^4.1.0
         version: 4.1.0
       modern-normalize:
-        specifier: ^3.0.0
-        version: 3.0.0
+        specifier: ^3.0.1
+        version: 3.0.1
       postcss:
         specifier: ^8.4.47
         version: 8.4.47
@@ -1526,8 +1526,8 @@ packages:
   mlly@1.7.1:
     resolution: {integrity: sha512-rrVRZRELyQzrIUAVMHxP97kv+G786pHmOKzuFII8zDYahFBS7qnHh2AlYSl1GAHhaMPCz6/oHjVMcfFYgFYHgA==}
 
-  modern-normalize@3.0.0:
-    resolution: {integrity: sha512-oY2uocgMUQC33i5rKZMWzhyJ+U2nsoiHDYyoDVFxYVBob8RIjZoCbRSbE4+a2/SfbGmZOhOJIavLrzz3BC72tw==}
+  modern-normalize@3.0.1:
+    resolution: {integrity: sha512-VqlMdYi59Uch6fnUPxnpijWUQe+TW6zeWCvyr6Mb7JibheHzSuAAoJi2c71ZwIaWKpECpGpYHoaaBp6rBRr+/g==}
     engines: {node: '>=6'}
 
   moment@2.30.1:
@@ -3687,7 +3687,7 @@ snapshots:
       pkg-types: 1.2.0
       ufo: 1.5.4
 
-  modern-normalize@3.0.0: {}
+  modern-normalize@3.0.1: {}
 
   moment@2.30.1: {}
 
