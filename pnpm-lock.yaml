@@ -30,8 +30,8 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2
       sveltekit-superforms:
-        specifier: ^2.19.0
-        version: 2.19.0(@sveltejs/kit@2.6.1(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4)))(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4)))(@types/json-schema@7.0.15)(svelte@4.2.19)
+        specifier: ^2.20.0
+        version: 2.20.0(@sveltejs/kit@2.6.1(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4)))(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4)))(@types/json-schema@7.0.15)(svelte@4.2.19)(typescript@5.6.2)
       zod:
         specifier: ^3.23.8
         version: 3.23.8
@@ -170,6 +170,11 @@ packages:
   '@babel/runtime@7.25.6':
     resolution: {integrity: sha512-VBj9MYyDb9tuLq7yzqjgzt6Q+IBQLrGZfdjOekyEirZPHxXWoTSGUTMrpsfi58Up73d13NfYLv8HT9vmznjzhQ==}
     engines: {node: '>=6.9.0'}
+
+  '@effect/schema@0.75.5':
+    resolution: {integrity: sha512-TQInulTVCuF+9EIbJpyLP6dvxbQJMphrnRqgexm/Ze39rSjfhJuufF7XvU3SxTgg3HnL7B/kpORTJbHhlE6thw==}
+    peerDependencies:
+      effect: ^3.9.2
 
   '@esbuild/aix-ppc64@0.21.5':
     resolution: {integrity: sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ==}
@@ -643,9 +648,6 @@ packages:
   '@sinclair/typebox@0.32.35':
     resolution: {integrity: sha512-Ul3YyOTU++to8cgNkttakC0dWvpERr6RYoHO2W47DLbFvrwBDJUY31B1sImH6JZSYc4Kt4PyHtoPNu+vL2r2dA==}
 
-  '@sodaru/yup-to-json-schema@2.0.1':
-    resolution: {integrity: sha512-lWb0Wiz8KZ9ip/dY1eUqt7fhTPmL24p6Hmv5Fd9pzlzAdw/YNcWZr+tiCT4oZ4Zyxzi9+1X4zv82o7jYvcFxYA==}
-
   '@square/svelte-store@1.0.18':
     resolution: {integrity: sha512-BCiUhDlF2XSY6P+MLvJTA7mh15yAXcuNDtf/GTG0XWSjatW0+4wQv++uijz14L0Bc+KKAGXz4T6/9N+JrTfAAA==}
     peerDependencies:
@@ -718,8 +720,8 @@ packages:
   '@types/validator@13.12.1':
     resolution: {integrity: sha512-w0URwf7BQb0rD/EuiG12KP0bailHKHP5YVviJG9zw3ykAokL0TuxU2TUqMB7EwZ59bDHYdeTIvjI5m0S7qHfOA==}
 
-  '@typeschema/class-validator@0.2.0':
-    resolution: {integrity: sha512-zq0qeflVu1Z6D0ttkqAWZMtxJeNEQ70yo/025sV0jujiOOgQx38JXrky77nSWWPp2E1KIMtgkToQbkzkXyW5yg==}
+  '@typeschema/class-validator@0.3.0':
+    resolution: {integrity: sha512-OJSFeZDIQ8EK1HTljKLT5CItM2wsbgczLN8tMEfz3I1Lmhc5TBfkZ0eikFzUC16tI3d1Nag7um6TfCgp2I2Bww==}
     peerDependencies:
       class-validator: ^0.14.1
     peerDependenciesMeta:
@@ -1098,6 +1100,9 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
+  effect@3.10.8:
+    resolution: {integrity: sha512-vCKKp7EL6j7x1xfBbmndcQvooNE5FEDxkVro2yqEGBR2Ogn4I4XVK5A4eLVlDxS9egvX7EFaBwDRfm7k6IM6oA==}
+
   electron-to-chromium@1.5.13:
     resolution: {integrity: sha512-lbBcvtIJ4J6sS4tb5TLp1b4LyfCdMkwStzXPyAgVgTRAsep4bvrAGaBOP7ZJtQMNJpSQ9SqG4brWOroNaQtm7Q==}
 
@@ -1192,6 +1197,10 @@ packages:
   esutils@2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
+
+  fast-check@3.22.0:
+    resolution: {integrity: sha512-8HKz3qXqnHYp/VCNn2qfjHdAdcI8zcSqOyX64GOMukp7SL2bfzfeDKjSd+UyECtejccaZv3LcvZTm9YDD22iCQ==}
+    engines: {node: '>=8.0.0'}
 
   fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
@@ -1803,6 +1812,9 @@ packages:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
 
+  pure-rand@6.1.0:
+    resolution: {integrity: sha512-bVWawvoZoBYpp6yIoQtQXHZjmz35RSVHnUOTefl8Vcjr8snTPY1wnpSPMWekcFwbxI6gtmT7rSYPFvz71ldiOA==}
+
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
@@ -1999,8 +2011,8 @@ packages:
     resolution: {integrity: sha512-IY1rnGr6izd10B0A8LqsBfmlT5OILVuZ7XsI0vdGPEvuonFV7NYEUK4dAkm9Zg2q0Um92kYjTpS1CAP3Nh/KWw==}
     engines: {node: '>=16'}
 
-  sveltekit-superforms@2.19.0:
-    resolution: {integrity: sha512-WJmdYf8WpuDkl6zxdRP72R+wDefx1OhIQYKdsIQqNkFntNq0/BUrkMdUr1i7d/FbX0gS1A9GRflCx3WiYQlAXg==}
+  sveltekit-superforms@2.20.0:
+    resolution: {integrity: sha512-5HyA6THKFBHEmJinZ/klu2/0jYr9ElSaXMYc5EO9ptP3x1wQPWVXYl59sMcaSrIjWUlPpayGxVppCyu+x/o4WA==}
     peerDependencies:
       '@sveltejs/kit': 1.x || 2.x
       svelte: 3.x || 4.x || >=5.0.0-next.51
@@ -2156,8 +2168,13 @@ packages:
   valibot@0.31.1:
     resolution: {integrity: sha512-2YYIhPrnVSz/gfT2/iXVTrSj92HwchCt9Cga/6hX4B26iCz9zkIsGTS0HjDYTZfTi1Un0X6aRvhBi1cfqs/i0Q==}
 
-  valibot@0.35.0:
-    resolution: {integrity: sha512-+i2aCRkReTrd5KBN/dW2BrPOvFnU5LXTV2xjZnjnqUIO8YUx6P2+MgRrkwF2FhkexgyKq/NIZdPdknhHf5A/Ww==}
+  valibot@0.41.0:
+    resolution: {integrity: sha512-igDBb8CTYr8YTQlOKgaN9nSS0Be7z+WRuaeYqGf3Cjz3aKmSnqEmYnkfVjzIuumGqfHpa3fLIvMEAfhrpqN8ng==}
+    peerDependencies:
+      typescript: '>=5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   validator@13.12.0:
     resolution: {integrity: sha512-c1Q0mCiPlgdTVVVIJIrBuxNicYE+t/7oKeI9MWLj3fh/uq2Pxh/3eeWbVZ4OcGW1TUf53At0njHw5SMdA3tmMg==}
@@ -2319,6 +2336,12 @@ snapshots:
   '@babel/runtime@7.25.6':
     dependencies:
       regenerator-runtime: 0.14.1
+    optional: true
+
+  '@effect/schema@0.75.5(effect@3.10.8)':
+    dependencies:
+      effect: 3.10.8
+      fast-check: 3.22.0
     optional: true
 
   '@esbuild/aix-ppc64@0.21.5':
@@ -2643,9 +2666,6 @@ snapshots:
   '@sinclair/typebox@0.32.35':
     optional: true
 
-  '@sodaru/yup-to-json-schema@2.0.1':
-    optional: true
-
   '@square/svelte-store@1.0.18(svelte@4.2.19)':
     dependencies:
       cookie-storage: 6.1.0
@@ -2741,7 +2761,7 @@ snapshots:
   '@types/validator@13.12.1':
     optional: true
 
-  '@typeschema/class-validator@0.2.0(@types/json-schema@7.0.15)(class-validator@0.14.1)':
+  '@typeschema/class-validator@0.3.0(@types/json-schema@7.0.15)(class-validator@0.14.1)':
     dependencies:
       '@typeschema/core': 0.14.0(@types/json-schema@7.0.15)
     optionalDependencies:
@@ -3138,6 +3158,11 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
+  effect@3.10.8:
+    dependencies:
+      fast-check: 3.22.0
+    optional: true
+
   electron-to-chromium@1.5.13: {}
 
   emoji-regex@8.0.0: {}
@@ -3309,6 +3334,11 @@ snapshots:
       '@types/estree': 1.0.5
 
   esutils@2.0.3: {}
+
+  fast-check@3.22.0:
+    dependencies:
+      pure-rand: 6.1.0
+    optional: true
 
   fast-deep-equal@3.1.3: {}
 
@@ -3807,6 +3837,9 @@ snapshots:
 
   punycode@2.3.1: {}
 
+  pure-rand@6.1.0:
+    optional: true
+
   queue-microtask@1.2.3: {}
 
   read-cache@1.0.0:
@@ -4033,7 +4066,7 @@ snapshots:
       magic-string: 0.30.11
       periscopic: 3.1.0
 
-  sveltekit-superforms@2.19.0(@sveltejs/kit@2.6.1(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4)))(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4)))(@types/json-schema@7.0.15)(svelte@4.2.19):
+  sveltekit-superforms@2.20.0(@sveltejs/kit@2.6.1(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4)))(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4)))(@types/json-schema@7.0.15)(svelte@4.2.19)(typescript@5.6.2):
     dependencies:
       '@sveltejs/kit': 2.6.1(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4)))(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4))
       devalue: 5.1.1
@@ -4042,23 +4075,25 @@ snapshots:
       svelte: 4.2.19
       ts-deepmerge: 7.0.1
     optionalDependencies:
+      '@effect/schema': 0.75.5(effect@3.10.8)
       '@exodus/schemasafe': 1.3.0
       '@gcornut/valibot-json-schema': 0.31.0
       '@sinclair/typebox': 0.32.35
-      '@sodaru/yup-to-json-schema': 2.0.1
-      '@typeschema/class-validator': 0.2.0(@types/json-schema@7.0.15)(class-validator@0.14.1)
+      '@typeschema/class-validator': 0.3.0(@types/json-schema@7.0.15)(class-validator@0.14.1)
       '@vinejs/vine': 1.8.0
       arktype: 2.0.0-rc.8
       class-validator: 0.14.1
+      effect: 3.10.8
       joi: 17.13.3
       json-schema-to-ts: 3.1.1
       superstruct: 2.0.2
-      valibot: 0.35.0
+      valibot: 0.41.0(typescript@5.6.2)
       yup: 1.4.0
       zod: 3.23.8
       zod-to-json-schema: 3.23.3(zod@3.23.8)
     transitivePeerDependencies:
       - '@types/json-schema'
+      - typescript
 
   tailwindcss@3.4.14:
     dependencies:
@@ -4202,7 +4237,9 @@ snapshots:
   valibot@0.31.1:
     optional: true
 
-  valibot@0.35.0:
+  valibot@0.41.0(typescript@5.6.2):
+    optionalDependencies:
+      typescript: 5.6.2
     optional: true
 
   validator@13.12.0:
