@@ -31,7 +31,7 @@ importers:
         version: 1.1.2
       sveltekit-superforms:
         specifier: ^2.20.0
-        version: 2.20.0(@sveltejs/kit@2.6.1(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4)))(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4)))(@types/json-schema@7.0.15)(svelte@4.2.19)(typescript@5.6.2)
+        version: 2.20.0(@sveltejs/kit@2.6.1(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4)))(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4)))(@types/json-schema@7.0.15)(svelte@4.2.19)(typescript@5.6.3)
       zod:
         specifier: ^3.23.8
         version: 3.23.8
@@ -130,8 +130,8 @@ importers:
         specifier: ^2.7.0
         version: 2.7.0
       tsx:
-        specifier: ^4.19.1
-        version: 4.19.1
+        specifier: ^4.19.2
+        version: 4.19.2
       typescript:
         specifier: ^5.6.3
         version: 5.6.3
@@ -2089,8 +2089,8 @@ packages:
   tslib@2.7.0:
     resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
 
-  tsx@4.19.1:
-    resolution: {integrity: sha512-0flMz1lh74BR4wOvBjuh9olbnwqCPc35OOlfyzHba0Dc+QNUeWX/Gq2YTbnwcWPO3BMd8fkzRVrHcsR+a7z7rA==}
+  tsx@4.19.2:
+    resolution: {integrity: sha512-pOUl6Vo2LUq/bSa8S5q7b91cgNSjctn9ugq/+Mvow99qW6x/UZYwzxy/3NmqoT66eHYfCVvFvACC58UBPFf28g==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -4066,7 +4066,7 @@ snapshots:
       magic-string: 0.30.11
       periscopic: 3.1.0
 
-  sveltekit-superforms@2.20.0(@sveltejs/kit@2.6.1(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4)))(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4)))(@types/json-schema@7.0.15)(svelte@4.2.19)(typescript@5.6.2):
+  sveltekit-superforms@2.20.0(@sveltejs/kit@2.6.1(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4)))(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4)))(@types/json-schema@7.0.15)(svelte@4.2.19)(typescript@5.6.3):
     dependencies:
       '@sveltejs/kit': 2.6.1(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4)))(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.4))
       devalue: 5.1.1
@@ -4087,7 +4087,7 @@ snapshots:
       joi: 17.13.3
       json-schema-to-ts: 3.1.1
       superstruct: 2.0.2
-      valibot: 0.41.0(typescript@5.6.2)
+      valibot: 0.41.0(typescript@5.6.3)
       yup: 1.4.0
       zod: 3.23.8
       zod-to-json-schema: 3.23.3(zod@3.23.8)
@@ -4175,7 +4175,7 @@ snapshots:
 
   tslib@2.7.0: {}
 
-  tsx@4.19.1:
+  tsx@4.19.2:
     dependencies:
       esbuild: 0.23.1
       get-tsconfig: 4.8.0
@@ -4237,9 +4237,9 @@ snapshots:
   valibot@0.31.1:
     optional: true
 
-  valibot@0.41.0(typescript@5.6.2):
+  valibot@0.41.0(typescript@5.6.3):
     optionalDependencies:
-      typescript: 5.6.2
+      typescript: 5.6.3
     optional: true
 
   validator@13.12.0:
