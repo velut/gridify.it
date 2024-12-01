@@ -64,7 +64,7 @@
 		"klaw": "^4.1.0",
 		"modern-normalize": "^3.0.1",
 		"postcss": "^8.4.47",
-		"prettier": "^3.3.3",
+		"prettier": "^3.4.1",
 		"prettier-plugin-svelte": "^3.3.2",
 		"prettier-plugin-tailwindcss": "^0.6.9",
 		"rollup-plugin-license": "^3.5.3",
