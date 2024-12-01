@@ -12,8 +12,8 @@ importers:
         specifier: ^1.0.18
         version: 1.0.18(svelte@4.2.19)
       attr-accept:
-        specifier: ^2.2.2
-        version: 2.2.2
+        specifier: ^2.2.5
+        version: 2.2.5
       client-zip:
         specifier: ^2.4.5
         version: 2.4.5
@@ -894,8 +894,8 @@ packages:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==}
     engines: {node: '>=12'}
 
-  attr-accept@2.2.2:
-    resolution: {integrity: sha512-7prDjvt9HmqiZ0cl5CRjtS84sEyhsHP2coDkaZKRKVfCDo9s7iw7ChVmar78Gu9pC4SoR/28wFu/G5JJhTnqEg==}
+  attr-accept@2.2.5:
+    resolution: {integrity: sha512-0bDNnY/u6pPwHDMoF0FieU354oBi0a8rD9FcsLwzcGWbc8KS8KPIi7y+s13OlVY+gMWc/9xEMUgNE6Qm8ZllYQ==}
     engines: {node: '>=4'}
 
   autoprefixer@10.4.20:
@@ -2990,7 +2990,7 @@ snapshots:
 
   assertion-error@2.0.1: {}
 
-  attr-accept@2.2.2: {}
+  attr-accept@2.2.5: {}
 
   autoprefixer@10.4.20(postcss@8.4.47):
     dependencies:
