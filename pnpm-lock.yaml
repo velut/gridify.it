@@ -37,8 +37,8 @@ importers:
         version: 3.23.8
     devDependencies:
       '@iconify-json/twemoji':
-        specifier: ^1.2.1
-        version: 1.2.1
+        specifier: ^1.2.2
+        version: 1.2.2
       '@sveltejs/adapter-static':
         specifier: ^3.0.8
         version: 3.0.8(@sveltejs/kit@2.6.1(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.8(@types/node@22.8.6)))(svelte@4.2.19)(vite@5.4.8(@types/node@22.8.6)))
@@ -502,8 +502,8 @@ packages:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     deprecated: Use @eslint/object-schema instead
 
-  '@iconify-json/twemoji@1.2.1':
-    resolution: {integrity: sha512-BwYutpZMsBfo9YXXLCosyQXT9qU5xT+FBOqw2Ivks0bL7zZNiQGP/bONoQTZVvmOcEJrndfcvZGfKTDC92klfQ==}
+  '@iconify-json/twemoji@1.2.2':
+    resolution: {integrity: sha512-ckWEY5KhIQgdFd9VGvfhecTtYUx3ihXycwlZcEws87LxuvIThMHNBCblrQQ5afhbGMfg21dF+z9F+ODMRDYHMg==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -2564,7 +2564,7 @@ snapshots:
 
   '@humanwhocodes/object-schema@2.0.3': {}
 
-  '@iconify-json/twemoji@1.2.1':
+  '@iconify-json/twemoji@1.2.2':
     dependencies:
       '@iconify/types': 2.0.0
 
