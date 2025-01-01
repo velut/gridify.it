@@ -38,7 +38,7 @@
 		"p-limit": "^6.2.0",
 		"pathe": "^1.1.2",
 		"sveltekit-superforms": "^2.20.0",
-		"zod": "^3.23.8"
+		"zod": "^3.24.1"
 	},
 	"devDependencies": {
 		"@iconify-json/twemoji": "^1.2.2",
