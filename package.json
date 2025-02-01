@@ -57,7 +57,7 @@
 		"daisyui": "^4.12.23",
 		"dotenv": "^16.4.7",
 		"eslint": "^8.57.1",
-		"eslint-config-prettier": "^9.1.0",
+		"eslint-config-prettier": "^10.0.1",
 		"eslint-plugin-svelte": "^2.46.1",
 		"hasha": "^6.0.0",
 		"html-minifier": "^4.0.0",
