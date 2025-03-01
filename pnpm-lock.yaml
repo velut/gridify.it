@@ -33,8 +33,8 @@ importers:
         specifier: ^2.23.1
         version: 2.23.1(@sveltejs/kit@2.6.1(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.8(@types/node@22.10.3)))(svelte@4.2.19)(vite@5.4.8(@types/node@22.10.3)))(@types/json-schema@7.0.15)(svelte@4.2.19)(typescript@5.7.3)
       zod:
-        specifier: ^3.24.1
-        version: 3.24.1
+        specifier: ^3.24.2
+        version: 3.24.2
     devDependencies:
       '@iconify-json/twemoji':
         specifier: ^1.2.2
@@ -2492,8 +2492,8 @@ packages:
     peerDependencies:
       zod: ^3.24.1
 
-  zod@3.24.1:
-    resolution: {integrity: sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==}
+  zod@3.24.2:
+    resolution: {integrity: sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==}
 
 snapshots:
 
@@ -4388,8 +4388,8 @@ snapshots:
       superstruct: 2.0.2
       valibot: 1.0.0-beta.11(typescript@5.7.3)
       yup: 1.6.1
-      zod: 3.24.1
-      zod-to-json-schema: 3.24.1(zod@3.24.1)
+      zod: 3.24.2
+      zod-to-json-schema: 3.24.1(zod@3.24.2)
     transitivePeerDependencies:
       - '@types/json-schema'
       - typescript
@@ -4651,9 +4651,9 @@ snapshots:
       type-fest: 2.19.0
     optional: true
 
-  zod-to-json-schema@3.24.1(zod@3.24.1):
+  zod-to-json-schema@3.24.1(zod@3.24.2):
     dependencies:
-      zod: 3.24.1
+      zod: 3.24.2
     optional: true
 
-  zod@3.24.1: {}
+  zod@3.24.2: {}
