@@ -2,9 +2,9 @@
 	"cSpell.ignoreWords": [
 		"arktype",
 		"autoclear",
-		"cédric",
 		"cookiecategory",
 		"cookieconsent",
+		"cédric",
 		"daisyui",
 		"darkmode",
 		"edoardo",
@@ -22,6 +22,7 @@
 		"tailwindcss",
 		"unplugin",
 		"velut",
+		"vercel",
 		"vite",
 		"webm"
 	],
