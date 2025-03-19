@@ -4,7 +4,7 @@
 	import IconMemo from '~icons/twemoji/memo';
 </script>
 
-<div class="navbar overflow-x-auto bg-base-200">
+<div class="navbar bg-base-200 overflow-x-auto">
 	<a href="/" title="Homepage" class="btn btn-ghost text-xl font-bold">
 		<IconChequeredFlag class="h-6 w-6" />
 		{projectName}

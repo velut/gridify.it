@@ -3,7 +3,7 @@
 </script>
 
 <div class="flex h-full items-center justify-center">
-	<div class="select-none text-lg font-semibold uppercase text-base-content text-opacity-80">
+	<div class="text-base-content text-opacity-80 text-lg font-semibold uppercase select-none">
 		{text}
 	</div>
 </div>
