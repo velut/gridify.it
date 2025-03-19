@@ -34,7 +34,7 @@
 	<div>
 		<span class="footer-title opacity-80">Legal</span>
 		<a href="/privacy/" class="link-hover link">Privacy Policy</a>
-		<a href="/licenses/" class="link-hover link">Software Licenses</a>
+		<a href="/third-party-licenses.txt" class="link-hover link">Software licenses</a>
 	</div>
 
 	<div>
