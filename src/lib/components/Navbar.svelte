@@ -10,12 +10,12 @@
 		{projectName}
 	</a>
 
-	<div class="divider divider-horizontal" />
+	<div class="divider divider-horizontal"></div>
 
 	<a href="/faq/" title="Frequently Asked Questions" class="btn btn-ghost text-lg">
 		<IconMemo class="h-6 w-6" />
 		FAQ
 	</a>
 
-	<div class="divider divider-horizontal" />
+	<div class="divider divider-horizontal"></div>
 </div>

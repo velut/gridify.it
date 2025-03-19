@@ -56,7 +56,7 @@
 <form method="POST" use:enhance>
 	<ResetRenderOptionsButton {isFormTainted} {resetForm} />
 
-	<div class="divider" />
+	<div class="divider"></div>
 
 	<div class="space-y-2">
 		<GridTypeInput bind:value={$form.grid.type} />
@@ -68,7 +68,7 @@
 		<GridStrokeColorInput bind:value={$form.grid.stroke.color} />
 	</div>
 
-	<div class="divider" />
+	<div class="divider"></div>
 
 	<div class="space-y-2">
 		<CellSquareAspectRatioInput bind:checked={$form.cell.squareAspectRatio} />
@@ -82,11 +82,11 @@
 		<CellRadiusInput bind:value={$cellRadiusIntProxy} errors={$errors.cell?.radius} />
 	</div>
 
-	<div class="divider" />
+	<div class="divider"></div>
 
 	<PixelFullyOpaqueInput bind:checked={$form.pixel.fullyOpaque} />
 
-	<div class="divider" />
+	<div class="divider"></div>
 
 	<RenderImagesButton />
 </form>

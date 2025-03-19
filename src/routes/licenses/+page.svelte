@@ -12,9 +12,9 @@
 
 <main class="flex items-center justify-center p-4 sm:p-8">
 	<article class="prose">
-		<div class="divider" />
+		<div class="divider"></div>
 		<h1 class="my-0 text-center">Software Licenses</h1>
-		<div class="divider" />
+		<div class="divider"></div>
 
 		<p>This is a list of third-party software and libraries used on {projectName}.</p>
 
@@ -40,6 +40,6 @@
 			{/each}
 		</ul>
 
-		<div class="divider" />
+		<div class="divider"></div>
 	</article>
 </main>
