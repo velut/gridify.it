@@ -1,13 +1,13 @@
 <script lang="ts">
 	import ThemeSwitch from '$lib/components/ThemeSwitch.svelte';
 	import { githubCommitShort, githubCommitUrl, githubUrl, projectName } from '$lib/metadata';
-	import IconChequeredFlag from '~icons/twemoji/chequered-flag';
+	import NotoChequeredFlag from '~icons/noto/chequered-flag';
 </script>
 
 <footer class="footer bg-base-200 text-base-content p-8 text-base">
 	<div>
 		<a href="/" class="link-hover link flex items-center gap-2 text-lg font-bold">
-			<IconChequeredFlag class="h-6 w-6" />
+			<NotoChequeredFlag class="size-6 flex-none" />
 			{projectName}
 		</a>
 		<p>
