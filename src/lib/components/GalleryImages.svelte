@@ -12,7 +12,7 @@
 			<img
 				src={singleImage.url}
 				alt={singleImage.file.name}
-				class="pixelated h-full w-full rounded-sm bg-white object-contain"
+				class="h-full w-full rounded-sm bg-white object-contain [image-rendering:pixelated]"
 			/>
 		</a>
 	</div>
