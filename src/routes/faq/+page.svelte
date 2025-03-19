@@ -1,9 +1,6 @@
 <script lang="ts">
-	import Metadata from '$lib/components/Metadata.svelte';
 	import { githubIssuesUrl, projectName } from '$lib/metadata';
 </script>
-
-<Metadata title="FAQ" description="Frequently asked questions for {projectName}" path="faq" />
 
 <main class="flex items-center justify-center p-4 sm:p-8">
 	<article class="prose">
