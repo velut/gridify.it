@@ -3,7 +3,7 @@ export const projectNameEscaped = 'gridify_it';
 export const baseUrl = `https://www.gridify.it`;
 export const githubUrl = `https://github.com/velut/${projectName}`;
 export const githubIssuesUrl = `${githubUrl}/issues`;
-export const githubCommit = _GIT_COMMIT;
+export const githubCommit = __GIT_COMMIT;
 export const githubCommitShort = githubCommit.slice(0, 7);
 export const githubCommitUrl = `${githubUrl}/commit/${githubCommit}`;
 
