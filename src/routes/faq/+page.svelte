@@ -33,7 +33,11 @@
 				<div class="my-5 grid grid-cols-2 gap-4 sm:grid-cols-3">
 					{#each ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg'] as imageUrl}
 						<a href="/examples/{imageUrl}" target="_blank" class="block h-full w-full">
-							<img class="m-0 rounded" src="/examples/small/{imageUrl}" alt="Example {imageUrl}" />
+							<img
+								class="m-0 rounded-sm"
+								src="/examples/small/{imageUrl}"
+								alt="Example {imageUrl}"
+							/>
 						</a>
 					{/each}
 				</div>
