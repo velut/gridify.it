@@ -1,21 +1,25 @@
 <script lang="ts">
 	import { renderOptions } from '$lib/stores';
 
-	export let isFormTainted: boolean;
-	export let resetForm: () => void;
+	interface Props {
+		isFormTainted: boolean;
+		resetForm: () => void;
+	}
+
+	let { isFormTainted, resetForm }: Props = $props();
 
 	const resetFormAndRenderOptions = () => {
 		resetForm();
 		$renderOptions = null;
 	};
 
-	$: disabled = !isFormTainted && $renderOptions === null;
+	let disabled = $derived(!isFormTainted && $renderOptions === null);
 </script>
 
 <button
 	title="Click to reset all rendering options"
 	type="button"
 	class="btn btn-outline btn-sm hover:btn-error w-full"
-	on:click={resetFormAndRenderOptions}
+	onclick={resetFormAndRenderOptions}
 	{disabled}>Reset Options</button
 >

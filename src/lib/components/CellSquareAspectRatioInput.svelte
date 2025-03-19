@@ -1,7 +1,11 @@
 <script lang="ts">
 	const inputId = 'cell.squareAspectRatio';
 
-	export let checked: boolean | undefined;
+	interface Props {
+		checked: boolean | undefined;
+	}
+
+	let { checked = $bindable() }: Props = $props();
 </script>
 
 <div class="form-control w-full">

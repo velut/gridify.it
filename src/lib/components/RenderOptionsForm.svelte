@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import CellHeightInput from '$lib/components/CellHeightInput.svelte';
 	import CellRadiusInput from '$lib/components/CellRadiusInput.svelte';
 	import CellScaleInput from '$lib/components/CellScaleInput.svelte';
@@ -40,17 +42,21 @@
 	const cellScaleIntProxy = intProxy(form, 'cell.scale');
 	const cellRadiusIntProxy = intProxy(form, 'cell.radius');
 
-	$: isFormTainted = isTainted($tainted);
-	$: isGridDisabled = $form.grid.type === 'none';
-	$: isCellSquareAspectRatio = $form.cell.squareAspectRatio;
-	$: if (isGridDisabled) {
-		$gridStrokeSizeIntProxy = 'reset-trigger';
-		$gridStrokeSizeIntProxy = '1';
-	}
-	$: if (isCellSquareAspectRatio) {
-		$cellHeightIntProxy = 'reset-trigger';
-		$cellHeightIntProxy = '1';
-	}
+	let isFormTainted = $derived(isTainted($tainted));
+	let isGridDisabled = $derived($form.grid.type === 'none');
+	let isCellSquareAspectRatio = $derived($form.cell.squareAspectRatio);
+	run(() => {
+		if (isGridDisabled) {
+			$gridStrokeSizeIntProxy = 'reset-trigger';
+			$gridStrokeSizeIntProxy = '1';
+		}
+	});
+	run(() => {
+		if (isCellSquareAspectRatio) {
+			$cellHeightIntProxy = 'reset-trigger';
+			$cellHeightIntProxy = '1';
+		}
+	});
 </script>
 
 <form method="POST" use:enhance>

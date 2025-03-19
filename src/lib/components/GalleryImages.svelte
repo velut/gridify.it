@@ -1,9 +1,13 @@
 <script lang="ts">
 	import type { Image } from '$lib/image';
 
-	export let images: Image[];
+	interface Props {
+		images: Image[];
+	}
 
-	$: singleImage = images[0];
+	let { images }: Props = $props();
+
+	let singleImage = $derived(images[0]);
 </script>
 
 {#if images.length === 1}

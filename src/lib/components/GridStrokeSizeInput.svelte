@@ -1,9 +1,13 @@
 <script lang="ts">
 	const inputId = 'grid.stroke.size';
 
-	export let value: string;
-	export let errors: string[] | undefined = undefined;
-	export let disabled = false;
+	interface Props {
+		value: string;
+		errors?: string[] | undefined;
+		disabled?: boolean;
+	}
+
+	let { value = $bindable(), errors = undefined, disabled = false }: Props = $props();
 </script>
 
 <div class="form-control w-full">

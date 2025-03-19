@@ -25,7 +25,7 @@
 		type="file"
 		multiple
 		{accept}
-		on:change={setFiles}
+		onchange={setFiles}
 		class="h-0 opacity-0"
 	/>
 </div>

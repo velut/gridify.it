@@ -1,8 +1,12 @@
 <script lang="ts">
 	const inputId = 'cell.scale';
 
-	export let value: string;
-	export let errors: string[] | undefined = undefined;
+	interface Props {
+		value: string;
+		errors?: string[] | undefined;
+	}
+
+	let { value = $bindable(), errors = undefined }: Props = $props();
 </script>
 
 <div class="form-control w-full">

@@ -1,7 +1,11 @@
 <script lang="ts">
 	const inputId = 'pixel.fullyOpaque';
 
-	export let checked: boolean | undefined;
+	interface Props {
+		checked: boolean | undefined;
+	}
+
+	let { checked = $bindable() }: Props = $props();
 </script>
 
 <div class="form-control w-full">

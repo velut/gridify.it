@@ -1,7 +1,11 @@
 <script lang="ts">
 	const inputId = 'grid.type';
 
-	export let value: string | undefined;
+	interface Props {
+		value: string | undefined;
+	}
+
+	let { value = $bindable() }: Props = $props();
 </script>
 
 <div class="form-control w-full">

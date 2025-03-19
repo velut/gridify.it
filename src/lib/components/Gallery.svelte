@@ -3,10 +3,10 @@
 	import GalleryText from '$lib/components/GalleryText.svelte';
 	import { outputImages, outputImagesState } from '$lib/stores';
 
-	$: ({ isPending, isLoaded, isError } = $outputImagesState);
-	$: images = $outputImages;
-	$: hasNoImages = isLoaded && images.length === 0;
-	$: hasImages = isLoaded && images.length > 0;
+	let { isPending, isLoaded, isError } = $derived($outputImagesState);
+	let images = $derived($outputImages);
+	let hasNoImages = $derived(isLoaded && images.length === 0);
+	let hasImages = $derived(isLoaded && images.length > 0);
 </script>
 
 <div class="bg-base-300 w-full rounded-xl p-4 shadow-sm sm:h-full sm:grow">

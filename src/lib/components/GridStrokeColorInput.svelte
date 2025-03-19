@@ -1,7 +1,11 @@
 <script lang="ts">
 	const inputId = 'grid.stroke.color';
 
-	export let value = '#000000';
+	interface Props {
+		value?: string;
+	}
+
+	let { value = $bindable('#000000') }: Props = $props();
 </script>
 
 <div class="form-control w-full">

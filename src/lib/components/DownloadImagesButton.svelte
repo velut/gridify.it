@@ -6,9 +6,9 @@
 
 	const { saveAs } = fileSaver;
 
-	$: ({ isLoaded } = $outputImagesState);
-	$: images = $outputImages;
-	$: disabled = !isLoaded || images.length === 0;
+	let { isLoaded } = $derived($outputImagesState);
+	let images = $derived($outputImages);
+	let disabled = $derived(!isLoaded || images.length === 0);
 
 	const downloadImages = async () => {
 		const archive = await downloadZip(images.map((image) => image.file)).blob();
@@ -19,6 +19,6 @@
 <button
 	title="Click to download all images"
 	class="btn btn-outline w-full"
-	on:click={downloadImages}
+	onclick={downloadImages}
 	{disabled}>Download Images</button
 >

@@ -3,9 +3,9 @@
 	import { handleRenderImagesHotkey } from '$lib/handle-render-images-hotkey';
 	import { inputImages, inputImagesState } from '$lib/stores';
 
-	$: ({ isLoaded } = $inputImagesState);
-	$: images = $inputImages;
-	$: disabled = dev ? false : !isLoaded || images.length === 0;
+	let { isLoaded } = $derived($inputImagesState);
+	let images = $derived($inputImages);
+	let disabled = $derived(dev ? false : !isLoaded || images.length === 0);
 </script>
 
 <button

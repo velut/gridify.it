@@ -1,16 +1,24 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { baseUrl, pageTitle, pageUrl, projectName } from '$lib/metadata';
 
 	const twitterCardImageUrl = `${baseUrl}/twitter_card_image.jpg`;
 	const twitterCardImageAlt = `Promotional image for ${projectName}`;
 	const twitterCreator = '@EdoardoScibona';
 
-	export let title: string;
-	export let description: string;
-	export let path = '';
+	interface Props {
+		title: string;
+		description: string;
+		path?: string;
+	}
 
-	$: title = pageTitle(title);
-	$: url = pageUrl(path);
+	let { title = $bindable(), description, path = '' }: Props = $props();
+
+	run(() => {
+		title = pageTitle(title);
+	});
+	let url = $derived(pageUrl(path));
 </script>
 
 <svelte:head>
