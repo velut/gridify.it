@@ -24,5 +24,3 @@ vite.config.ts.timestamp-*
 
 # Ignore build time generated third-party licenses
 static/third-party-licenses.txt
-
-next
