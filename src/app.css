@@ -1,9 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer components {
-	.pixelated {
-		image-rendering: pixelated;
-	}
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+@plugin 'daisyui' {
+	logs: false;
 }
