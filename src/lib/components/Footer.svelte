@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { changeTheme } from '$lib/change-theme';
 	import MaterialSymbolsBackgroundGridSmall from '~icons/material-symbols/background-grid-small';
 
 	const commitShort = __GIT_COMMIT.slice(0, 7);
@@ -6,22 +7,23 @@
 	const ghCommitUrl = `${ghUrl}/commit/${__GIT_COMMIT}`;
 </script>
 
-<footer class="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4">
-	<aside class="grid-flow-row items-center md:grid-flow-col">
+<footer class="footer lg:footer-horizontal bg-neutral text-neutral-content items-center p-4">
+	<aside class="grid-flow-row items-center sm:grid-flow-col">
 		<a href="/" class="link link-hover flex items-center gap-2 font-bold">
 			<MaterialSymbolsBackgroundGridSmall class="size-6" />
 			gridify.it
 		</a>
-		<div class="hidden md:block">-</div>
+		<div class="hidden sm:block">-</div>
 		<div>
 			Created by
 			<a href="https://github.com/velut" class="link link-hover font-bold">Edoardo Scibona</a>
 		</div>
 	</aside>
-	<nav class="grid-flow-row gap-4 sm:grid-flow-col md:place-self-center md:justify-self-end">
+	<nav class="grid-flow-row gap-4 sm:grid-flow-col lg:place-self-center lg:justify-self-end">
 		<a href={ghCommitUrl} class="link link-hover">{commitShort}</a>
 		<a href={ghUrl} class="link link-hover">GitHub</a>
 		<a href="/third-party-licenses.txt" class="link link-hover">OSS licenses</a>
 		<a href="/privacy/" class="link link-hover">Privacy policy</a>
+		<button class="link link-hover" onclick={changeTheme}>Change theme</button>
 	</nav>
 </footer>
