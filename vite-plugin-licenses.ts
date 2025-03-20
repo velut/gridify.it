@@ -42,6 +42,15 @@ export async function licenses() {
 			url: 'https://tailwindcss.com'
 		},
 		{
+			name: 'Material Symbols',
+			version: packageJson.devDependencies['@iconify-json/material-symbols'].replace('^', ''),
+			license: 'Apache-2.0',
+			licenseText: await fs.readFile('./third-party-licenses/material-symbols/license.txt', {
+				encoding: 'utf-8'
+			}),
+			url: 'https://github.com/google/material-design-icons'
+		},
+		{
 			name: 'Noto Emoji',
 			version: '16.0',
 			license: 'Apache-2.0',

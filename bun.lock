@@ -15,6 +15,7 @@
         "zod": "^3.24.2",
       },
       "devDependencies": {
+        "@iconify-json/material-symbols": "^1.2.16",
         "@iconify-json/noto": "^1.2.3",
         "@sveltejs/adapter-static": "^3.0.8",
         "@sveltejs/kit": "^2.20.1",
@@ -108,6 +109,8 @@
     "@hapi/hoek": ["@hapi/hoek@9.3.0", "", {}, "sha512-/c6rf4UJlmHlC9b5BaNvzAcFv7HZ2QHaV0D4/HNlBdvFnvQq8RI4kYdhyPCl7Xj+oWvTWQ8ujhqS53LIgAe6KQ=="],
 
     "@hapi/topo": ["@hapi/topo@5.1.0", "", { "dependencies": { "@hapi/hoek": "^9.0.0" } }, "sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg=="],
+
+    "@iconify-json/material-symbols": ["@iconify-json/material-symbols@1.2.16", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-hCUbIYLWPX9YMChvqEScG5tvFLZ2arXl+bnsvUQDrtsGq00wu4S4qIofH3uZgClYxXhvApkDKtJDlXhoygzmMQ=="],
 
     "@iconify-json/noto": ["@iconify-json/noto@1.2.3", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-YvsF8je31tPUAkhXw+aydVlmF5LOTNGRE5foOdsZVuniymr4r4020JUN9Kc/i2eOqmHDodBKmX62Um4+o8c6UQ=="],
 

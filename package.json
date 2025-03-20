@@ -38,6 +38,7 @@
 		"zod": "^3.24.2"
 	},
 	"devDependencies": {
+		"@iconify-json/material-symbols": "^1.2.16",
 		"@iconify-json/noto": "^1.2.3",
 		"@sveltejs/adapter-static": "^3.0.8",
 		"@sveltejs/kit": "^2.20.1",
