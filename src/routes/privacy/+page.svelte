@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { githubIssuesUrl, projectName } from '$lib/metadata';
+	const ghIssuesUrl = 'https://github.com/velut/gridify.it/issues';
 </script>
 
 <main class="flex items-center justify-center p-4 sm:p-8">
@@ -9,7 +9,7 @@
 		<div class="divider"></div>
 
 		<p>
-			This is the privacy policy for {projectName}.
+			This is the privacy policy for gridify.it.
 			<br />
 			Last updated on June 30, 2023.
 		</p>
@@ -80,7 +80,7 @@
 				<p><strong>Contact Information</strong></p>
 				<p>
 					You can contact the website owner, Edoardo Scibona, on{' '}
-					<a href={githubIssuesUrl} target="_blank">Github</a> or by{' '}
+					<a href={ghIssuesUrl} target="_blank">Github</a> or by{' '}
 					<a href="mailto:scibona.edoardo@proton.me">email</a>.
 				</p>
 			</li>

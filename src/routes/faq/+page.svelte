@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { githubIssuesUrl, projectName } from '$lib/metadata';
+	const ghIssuesUrl = 'https://github.com/velut/gridify.it/issues';
 </script>
 
 <main class="flex items-center justify-center p-4 sm:p-8">
@@ -9,7 +9,7 @@
 		<div class="divider"></div>
 
 		<p>
-			This is a list of frequently asked questions about {projectName}.
+			This is a list of frequently asked questions about gridify.it.
 			<br />
 			Last updated on July 15, 2023.
 		</p>
@@ -18,9 +18,9 @@
 			<li>
 				<p><strong>What can I use this app for?</strong></p>
 				<p>
-					With {projectName} you can easily <strong>add a customizable grid</strong> to your images,
-					photos, reference pictures, pixel art creations or cross stitch designs. You can use various
-					grid types and line colors, resize images, and round the corners of grid cells.
+					With gridify.it you can easily <strong>add a customizable grid</strong> to your images, photos,
+					reference pictures, pixel art creations or cross stitch designs. You can use various grid types
+					and line colors, resize images, and round the corners of grid cells.
 				</p>
 				<p>
 					The pictures below show some examples of what you can do. Click on the previews to see the
@@ -276,8 +276,8 @@
 					<strong>I found an error / I want to ask another question.</strong>
 				</p>
 				<p>
-					Please <a href={githubIssuesUrl} target="_blank">open an issue on Github</a>, it's the
-					fastest way to have your question seen.
+					Please <a href={ghIssuesUrl} target="_blank">open an issue on Github</a>, it's the fastest
+					way to have your question seen.
 				</p>
 			</li>
 		</ul>

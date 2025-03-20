@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { projectNameEscaped } from '$lib/metadata';
 	import { outputImages, outputImagesState } from '$lib/stores';
 	import { downloadZip } from 'client-zip';
 	import fileSaver from 'file-saver';
@@ -12,7 +11,7 @@
 
 	const downloadImages = async () => {
 		const archive = await downloadZip(images.map((image) => image.file)).blob();
-		saveAs(archive, `${projectNameEscaped}_images.zip`);
+		saveAs(archive, 'gridify_it_images.zip');
 	};
 </script>
 
