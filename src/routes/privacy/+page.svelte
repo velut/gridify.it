@@ -80,7 +80,7 @@
 				<p><strong>Contact Information</strong></p>
 				<p>
 					You can contact the website owner, Edoardo Scibona, on{' '}
-					<a href={ghIssuesUrl}>Github</a> or by{' '}
+					<a href={ghIssuesUrl}>GitHub</a> or by{' '}
 					<a href="mailto:scibona.edoardo@proton.me">email</a>.
 				</p>
 			</li>

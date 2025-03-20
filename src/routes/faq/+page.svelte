@@ -275,7 +275,7 @@
 					<strong>I found an error / I want to ask another question.</strong>
 				</p>
 				<p>
-					Please <a href={ghIssuesUrl}>open an issue on Github</a>, it's the fastest way to have
+					Please <a href={ghIssuesUrl}>open an issue on GitHub</a>, it's the fastest way to have
 					your question seen.
 				</p>
 			</li>
