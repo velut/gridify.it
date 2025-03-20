@@ -29,7 +29,7 @@
 
 				<div class="my-5 grid grid-cols-2 gap-4 sm:grid-cols-3">
 					{#each ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg'] as imageUrl}
-						<a href="/examples/{imageUrl}" target="_blank" class="block h-full w-full">
+						<a href="/examples/{imageUrl}" class="block h-full w-full">
 							<img
 								class="m-0 rounded-sm"
 								src="/examples/small/{imageUrl}"
@@ -41,10 +41,9 @@
 
 				<blockquote class="text-sm">
 					<p>
-						Photo by <a href="https://unsplash.com/@cedric_photography" target="_blank">Cédric VT</a
-						>
+						Photo by <a href="https://unsplash.com/@cedric_photography">Cédric VT</a>
 						on
-						<a href="https://unsplash.com/photos/IuJc2qh2TcA" target="_blank">Unsplash</a>
+						<a href="https://unsplash.com/photos/IuJc2qh2TcA">Unsplash</a>
 					</p>
 				</blockquote>
 			</li>
@@ -276,8 +275,8 @@
 					<strong>I found an error / I want to ask another question.</strong>
 				</p>
 				<p>
-					Please <a href={ghIssuesUrl} target="_blank">open an issue on Github</a>, it's the fastest
-					way to have your question seen.
+					Please <a href={ghIssuesUrl}>open an issue on Github</a>, it's the fastest way to have
+					your question seen.
 				</p>
 			</li>
 		</ul>

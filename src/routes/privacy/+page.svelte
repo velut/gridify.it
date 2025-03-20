@@ -45,10 +45,10 @@
 					<strong>Server Provider</strong>
 				</p>
 				<p>
-					This website is hosted by <a href="https://bunny.net/" target="_blank">Bunny.net</a>
+					This website is hosted by <a href="https://bunny.net/">Bunny.net</a>
 					, an EU based company, which may collect some data to provide its services. To learn more about
 					the data collected by Bunny.net, you can read their{' '}
-					<a href="https://bunny.net/privacy" target="_blank">privacy policy</a>
+					<a href="https://bunny.net/privacy">privacy policy</a>
 					.
 				</p>
 			</li>
@@ -58,10 +58,10 @@
 					<strong>Server Logs</strong>
 				</p>
 				<p>
-					Our host, <a href="https://bunny.net/" target="_blank">Bunny.net</a>, provides us with
-					<a href="https://docs.bunny.net/docs/cdn-log-format" target="_blank">server logs</a> that
-					contain information about requests made to this website. Every IP address present in the
-					logs is automatically anonymized to <code>0.0.0.0</code> to prevent storing personal data.
+					Our host, <a href="https://bunny.net/">Bunny.net</a>, provides us with
+					<a href="https://docs.bunny.net/docs/cdn-log-format">server logs</a> that contain
+					information about requests made to this website. Every IP address present in the logs is
+					automatically anonymized to <code>0.0.0.0</code> to prevent storing personal data.
 				</p>
 			</li>
 
@@ -80,7 +80,7 @@
 				<p><strong>Contact Information</strong></p>
 				<p>
 					You can contact the website owner, Edoardo Scibona, on{' '}
-					<a href={ghIssuesUrl} target="_blank">Github</a> or by{' '}
+					<a href={ghIssuesUrl}>Github</a> or by{' '}
 					<a href="mailto:scibona.edoardo@proton.me">email</a>.
 				</p>
 			</li>
