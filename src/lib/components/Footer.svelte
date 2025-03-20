@@ -7,7 +7,7 @@
 	const ghCommitUrl = `${ghUrl}/commit/${__GIT_COMMIT}`;
 </script>
 
-<footer class="footer lg:footer-horizontal bg-neutral text-neutral-content items-center p-4">
+<footer class="footer lg:footer-horizontal bg-base-200 text-base-content items-center p-4">
 	<aside class="grid-flow-row items-center sm:grid-flow-col">
 		<a href="/" class="link link-hover flex items-center gap-2 font-bold">
 			<MaterialSymbolsBackgroundGridSmall class="size-6" />
