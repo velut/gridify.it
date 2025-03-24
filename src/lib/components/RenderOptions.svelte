@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { RenderOptions } from '$lib/state.svelte';
 	import MaterialSymbolsColorsRounded from '~icons/material-symbols/colors-rounded';
 	import MaterialSymbolsCropRounded from '~icons/material-symbols/crop-rounded';
 	import MaterialSymbolsExpandRounded from '~icons/material-symbols/expand-rounded';
@@ -7,6 +8,8 @@
 	import MaterialSymbolsOpenInFullRounded from '~icons/material-symbols/open-in-full-rounded';
 	import MaterialSymbolsRoundedCornerRounded from '~icons/material-symbols/rounded-corner-rounded';
 	import MaterialSymbolsTextureRounded from '~icons/material-symbols/texture-rounded';
+
+	const opts = new RenderOptions();
 </script>
 
 <div>
@@ -15,7 +18,7 @@
 			<MaterialSymbolsGrid3x3Rounded class="size-6" />
 			Grid type
 		</legend>
-		<select class="select">
+		<select class="select" bind:value={opts.grid.type}>
 			<option value="full">Full grid (Grid lines and outer border)</option>
 			<option value="lines">Grid lines only</option>
 			<option value="border">Outer border only</option>
@@ -25,22 +28,22 @@
 
 	<fieldset class="fieldset text-sm">
 		<legend class="fieldset-legend">
-			<MaterialSymbolsLineWeightRounded class="size-6" />
-			Grid lines size
+			<MaterialSymbolsColorsRounded class="size-6" />
+			Grid color
 		</legend>
 		<label class="input">
-			<input type="text" />
-			<span class="label">pixels</span>
+			<input type="color" bind:value={opts.grid.color} />
 		</label>
 	</fieldset>
 
 	<fieldset class="fieldset text-sm">
 		<legend class="fieldset-legend">
-			<MaterialSymbolsColorsRounded class="size-6" />
-			Grid lines color
+			<MaterialSymbolsLineWeightRounded class="size-6" />
+			Grid lines size
 		</legend>
 		<label class="input">
-			<input type="color" />
+			<input type="text" inputMode="numeric" pattern="[0-9]*" bind:value={opts.grid.lines.size} />
+			<span class="label">px</span>
 		</label>
 	</fieldset>
 
@@ -49,7 +52,7 @@
 			<MaterialSymbolsCropRounded class="size-6" />
 			Grid cell shape
 		</legend>
-		<select class="select">
+		<select class="select" bind:value={opts.grid.cell.shape}>
 			<option value="square">Square (Same width and height)</option>
 			<option value="rectangle">Rectangle (Different width and height)</option>
 		</select>
@@ -61,8 +64,8 @@
 			Grid cell width
 		</legend>
 		<label class="input">
-			<input type="text" />
-			<span class="label">pixels</span>
+			<input type="text" inputMode="numeric" pattern="[0-9]*" bind:value={opts.grid.cell.width} />
+			<span class="label">px</span>
 		</label>
 	</fieldset>
 
@@ -72,8 +75,14 @@
 			Grid cell height
 		</legend>
 		<label class="input">
-			<input type="text" />
-			<span class="label">pixels</span>
+			<input
+				type="text"
+				inputMode="numeric"
+				pattern="[0-9]*"
+				bind:value={opts.grid.cell.height}
+				disabled={opts.grid.cell.shape === 'square'}
+			/>
+			<span class="label">px</span>
 		</label>
 	</fieldset>
 
@@ -83,7 +92,7 @@
 			Grid cell scale
 		</legend>
 		<label class="input">
-			<input type="text" />
+			<input type="text" inputMode="numeric" pattern="[0-9]*" bind:value={opts.grid.cell.scale} />
 			<span class="label">x</span>
 		</label>
 	</fieldset>
@@ -94,8 +103,13 @@
 			Grid cell corner radius
 		</legend>
 		<label class="input">
-			<input type="text" />
-			<span class="label">pixels</span>
+			<input
+				type="text"
+				inputMode="numeric"
+				pattern="[0-9]*"
+				bind:value={opts.grid.cell.cornerRadius}
+			/>
+			<span class="label">px</span>
 		</label>
 	</fieldset>
 
@@ -104,7 +118,7 @@
 			<MaterialSymbolsTextureRounded class="size-6" />
 			Transparent pixels
 		</legend>
-		<select class="select">
+		<select class="select" bind:value={opts.opacity}>
 			<option value="preserve">Preserve transparency</option>
 			<option value="opaque">Make fully opaque</option>
 		</select>
