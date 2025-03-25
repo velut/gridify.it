@@ -75,13 +75,16 @@
 			Grid cell height
 		</legend>
 		<label class="input">
-			<input
-				type="text"
-				inputMode="numeric"
-				pattern="[0-9]*"
-				bind:value={opts.grid.cell.height}
-				disabled={opts.grid.cell.shape === 'square'}
-			/>
+			{#if opts.grid.cell.shape === 'rectangle'}
+				<input
+					type="text"
+					inputMode="numeric"
+					pattern="[0-9]*"
+					bind:value={opts.grid.cell.height}
+				/>
+			{:else}
+				<input type="text" value={opts.grid.cell.heightInt} disabled />
+			{/if}
 			<span class="label">px</span>
 		</label>
 	</fieldset>

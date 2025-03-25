@@ -39,7 +39,7 @@ class GridCell {
 	width = $state('1');
 	widthInt = $derived(toInt(this.width, 1));
 	height = $state('1');
-	heightInt = $derived(toInt(this.height, 1));
+	heightInt = $derived(this.shape === 'rectangle' ? toInt(this.height, 1) : this.widthInt);
 	scale = $state('1');
 	scaleInt = $derived(toInt(this.scale, 1));
 	cornerRadius = $state('0');
