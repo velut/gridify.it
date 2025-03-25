@@ -45,9 +45,9 @@
 		"@sveltejs/vite-plugin-svelte": "^5.0.3",
 		"@tailwindcss/typography": "^0.5.16",
 		"@tailwindcss/vite": "^4.0.15",
-		"@types/bun": "^1.2.5",
+		"@types/bun": "^1.2.6",
 		"@types/file-saver": "^2.0.7",
-		"@types/node": "^22.13.11",
+		"@types/node": "^22.13.13",
 		"daisyui": "^5.0.9",
 		"prettier": "^3.5.3",
 		"prettier-plugin-svelte": "^3.3.3",
@@ -58,6 +58,6 @@
 		"tailwindcss": "^4.0.15",
 		"typescript": "^5.8.2",
 		"unplugin-icons": "^22.1.0",
-		"vite": "^6.2.2"
+		"vite": "^6.2.3"
 	}
 }
