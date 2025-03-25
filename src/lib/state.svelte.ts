@@ -1,12 +1,13 @@
 import { toInt } from '$lib/to-int';
+import type { GridShape, GridType, Opacity } from '$lib/types';
 
 export class RenderOptions {
 	grid = new Grid();
-	opacity = $state<'preserve' | 'opaque'>('preserve');
+	opacity = $state<Opacity>('preserve');
 }
 
 class Grid {
-	type = $state<'full' | 'lines' | 'border' | 'none'>('full');
+	type = $state<GridType>('full');
 	color = $state('#000000');
 	lines = new GridLines();
 	cell = new GridCell();
@@ -18,7 +19,7 @@ class GridLines {
 }
 
 class GridCell {
-	shape = $state<'square' | 'rectangle'>('square');
+	shape = $state<GridShape>('square');
 	width = $state('1');
 	widthInt = $derived(toInt(this.width, 1));
 	height = $state('1');
