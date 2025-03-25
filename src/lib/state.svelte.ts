@@ -4,6 +4,11 @@ import type { GridShape, GridType, Opacity } from '$lib/types';
 export class RenderOptions {
 	grid = new Grid();
 	opacity = $state<Opacity>('preserve');
+
+	reset() {
+		this.grid.reset();
+		this.opacity = 'preserve';
+	}
 }
 
 class Grid {
@@ -11,11 +16,22 @@ class Grid {
 	color = $state('#000000');
 	lines = new GridLines();
 	cell = new GridCell();
+
+	reset() {
+		this.type = 'full';
+		this.color = '#000000';
+		this.lines.reset();
+		this.cell.reset();
+	}
 }
 
 class GridLines {
 	size = $state('1');
 	sizeInt = $derived(toInt(this.size, 1));
+
+	reset() {
+		this.size = '1';
+	}
 }
 
 class GridCell {
@@ -28,4 +44,12 @@ class GridCell {
 	scaleInt = $derived(toInt(this.scale, 1));
 	cornerRadius = $state('0');
 	cornerRadiusInt = $derived(toInt(this.cornerRadius, 0));
+
+	reset() {
+		this.shape = 'square';
+		this.width = '1';
+		this.height = '1';
+		this.scale = '1';
+		this.cornerRadius = '0';
+	}
 }
