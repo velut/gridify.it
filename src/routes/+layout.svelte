@@ -43,7 +43,7 @@
 	<meta name="twitter:creator" content="@EdoardoScibona" />
 </svelte:head>
 
-<div class="grid h-screen auto-cols-fr grid-rows-[auto_minmax(0,1fr)_auto]">
+<div class="_h-screen grid auto-cols-fr grid-rows-[auto_minmax(0,1fr)_auto]">
 	<Navbar />
 	{@render children?.()}
 	<Footer />
