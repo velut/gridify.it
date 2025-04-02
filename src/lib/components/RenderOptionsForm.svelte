@@ -1,98 +1,159 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
+	import type { RenderOptionsState } from '$lib/render-options-state.svelte';
+	import MaterialSymbolsBackToTabRounded from '~icons/material-symbols/back-to-tab-rounded';
+	import MaterialSymbolsColorsRounded from '~icons/material-symbols/colors-rounded';
+	import MaterialSymbolsCropRounded from '~icons/material-symbols/crop-rounded';
+	import MaterialSymbolsExpandRounded from '~icons/material-symbols/expand-rounded';
+	import MaterialSymbolsGrid3x3Rounded from '~icons/material-symbols/grid-3x3-rounded';
+	import MaterialSymbolsLineWeightRounded from '~icons/material-symbols/line-weight-rounded';
+	import MaterialSymbolsRoundedCornerRounded from '~icons/material-symbols/rounded-corner-rounded';
+	import MaterialSymbolsTextureRounded from '~icons/material-symbols/texture-rounded';
 
-	import CellHeightInput from '$lib/components/CellHeightInput.svelte';
-	import CellRadiusInput from '$lib/components/CellRadiusInput.svelte';
-	import CellScaleInput from '$lib/components/CellScaleInput.svelte';
-	import CellSquareAspectRatioInput from '$lib/components/CellSquareAspectRatioInput.svelte';
-	import CellWidthInput from '$lib/components/CellWidthInput.svelte';
-	import GridStrokeColorInput from '$lib/components/GridStrokeColorInput.svelte';
-	import GridStrokeSizeInput from '$lib/components/GridStrokeSizeInput.svelte';
-	import GridTypeInput from '$lib/components/GridTypeInput.svelte';
-	import PixelFullyOpaqueInput from '$lib/components/PixelFullyOpaqueInput.svelte';
-	import RenderImagesButton from '$lib/components/RenderImagesButton.svelte';
-	import ResetRenderOptionsButton from '$lib/components/ResetRenderOptionsButton.svelte';
-	import { renderOptionsSchema } from '$lib/render-options';
-	import { renderOptions } from '$lib/stores';
-	import { defaults, intProxy, superForm } from 'sveltekit-superforms';
-	import { zod } from 'sveltekit-superforms/adapters';
+	type Props = {
+		renderOptionsState: RenderOptionsState;
+		onRenderOptionsSubmit: () => any;
+	};
 
-	const {
-		form,
-		errors,
-		tainted,
-		isTainted,
-		reset: resetForm,
-		enhance
-	} = superForm(defaults(zod(renderOptionsSchema)), {
-		SPA: true,
-		dataType: 'json',
-		validators: zod(renderOptionsSchema),
-		resetForm: false,
-		onUpdate({ form }) {
-			if (form.valid) {
-				$renderOptions = renderOptionsSchema.parse(form.data);
-			}
-		}
-	});
+	let { renderOptionsState: opts, onRenderOptionsSubmit }: Props = $props();
 
-	const gridStrokeSizeIntProxy = intProxy(form, 'grid.stroke.size');
-	const cellWidthIntProxy = intProxy(form, 'cell.width');
-	const cellHeightIntProxy = intProxy(form, 'cell.height');
-	const cellScaleIntProxy = intProxy(form, 'cell.scale');
-	const cellRadiusIntProxy = intProxy(form, 'cell.radius');
-
-	let isFormTainted = $derived(isTainted($tainted));
-	let isGridDisabled = $derived($form.grid.type === 'none');
-	let isCellSquareAspectRatio = $derived($form.cell.squareAspectRatio);
-	run(() => {
-		if (isGridDisabled) {
-			$gridStrokeSizeIntProxy = 'reset-trigger';
-			$gridStrokeSizeIntProxy = '1';
-		}
-	});
-	run(() => {
-		if (isCellSquareAspectRatio) {
-			$cellHeightIntProxy = 'reset-trigger';
-			$cellHeightIntProxy = '1';
-		}
-	});
+	function handleSubmit(e: SubmitEvent) {
+		e.preventDefault();
+		onRenderOptionsSubmit();
+	}
 </script>
 
-<form method="POST" use:enhance>
-	<ResetRenderOptionsButton {isFormTainted} {resetForm} />
+<form id="render-options-form" onsubmit={handleSubmit}>
+	<fieldset class="fieldset text-sm">
+		<legend class="fieldset-legend">
+			<MaterialSymbolsGrid3x3Rounded class="size-6" />
+			Grid type
+		</legend>
+		<select class="select w-full" bind:value={opts.grid.type}>
+			<option value="full">Full grid (Grid lines and outer border)</option>
+			<option value="lines">Grid lines only</option>
+			<option value="border">Outer border only</option>
+			<option value="none">None</option>
+		</select>
+	</fieldset>
 
-	<div class="divider"></div>
+	<fieldset class="fieldset text-sm">
+		<legend class="fieldset-legend">
+			<MaterialSymbolsColorsRounded class="size-6" />
+			Grid color
+		</legend>
+		<label class="input w-full">
+			<input type="color" bind:value={opts.grid.color} />
+		</label>
+	</fieldset>
 
-	<div class="space-y-2">
-		<GridTypeInput bind:value={$form.grid.type} />
-		<GridStrokeSizeInput
-			bind:value={$gridStrokeSizeIntProxy}
-			errors={$errors.grid?.stroke?.size}
-			disabled={isGridDisabled}
-		/>
-		<GridStrokeColorInput bind:value={$form.grid.stroke.color} />
-	</div>
+	<fieldset class="fieldset text-sm">
+		<legend class="fieldset-legend">
+			<MaterialSymbolsLineWeightRounded class="size-6" />
+			Grid lines size
+		</legend>
+		<label class="input w-full">
+			<input
+				type="text"
+				inputMode="numeric"
+				pattern="[0-9]*"
+				title="Use 1 or a bigger integer number of pixels"
+				bind:value={opts.grid.lines.size}
+			/>
+			<span class="label">px</span>
+		</label>
+	</fieldset>
 
-	<div class="divider"></div>
+	<fieldset class="fieldset text-sm">
+		<legend class="fieldset-legend">
+			<MaterialSymbolsCropRounded class="size-6" />
+			Grid cell shape
+		</legend>
+		<select class="select w-full" bind:value={opts.grid.cell.shape}>
+			<option value="square">Square (Same width and height)</option>
+			<option value="rectangle">Rectangle (Different width and height)</option>
+		</select>
+	</fieldset>
 
-	<div class="space-y-2">
-		<CellSquareAspectRatioInput bind:checked={$form.cell.squareAspectRatio} />
-		<CellWidthInput bind:value={$cellWidthIntProxy} errors={$errors.cell?.width} />
-		<CellHeightInput
-			bind:value={$cellHeightIntProxy}
-			errors={$errors.cell?.height}
-			disabled={isCellSquareAspectRatio}
-		/>
-		<CellScaleInput bind:value={$cellScaleIntProxy} errors={$errors.cell?.scale} />
-		<CellRadiusInput bind:value={$cellRadiusIntProxy} errors={$errors.cell?.radius} />
-	</div>
+	<fieldset class="fieldset text-sm">
+		<legend class="fieldset-legend">
+			<MaterialSymbolsExpandRounded class="size-6 rotate-90" />
+			Grid cell width
+		</legend>
+		<label class="input w-full">
+			<input
+				type="text"
+				inputMode="numeric"
+				pattern="[0-9]*"
+				title="Use 1 or a bigger integer number of pixels"
+				bind:value={opts.grid.cell.width}
+			/>
+			<span class="label">px</span>
+		</label>
+	</fieldset>
 
-	<div class="divider"></div>
+	<fieldset class="fieldset text-sm">
+		<legend class="fieldset-legend">
+			<MaterialSymbolsExpandRounded class="size-6" />
+			Grid cell height
+		</legend>
+		<label class="input w-full">
+			{#if opts.grid.cell.shape === 'rectangle'}
+				<input
+					type="text"
+					inputMode="numeric"
+					pattern="[0-9]*"
+					title="Use 1 or a bigger integer number of pixels"
+					bind:value={opts.grid.cell.height}
+				/>
+			{:else}
+				<input type="text" value={opts.grid.cell.width} disabled />
+			{/if}
+			<span class="label">px</span>
+		</label>
+	</fieldset>
 
-	<PixelFullyOpaqueInput bind:checked={$form.pixel.fullyOpaque} />
+	<fieldset class="fieldset text-sm">
+		<legend class="fieldset-legend">
+			<MaterialSymbolsBackToTabRounded class="size-6 -scale-x-100" />
+			Grid cell scale
+		</legend>
+		<label class="input w-full">
+			<input
+				type="text"
+				inputMode="numeric"
+				pattern="[0-9]*"
+				title="Use 1 or a bigger integer number of pixels"
+				bind:value={opts.grid.cell.scale}
+			/>
+			<span class="label">x</span>
+		</label>
+	</fieldset>
 
-	<div class="divider"></div>
+	<fieldset class="fieldset text-sm">
+		<legend class="fieldset-legend">
+			<MaterialSymbolsRoundedCornerRounded class="size-6" />
+			Grid cell corner radius
+		</legend>
+		<label class="input w-full">
+			<input
+				type="text"
+				inputMode="numeric"
+				pattern="[0-9]*"
+				title="Use 0 or a bigger integer number of pixels"
+				bind:value={opts.grid.cell.cornerRadius}
+			/>
+			<span class="label">px</span>
+		</label>
+	</fieldset>
 
-	<RenderImagesButton />
+	<fieldset class="fieldset text-sm">
+		<legend class="fieldset-legend">
+			<MaterialSymbolsTextureRounded class="size-6" />
+			Transparent pixels
+		</legend>
+		<select class="select w-full" bind:value={opts.opacity}>
+			<option value="preserve">Preserve transparency</option>
+			<option value="opaque">Make fully opaque</option>
+		</select>
+	</fieldset>
 </form>
