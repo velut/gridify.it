@@ -1,25 +1,14 @@
 <script lang="ts">
-	import { renderOptions } from '$lib/stores';
+	import MaterialSymbolsResetWrenchRounded from '~icons/material-symbols/reset-wrench-rounded';
 
-	interface Props {
-		isFormTainted: boolean;
-		resetForm: () => void;
-	}
-
-	let { isFormTainted, resetForm }: Props = $props();
-
-	const resetFormAndRenderOptions = () => {
-		resetForm();
-		$renderOptions = null;
+	type Props = {
+		onResetRenderOptions: () => any;
 	};
 
-	let disabled = $derived(!isFormTainted && $renderOptions === null);
+	let { onResetRenderOptions }: Props = $props();
 </script>
 
-<button
-	title="Click to reset all rendering options"
-	type="button"
-	class="btn btn-outline btn-sm hover:btn-error w-full"
-	onclick={resetFormAndRenderOptions}
-	{disabled}>Reset Options</button
->
+<button class="btn btn-error btn-outline w-full" onclick={onResetRenderOptions}>
+	<MaterialSymbolsResetWrenchRounded class="size-6" />
+	Reset options
+</button>

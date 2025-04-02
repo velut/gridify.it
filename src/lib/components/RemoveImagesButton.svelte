@@ -1,16 +1,14 @@
 <script lang="ts">
-	import { files } from '$lib/stores';
+	import MaterialSymbolsResetImageRounded from '~icons/material-symbols/reset-image-rounded';
 
-	const resetFiles = async () => {
-		$files = [];
+	type Props = {
+		onRemoveImages: () => any;
 	};
 
-	let disabled = $derived($files.length === 0);
+	let { onRemoveImages }: Props = $props();
 </script>
 
-<button
-	title="Click to remove all images"
-	class="btn btn-outline btn-sm hover:btn-error w-full"
-	onclick={resetFiles}
-	{disabled}>Remove Images</button
->
+<button class="btn btn-error btn-outline w-full" onclick={onRemoveImages}>
+	<MaterialSymbolsResetImageRounded class="size-6" />
+	Remove images
+</button>
