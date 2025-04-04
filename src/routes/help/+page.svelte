@@ -4,9 +4,7 @@
 
 <main class="flex items-center justify-center p-4 sm:p-8">
 	<article class="prose">
-		<div class="divider"></div>
 		<h1 class="my-0 text-center">FAQ &amp; Instructions</h1>
-		<div class="divider"></div>
 
 		<p>
 			This is a list of frequently asked questions about gridify.it.
@@ -280,7 +278,5 @@
 				</p>
 			</li>
 		</ul>
-
-		<div class="divider"></div>
 	</article>
 </main>

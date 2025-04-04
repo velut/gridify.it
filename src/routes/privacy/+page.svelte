@@ -4,9 +4,7 @@
 
 <main class="flex items-center justify-center p-4 sm:p-8">
 	<article class="prose">
-		<div class="divider"></div>
 		<h1 class="my-0 text-center">Privacy Policy</h1>
-		<div class="divider"></div>
 
 		<p>
 			This is the privacy policy for gridify.it.
@@ -85,7 +83,5 @@
 				</p>
 			</li>
 		</ul>
-
-		<div class="divider"></div>
 	</article>
 </main>
