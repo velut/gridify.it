@@ -9,7 +9,7 @@
 	}
 </script>
 
-<button class="btn btn-error btn-outline w-full" onclick={resetRenderOptions}>
+<button type="button" class="btn btn-error btn-outline w-full" onclick={resetRenderOptions}>
 	<MaterialSymbolsResetWrenchRounded class="size-6" />
 	Reset options
 </button>

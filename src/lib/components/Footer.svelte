@@ -24,6 +24,6 @@
 		<a href={ghUrl} class="link link-hover">GitHub</a>
 		<a href="/third-party-licenses.txt" class="link link-hover">OSS licenses</a>
 		<a href="/privacy/" class="link link-hover">Privacy policy</a>
-		<button class="link link-hover" onclick={changeTheme}>Change theme</button>
+		<button type="button" class="link link-hover" onclick={changeTheme}>Change theme</button>
 	</nav>
 </footer>

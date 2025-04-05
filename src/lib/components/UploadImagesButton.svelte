@@ -6,7 +6,7 @@
 	}
 </script>
 
-<button class="btn btn-primary w-full" onclick={onUploadImages}>
+<button type="button" class="btn btn-primary w-full" onclick={onUploadImages}>
 	<MaterialSymbolsImageArrowUpRounded class="size-6" />
 	Upload images
 </button>
