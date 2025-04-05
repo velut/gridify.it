@@ -1,11 +1,9 @@
 <script lang="ts">
 	import MaterialSymbolsImageArrowUpRounded from '~icons/material-symbols/image-arrow-up-rounded';
 
-	type Props = {
-		onUploadImages: () => any;
-	};
-
-	let { onUploadImages }: Props = $props();
+	function onUploadImages() {
+		console.log('onUploadImages');
+	}
 </script>
 
 <button class="btn btn-primary w-full" onclick={onUploadImages}>

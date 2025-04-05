@@ -9,24 +9,12 @@
 
 	let appState = new AppState();
 	setAppStateContext(appState);
-
-	function onUploadImages() {
-		console.log('onUploadImages');
-	}
-
-	function onRemoveImages() {
-		console.log('onRemoveImages');
-	}
-
-	function onDownloadImages() {
-		console.log('onDownloadImages');
-	}
 </script>
 
 <div class="grid gap-4 overflow-hidden p-4">
 	<div class="bg-base-300 grid gap-4 rounded-xl p-4">
-		<UploadImagesButton {onUploadImages} />
-		<RemoveImagesButton {onRemoveImages} />
+		<UploadImagesButton />
+		<RemoveImagesButton />
 	</div>
 
 	<div class="bg-base-300 grid gap-4 rounded-xl p-4">
@@ -36,6 +24,6 @@
 
 	<div class="bg-base-300 grid gap-4 rounded-xl p-4">
 		<RenderImagesButton />
-		<DownloadImagesButton {onDownloadImages} />
+		<DownloadImagesButton />
 	</div>
 </div>

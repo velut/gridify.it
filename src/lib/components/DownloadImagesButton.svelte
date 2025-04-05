@@ -1,11 +1,9 @@
 <script lang="ts">
 	import MaterialSymbolsDownloadRounded from '~icons/material-symbols/download-rounded';
 
-	type Props = {
-		onDownloadImages: () => any;
-	};
-
-	let { onDownloadImages }: Props = $props();
+	function onDownloadImages() {
+		console.log('onDownloadImages');
+	}
 </script>
 
 <button class="btn btn-primary w-full" onclick={onDownloadImages}>
