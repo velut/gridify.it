@@ -27,4 +27,8 @@ export class ImagesState {
 		this.inputImages = [];
 		this.outputImages = [];
 	}
+
+	hasInputImages() {
+		return this.inputImages.length > 0;
+	}
 }

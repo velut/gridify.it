@@ -9,7 +9,12 @@
 	}
 </script>
 
-<button class="btn btn-error btn-outline w-full" onclick={resetImages}>
+<button
+	type="button"
+	class="btn btn-error btn-outline w-full"
+	onclick={resetImages}
+	disabled={!images.hasInputImages()}
+>
 	<MaterialSymbolsResetImageRounded class="size-6" />
 	Remove images
 </button>
