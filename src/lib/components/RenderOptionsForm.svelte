@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RenderOptionsState } from '$lib/render-options-state.svelte';
+	import { getAppStateContext } from '$lib/app-state.svelte';
 	import MaterialSymbolsBackToTabRounded from '~icons/material-symbols/back-to-tab-rounded';
 	import MaterialSymbolsColorsRounded from '~icons/material-symbols/colors-rounded';
 	import MaterialSymbolsCropRounded from '~icons/material-symbols/crop-rounded';
@@ -9,16 +9,11 @@
 	import MaterialSymbolsRoundedCornerRounded from '~icons/material-symbols/rounded-corner-rounded';
 	import MaterialSymbolsTextureRounded from '~icons/material-symbols/texture-rounded';
 
-	type Props = {
-		renderOptionsState: RenderOptionsState;
-		onRenderOptionsSubmit: () => any;
-	};
-
-	let { renderOptionsState: opts, onRenderOptionsSubmit }: Props = $props();
+	let opts = getAppStateContext().renderOptions;
 
 	function handleSubmit(e: SubmitEvent) {
 		e.preventDefault();
-		onRenderOptionsSubmit();
+		console.log(JSON.stringify(opts.toRenderOptions(), null, 2));
 	}
 </script>
 
