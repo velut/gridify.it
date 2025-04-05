@@ -34,7 +34,7 @@ export class RenderOptionsState {
 	}
 }
 
-class GridState {
+export class GridState {
 	type = $state<GridType>('full');
 	color = $state('#000000');
 	lines = new GridLinesState();
@@ -48,7 +48,7 @@ class GridState {
 	}
 }
 
-class GridLinesState {
+export class GridLinesState {
 	size = $state('1');
 
 	reset() {
@@ -56,7 +56,7 @@ class GridLinesState {
 	}
 }
 
-class GridCellState {
+export class GridCellState {
 	shape = $state<GridCellShape>('square');
 	width = $state('1');
 	height = $state('1');
