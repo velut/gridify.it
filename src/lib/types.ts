@@ -1,3 +1,8 @@
+export type Image = {
+	file: File;
+	url: string;
+};
+
 export type RenderOptions = {
 	grid: {
 		type: GridType;
