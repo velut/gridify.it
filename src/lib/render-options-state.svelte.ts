@@ -32,6 +32,10 @@ export class RenderOptionsState {
 		this.grid.reset();
 		this.opacity = 'preserve';
 	}
+
+	isDefault() {
+		return this.grid.isDefault() && this.opacity === 'preserve';
+	}
 }
 
 export class GridState {
@@ -46,6 +50,15 @@ export class GridState {
 		this.lines.reset();
 		this.cell.reset();
 	}
+
+	isDefault() {
+		return (
+			this.type === 'full' &&
+			this.color === '#000000' &&
+			this.lines.isDefault() &&
+			this.cell.isDefault()
+		);
+	}
 }
 
 export class GridLinesState {
@@ -53,6 +66,10 @@ export class GridLinesState {
 
 	reset() {
 		this.size = '1';
+	}
+
+	isDefault() {
+		return this.size === '1';
 	}
 }
 
@@ -69,5 +86,15 @@ export class GridCellState {
 		this.height = '1';
 		this.scale = '1';
 		this.cornerRadius = '0';
+	}
+
+	isDefault() {
+		return (
+			this.shape === 'square' &&
+			this.width === '1' &&
+			this.height === '1' &&
+			this.scale === '1' &&
+			this.cornerRadius === '0'
+		);
 	}
 }
