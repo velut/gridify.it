@@ -1,5 +1,7 @@
 import { revokeObjectUrls } from '$lib/revoke-object-urls';
 import type { Image } from '$lib/types';
+import accept from 'attr-accept';
+import { fromEvent } from 'file-selector';
 
 export class ImagesState {
 	#inputImages = $state<Image[]>([]);
@@ -30,5 +32,15 @@ export class ImagesState {
 
 	hasInputImages() {
 		return this.inputImages.length > 0;
+	}
+
+	async upload(event: Event) {
+		this.reset();
+		const images = (await fromEvent(event))
+			.filter((res) => res instanceof File)
+			.filter((file) => accept(file, 'image/*'))
+			.map((file) => ({ file, url: URL.createObjectURL(file) }));
+		this.inputImages = images;
+		this.outputImages = images;
 	}
 }
