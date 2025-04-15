@@ -8,5 +8,5 @@ export function revokeObjectUrls(images: Image[]) {
 		for (let url of urls) {
 			URL.revokeObjectURL(url);
 		}
-	}, 10 * 1000);
+	}, 10_000);
 }

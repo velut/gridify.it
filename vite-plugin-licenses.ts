@@ -68,7 +68,7 @@ export async function licenses() {
 		thirdParty: {
 			includePrivate: false,
 			allow: {
-				test: 'MIT OR ISC OR 0BSD OR Apache-2.0',
+				test: 'MIT OR ISC OR 0BSD OR BSD-3-Clause OR Apache-2.0',
 				failOnUnlicensed: true,
 				failOnViolation: true
 			},

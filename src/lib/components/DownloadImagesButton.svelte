@@ -3,17 +3,13 @@
 	import MaterialSymbolsDownloadRounded from '~icons/material-symbols/download-rounded';
 
 	let images = getAppStateContext().images;
-
-	function onDownloadImages() {
-		console.log('onDownloadImages');
-	}
 </script>
 
 <button
 	type="button"
 	class="btn btn-primary w-full"
-	onclick={onDownloadImages}
-	disabled={!images.hasInputImages()}
+	onclick={() => images.download()}
+	disabled={!images.hasOutputImages()}
 >
 	<MaterialSymbolsDownloadRounded class="size-6" />
 	Download images
