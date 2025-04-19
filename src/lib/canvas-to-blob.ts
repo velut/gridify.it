@@ -1,4 +1,4 @@
-export const canvasToBlob = async (canvas: HTMLCanvasElement): Promise<Blob> => {
+export async function canvasToBlob(canvas: HTMLCanvasElement): Promise<Blob> {
 	return new Promise((resolve, reject) => {
 		canvas.toBlob(
 			(blob) => {
@@ -12,4 +12,4 @@ export const canvasToBlob = async (canvas: HTMLCanvasElement): Promise<Blob> => 
 			1.0
 		);
 	});
-};
+}
