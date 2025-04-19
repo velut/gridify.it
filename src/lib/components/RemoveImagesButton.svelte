@@ -3,16 +3,12 @@
 	import MaterialSymbolsResetImageRounded from '~icons/material-symbols/reset-image-rounded';
 
 	let images = getAppStateContext().images;
-
-	function resetImages() {
-		images.reset();
-	}
 </script>
 
 <button
 	type="button"
 	class="btn btn-error btn-outline w-full"
-	onclick={resetImages}
+	onclick={() => images.reset()}
 	disabled={!images.hasInputImages()}
 >
 	<MaterialSymbolsResetImageRounded class="size-6" />

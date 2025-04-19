@@ -3,16 +3,12 @@
 	import MaterialSymbolsResetWrenchRounded from '~icons/material-symbols/reset-wrench-rounded';
 
 	let opts = getAppStateContext().renderOptions;
-
-	function resetRenderOptions() {
-		opts.reset();
-	}
 </script>
 
 <button
 	type="button"
 	class="btn btn-error btn-outline w-full"
-	onclick={resetRenderOptions}
+	onclick={() => opts.reset()}
 	disabled={opts.isDefault()}
 >
 	<MaterialSymbolsResetWrenchRounded class="size-6" />

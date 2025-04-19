@@ -5,24 +5,16 @@
 	let images = getAppStateContext().images;
 	let fileInput: HTMLInputElement;
 
-	function clickFileInput() {
-		fileInput.click();
-	}
-
-	function handleDragOver(event: DragEvent) {
-		event.preventDefault();
-	}
-
-	async function handleImagesUpload(event: Event) {
-		event.preventDefault();
-		await images.upload(event);
+	async function handleImagesUpload(e: Event) {
+		e.preventDefault();
+		await images.upload(e);
 		fileInput.value = '';
 	}
 </script>
 
-<svelte:window ondragover={handleDragOver} ondrop={handleImagesUpload} />
+<svelte:window ondragover={(e) => e.preventDefault()} ondrop={handleImagesUpload} />
 
-<button type="button" class="btn btn-primary w-full" onclick={clickFileInput}>
+<button type="button" class="btn btn-primary w-full" onclick={() => fileInput.click()}>
 	<MaterialSymbolsImageArrowUpRounded class="size-6" />
 	Upload images
 </button>
