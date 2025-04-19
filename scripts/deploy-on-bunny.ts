@@ -14,15 +14,15 @@ try {
 }
 
 async function deploy() {
-	const apiKey = process.env.BUNNY_API_KEY!;
-	const pullZoneId = process.env.BUNNY_PULL_ZONE_ID!;
-	const storageZoneHostname = process.env.BUNNY_STORAGE_ZONE_HOSTNAME!;
-	const storageZoneName = process.env.BUNNY_STORAGE_ZONE_NAME!;
-	const storageZonePassword = process.env.BUNNY_STORAGE_ZONE_PASSWORD!;
-	const storageZoneEndpoint = `https://${storageZoneHostname}/${storageZoneName}`;
+	let apiKey = process.env.BUNNY_API_KEY!;
+	let pullZoneId = process.env.BUNNY_PULL_ZONE_ID!;
+	let storageZoneHostname = process.env.BUNNY_STORAGE_ZONE_HOSTNAME!;
+	let storageZoneName = process.env.BUNNY_STORAGE_ZONE_NAME!;
+	let storageZonePassword = process.env.BUNNY_STORAGE_ZONE_PASSWORD!;
+	let storageZoneEndpoint = `https://${storageZoneHostname}/${storageZoneName}`;
 
 	// Script must be run from the project's root.
-	const buildDir = path.join(process.cwd(), 'build');
+	let buildDir = path.join(process.cwd(), 'build');
 
 	await clearStorageZone(storageZoneEndpoint, storageZonePassword);
 	await uploadFiles(buildDir, storageZoneEndpoint, storageZonePassword);
@@ -33,17 +33,17 @@ async function clearStorageZone(endpoint: string, password: string) {
 	console.log('clearStorageZone: clearing storage zone');
 
 	// DELETE ALL FILES IN THE STORAGE ZONE.
-	const storageRootDir = `${endpoint}/`;
+	let storageRootDir = `${endpoint}/`;
 	await fetch(storageRootDir, { method: 'DELETE', headers: { AccessKey: password } });
 
 	// Check if the storage zone was cleared.
 	await new Promise((r) => setTimeout(r, 500));
-	const res = await fetch(storageRootDir, {
+	let res = await fetch(storageRootDir, {
 		method: 'GET',
 		headers: { accept: 'application/json', AccessKey: password }
 	});
-	const data = await res.json();
-	const isEmptyArray = Array.isArray(data) && data.length === 0;
+	let data = await res.json();
+	let isEmptyArray = Array.isArray(data) && data.length === 0;
 	if (!isEmptyArray) {
 		throw new Error('clearStorageZone: failed to clear storage zone');
 	}
@@ -51,16 +51,16 @@ async function clearStorageZone(endpoint: string, password: string) {
 }
 
 async function uploadFiles(buildDir: string, endpoint: string, password: string) {
-	const entries = await fs.readdir(buildDir, { recursive: true, withFileTypes: true });
-	const files = entries.filter((entry) => entry.isFile());
+	let entries = await fs.readdir(buildDir, { recursive: true, withFileTypes: true });
+	let files = entries.filter((entry) => entry.isFile());
 	let uploadedFilesCount = 0;
-	for (const file of files) {
-		const fsPath = path.join(file.parentPath, file.name);
-		const relativePath = fsPath.replace(`${buildDir}/`, '');
-		const storagePath = `${endpoint}/${relativePath}`;
-		const data = await fs.readFile(fsPath);
-		const hash = createHash('sha256').update(data).digest('hex').toUpperCase();
-		const res = await fetch(storagePath, {
+	for (let file of files) {
+		let fsPath = path.join(file.parentPath, file.name);
+		let relativePath = fsPath.replace(`${buildDir}/`, '');
+		let storagePath = `${endpoint}/${relativePath}`;
+		let data = await fs.readFile(fsPath);
+		let hash = createHash('sha256').update(data).digest('hex').toUpperCase();
+		let res = await fetch(storagePath, {
 			method: 'PUT',
 			headers: { Checksum: hash, 'content-type': 'application/octet-stream', AccessKey: password },
 			body: data
@@ -75,7 +75,7 @@ async function uploadFiles(buildDir: string, endpoint: string, password: string)
 }
 
 async function purgePullZoneCache(pullZoneId: string, apiKey: string) {
-	const res = await fetch(`https://api.bunny.net/pullzone/${pullZoneId}/purgeCache`, {
+	let res = await fetch(`https://api.bunny.net/pullzone/${pullZoneId}/purgeCache`, {
 		method: 'POST',
 		headers: { 'content-type': 'application/json', AccessKey: apiKey }
 	});

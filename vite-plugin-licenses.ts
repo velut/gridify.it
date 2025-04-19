@@ -17,7 +17,7 @@ export async function licenses() {
 		return false;
 	}
 
-	const manualDeps: License[] = [
+	let manualDeps: License[] = [
 		{
 			name: '@tailwindcss/typography',
 			version: packageJson.devDependencies['@tailwindcss/typography'].replace('^', ''),
@@ -75,7 +75,7 @@ export async function licenses() {
 			output: {
 				file: 'static/third-party-licenses.txt',
 				template: (dependencies) => {
-					const foundLicenses = dependencies.map(
+					let foundLicenses = dependencies.map(
 						(dep): License => ({
 							name: dep.name ?? '',
 							version: dep.version ?? '',
