@@ -21,6 +21,8 @@ export type RenderOptions = {
 	opacity: PixelOpacity;
 };
 
+export type RenderOptionsGrid = RenderOptions['grid'];
+
 export type GridType = 'full' | 'lines' | 'border' | 'none';
 
 export type GridCellShape = 'square' | 'rectangle';
