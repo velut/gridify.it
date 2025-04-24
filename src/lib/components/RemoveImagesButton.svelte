@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getAppStateContext } from '$lib/app-state.svelte';
-	import MaterialSymbolsResetImageRounded from '~icons/material-symbols/reset-image-rounded';
+	import MaterialSymbolsHideImageRounded from '~icons/material-symbols/hide-image-rounded';
 
 	let { images } = getAppStateContext();
 </script>
@@ -11,6 +11,6 @@
 	onclick={() => images.reset()}
 	disabled={!images.hasInputImages()}
 >
-	<MaterialSymbolsResetImageRounded class="size-6" />
+	<MaterialSymbolsHideImageRounded class="size-6" />
 	Remove images
 </button>
