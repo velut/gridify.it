@@ -1,3 +1,4 @@
+import { cloneImages } from '$lib/clone-images';
 import { downloadBlob } from '$lib/download-blob';
 import { renderImages } from '$lib/render-images';
 import { revokeObjectUrls } from '$lib/revoke-object-urls';
@@ -43,19 +44,12 @@ export class ImagesState {
 
 	async upload(event: Event) {
 		this.reset();
-		let imageFiles = (await fromEvent(event))
+		let images = (await fromEvent(event))
 			.filter((res) => res instanceof File)
-			.filter((file) => accept(file, 'image/*'));
-		this.inputImages = imageFiles.map((file) => ({
-			file,
-			url: URL.createObjectURL(file)
-		}));
-
-		// Use different object URLs to prevent revoking the input images URLs.
-		this.outputImages = imageFiles.map((file) => ({
-			file,
-			url: URL.createObjectURL(file)
-		}));
+			.filter((file) => accept(file, 'image/*'))
+			.map((file) => ({ file, url: URL.createObjectURL(file) }));
+		this.inputImages = images;
+		this.outputImages = cloneImages(images);
 	}
 
 	async download() {
