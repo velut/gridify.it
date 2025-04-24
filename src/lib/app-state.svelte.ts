@@ -4,8 +4,8 @@ import { getContext, setContext } from 'svelte';
 
 let key = Symbol('app-state');
 
-export function setAppStateContext(appState: AppState) {
-	setContext(key, appState);
+export function setAppStateContext(state: AppState) {
+	setContext(key, state);
 }
 
 export function getAppStateContext(): AppState {
