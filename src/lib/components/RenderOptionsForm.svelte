@@ -9,11 +9,11 @@
 	import MaterialSymbolsRoundedCornerRounded from '~icons/material-symbols/rounded-corner-rounded';
 	import MaterialSymbolsTextureRounded from '~icons/material-symbols/texture-rounded';
 
-	let { renderOptions: opts } = getAppStateContext();
+	let { renderOptions: opts, images } = getAppStateContext();
 
-	function handleSubmit(e: SubmitEvent) {
+	async function handleSubmit(e: SubmitEvent) {
 		e.preventDefault();
-		console.log(JSON.stringify(opts.toRenderOptions(), null, 2));
+		await images.render(opts.toRenderOptions());
 	}
 </script>
 
