@@ -1,6 +1,7 @@
 import { downloadBlob } from '$lib/download-blob';
+import { renderImages } from '$lib/render-images';
 import { revokeObjectUrls } from '$lib/revoke-object-urls';
-import type { Image } from '$lib/types';
+import type { Image, RenderOptions } from '$lib/types';
 import { zipImages } from '$lib/zip-images';
 import accept from 'attr-accept';
 import { fromEvent } from 'file-selector';
@@ -58,5 +59,10 @@ export class ImagesState {
 		} else {
 			downloadBlob(await zipImages(this.outputImages), 'gridify-it-images.zip');
 		}
+	}
+
+	async render(opts: RenderOptions) {
+		if (!this.hasInputImages()) return;
+		this.outputImages = await renderImages(this.inputImages, opts);
 	}
 }
