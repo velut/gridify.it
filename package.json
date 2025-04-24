@@ -27,20 +27,13 @@
 		"pre-push": "bun i && bun run lint && bun run check && bun run build"
 	},
 	"dependencies": {
-		"@square/svelte-store": "^1.0.18",
 		"@zip.js/zip.js": "^2.7.60",
 		"attr-accept": "^2.2.5",
-		"client-zip": "^2.5.0",
 		"file-selector": "^2.1.2",
-		"p-limit": "^6.2.0",
-		"p-map": "^7.0.3",
-		"pathe": "^2.0.3",
-		"sveltekit-superforms": "^2.24.1",
-		"zod": "^3.24.3"
+		"p-map": "^7.0.3"
 	},
 	"devDependencies": {
 		"@iconify-json/material-symbols": "^1.2.20",
-		"@iconify-json/noto": "^1.2.3",
 		"@sveltejs/adapter-static": "^3.0.8",
 		"@sveltejs/kit": "^2.20.7",
 		"@sveltejs/vite-plugin-svelte": "^5.0.3",

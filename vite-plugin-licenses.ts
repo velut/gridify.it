@@ -49,15 +49,6 @@ export async function licenses() {
 				encoding: 'utf-8'
 			}),
 			url: 'https://github.com/google/material-design-icons'
-		},
-		{
-			name: 'Noto Emoji',
-			version: '16.0',
-			license: 'Apache-2.0',
-			licenseText: await fs.readFile('./third-party-licenses/noto-emoji/license.txt', {
-				encoding: 'utf-8'
-			}),
-			url: 'https://github.com/googlefonts/noto-emoji'
 		}
 	];
 
