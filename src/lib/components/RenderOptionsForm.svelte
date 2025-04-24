@@ -9,7 +9,7 @@
 	import MaterialSymbolsRoundedCornerRounded from '~icons/material-symbols/rounded-corner-rounded';
 	import MaterialSymbolsTextureRounded from '~icons/material-symbols/texture-rounded';
 
-	let opts = getAppStateContext().renderOptions;
+	let { renderOptions: opts } = getAppStateContext();
 
 	function handleSubmit(e: SubmitEvent) {
 		e.preventDefault();

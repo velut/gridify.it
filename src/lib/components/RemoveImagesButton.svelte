@@ -2,7 +2,7 @@
 	import { getAppStateContext } from '$lib/app-state.svelte';
 	import MaterialSymbolsResetImageRounded from '~icons/material-symbols/reset-image-rounded';
 
-	let images = getAppStateContext().images;
+	let { images } = getAppStateContext();
 </script>
 
 <button

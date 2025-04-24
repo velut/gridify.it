@@ -2,7 +2,7 @@
 	import { getAppStateContext } from '$lib/app-state.svelte';
 	import MaterialSymbolsResetWrenchRounded from '~icons/material-symbols/reset-wrench-rounded';
 
-	let opts = getAppStateContext().renderOptions;
+	let { renderOptions: opts } = getAppStateContext();
 </script>
 
 <button
