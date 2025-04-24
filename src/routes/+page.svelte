@@ -7,8 +7,7 @@
 	import ResetRenderOptionsButton from '$lib/components/ResetRenderOptionsButton.svelte';
 	import UploadImagesButton from '$lib/components/UploadImagesButton.svelte';
 
-	let appState = new AppState();
-	setAppStateContext(appState);
+	setAppStateContext(new AppState());
 </script>
 
 <div class="grid gap-4 overflow-hidden p-4">
