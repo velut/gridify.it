@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { AppState, setAppStateContext } from '$lib/app-state.svelte';
+	import Card from '$lib/components/Card.svelte';
 	import DownloadImagesButton from '$lib/components/DownloadImagesButton.svelte';
 	import RemoveImagesButton from '$lib/components/RemoveImagesButton.svelte';
 	import RenderImagesButton from '$lib/components/RenderImagesButton.svelte';
@@ -11,18 +12,18 @@
 </script>
 
 <div class="grid gap-4 overflow-hidden p-4">
-	<div class="bg-base-300 grid gap-4 rounded-xl p-4">
+	<Card>
 		<UploadImagesButton />
 		<RemoveImagesButton />
-	</div>
+	</Card>
 
-	<div class="bg-base-300 grid gap-4 rounded-xl p-4">
+	<Card>
 		<RenderOptionsForm />
 		<ResetRenderOptionsButton />
-	</div>
+	</Card>
 
-	<div class="bg-base-300 grid gap-4 rounded-xl p-4">
+	<Card>
 		<RenderImagesButton />
 		<DownloadImagesButton />
-	</div>
+	</Card>
 </div>
