@@ -66,4 +66,9 @@ export class ImagesState {
 		if (!this.hasInputImages()) return;
 		this.outputImages = await renderImages(this.inputImages, opts);
 	}
+
+	undoRender() {
+		if (!this.hasInputImages()) return;
+		this.outputImages = cloneImages(this.inputImages);
+	}
 }
