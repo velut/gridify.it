@@ -1,7 +1,9 @@
+import { cloneImages } from '$lib/clone-images';
 import type { Image, RenderOptions, RenderOptionsGrid } from '$lib/types';
 import pMap, { pMapSkip } from 'p-map';
 
 export async function renderImages(images: Image[], opts: RenderOptions): Promise<Image[]> {
+	if (skipRender(opts)) return cloneImages(images);
 	return await pMap(
 		images,
 		async (image) => {
@@ -15,11 +17,17 @@ export async function renderImages(images: Image[], opts: RenderOptions): Promis
 	);
 }
 
-async function renderImage(image: Image, { grid, opacity }: RenderOptions): Promise<Image> {
-	if (skipRender({ grid, opacity })) {
-		return cloneImage(image);
-	}
+function skipRender({ grid, opacity }: RenderOptions): boolean {
+	// With these options the image is not modified.
+	return (
+		grid.type === 'none' &&
+		grid.cell.scale === 1 &&
+		grid.cell.cornerRadius === 0 &&
+		opacity === 'preserve'
+	);
+}
 
+async function renderImage(image: Image, { grid, opacity }: RenderOptions): Promise<Image> {
 	let canvas = await imageToCanvas(image);
 	if (opacity === 'opaque') {
 		canvas = opacify(canvas);
@@ -31,23 +39,7 @@ async function renderImage(image: Image, { grid, opacity }: RenderOptions): Prom
 	if (grid.type !== 'none' || grid.cell.cornerRadius > 0) {
 		canvas = gridify(canvas, grid);
 	}
-
 	return await canvasToImage(canvas, image);
-}
-
-function skipRender({ grid, opacity }: RenderOptions): boolean {
-	// With these options the image is not modified.
-	return (
-		grid.type === 'none' &&
-		grid.cell.scale === 1 &&
-		grid.cell.cornerRadius === 0 &&
-		opacity === 'preserve'
-	);
-}
-
-function cloneImage(image: Image): Image {
-	// Return a new object URL to prevent revoking the input image URL.
-	return { ...image, url: URL.createObjectURL(image.file) };
 }
 
 async function imageToCanvas(image: Image): Promise<HTMLCanvasElement> {
