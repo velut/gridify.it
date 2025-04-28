@@ -1,6 +1,6 @@
 <script lang="ts">
 	import MaterialSymbolsBackgroundGridSmall from '~icons/material-symbols/background-grid-small';
-	import MaterialSymbolsHelp from '~icons/material-symbols/help';
+	import MaterialSymbolsHelpOutline from '~icons/material-symbols/help-outline';
 </script>
 
 <div class="navbar bg-base-100 shadow-sm">
@@ -12,7 +12,7 @@
 	</div>
 	<div class="flex-none">
 		<a href="/help/" class="btn btn-ghost">
-			<MaterialSymbolsHelp class="size-6 flex-none" />
+			<MaterialSymbolsHelpOutline class="size-6 flex-none" />
 			Help
 		</a>
 	</div>
