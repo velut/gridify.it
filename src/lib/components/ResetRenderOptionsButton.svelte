@@ -12,5 +12,5 @@
 	disabled={opts.isDefault()}
 >
 	<MaterialSymbolsResetWrenchRounded class="size-6" />
-	Reset options
+	Reset render options
 </button>
