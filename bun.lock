@@ -17,7 +17,7 @@
         "@tailwindcss/typography": "^0.5.16",
         "@tailwindcss/vite": "^4.1.4",
         "@types/bun": "^1.2.10",
-        "@types/node": "^22.15.2",
+        "@types/node": "^22.15.3",
         "daisyui": "^5.0.28",
         "prettier": "^3.5.3",
         "prettier-plugin-svelte": "^3.3.3",
@@ -193,7 +193,7 @@
 
     "@types/estree": ["@types/estree@1.0.6", "", {}, "sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw=="],
 
-    "@types/node": ["@types/node@22.15.2", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-uKXqKN9beGoMdBfcaTY1ecwz6ctxuJAcUlwE55938g0ZJ8lRxwAZqRz2AJ4pzpt5dHdTPMB863UZ0ESiFUcP7A=="],
+    "@types/node": ["@types/node@22.15.3", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-lX7HFZeHf4QG/J7tBZqrCAXwz9J5RD56Y6MpP0eJkka8p+K0RY/yBTW7CYFJ4VGCclxqOLKmiGP5juQc6MKgcw=="],
 
     "@zip.js/zip.js": ["@zip.js/zip.js@2.7.60", "", {}, "sha512-vA3rLyqdxBrVo1FWSsbyoecaqWTV+vgPRf0QKeM7kVDG0r+lHUqd7zQDv1TO9k4BcAoNzNDSNrrel24Mk6addA=="],
 
