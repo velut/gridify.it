@@ -36,6 +36,10 @@ export class RenderOptionsState {
 	isDefault() {
 		return this.grid.isDefault() && this.opacity === 'preserve';
 	}
+
+	isGridTypeNone(): boolean {
+		return this.grid.type === 'none';
+	}
 }
 
 export class GridState {

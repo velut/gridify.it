@@ -53,6 +53,7 @@
 				pattern="[0-9]*"
 				title="Use 1 or a bigger integer number of pixels"
 				bind:value={opts.grid.lines.size}
+				disabled={opts.isGridTypeNone()}
 			/>
 			<span class="label">px</span>
 		</label>
