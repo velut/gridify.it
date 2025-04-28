@@ -19,7 +19,7 @@
 
 <form id="render-options-form" onsubmit={handleSubmit}>
 	<fieldset class="fieldset text-sm">
-		<legend class="fieldset-legend">
+		<legend class="fieldset-legend pt-0">
 			<MaterialSymbolsGrid3x3Rounded class="size-6" />
 			Grid type
 		</legend>
