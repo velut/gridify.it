@@ -21,6 +21,7 @@
 	class="btn btn-primary w-full"
 	disabled={!images.hasInputImages()}
 	bind:this={button}
+	title="Render images [Ctrl+Enter]"
 >
 	<MaterialSymbolsAnimatedImagesRounded class="size-6" />
 	Render images
