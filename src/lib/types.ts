@@ -28,3 +28,5 @@ export type GridType = 'full' | 'lines' | 'border' | 'none';
 export type GridCellShape = 'square' | 'rectangle';
 
 export type PixelOpacity = 'preserve' | 'opaque';
+
+export type PreviewMode = 'pixel-art' | 'high-res';
