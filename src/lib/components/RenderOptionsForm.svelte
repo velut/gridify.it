@@ -23,7 +23,8 @@
 			<MaterialSymbolsGrid3x3Rounded class="size-6" />
 			Grid type
 		</legend>
-		<select class="select w-full" bind:value={opts.grid.type}>
+		<label for="grid-type" class="sr-only">Grid type</label>
+		<select id="grid-type" class="select w-full" bind:value={opts.grid.type}>
 			<option value="full">Full grid (Grid lines and outer border)</option>
 			<option value="lines">Grid lines only</option>
 			<option value="border">Outer border only</option>
@@ -38,6 +39,7 @@
 		</legend>
 		<label class="input w-full">
 			<input type="color" bind:value={opts.grid.color} />
+			<span class="sr-only">Grid color</span>
 		</label>
 	</fieldset>
 
@@ -64,7 +66,8 @@
 			<MaterialSymbolsCropRounded class="size-6" />
 			Grid cell shape
 		</legend>
-		<select class="select w-full" bind:value={opts.grid.cell.shape}>
+		<label for="grid-cell-shape" class="sr-only">Grid cell shape</label>
+		<select id="grid-cell-shape" class="select w-full" bind:value={opts.grid.cell.shape}>
 			<option value="square">Square (Same width and height)</option>
 			<option value="rectangle">Rectangle (Different width and height)</option>
 		</select>
@@ -147,7 +150,8 @@
 			<MaterialSymbolsTextureRounded class="size-6" />
 			Transparent pixels
 		</legend>
-		<select class="select w-full" bind:value={opts.opacity}>
+		<label for="opacity" class="sr-only">Transparent pixels</label>
+		<select id="opacity" class="select w-full" bind:value={opts.opacity}>
 			<option value="preserve">Preserve transparency</option>
 			<option value="opaque">Make fully opaque</option>
 		</select>
