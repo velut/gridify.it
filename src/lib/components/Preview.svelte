@@ -4,7 +4,7 @@
 	import PreviewMode from '$lib/components/PreviewMode.svelte';
 </script>
 
-<Card class="grid-rows-[auto_minmax(0,1fr)]">
+<Card class="grid grid-rows-[auto_minmax(0,1fr)] gap-4">
 	<PreviewMode />
 	<PreviewGallery />
 </Card>

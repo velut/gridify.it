@@ -10,6 +10,6 @@
 	let props: Props = $props();
 </script>
 
-<div class={['bg-base-300 grid gap-4 rounded-xl p-4', props.class]}>
+<div class={['bg-base-300 overflow-y-auto rounded-xl p-4', props.class]}>
 	{@render props.children()}
 </div>

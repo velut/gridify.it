@@ -6,7 +6,7 @@
 </script>
 
 <fieldset class="fieldset text-sm">
-	<legend class="fieldset-legend">
+	<legend class="fieldset-legend pt-0">
 		<MaterialSymbolsGalleryThumbnailRounded class="size-6" />
 		Preview mode
 	</legend>

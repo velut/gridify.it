@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import Footer from '$lib/components/Footer.svelte';
-	import Navbar from '$lib/components/Navbar.svelte';
 	import '../app.css';
 
 	let { children } = $props();
@@ -43,10 +41,4 @@
 	<meta name="twitter:creator" content="@EdoardoScibona" />
 </svelte:head>
 
-<div class="grid min-h-screen grid-rows-[auto_minmax(0,1fr)_auto]">
-	<Navbar />
-	<div>
-		{@render children?.()}
-	</div>
-	<Footer />
-</div>
+{@render children?.()}

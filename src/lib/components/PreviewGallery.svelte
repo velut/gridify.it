@@ -15,7 +15,7 @@
 				src={image.url}
 				alt={image.file.name}
 				class={[
-					'max-h-full w-full max-w-full snap-center object-contain object-top-left',
+					'max-h-full w-full snap-center object-contain object-top-left',
 					preview.isPixelArt() && '[image-rendering:pixelated]'
 				]}
 			/>

@@ -3,11 +3,11 @@
 	import MaterialSymbolsImageSearchRounded from '~icons/material-symbols/image-search-rounded';
 </script>
 
-<Card>
-	<div class="text-base-content/65 flex items-center justify-center gap-2 md:flex-col">
+<Card class="grid place-items-center">
+	<div class="text-base-content/65 flex items-center justify-center gap-2 font-bold md:flex-col">
 		<MaterialSymbolsImageSearchRounded class="size-6 md:size-12" />
-		<span class="text-sm font-bold md:hidden">Upload an image to start</span>
-		<span class="hidden font-bold md:block md:max-w-96 md:text-center md:text-balance"
+		<span class="text-sm md:hidden">Upload an image to start</span>
+		<span class="hidden max-w-96 text-center text-balance md:block"
 			>Upload or drag and drop an image on the page to start</span
 		>
 	</div>
