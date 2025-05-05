@@ -40,7 +40,7 @@
 		"@tailwindcss/typography": "^0.5.16",
 		"@tailwindcss/vite": "^4.1.5",
 		"@types/bun": "^1.2.12",
-		"@types/node": "^22.15.3",
+		"@types/node": "^22.15.9",
 		"daisyui": "^5.0.35",
 		"prettier": "^3.5.3",
 		"prettier-plugin-svelte": "^3.3.3",
