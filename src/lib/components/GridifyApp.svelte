@@ -8,7 +8,7 @@
 	let { images } = getAppStateContext();
 </script>
 
-<div class="grid gap-4 overflow-y-auto p-4 lg:grid-cols-[auto_minmax(0,1fr)]">
+<main class="grid gap-4 overflow-y-auto p-4 lg:grid-cols-[auto_minmax(0,1fr)]">
 	<div class="grid gap-4 overflow-y-auto sm:grid-cols-[auto_auto]">
 		<Actions />
 		<RenderOptions />
@@ -19,4 +19,4 @@
 	{:else}
 		<PreviewPlaceholder />
 	{/if}
-</div>
+</main>
