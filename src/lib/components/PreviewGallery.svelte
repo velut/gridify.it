@@ -5,7 +5,7 @@
 </script>
 
 <!-- https://stackoverflow.com/a/48943583/16109047 -->
-<div class="lg:snap-y lg:snap-mandatory lg:overflow-y-auto lg:[contain:size]">
+<div class="overflow-y-auto lg:snap-y lg:snap-mandatory">
 	{#each images.outputImages as image, index (image.url)}
 		{#if index > 0}
 			<div class="divider"></div>

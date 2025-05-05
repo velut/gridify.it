@@ -8,10 +8,8 @@
 	let { images } = getAppStateContext();
 </script>
 
-<div
-	class="grid grid-cols-1 gap-4 p-4 lg:h-full lg:grid-cols-[auto_minmax(0,1fr)] lg:overflow-hidden"
->
-	<div class="grid grid-cols-1 gap-4 sm:grid-cols-[auto_auto] lg:h-full lg:overflow-hidden">
+<div class="grid gap-4 overflow-y-auto p-4 lg:grid-cols-[auto_minmax(0,1fr)]">
+	<div class="grid gap-4 overflow-y-auto sm:grid-cols-[auto_auto]">
 		<Actions />
 		<RenderOptions />
 	</div>

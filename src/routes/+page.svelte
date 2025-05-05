@@ -6,9 +6,7 @@
 	setAppStateContext(new AppState());
 </script>
 
-<div
-	class="grid min-h-screen grid-rows-[minmax(0,1fr)_auto] lg:h-full lg:min-h-auto lg:overflow-hidden"
->
+<div class="grid min-h-screen grid-rows-[minmax(0,1fr)_auto] lg:h-full lg:min-h-auto">
 	<GridifyApp />
 	<Footer />
 </div>
