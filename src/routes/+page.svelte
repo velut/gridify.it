@@ -6,14 +6,19 @@
 	setAppStateContext(new AppState());
 </script>
 
-<div class="grid h-full grid-rows-[minmax(0,1fr)_auto] overflow-hidden">
+<div
+	class="grid min-h-screen grid-rows-[minmax(0,1fr)_auto] lg:h-full lg:min-h-auto lg:overflow-hidden"
+>
 	<GridifyApp />
 	<Footer />
 </div>
 
 <style>
-	:global(body) {
-		overflow: hidden;
-		height: 100vh;
+	/* lg breakpoint. */
+	@media (width >= 64rem) {
+		:global(body) {
+			overflow: hidden;
+			height: 100vh;
+		}
 	}
 </style>

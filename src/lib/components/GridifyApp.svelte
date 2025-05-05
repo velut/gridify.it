@@ -8,9 +8,13 @@
 	let { images } = getAppStateContext();
 </script>
 
-<div class="grid grid-cols-[auto_auto_minmax(0,1fr)] gap-4 p-4">
-	<Actions />
-	<RenderOptions />
+<div
+	class="grid grid-cols-1 gap-4 p-4 lg:h-full lg:grid-cols-[auto_minmax(0,1fr)] lg:overflow-hidden"
+>
+	<div class="grid grid-cols-1 gap-4 sm:grid-cols-[auto_auto] lg:h-full lg:overflow-hidden">
+		<Actions />
+		<RenderOptions />
+	</div>
 
 	{#if images.hasOutputImages()}
 		<Preview />
