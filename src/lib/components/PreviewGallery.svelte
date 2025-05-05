@@ -5,7 +5,7 @@
 </script>
 
 <!-- https://stackoverflow.com/a/48943583/16109047 -->
-<div class="snap-y snap-mandatory lg:overflow-y-auto lg:[contain:size]">
+<div class="lg:snap-y lg:snap-mandatory lg:overflow-y-auto lg:[contain:size]">
 	{#each images.outputImages as image, index (image.url)}
 		{#if index > 0}
 			<div class="divider"></div>
@@ -15,7 +15,7 @@
 				src={image.url}
 				alt={image.file.name}
 				class={[
-					'max-h-full w-full snap-center object-contain object-top-left',
+					'max-h-full w-full object-contain object-top-left lg:snap-center',
 					preview.isPixelArt() && '[image-rendering:pixelated]'
 				]}
 			/>
