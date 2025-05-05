@@ -33,7 +33,7 @@ export class RenderOptionsState {
 		this.opacity = 'preserve';
 	}
 
-	isDefault() {
+	isDefault(): boolean {
 		return this.grid.isDefault() && this.opacity === 'preserve';
 	}
 
@@ -55,7 +55,7 @@ export class GridState {
 		this.cell.reset();
 	}
 
-	isDefault() {
+	isDefault(): boolean {
 		return (
 			this.type === 'full' &&
 			this.color === '#000000' &&
@@ -72,7 +72,7 @@ export class GridLinesState {
 		this.size = '1';
 	}
 
-	isDefault() {
+	isDefault(): boolean {
 		return this.size === '1';
 	}
 }
@@ -92,7 +92,7 @@ export class GridCellState {
 		this.cornerRadius = '0';
 	}
 
-	isDefault() {
+	isDefault(): boolean {
 		return (
 			this.shape === 'square' &&
 			this.width === '1' &&
