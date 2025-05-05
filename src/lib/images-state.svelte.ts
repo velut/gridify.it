@@ -2,7 +2,7 @@ import { cloneImages } from '$lib/clone-images';
 import { downloadBlob } from '$lib/download-blob';
 import { renderImages } from '$lib/render-images';
 import { revokeObjectUrls } from '$lib/revoke-object-urls';
-import type { Image, RenderOptions } from '$lib/types';
+import { type Image, type ImagesRenderState, type RenderOptions } from '$lib/types';
 import { zipImages } from '$lib/zip-images';
 import accept from 'attr-accept';
 import { fromEvent } from 'file-selector';
@@ -10,6 +10,7 @@ import { fromEvent } from 'file-selector';
 export class ImagesState {
 	#inputImages = $state<Image[]>([]);
 	#outputImages = $state<Image[]>([]);
+	renderState = $state<ImagesRenderState>('original');
 
 	get inputImages() {
 		return this.#inputImages;
@@ -32,13 +33,14 @@ export class ImagesState {
 	reset() {
 		this.inputImages = [];
 		this.outputImages = [];
+		this.renderState = 'original';
 	}
 
-	hasInputImages() {
+	hasInputImages(): boolean {
 		return this.inputImages.length > 0;
 	}
 
-	hasOutputImages() {
+	hasOutputImages(): boolean {
 		return this.outputImages.length > 0;
 	}
 
@@ -50,6 +52,7 @@ export class ImagesState {
 			.map((file) => ({ file, url: URL.createObjectURL(file) }));
 		this.inputImages = images;
 		this.outputImages = cloneImages(images);
+		this.renderState = 'original';
 	}
 
 	async download() {
@@ -65,10 +68,16 @@ export class ImagesState {
 	async render(opts: RenderOptions) {
 		if (!this.hasInputImages()) return;
 		this.outputImages = await renderImages(this.inputImages, opts);
+		this.renderState = 'rendered';
 	}
 
 	undoRender() {
 		if (!this.hasInputImages()) return;
 		this.outputImages = cloneImages(this.inputImages);
+		this.renderState = 'original';
+	}
+
+	hasRenderedImages(): boolean {
+		return this.renderState === 'rendered';
 	}
 }

@@ -30,3 +30,5 @@ export type GridCellShape = 'square' | 'rectangle';
 export type PixelOpacity = 'preserve' | 'opaque';
 
 export type PreviewMode = 'pixel-art' | 'high-res';
+
+export type ImagesRenderState = 'original' | 'rendered';

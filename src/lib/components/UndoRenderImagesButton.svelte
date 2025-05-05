@@ -19,7 +19,7 @@
 	type="button"
 	class="btn btn-error btn-outline w-full"
 	onclick={() => images.undoRender()}
-	disabled={!images.hasInputImages()}
+	disabled={!images.hasInputImages() || !images.hasRenderedImages()}
 	bind:this={button}
 	title="Undo render images [Ctrl+Z]"
 >
