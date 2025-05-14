@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { changeTheme } from '$lib/change-theme';
-	import MaterialSymbolsBackgroundGridSmall from '~icons/material-symbols/background-grid-small';
+	import MaterialSymbolsGridOn from '~icons/material-symbols/grid-on';
 
 	const commitShort = __GIT_COMMIT.slice(0, 7);
 	const ghUrl = 'https://github.com/velut/gridify.it';
@@ -12,7 +12,7 @@
 >
 	<aside class="grid-flow-row items-center sm:grid-flow-col">
 		<a href="/" class="link link-hover flex items-center gap-2 font-bold">
-			<MaterialSymbolsBackgroundGridSmall class="size-6" />
+			<MaterialSymbolsGridOn class="size-6" />
 			gridify.it
 		</a>
 		<div class="hidden sm:block">-</div>
