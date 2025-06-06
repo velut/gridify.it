@@ -41,4 +41,8 @@
 	<meta name="twitter:creator" content="@EdoardoScibona" />
 </svelte:head>
 
-{@render children?.()}
+<div
+	class="min-h-screen bg-[url(/bg_dots_light.svg)] bg-size-[48px_48px] bg-fixed bg-repeat dark:bg-[url(/bg_dots_dark.svg)]"
+>
+	{@render children?.()}
+</div>
