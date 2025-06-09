@@ -1,6 +1,6 @@
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = () => ({
-	title: 'FAQ',
-	description: 'Frequently asked questions about gridify.it'
+	title: 'Help',
+	description: 'Help section, instructions, and frequently asked questions about gridify.it'
 });

@@ -2,281 +2,231 @@
 	const ghIssuesUrl = 'https://github.com/velut/gridify.it/issues';
 </script>
 
-<main class="flex items-center justify-center p-4 sm:p-8">
-	<article class="prose">
-		<h1 class="my-0 text-center">FAQ &amp; Instructions</h1>
+<main class="grid place-items-center p-4 sm:p-8">
+	<article class="grid gap-8">
+		<div class="bg-base-100 prose grid place-items-center rounded-lg border p-8">
+			<h1 class="">Help & FAQ</h1>
+		</div>
 
-		<p>
-			This is a list of frequently asked questions about gridify.it.
-			<br />
-			Last updated on July 15, 2023.
-		</p>
+		<section class="bg-base-100 prose rounded-lg border p-8">
+			<h2>About gridify.it</h2>
 
-		<ul>
-			<li>
-				<p><strong>What can I use this app for?</strong></p>
-				<p>
-					With gridify.it you can easily <strong>add a customizable grid</strong> to your images, photos,
-					reference pictures, pixel art creations or cross stitch designs. You can use various grid types
-					and line colors, resize images, and round the corners of grid cells.
-				</p>
-				<p>
-					The pictures below show some examples of what you can do. Click on the previews to see the
-					images in full size.
-				</p>
+			<h3>What is gridify.it?</h3>
+			<p>
+				<strong>gridify.it</strong> is a free online grid maker that lets you easily create custom grids
+				from your images.
+			</p>
 
-				<div class="my-5 grid grid-cols-2 gap-4 sm:grid-cols-3">
-					{#each ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg'] as imageUrl}
-						<a href="/examples/{imageUrl}" class="block h-full w-full">
-							<img
-								class="m-0 rounded-sm"
-								src="/examples/small/{imageUrl}"
-								alt="Example {imageUrl}"
-							/>
-						</a>
-					{/each}
-				</div>
+			<h3>What can I do with gridify.it?</h3>
+			<p>
+				You can upload photos, reference pictures, pixel art creations or cross stitch designs. You
+				can use various grid types and line colors, resize images, and round the corners of grid
+				cells.
+			</p>
 
-				<blockquote class="text-sm">
-					<p>
-						Photo by <a href="https://unsplash.com/@cedric_photography">Cédric VT</a>
-						on
-						<a href="https://unsplash.com/photos/IuJc2qh2TcA">Unsplash</a>
-					</p>
-				</blockquote>
-			</li>
+			<h3>Can I use gridify.it for free?</h3>
+			<p><strong>Yes!</strong> The app is completely free to use.</p>
+		</section>
 
-			<li>
-				<p><strong>Is this app free to use?</strong></p>
-				<p><strong>Yes.</strong> This app is completely free to use.</p>
-			</li>
+		<section class="bg-base-100 prose rounded-lg border p-8">
+			<h2>Uploading images</h2>
 
-			<li>
-				<p><strong>Are my images kept private?</strong></p>
-				<p>
-					<strong>Yes.</strong> This app works entirely inside your browser and no file ever leaves your
-					device.
-				</p>
-			</li>
+			<h3>How do I upload images?</h3>
+			<p>
+				Click on the <strong>Upload images</strong> button to open a file picker dialog. You can
+				also directly <strong>drag and drop</strong> the images on the page.
+			</p>
 
-			<li>
-				<p><strong>Which image formats are supported by the app?</strong></p>
-				<p>
-					<strong>It depends.</strong> As this app runs inside your browser, you should be able to process
-					the image formats natively supported by your browser. In practice, most common images formats
-					should work with this app.
-				</p>
-			</li>
+			<h3>How do I remove uploaded images?</h3>
+			<p>
+				Click on the <strong>Remove images</strong> button to remove all uploaded images.
+			</p>
 
-			<li>
-				<p><strong>How many images can I process?</strong></p>
-				<p>
-					<strong>As many as you want.</strong> You can process one image at a time or many images together.
-				</p>
-			</li>
+			<h3>Which image formats can I use?</h3>
+			<p>
+				The app supports most common image formats. For best results, use <strong>JPEG</strong> and
+				<strong>PNG</strong> images.
+			</p>
 
-			<li>
-				<p>
-					<strong>How do I load images into the app?</strong>
-				</p>
-				<p>
-					Either click on the <strong>Select or Drop Images</strong> button to open a file picker
-					dialog or directly <strong>drag and drop</strong> the images on the page.
-				</p>
-			</li>
+			<h3>How many images can I upload?</h3>
+			<p>
+				<strong>As many as you want.</strong> You can upload a single image or many images together.
+			</p>
 
-			<li>
-				<p>
-					<strong>How do I remove loaded images?</strong>
-				</p>
-				<p>
-					Click on the <strong>Remove Images</strong> button to discard all images.
-				</p>
-			</li>
+			<h3>Are my uploaded images kept private?</h3>
+			<p>
+				<strong>Yes!</strong> The app works entirely in your browser and your images never leave your
+				device.
+			</p>
+		</section>
 
-			<li>
-				<p>
-					<strong>How do I reset the rendering options?</strong>
-				</p>
-				<p>
-					Click on the <strong>Reset Options</strong> button to reset the rendering options to their
-					default values.
-				</p>
-			</li>
+		<section class="bg-base-100 prose rounded-lg border p-8">
+			<h2>Downloading images</h2>
 
-			<li>
-				<p>
-					<strong>How do I apply the rendering options to my images?</strong>
-				</p>
-				<p>
-					Either click on the <strong>Render Images</strong> button or use the keyboard shortcut by
-					pressing
-					<strong>Ctrl</strong>
-					and <strong>Enter</strong> together.
-				</p>
-			</li>
+			<h3>How do I download the rendered images?</h3>
+			<p>
+				Click on the <strong>Download images</strong> button to save the rendered images on your device.
+			</p>
+		</section>
 
-			<li>
-				<p>
-					<strong>How do I download the rendered images?</strong>
-				</p>
-				<p>
-					Click on the <strong>Download Images</strong> button to save to your device a zip file containing
-					the rendered images.
-				</p>
-			</li>
+		<section class="bg-base-100 prose rounded-lg border p-8">
+			<h2>Previewing images</h2>
 
-			<li>
-				<p>
-					<strong>Why do the images in the preview look wrong?</strong>
-				</p>
-				<p>
-					A graphical glitch may happen if images are too small, too big, or if they have too many
-					grid lines. Always click on the image preview to see the real rendered image in a new
-					page.
-				</p>
-			</li>
+			<h3>How do I preview images?</h3>
+			<p>After uploading your images, they will automatically show in the preview area.</p>
 
-			<li>
-				<p>
-					<strong>Why have the images been rendered incorrectly?</strong>
-				</p>
-				<p>
-					Incorrectly rendered images may be the result of bugs in browsers or graphical drivers.
-					Try changing the rendering options and then render the images again. Alternatively, try
-					using different browsers or devices to render the images.
-				</p>
-			</li>
+			<h3>How do I preview an image at full size?</h3>
+			<p>Click on an image in the preview area to see it at full size in a new tab.</p>
 
-			<li>
-				<p>
-					<strong>Which grid type should I choose?</strong>
-				</p>
-				<p>
-					Use <strong>None</strong> if you don't want any type of grid lines; use
-					<strong>Inner lines only</strong> if you want just the horizontal and vertical bars
-					dividing the image; use <strong>Outer border only</strong> if you just want a frame around
-					your image; use <strong>Full grid</strong> if you want both the frame around your image and
-					the horizontal and vertical bars dividing the image.
-				</p>
-			</li>
+			<h3>How do I change the preview mode?</h3>
+			<p>
+				Click on the <strong>Preview mode</strong> setting in the preview area and select between
+				<strong>Pixel art</strong> (suited for pixel art, game sprites, and smaller images) and
+				<strong>High resolution images</strong> (suited for photos, drawings, and bigger images).
+			</p>
 
-			<li>
-				<p>
-					<strong>Which grid stroke size should I choose?</strong>
-				</p>
-				<p>
-					Use 1 if you want grid lines that are 1 pixel in size; use higher values if you want
-					thicker grid lines. For example, use 25 for grid lines that are 25 pixels thick.
-				</p>
-			</li>
+			<h3>Why do image previews look weird?</h3>
+			<p>
+				Due to scaling, image previews may contain visual artifacts; click on an image to see it at
+				full size.
+			</p>
+		</section>
 
-			<li>
-				<p><strong>How do I change the color of the grid?</strong></p>
-				<p>
-					Click on the <strong>Grid color</strong> input to choose a different color for the grid.
-					The selected color is also used to round cell corners even if the grid type is
-					<strong>None</strong>.
-				</p>
-			</li>
+		<section class="bg-base-100 prose rounded-lg border p-8">
+			<h2>Rendering images</h2>
 
-			<li>
-				<p>
-					<strong>What are grid cells?</strong>
-				</p>
-				<p>
-					Grid cells are the parts of your image created by dividing it with grid lines. In other
-					words, a cell is a part of your image surrounded by grid lines. They are like the pieces
-					of a puzzle that together form a complete image.
-				</p>
-			</li>
+			<h3>How do I render images?</h3>
+			<p>
+				Click on the <strong>Render images</strong> button. You can also use the keyboard shortcut
+				by pressing <strong>Ctrl</strong> and
+				<strong>Enter</strong> together.
+			</p>
 
-			<li>
-				<p>
-					<strong>How do I change the aspect ratio of cells?</strong>
-				</p>
-				<p>
-					Toggle on (default) or off the <strong>Square cells</strong> switch to change between square
-					cells and rectangular cells.
-				</p>
-			</li>
+			<h3>How do I undo the images render?</h3>
+			<p>
+				Click on the <strong>Undo render images</strong> button to restore images to their original
+				state. You can also use the keyboard shortcut by pressing <strong>Ctrl</strong> and
+				<strong>Z</strong> together.
+			</p>
 
-			<li>
-				<p>
-					<strong>How do I change cell dimensions?</strong>
-				</p>
-				<p>
-					Use the <strong>Cell width</strong> input (and/or the <strong>Cell height</strong> input
-					if the
-					<strong>Square cells</strong> switch is off) to change the dimensions in pixels of the cells.
-					All cells in the grid will have the same dimensions except for the ones that do not fit in
-					the image which instead will fill the remaining space.
-				</p>
-			</li>
+			<h3>Why have the images been rendered incorrectly?</h3>
+			<p>
+				Bugs in browsers or graphical drivers can cause images to be rendered incorrectly. Try
+				changing the rendering options and then render the images again. Alternatively, try using
+				different browsers or devices to render the images.
+			</p>
+		</section>
 
-			<li>
-				<p>
-					<strong>Which cell scale multiplier should I use?</strong>
-				</p>
-				<p>
-					Use 1 if you want the cells to keep the same size they have in the original image; use
-					higher values if you want to scale up the cells. For example, a 2x3 pixels cell with a
-					scale value of 5 becomes a 10x15 pixels cell in the rendered image.
-				</p>
-			</li>
+		<section class="bg-base-100 prose rounded-lg border p-8">
+			<h2>Rendering options</h2>
 
-			<li>
-				<p>
-					<strong>Which cell corner radius should I use?</strong>
-				</p>
-				<p>
-					Use 0 if you want cells to have square corners; use higher values to round cell corners
-					more and more; use really high values like 1000 to turn square cells into circles. You may
-					need to scale up cells if they are too small to be rounded correctly.
-				</p>
-			</li>
+			<h3>What are the rendering options?</h3>
+			<p>
+				The <strong>rendering options</strong> determine how the grid will look like when added to your
+				images.
+			</p>
 
-			<li>
-				<p>
-					<strong>When should I use the fully opaque pixels option?</strong>
-				</p>
-				<p>
-					Toggle on the <strong>Fully opaque pixels</strong> switch only if your original image contains
-					transparent pixels that you don't want to be mixed with the grid color.
-				</p>
-			</li>
+			<h3>How do I reset the rendering options?</h3>
+			<p>
+				Click on the <strong>Reset Options</strong> button to reset the rendering options to their default
+				values.
+			</p>
+		</section>
 
-			<li>
-				<p>
-					<strong>Are the original image colors exactly preserved in the rendered images?</strong>
-				</p>
-				<p>
-					<strong>Probably not.</strong> Depending on the browser that you are using, you should expect
-					some slight differences between the colors in a rendered image and the original image colors.
-					In general, rendering images should be considered a lossy operation.
-				</p>
-			</li>
+		<section class="bg-base-100 prose rounded-lg border p-8">
+			<h2>Rendering options: Grid</h2>
 
-			<li>
-				<p>
-					<strong>Why is the app becoming slow and unresponsive?</strong>
-				</p>
-				<p>
-					The app performance is influenced by your browser and device. If you are processing a high
-					number of images or even a single image with large dimensions, you should expect some
-					slowdowns.
-				</p>
-			</li>
+			<h3>Which grid type should I choose?</h3>
+			<p>
+				Use <strong>None</strong> if you don't want any type of grid lines; use
+				<strong>Inner lines only</strong> if you want just the horizontal and vertical bars dividing
+				the image; use <strong>Outer border only</strong> if you just want a frame around your
+				image; use <strong>Full grid</strong> if you want both the frame around your image and the horizontal
+				and vertical bars dividing the image.
+			</p>
 
-			<li>
-				<p>
-					<strong>I found an error / I want to ask another question.</strong>
-				</p>
-				<p>
-					Please <a href={ghIssuesUrl}>open an issue on GitHub</a>, it's the fastest way to have
-					your question seen.
-				</p>
-			</li>
-		</ul>
+			<h3>Which grid stroke size should I choose?</h3>
+			<p>
+				Use 1 if you want grid lines that are 1 pixel in size; use higher values if you want thicker
+				grid lines. For example, use 25 for grid lines that are 25 pixels thick.
+			</p>
+
+			<h3>How do I change the color of the grid?</h3>
+			<p>
+				Click on the <strong>Grid color</strong> input to choose a different color for the grid. The
+				selected color is also used to round cell corners even if the grid type is
+				<strong>None</strong>.
+			</p>
+
+			<h3>When should I use the fully opaque pixels option?</h3>
+			<p>
+				Toggle on the <strong>Fully opaque pixels</strong> switch only if your original image contains
+				transparent pixels that you don't want to be mixed with the grid color.
+			</p>
+		</section>
+
+		<section class="bg-base-100 prose rounded-lg border p-8">
+			<h2>Rendering options: Grid cells</h2>
+
+			<h3>What are grid cells?</h3>
+			<p>
+				Grid cells are the parts of your image created by dividing it with grid lines. In other
+				words, a cell is a part of your image surrounded by grid lines. They are like the pieces of
+				a puzzle that together form a complete image.
+			</p>
+
+			<h3>How do I change the aspect ratio of cells?</h3>
+			<p>
+				Toggle on (default) or off the <strong>Square cells</strong> switch to change between square
+				cells and rectangular cells.
+			</p>
+
+			<h3>How do I change cell dimensions?</h3>
+			<p>
+				Use the <strong>Cell width</strong> input (and/or the <strong>Cell height</strong> input if
+				the
+				<strong>Square cells</strong> switch is off) to change the dimensions in pixels of the cells.
+				All cells in the grid will have the same dimensions except for the ones that do not fit in the
+				image which instead will fill the remaining space.
+			</p>
+
+			<h3>Which cell scale multiplier should I use?</h3>
+			<p>
+				Use 1 if you want the cells to keep the same size they have in the original image; use
+				higher values if you want to scale up the cells. For example, a 2x3 pixels cell with a scale
+				value of 5 becomes a 10x15 pixels cell in the rendered image.
+			</p>
+
+			<h3>Which cell corner radius should I use?</h3>
+			<p>
+				Use 0 if you want cells to have square corners; use higher values to round cell corners more
+				and more; use really high values like 1000 to turn square cells into circles. You may need
+				to scale up cells if they are too small to be rounded correctly.
+			</p>
+		</section>
+
+		<section class="bg-base-100 prose rounded-lg border p-8">
+			<h2>Other questions</h2>
+
+			<h3>Are the original image colors exactly preserved in the rendered images?</h3>
+			<p>
+				<strong>Probably not.</strong> Depending on the browser that you are using, you should expect
+				some slight differences between the colors in a rendered image and the original image colors.
+				In general, rendering images should be considered a lossy operation.
+			</p>
+
+			<h3>Why is the app becoming slow and unresponsive?</h3>
+			<p>
+				The app performance is influenced by your browser and device. If you are processing a high
+				number of images or even a single high quality image, you should expect some slowdowns.
+			</p>
+
+			<h3>I found an error / I want to ask another question.</h3>
+			<p>
+				Please <a href={ghIssuesUrl}>open an issue on GitHub</a>, it's the fastest way to have your
+				question seen. You can also send an email to
+				<a href="mailto:scibona.edoardo@proton.me">scibona.edoardo@proton.me</a>.
+			</p>
+		</section>
 	</article>
 </main>
