@@ -1,5 +1,4 @@
 <script lang="ts">
-	const ghIssuesUrl = 'https://github.com/velut/gridify.it/issues';
 </script>
 
 <main class="grid place-items-center p-4 sm:p-8">
@@ -7,26 +6,6 @@
 		<div class="bg-base-100 prose grid place-items-center rounded-lg border p-8">
 			<h1 class="">Help & FAQ</h1>
 		</div>
-
-		<section class="bg-base-100 prose rounded-lg border p-8">
-			<h2>About gridify.it</h2>
-
-			<h3>What is gridify.it?</h3>
-			<p>
-				<strong>gridify.it</strong> is a free online grid maker that lets you easily create custom grids
-				from your images.
-			</p>
-
-			<h3>What can I do with gridify.it?</h3>
-			<p>
-				You can upload photos, reference pictures, pixel art creations or cross stitch designs. You
-				can use various grid types and line colors, resize images, and round the corners of grid
-				cells.
-			</p>
-
-			<h3>Can I use gridify.it for free?</h3>
-			<p><strong>Yes!</strong> The app is completely free to use.</p>
-		</section>
 
 		<section class="bg-base-100 prose rounded-lg border p-8">
 			<h2>Uploading images</h2>
@@ -128,8 +107,8 @@
 
 			<h3>How do I reset the rendering options?</h3>
 			<p>
-				Click on the <strong>Reset Options</strong> button to reset the rendering options to their default
-				values.
+				Click on the <strong>Reset Options</strong> button to restore the rendering options to their
+				default values.
 			</p>
 		</section>
 
@@ -219,13 +198,6 @@
 			<p>
 				The app performance is influenced by your browser and device. If you are processing a high
 				number of images or even a single high quality image, you should expect some slowdowns.
-			</p>
-
-			<h3>I found an error / I want to ask another question.</h3>
-			<p>
-				Please <a href={ghIssuesUrl}>open an issue on GitHub</a>, it's the fastest way to have your
-				question seen. You can also send an email to
-				<a href="mailto:scibona.edoardo@proton.me">scibona.edoardo@proton.me</a>.
 			</p>
 		</section>
 	</article>
