@@ -91,7 +91,7 @@
 
 			<h3>Why have the images been rendered incorrectly?</h3>
 			<p>
-				Bugs in browsers or graphical drivers can cause images to be rendered incorrectly. Try
+				Bugs in browsers or graphical drivers may cause images to be rendered incorrectly. Try
 				changing the rendering options or using different browsers or devices to render the images.
 			</p>
 		</ArticleSection>
@@ -116,13 +116,65 @@
 			<h2>Rendering options: Grid</h2>
 
 			<h3>Which grid type should I choose?</h3>
-			<p>
-				Use <strong>None</strong> if you don't want any type of grid lines; use
-				<strong>Inner lines only</strong> if you want just the horizontal and vertical bars dividing
-				the image; use <strong>Outer border only</strong> if you just want a frame around your
-				image; use <strong>Full grid</strong> if you want both the frame around your image and the horizontal
-				and vertical bars dividing the image.
-			</p>
+			<p>The app provides different grid types for you to use:</p>
+			<ul>
+				<li>
+					<p><strong>Full grid</strong></p>
+					<p>
+						Use this if you want the grid to have both the outer border and the inner grid lines
+						between the cells as shown below.
+					</p>
+					<div class="grid place-items-start">
+						<div class="bg-base-content grid grid-cols-3 grid-rows-3 gap-[1px] p-[1px]">
+							{#each { length: 9 }}
+								<div class="bg-base-100 size-6"></div>
+							{/each}
+						</div>
+					</div>
+				</li>
+				<li>
+					<p><strong>Grid lines only</strong></p>
+					<p>
+						Use this if you want only the inner grid lines between the cells without the outer grid
+						border as shown below.
+					</p>
+					<div class="grid place-items-start">
+						<div class="bg-base-content grid grid-cols-3 grid-rows-3 gap-[1px]">
+							{#each { length: 9 }}
+								<div class="bg-base-100 size-6"></div>
+							{/each}
+						</div>
+					</div>
+				</li>
+				<li>
+					<p><strong>Outer border only</strong></p>
+					<p>
+						Use this if you want only the outer grid border without the inner grid lines as shown
+						below.
+					</p>
+					<div class="grid place-items-start">
+						<div class="bg-base-content grid grid-cols-3 grid-rows-3 p-[1px]">
+							{#each { length: 9 }}
+								<div class="bg-base-100 size-6"></div>
+							{/each}
+						</div>
+					</div>
+				</li>
+				<li>
+					<p><strong>None</strong></p>
+					<p>
+						Use this if you do not want any type of grid lines. This can be useful when you only
+						want to round the corners of cells as shown below.
+					</p>
+					<div class="grid place-items-start">
+						<div class="grid grid-cols-3 grid-rows-3 p-[1px]">
+							{#each { length: 9 }}
+								<div class="bg-base-content size-6 rounded-lg"></div>
+							{/each}
+						</div>
+					</div>
+				</li>
+			</ul>
 
 			<h3>Which grid stroke size should I choose?</h3>
 			<p>
