@@ -1,13 +1,14 @@
 <script lang="ts">
+	import Article from '$lib/components/Article.svelte';
+	import ArticleSection from '$lib/components/ArticleSection.svelte';
+	import ArticleTitle from '$lib/components/ArticleTitle.svelte';
 </script>
 
 <main class="grid place-items-center p-4 sm:p-8">
-	<article class="grid gap-8">
-		<div class="bg-base-100 prose grid place-items-center rounded-lg border p-8">
-			<h1 class="">Help & FAQ</h1>
-		</div>
+	<Article>
+		<ArticleTitle title="Help" />
 
-		<section class="bg-base-100 prose rounded-lg border p-8">
+		<ArticleSection>
 			<h2>Uploading images</h2>
 
 			<h3>How do I upload images?</h3>
@@ -37,22 +38,22 @@
 				<strong>Yes!</strong> The app works entirely in your browser and your images never leave your
 				device.
 			</p>
-		</section>
+		</ArticleSection>
 
-		<section class="bg-base-100 prose rounded-lg border p-8">
+		<ArticleSection>
 			<h2>Downloading images</h2>
 
 			<h3>How do I download the rendered images?</h3>
 			<p>
 				Click on the <strong>Download images</strong> button to save the rendered images on your device.
 			</p>
-		</section>
+		</ArticleSection>
 
-		<section class="bg-base-100 prose rounded-lg border p-8">
+		<ArticleSection>
 			<h2>Previewing images</h2>
 
 			<h3>How do I preview images?</h3>
-			<p>After uploading your images, they will automatically show in the preview area.</p>
+			<p>After uploading your images, you will immediately see them in the preview area.</p>
 
 			<h3>How do I preview an image at full size?</h3>
 			<p>Click on an image in the preview area to see it at full size in a new tab.</p>
@@ -61,7 +62,7 @@
 			<p>
 				Click on the <strong>Preview mode</strong> setting in the preview area and select between
 				<strong>Pixel art</strong> (suited for pixel art, game sprites, and smaller images) and
-				<strong>High resolution images</strong> (suited for photos, drawings, and bigger images).
+				<strong>High resolution images</strong> (suited for photos, drawings, and larger images).
 			</p>
 
 			<h3>Why do image previews look weird?</h3>
@@ -69,9 +70,9 @@
 				Due to scaling, image previews may contain visual artifacts; click on an image to see it at
 				full size.
 			</p>
-		</section>
+		</ArticleSection>
 
-		<section class="bg-base-100 prose rounded-lg border p-8">
+		<ArticleSection>
 			<h2>Rendering images</h2>
 
 			<h3>How do I render images?</h3>
@@ -91,28 +92,27 @@
 			<h3>Why have the images been rendered incorrectly?</h3>
 			<p>
 				Bugs in browsers or graphical drivers can cause images to be rendered incorrectly. Try
-				changing the rendering options and then render the images again. Alternatively, try using
-				different browsers or devices to render the images.
+				changing the rendering options or using different browsers or devices to render the images.
 			</p>
-		</section>
+		</ArticleSection>
 
-		<section class="bg-base-100 prose rounded-lg border p-8">
+		<ArticleSection>
 			<h2>Rendering options</h2>
 
 			<h3>What are the rendering options?</h3>
 			<p>
-				The <strong>rendering options</strong> determine how the grid will look like when added to your
-				images.
+				The <strong>rendering options</strong> are the settings that determine how the grid will look
+				like when added to your images.
 			</p>
 
 			<h3>How do I reset the rendering options?</h3>
 			<p>
-				Click on the <strong>Reset Options</strong> button to restore the rendering options to their
-				default values.
+				Click on the <strong>Reset render options</strong> button to restore the rendering options to
+				their default values.
 			</p>
-		</section>
+		</ArticleSection>
 
-		<section class="bg-base-100 prose rounded-lg border p-8">
+		<ArticleSection>
 			<h2>Rendering options: Grid</h2>
 
 			<h3>Which grid type should I choose?</h3>
@@ -142,9 +142,9 @@
 				Toggle on the <strong>Fully opaque pixels</strong> switch only if your original image contains
 				transparent pixels that you don't want to be mixed with the grid color.
 			</p>
-		</section>
+		</ArticleSection>
 
-		<section class="bg-base-100 prose rounded-lg border p-8">
+		<ArticleSection>
 			<h2>Rendering options: Grid cells</h2>
 
 			<h3>What are grid cells?</h3>
@@ -182,9 +182,9 @@
 				and more; use really high values like 1000 to turn square cells into circles. You may need
 				to scale up cells if they are too small to be rounded correctly.
 			</p>
-		</section>
+		</ArticleSection>
 
-		<section class="bg-base-100 prose rounded-lg border p-8">
+		<ArticleSection>
 			<h2>Other questions</h2>
 
 			<h3>Are the original image colors exactly preserved in the rendered images?</h3>
@@ -199,6 +199,6 @@
 				The app performance is influenced by your browser and device. If you are processing a high
 				number of images or even a single high quality image, you should expect some slowdowns.
 			</p>
-		</section>
-	</article>
+		</ArticleSection>
+	</Article>
 </main>
