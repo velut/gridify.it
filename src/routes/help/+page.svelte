@@ -127,7 +127,7 @@
 					<div class="grid place-items-start">
 						<div class="bg-base-content grid grid-cols-3 grid-rows-3 gap-[1px] p-[1px]">
 							{#each { length: 9 }}
-								<div class="bg-base-100 size-6"></div>
+								<div class="bg-base-100 size-8"></div>
 							{/each}
 						</div>
 					</div>
@@ -141,7 +141,7 @@
 					<div class="grid place-items-start">
 						<div class="bg-base-content grid grid-cols-3 grid-rows-3 gap-[1px]">
 							{#each { length: 9 }}
-								<div class="bg-base-100 size-6"></div>
+								<div class="bg-base-100 size-8"></div>
 							{/each}
 						</div>
 					</div>
@@ -155,7 +155,7 @@
 					<div class="grid place-items-start">
 						<div class="bg-base-content grid grid-cols-3 grid-rows-3 p-[1px]">
 							{#each { length: 9 }}
-								<div class="bg-base-100 size-6"></div>
+								<div class="bg-base-100 size-8"></div>
 							{/each}
 						</div>
 					</div>
@@ -169,30 +169,23 @@
 					<div class="grid place-items-start">
 						<div class="grid grid-cols-3 grid-rows-3 p-[1px]">
 							{#each { length: 9 }}
-								<div class="bg-base-content size-6 rounded-lg"></div>
+								<div class="bg-base-content size-8 rounded-lg"></div>
 							{/each}
 						</div>
 					</div>
 				</li>
 			</ul>
 
-			<h3>Which grid stroke size should I choose?</h3>
-			<p>
-				Use 1 if you want grid lines that are 1 pixel in size; use higher values if you want thicker
-				grid lines. For example, use 25 for grid lines that are 25 pixels thick.
-			</p>
-
 			<h3>How do I change the color of the grid?</h3>
 			<p>
-				Click on the <strong>Grid color</strong> input to choose a different color for the grid. The
-				selected color is also used to round cell corners even if the grid type is
-				<strong>None</strong>.
+				Click on the <strong>Grid color</strong> setting to choose a different color for the grid. The
+				selected color is also used to round cell corners even if the grid type is None.
 			</p>
 
-			<h3>When should I use the fully opaque pixels option?</h3>
+			<h3>How do I change the grid lines size?</h3>
 			<p>
-				Toggle on the <strong>Fully opaque pixels</strong> switch only if your original image contains
-				transparent pixels that you don't want to be mixed with the grid color.
+				Click on the <strong>Grid lines size</strong> setting and type a value in pixels to choose how
+				thin or thick you want the outer border and the inner grid lines to be.
 			</p>
 		</ArticleSection>
 
@@ -201,16 +194,43 @@
 
 			<h3>What are grid cells?</h3>
 			<p>
-				Grid cells are the parts of your image created by dividing it with grid lines. In other
-				words, a cell is a part of your image surrounded by grid lines. They are like the pieces of
-				a puzzle that together form a complete image.
+				A grid divides an image into cells that are separated by grid lines. For example, in the 3x3
+				grid below there are nine grid cells labelled from 1 to 9.
 			</p>
 
-			<h3>How do I change the aspect ratio of cells?</h3>
+			<div class="not-prose grid place-items-start">
+				<div class="bg-base-content grid grid-cols-3 grid-rows-3 gap-[1px] p-[1px]">
+					{#each { length: 9 }, i}
+						<div class="bg-base-100 grid size-8 place-items-center">{i + 1}</div>
+					{/each}
+				</div>
+			</div>
+
+			<h3>How do I change the shape of grid cells?</h3>
 			<p>
-				Toggle on (default) or off the <strong>Square cells</strong> switch to change between square
-				cells and rectangular cells.
+				Click on the <strong>Grid cell shape</strong> setting and select between
+				<strong>Square</strong> to have grid cells with the same width and height (shown below on
+				the left) and
+				<strong>Rectangle</strong> to freely choose the grid cell dimensions (shown below on the right).
 			</p>
+
+			<div class="flex items-center gap-8">
+				<div class="grid place-items-start">
+					<div class="bg-base-content grid grid-cols-3 grid-rows-3 gap-[1px] p-[1px]">
+						{#each { length: 9 }}
+							<div class="bg-base-100 size-8"></div>
+						{/each}
+					</div>
+				</div>
+
+				<div class="grid place-items-start">
+					<div class="bg-base-content grid grid-cols-3 grid-rows-3 gap-[1px] p-[1px]">
+						{#each { length: 9 }}
+							<div class="bg-base-100 h-8 w-16"></div>
+						{/each}
+					</div>
+				</div>
+			</div>
 
 			<h3>How do I change cell dimensions?</h3>
 			<p>
@@ -233,6 +253,16 @@
 				Use 0 if you want cells to have square corners; use higher values to round cell corners more
 				and more; use really high values like 1000 to turn square cells into circles. You may need
 				to scale up cells if they are too small to be rounded correctly.
+			</p>
+		</ArticleSection>
+
+		<ArticleSection>
+			<h2>Rendering options: Image</h2>
+
+			<h3>When should I use the fully opaque pixels option?</h3>
+			<p>
+				Toggle on the <strong>Fully opaque pixels</strong> switch only if your original image contains
+				transparent pixels that you don't want to be mixed with the grid color.
 			</p>
 		</ArticleSection>
 
