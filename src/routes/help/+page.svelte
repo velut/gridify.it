@@ -318,16 +318,59 @@
 
 		<ArticleSection>
 			<h2 id="tips-for-pixel-art">Tips for pixel art</h2>
+
+			<h3>Use square, 1x1 pixels grid cells</h3>
+			<p>
+				If you want every pixel in the original pixel art image to be its own grid cell, use the
+				<strong>Square</strong> cell shape and set the <strong>cell width</strong> to be 1 pixel. These
+				are the default rendering options.
+			</p>
+
+			<h3>Scale up grid cells to distinguish them from grid lines</h3>
+			<p>
+				If every pixel is its own grid cell and the grid lines size is also 1 pixel, the rendered
+				image can look confusing. To avoid this, you can set the <strong>cell scale</strong> to 10 for
+				example. This causes the grid cells to become 10x10 pixels in the rendered image while the grid
+				lines remain 1 pixel thick.
+			</p>
+
+			<h3>Scale up grid cells to round their corners</h3>
+			<p>
+				If every pixel is its own grid cell and you want the corners to be rounded, you need to
+				scale up the grid cells. For example, you can set the <strong>cell scale</strong> to 50 and
+				the <strong>cell corner radius</strong> to 10. This causes the grid cells to become 50x50 pixels
+				in the rendered image with a corner radius of 10 pixels.
+			</p>
 		</ArticleSection>
 
 		<ArticleSection>
 			<h2 id="tips-for-high-resolution-images">Tips for high resolution images</h2>
+
+			<h3>Use larger grid cells</h3>
+			<p>
+				If you are adding a grid to a high resolution image, try setting the
+				<strong>cell width</strong> to a higher value like 100 pixels. Otherwise, the grid will be very
+				fine and the rendered image will look like a darker version of the original image.
+			</p>
+
+			<h3>Use thicker grid lines</h3>
+			<p>
+				If you are using larger cell sizes, you may also need to increase the
+				<strong>grid lines size</strong> to better see the grid lines in the rendered images.
+			</p>
+
+			<h3>Render fewer images at a time</h3>
+			<p>
+				Adding grids to high resolution images, especially with smaller cell sizes, is a resource
+				intensive operation which may cause the app to become slow and unresponsive. If you are
+				rendering many high resolution images, try rendering them in smaller batches or one by one.
+			</p>
 		</ArticleSection>
 
 		<ArticleSection>
 			<h2 id="other-questions">Other questions</h2>
 
-			<h3>Are the original image colors exactly preserved in the rendered images?</h3>
+			<h3>Are the original colors exactly preserved in the rendered images?</h3>
 			<p>
 				<strong>Probably not.</strong> Depending on the browser that you are using, you should expect
 				some slight differences between the colors in a rendered image and the original image colors.
@@ -336,7 +379,7 @@
 
 			<h3>Why is the app becoming slow and unresponsive?</h3>
 			<p>
-				The app performance is influenced by your browser and device. If you are processing a high
+				The app performance is influenced by your browser and device. If you are rendering a high
 				number of images or even a single high quality image, you should expect some slowdowns.
 			</p>
 		</ArticleSection>
