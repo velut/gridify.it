@@ -9,12 +9,28 @@
 		<ArticleTitle title="Help" />
 
 		<ArticleSection>
-			<h2>Uploading images</h2>
+			<ul class="text-lg">
+				<li><a href="#uploading-images">Uploading images</a></li>
+				<li><a href="#downloading-images">Downloading images</a></li>
+				<li><a href="#previewing-images">Previewing images</a></li>
+				<li><a href="#rendering-images">Rendering images</a></li>
+				<li><a href="#rendering-options">Rendering options</a></li>
+				<li><a href="#rendering-options-grid">Rendering options: Grid</a></li>
+				<li><a href="#rendering-options-grid-cells">Rendering options: Grid cells</a></li>
+				<li><a href="#rendering-options-opacity">Rendering options: Opacity</a></li>
+				<li><a href="#tips-for-pixel-art">Tips for pixel art</a></li>
+				<li><a href="#tips-for-high-resolution-images">Tips for high resolution images</a></li>
+				<li><a href="#other-questions">Other questions</a></li>
+			</ul>
+		</ArticleSection>
+
+		<ArticleSection>
+			<h2 id="uploading-images">Uploading images</h2>
 
 			<h3>How do I upload images?</h3>
 			<p>
 				Click on the <strong>Upload images</strong> button to open a file picker dialog. You can
-				also directly <strong>drag and drop</strong> the images on the page.
+				also directly <strong>drag and drop</strong> the images on the app page.
 			</p>
 
 			<h3>How do I remove uploaded images?</h3>
@@ -41,7 +57,7 @@
 		</ArticleSection>
 
 		<ArticleSection>
-			<h2>Downloading images</h2>
+			<h2 id="downloading-images">Downloading images</h2>
 
 			<h3>How do I download the rendered images?</h3>
 			<p>
@@ -50,7 +66,7 @@
 		</ArticleSection>
 
 		<ArticleSection>
-			<h2>Previewing images</h2>
+			<h2 id="previewing-images">Previewing images</h2>
 
 			<h3>How do I preview images?</h3>
 			<p>After uploading your images, you will immediately see them in the preview area.</p>
@@ -61,32 +77,30 @@
 			<h3>How do I change the preview mode?</h3>
 			<p>
 				Click on the <strong>Preview mode</strong> setting in the preview area and select between
-				<strong>Pixel art</strong> (suited for pixel art, game sprites, and smaller images) and
-				<strong>High resolution images</strong> (suited for photos, drawings, and larger images).
+				<strong>Pixel art</strong> (for pixel art, game sprites, and smaller images) and
+				<strong>High resolution images</strong> (for photos, drawings, and larger images).
 			</p>
 
 			<h3>Why do image previews look weird?</h3>
 			<p>
-				Due to scaling, image previews may contain visual artifacts; click on an image to see it at
-				full size.
+				Scaling in the preview area may cause image previews to contain visual artifacts; click on
+				an image to see it at full size in a new tab.
 			</p>
 		</ArticleSection>
 
 		<ArticleSection>
-			<h2>Rendering images</h2>
+			<h2 id="rendering-images">Rendering images</h2>
 
 			<h3>How do I render images?</h3>
 			<p>
-				Click on the <strong>Render images</strong> button. You can also use the keyboard shortcut
-				by pressing <strong>Ctrl</strong> and
-				<strong>Enter</strong> together.
+				Click on the <strong>Render images</strong> button. You can also use the
+				<strong>Ctrl+Enter</strong> keyboard shortcut.
 			</p>
 
 			<h3>How do I undo the images render?</h3>
 			<p>
 				Click on the <strong>Undo render images</strong> button to restore images to their original
-				state. You can also use the keyboard shortcut by pressing <strong>Ctrl</strong> and
-				<strong>Z</strong> together.
+				appearance. You can also use the <strong>Ctrl+Z</strong> keyboard shortcut.
 			</p>
 
 			<h3>Why have the images been rendered incorrectly?</h3>
@@ -97,7 +111,7 @@
 		</ArticleSection>
 
 		<ArticleSection>
-			<h2>Rendering options</h2>
+			<h2 id="rendering-options">Rendering options</h2>
 
 			<h3>What are the rendering options?</h3>
 			<p>
@@ -113,7 +127,7 @@
 		</ArticleSection>
 
 		<ArticleSection>
-			<h2>Rendering options: Grid</h2>
+			<h2 id="rendering-options-grid">Rendering options: Grid</h2>
 
 			<h3>Which grid type should I choose?</h3>
 			<p>The app provides different grid types for you to use:</p>
@@ -190,7 +204,7 @@
 		</ArticleSection>
 
 		<ArticleSection>
-			<h2>Rendering options: Grid cells</h2>
+			<h2 id="rendering-options-grid-cells">Rendering options: Grid cells</h2>
 
 			<h3>What are grid cells?</h3>
 			<p>
@@ -211,7 +225,7 @@
 				Click on the <strong>Grid cell shape</strong> setting and select between
 				<strong>Square</strong> to have grid cells with the same width and height (shown below on
 				the left) and
-				<strong>Rectangle</strong> to freely choose the grid cell dimensions (shown below on the right).
+				<strong>Rectangle</strong> to freely choose the grid cell sizes (shown below on the right).
 			</p>
 
 			<div class="flex items-center gap-8">
@@ -232,42 +246,86 @@
 				</div>
 			</div>
 
-			<h3>How do I change cell dimensions?</h3>
+			<h3>How do I change the width of grid cells?</h3>
 			<p>
-				Use the <strong>Cell width</strong> input (and/or the <strong>Cell height</strong> input if
-				the
-				<strong>Square cells</strong> switch is off) to change the dimensions in pixels of the cells.
-				All cells in the grid will have the same dimensions except for the ones that do not fit in the
-				image which instead will fill the remaining space.
+				Click on the <strong>Grid cell width</strong> setting and type a value in pixels to choose
+				how wide you want the grid cells to be. This value will also be used for the height of grid
+				cells if the grid cells shape is set to <strong>Square</strong>.
 			</p>
 
-			<h3>Which cell scale multiplier should I use?</h3>
+			<h3>How do I change the height of grid cells?</h3>
 			<p>
-				Use 1 if you want the cells to keep the same size they have in the original image; use
-				higher values if you want to scale up the cells. For example, a 2x3 pixels cell with a scale
-				value of 5 becomes a 10x15 pixels cell in the rendered image.
+				Click on the <strong>Grid cell shape</strong> setting and select the
+				<strong>Rectangle</strong> option, then click on the <strong>Grid cell height</strong> setting
+				and type a value in pixels to choose how tall you want the grid cells to be.
 			</p>
 
-			<h3>Which cell corner radius should I use?</h3>
+			<h3>Are all the grid cells the exact same size?</h3>
 			<p>
-				Use 0 if you want cells to have square corners; use higher values to round cell corners more
-				and more; use really high values like 1000 to turn square cells into circles. You may need
-				to scale up cells if they are too small to be rounded correctly.
+				All grid cells have the exact same size except for the ones that do not fit in the image at
+				the right and bottom edges. Fox example, in the grid below the cells 3, 6, and 9 are smaller
+				and only fill the remaining space on the right.
+			</p>
+
+			<div class="grid place-items-start">
+				<div class="bg-base-content grid grid-cols-[2fr_2fr_1fr] grid-rows-3 gap-[1px] p-[1px]">
+					{#each { length: 9 }, i}
+						<div
+							class={[
+								'bg-base-100 grid h-8 place-items-center',
+								(i + 1) % 3 === 0 ? 'w-8' : 'w-16'
+							]}
+						>
+							{i + 1}
+						</div>
+					{/each}
+				</div>
+			</div>
+
+			<h3>How do I scale up grid cells?</h3>
+			<p>
+				Click on the <strong>Grid cell scale</strong> setting and type a multiplier value to apply to
+				the grid cell sizes. For example, if you set the scale to 5, a grid cell that is 20x20 pixels
+				in the original image will be scaled up to 100x100 pixels in the rendered image.
+			</p>
+
+			<h3>How do I round the corner of grid cells?</h3>
+			<p>
+				Click on the <strong>Grid cell corner radius</strong> setting and type a value in pixels for
+				the radius to apply to the corners of grid cells. You may need to also scale up cells if they
+				are too small to be rounded correctly.
 			</p>
 		</ArticleSection>
 
 		<ArticleSection>
-			<h2>Rendering options: Image</h2>
+			<h2 id="rendering-options-opacity">Rendering options: Opacity</h2>
 
-			<h3>When should I use the fully opaque pixels option?</h3>
+			<h3>How do I change the transparency of pixels?</h3>
 			<p>
-				Toggle on the <strong>Fully opaque pixels</strong> switch only if your original image contains
-				transparent pixels that you don't want to be mixed with the grid color.
+				Click on the <strong>Transparent pixels</strong> setting and select between the
+				<strong>Preserve transparency</strong> option to keep the original pixel transparency in the
+				rendered image and the <strong>Fully opaque pixels</strong> option to make all pixels fully opaque
+				in the rendered image.
+			</p>
+
+			<h3>Why should I make the pixels fully opaque?</h3>
+			<p>
+				Preserving the original pixel transparency causes the image colors to be mixed with the grid
+				color. Changing the pixels to fully opaque prevents the mixing between the image colors and
+				the grid color.
 			</p>
 		</ArticleSection>
 
 		<ArticleSection>
-			<h2>Other questions</h2>
+			<h2 id="tips-for-pixel-art">Tips for pixel art</h2>
+		</ArticleSection>
+
+		<ArticleSection>
+			<h2 id="tips-for-high-resolution-images">Tips for high resolution images</h2>
+		</ArticleSection>
+
+		<ArticleSection>
+			<h2 id="other-questions">Other questions</h2>
 
 			<h3>Are the original image colors exactly preserved in the rendered images?</h3>
 			<p>
