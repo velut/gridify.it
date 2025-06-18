@@ -26,12 +26,6 @@
 		"bunny:deploy": "bun run scripts/deploy-on-bunny.ts",
 		"pre-push": "bun i && bun run lint && bun run check && bun run build"
 	},
-	"dependencies": {
-		"@zip.js/zip.js": "^2.7.62",
-		"attr-accept": "^2.2.5",
-		"file-selector": "^2.1.2",
-		"p-map": "^7.0.3"
-	},
 	"devDependencies": {
 		"@iconify-json/material-symbols": "^1.2.27",
 		"@lucide/svelte": "^0.517.0",
@@ -42,14 +36,18 @@
 		"@tailwindcss/vite": "^4.1.10",
 		"@types/bun": "^1.2.16",
 		"@types/node": "^24.0.3",
+		"@zip.js/zip.js": "^2.7.62",
+		"attr-accept": "^2.2.5",
 		"clsx": "^2.1.1",
 		"daisyui": "^5.0.43",
-		"prettier": "^3.5.3",
+		"file-selector": "^2.1.2",
+		"p-map": "^7.0.3",
 		"prettier-plugin-svelte": "^3.4.0",
 		"prettier-plugin-tailwindcss": "^0.6.12",
+		"prettier": "^3.5.3",
 		"rollup-plugin-license": "^3.6.0",
-		"svelte": "^5.34.5",
 		"svelte-check": "^4.2.1",
+		"svelte": "^5.34.5",
 		"tailwind-merge": "^3.3.1",
 		"tailwind-variants": "^1.0.0",
 		"tailwindcss": "^4.1.10",
