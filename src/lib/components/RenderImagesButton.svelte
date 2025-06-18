@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { getAppStateContext } from '$lib/app-state.svelte';
+	import { Button } from '$lib/components/ui/button/index.js';
 	import MaterialSymbolsAnimatedImagesRounded from '~icons/material-symbols/animated-images-rounded';
 
 	let { images } = getAppStateContext();
-	let button: HTMLButtonElement;
+	let button = $state<HTMLInputElement | null>(null);
 
 	function handleHotkey(e: KeyboardEvent) {
-		if (e.ctrlKey && e.key === 'Enter' && !button.disabled) {
+		if (e.ctrlKey && e.key === 'Enter' && button && !button.disabled) {
 			e.preventDefault();
 			button.click();
 		}
@@ -15,14 +16,13 @@
 
 <svelte:window onkeydown={handleHotkey} />
 
-<button
+<Button
 	type="submit"
 	form="render-options-form"
-	class="btn btn-primary w-full"
-	disabled={!images.hasInputImages()}
-	bind:this={button}
 	title="Render images [Ctrl+Enter]"
+	disabled={!images.hasInputImages()}
+	bind:ref={button}
 >
-	<MaterialSymbolsAnimatedImagesRounded class="size-6" />
+	<MaterialSymbolsAnimatedImagesRounded />
 	Render images
-</button>
+</Button>

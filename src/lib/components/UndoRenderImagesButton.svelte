@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { getAppStateContext } from '$lib/app-state.svelte';
+	import { Button } from '$lib/components/ui/button/index.js';
 	import MaterialSymbolsResetImageRounded from '~icons/material-symbols/reset-image-rounded';
 
 	let { images } = getAppStateContext();
-	let button: HTMLButtonElement;
+	let button = $state<HTMLInputElement | null>(null);
 
 	function handleHotkey(e: KeyboardEvent) {
-		if (e.ctrlKey && e.key.toLowerCase() === 'z' && !button.disabled) {
+		if (e.ctrlKey && e.key.toLowerCase() === 'z' && button && !button.disabled) {
 			e.preventDefault();
 			button.click();
 		}
@@ -15,14 +16,12 @@
 
 <svelte:window onkeydown={handleHotkey} />
 
-<button
-	type="button"
-	class="btn btn-error btn-outline w-full"
+<Button
+	title="Undo render images [Ctrl+Z]"
 	onclick={() => images.undoRender()}
 	disabled={!images.hasInputImages() || !images.hasRenderedImages()}
-	bind:this={button}
-	title="Undo render images [Ctrl+Z]"
+	bind:ref={button}
 >
-	<MaterialSymbolsResetImageRounded class="size-6" />
+	<MaterialSymbolsResetImageRounded />
 	Undo render images
-</button>
+</Button>

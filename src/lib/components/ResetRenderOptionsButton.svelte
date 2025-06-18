@@ -1,16 +1,12 @@
 <script lang="ts">
 	import { getAppStateContext } from '$lib/app-state.svelte';
+	import { Button } from '$lib/components/ui/button/index.js';
 	import MaterialSymbolsResetWrenchRounded from '~icons/material-symbols/reset-wrench-rounded';
 
 	let { renderOptions: opts } = getAppStateContext();
 </script>
 
-<button
-	type="button"
-	class="btn btn-error btn-outline w-full"
-	onclick={() => opts.reset()}
-	disabled={opts.isDefault()}
->
-	<MaterialSymbolsResetWrenchRounded class="size-6" />
+<Button variant="destructive" onclick={() => opts.reset()} disabled={opts.isDefault()}>
+	<MaterialSymbolsResetWrenchRounded />
 	Reset render options
-</button>
+</Button>

@@ -1,16 +1,12 @@
 <script lang="ts">
 	import { getAppStateContext } from '$lib/app-state.svelte';
+	import { Button } from '$lib/components/ui/button/index.js';
 	import MaterialSymbolsHideImageRounded from '~icons/material-symbols/hide-image-rounded';
 
 	let { images } = getAppStateContext();
 </script>
 
-<button
-	type="button"
-	class="btn btn-error btn-outline w-full"
-	onclick={() => images.reset()}
-	disabled={!images.hasInputImages()}
->
-	<MaterialSymbolsHideImageRounded class="size-6" />
+<Button variant="destructive" onclick={() => images.reset()} disabled={!images.hasInputImages()}>
+	<MaterialSymbolsHideImageRounded />
 	Remove images
-</button>
+</Button>
