@@ -11,6 +11,11 @@
 	let props: Props = $props();
 </script>
 
-<div class={cn('bg-base-300 overflow-y-auto rounded-xl p-4', props.class)}>
+<div
+	class={cn(
+		'bg-base-100 border-base-content/30 overflow-y-auto rounded-md border p-4',
+		props.class
+	)}
+>
 	{@render props.children()}
 </div>

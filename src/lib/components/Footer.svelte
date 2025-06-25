@@ -8,7 +8,7 @@
 </script>
 
 <footer
-	class="footer lg:footer-horizontal bg-base-200 text-base-content items-center p-4 sm:gap-y-4"
+	class="footer lg:footer-horizontal bg-base-100 text-base-content border-base-content/30 items-center border-t p-4 sm:gap-y-4"
 >
 	<aside class="grid-flow-row items-center sm:grid-flow-col">
 		<a href="/" class="link link-hover flex items-center gap-2 font-bold">
