@@ -2,6 +2,6 @@
 	let { children } = $props();
 </script>
 
-<article class="grid gap-8">
+<article class="grid gap-4">
 	{@render children?.()}
 </article>
