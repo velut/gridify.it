@@ -13,7 +13,7 @@ export default defineConfig({
 		tailwindcss(),
 		sveltekit(),
 		Icons({ compiler: 'svelte' }),
-		isProduction && (await import('./vite-plugin-licenses')).licenses()
+		isProduction && ((await import('./vite-plugin-licenses')).licenses() as any)
 	],
 	define: {
 		__GIT_COMMIT: JSON.stringify(execSync('git rev-parse HEAD').toString().trim())
