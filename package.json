@@ -16,7 +16,7 @@
 	"scripts": {
 		"prepare": "svelte-kit sync || echo ''",
 		"dev": "vite dev",
-		"build": "vite build",
+		"build": "vite build && bun run scripts/third-party-licenses.ts",
 		"start": "vite build && vite preview",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",

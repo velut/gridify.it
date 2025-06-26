@@ -2,10 +2,9 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import tailwindcss from '@tailwindcss/vite';
 import { execSync } from 'node:child_process';
 import Icons from 'unplugin-icons/vite';
-import { defineConfig } from 'vite';
+import { defineConfig, perEnvironmentPlugin } from 'vite';
 import devtoolsJson from 'vite-plugin-devtools-json';
-
-const isProduction = process.env.NODE_ENV === 'production';
+import { licenses } from './vite-plugin-licenses';
 
 export default defineConfig({
 	plugins: [
@@ -13,7 +12,10 @@ export default defineConfig({
 		tailwindcss(),
 		sveltekit(),
 		Icons({ compiler: 'svelte' }),
-		isProduction && ((await import('./vite-plugin-licenses')).licenses() as any)
+		perEnvironmentPlugin('vite-plugin-licenses', (environment) => {
+			if (environment.name !== 'client') return false;
+			return licenses() as any;
+		})
 	],
 	define: {
 		__GIT_COMMIT: JSON.stringify(execSync('git rev-parse HEAD').toString().trim())

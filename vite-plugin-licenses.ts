@@ -11,12 +11,6 @@ type License = {
 };
 
 export async function licenses() {
-	// "Falsy plugins will be ignored, which can be used to easily activate or deactivate plugins."
-	// See https://vitejs.dev/guide/api-plugin.html#plugins-config.
-	if (process.env.NODE_ENV !== 'production') {
-		return false;
-	}
-
 	let manualDeps: License[] = [
 		{
 			name: '@tailwindcss/typography',

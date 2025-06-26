@@ -13,7 +13,13 @@ const config = {
 		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 		adapter: adapter({
 			fallback: '404.html'
-		})
+		}),
+		prerender: {
+			handleHttpError: ({ path, message }) => {
+				if (path === '/third-party-licenses.txt') return;
+				throw new Error(message);
+			}
+		}
 	}
 };
 
