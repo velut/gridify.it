@@ -249,7 +249,7 @@
 		<p>
 			Click on the <strong>Grid cell width</strong> setting and type a value in pixels to choose how
 			wide you want the grid cells to be. This value will also be used for the height of grid cells
-			if the grid cells shape is set to <strong>Square</strong>.
+			if the <strong>Grid cell shape</strong> is set to <strong>Square</strong>.
 		</p>
 
 		<h3>How do I change the height of grid cells?</h3>
@@ -285,11 +285,11 @@
 			original image will be scaled up to 100x100 pixels in the rendered image.
 		</p>
 
-		<h3>How do I round the corner of grid cells?</h3>
+		<h3>How do I round the corners of grid cells?</h3>
 		<p>
-			Click on the <strong>Grid cell corner radius</strong> setting and type a value in pixels for the
-			radius to apply to the corners of grid cells. You may need to also scale up cells if they are too
-			small to be rounded correctly.
+			Click on the <strong>Grid cell corner radius</strong> setting and type a value in pixels for
+			the radius to apply to the corners of grid cells. You may need to also scale up cells using
+			the <strong>Grid cell scale</strong> setting if they are too small to be rounded correctly.
 		</p>
 	</ArticleSection>
 
@@ -318,24 +318,24 @@
 		<h3>Use square, 1x1 pixels grid cells</h3>
 		<p>
 			If you want every pixel in the original pixel art image to be its own grid cell, use the
-			<strong>Square</strong> cell shape and set the <strong>cell width</strong> to be 1 pixel. These
-			are the default rendering options.
+			<strong>Square</strong> cell shape and set the <strong>Grid cell width</strong> to be 1 pixel.
+			These are the default rendering options.
 		</p>
 
 		<h3>Scale up grid cells to distinguish them from grid lines</h3>
 		<p>
 			If every pixel is its own grid cell and the grid lines size is also 1 pixel, the rendered
-			image can look confusing. To avoid this, you can set the <strong>cell scale</strong> to 10 for
-			example. This causes the grid cells to become 10x10 pixels in the rendered image while the grid
-			lines remain 1 pixel thick.
+			image can look confusing. To avoid this, you can set the <strong>Grid cell scale</strong> to 10
+			for example. This causes the grid cells to become 10x10 pixels in the rendered image while the
+			grid lines remain 1 pixel thick.
 		</p>
 
 		<h3>Scale up grid cells to round their corners</h3>
 		<p>
 			If every pixel is its own grid cell and you want the corners to be rounded, you need to scale
-			up the grid cells. For example, you can set the <strong>cell scale</strong> to 50 and the
-			<strong>cell corner radius</strong> to 10. This causes the grid cells to become 50x50 pixels in
-			the rendered image with a corner radius of 10 pixels.
+			up the grid cells. For example, you can set the <strong>Grid cell scale</strong> to 50 and the
+			<strong>Grid cell corner radius</strong> to 10. This causes the grid cells to become 50x50 pixels
+			in the rendered image with a corner radius of 10 pixels.
 		</p>
 	</ArticleSection>
 
@@ -345,14 +345,14 @@
 		<h3>Use larger grid cells</h3>
 		<p>
 			If you are adding a grid to a high resolution image, try setting the
-			<strong>cell width</strong> to a higher value like 100 pixels. Otherwise, the grid will be very
-			fine and the rendered image will look like a darker version of the original image.
+			<strong>Grid cell width</strong> to a higher value like 100 pixels. Otherwise, the grid will be
+			very fine and the rendered image will look like a darker version of the original image.
 		</p>
 
 		<h3>Use thicker grid lines</h3>
 		<p>
 			If you are using larger cell sizes, you may also need to increase the
-			<strong>grid lines size</strong> to better see the grid lines in the rendered images.
+			<strong>Grid lines size</strong> value to better see the grid lines in the rendered images.
 		</p>
 
 		<h3>Render fewer images at a time</h3>
@@ -377,6 +377,13 @@
 		<p>
 			The app performance is influenced by your browser and device. If you are rendering a high
 			number of images or even a single high quality image, you should expect some slowdowns.
+		</p>
+
+		<h3>I want to ask another question.</h3>
+		<p>
+			Please <a href="https://github.com/velut/gridify.it/issues">open an issue on GitHub</a>, it's
+			the fastest way for me too see your question. You can also send me an email to
+			<a href="mailto:scibona.edoardo@proton.me">scibona.edoardo@proton.me</a>.
 		</p>
 	</ArticleSection>
 </Article>
