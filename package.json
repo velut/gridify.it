@@ -37,6 +37,7 @@
 		"@types/node": "^24.0.4",
 		"@zip.js/zip.js": "^2.7.62",
 		"attr-accept": "^2.2.5",
+		"basecoat-css": "^0.2.7",
 		"clsx": "^2.1.1",
 		"daisyui": "^5.0.43",
 		"file-selector": "^2.1.2",

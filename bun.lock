@@ -14,6 +14,7 @@
         "@types/node": "^24.0.4",
         "@zip.js/zip.js": "^2.7.62",
         "attr-accept": "^2.2.5",
+        "basecoat-css": "^0.2.7",
         "clsx": "^2.1.1",
         "daisyui": "^5.0.43",
         "file-selector": "^2.1.2",
@@ -211,6 +212,8 @@
     "attr-accept": ["attr-accept@2.2.5", "", {}, "sha512-0bDNnY/u6pPwHDMoF0FieU354oBi0a8rD9FcsLwzcGWbc8KS8KPIi7y+s13OlVY+gMWc/9xEMUgNE6Qm8ZllYQ=="],
 
     "axobject-query": ["axobject-query@4.1.0", "", {}, "sha512-qIj0G9wZbMGNLjLmg1PT6v2mE9AH2zlnADJD/2tC6E00hgmhUOfEB6greHPAfLRSufHqROIUTkw6E+M3lH0PTQ=="],
+
+    "basecoat-css": ["basecoat-css@0.2.7", "", {}, "sha512-DX2fOR+Nbt03+ag6IqeFXlBQWYrSpHyXBuRqReoRnx2zjVKS5noR+VF1H0PrF1OKjIF+yYlQMOzRWWOeKBd+Og=="],
 
     "bun-types": ["bun-types@1.2.17", "", { "dependencies": { "@types/node": "*" } }, "sha512-ElC7ItwT3SCQwYZDYoAH+q6KT4Fxjl8DtZ6qDulUFBmXA8YB4xo+l54J9ZJN+k2pphfn9vk7kfubeSd5QfTVJQ=="],
 

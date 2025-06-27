@@ -1,5 +1,6 @@
 {
 	"cSpell.ignoreWords": [
+		"basecoat",
 		"clsx",
 		"cédric",
 		"daisyui",
@@ -14,7 +15,9 @@
 		"nonogram",
 		"noopener",
 		"noto",
+		"oklch",
 		"perler",
+		"prefersdark",
 		"scibona",
 		"superforms",
 		"sveltekit",

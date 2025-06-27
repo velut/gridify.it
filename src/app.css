@@ -1,15 +1,4 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
-@plugin 'daisyui' {
-	logs: false;
-}
-@plugin "daisyui/theme" {
-	name: 'light';
-	--depth: 0;
-}
-@plugin "daisyui/theme" {
-	name: 'dark';
-	--depth: 0;
-}
-
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@import 'basecoat-css';
+@import './theme.css';
