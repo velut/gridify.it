@@ -41,7 +41,7 @@
 		"daisyui": "^5.0.43",
 		"file-selector": "^2.1.2",
 		"p-map": "^7.0.3",
-		"prettier": "^3.6.1",
+		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
 		"prettier-plugin-tailwindcss": "^0.6.13",
 		"rollup-plugin-license": "^3.6.0",
