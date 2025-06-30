@@ -1,9 +1,9 @@
 export function changeTheme() {
-	if (document.documentElement.getAttribute('data-theme') === 'dark') {
+	if (document.documentElement.classList.contains('dark')) {
 		localStorage.theme = 'light';
-		document.documentElement.setAttribute('data-theme', 'light');
+		document.documentElement.classList.remove('dark');
 	} else {
 		localStorage.theme = 'dark';
-		document.documentElement.setAttribute('data-theme', 'dark');
+		document.documentElement.classList.add('dark');
 	}
 }

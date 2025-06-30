@@ -12,14 +12,11 @@
 		%sveltekit.head%
 
 		<script>
-			if (
+			document.documentElement.classList.toggle(
+				'dark',
 				localStorage.theme === 'dark' ||
-				(!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
-			) {
-				document.documentElement.setAttribute('data-theme', 'dark');
-			} else {
-				document.documentElement.setAttribute('data-theme', 'light');
-			}
+					(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+			);
 		</script>
 	</head>
 	<body data-sveltekit-preload-data="hover">
