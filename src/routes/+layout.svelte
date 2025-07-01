@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import Footer from '$lib/components/Footer.svelte';
+	import Header from '$lib/components/Header.svelte';
 	import '../app.css';
 
 	let { children } = $props();
@@ -41,8 +43,10 @@
 	<meta name="twitter:creator" content="@EdoardoScibona" />
 </svelte:head>
 
-<div
-	class="min-h-screen bg-[url(/bg_dots_light.svg)] bg-size-[48px_48px] bg-fixed bg-repeat dark:bg-[url(/bg_dots_dark.svg)]"
->
-	{@render children?.()}
+<div class="grid min-h-screen grid-rows-[auto_1fr_auto]">
+	<Header />
+	<main>
+		{@render children?.()}
+	</main>
+	<Footer />
 </div>

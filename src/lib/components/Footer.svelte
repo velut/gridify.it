@@ -1,32 +1,26 @@
 <script lang="ts">
-	import { changeTheme } from '$lib/change-theme';
-	import MaterialSymbolsGridOn from '~icons/material-symbols/grid-on';
-
 	const commitShort = __GIT_COMMIT.slice(0, 7);
 	const ghUrl = 'https://github.com/velut/gridify.it';
 	const ghCommitUrl = `${ghUrl}/commit/${__GIT_COMMIT}`;
 </script>
 
-<footer
-	class="footer lg:footer-horizontal bg-base-100 text-base-content border-base-content/30 items-center border-t p-4 sm:gap-y-4"
->
-	<aside class="grid-flow-row items-center sm:grid-flow-col">
-		<a href="/" class="link link-hover flex items-center gap-2 font-bold">
-			<MaterialSymbolsGridOn class="size-6" />
-			gridify.it
-		</a>
-		<div class="hidden sm:block">-</div>
+<footer class="border-t">
+	<div
+		class="text-muted-foreground flex flex-col justify-between gap-4 p-4 text-xs md:flex-row md:items-center"
+	>
 		<div>
-			Created by
-			<a href="https://github.com/velut" class="link link-hover font-bold">Edoardo Scibona</a>
+			Made by
+			<a href="https://github.com/velut" class="font-bold underline underline-offset-4"
+				>Edoardo Scibona</a
+			>
 		</div>
-	</aside>
-	<nav class="grid-flow-row gap-4 sm:grid-flow-col lg:place-self-center lg:justify-self-end">
-		<a href={ghCommitUrl} class="link link-hover">{commitShort}</a>
-		<a href={ghUrl} class="link link-hover">GitHub</a>
-		<a href="/third-party-licenses.txt" class="link link-hover">OSS licenses</a>
-		<a href="/privacy/" class="link link-hover">Privacy policy</a>
-		<a href="/about/" class="link link-hover">About</a>
-		<button type="button" class="link link-hover" onclick={changeTheme}>Change theme</button>
-	</nav>
+		<nav class="flex flex-col gap-2 md:flex-row md:items-center">
+			<a href={ghCommitUrl} class="underline-offset-4 hover:underline">{commitShort}</a>
+			<a href={ghUrl} class="underline-offset-4 hover:underline">GitHub</a>
+			<a href="/third-party-licenses.txt" class="underline-offset-4 hover:underline">OSS licenses</a
+			>
+			<a href="/privacy/" class="underline-offset-4 hover:underline">Privacy policy</a>
+			<a href="/about/" class="underline-offset-4 hover:underline">About</a>
+		</nav>
+	</div>
 </footer>
