@@ -66,7 +66,7 @@
 		"postcss": "^8.5.1",
 		"prettier": "^3.5.2",
 		"prettier-plugin-svelte": "^3.3.3",
-		"prettier-plugin-tailwindcss": "^0.6.9",
+		"prettier-plugin-tailwindcss": "^0.6.13",
 		"rollup-plugin-license": "^3.5.3",
 		"svelte": "^4.2.19",
 		"svelte-check": "^4.2.1",
