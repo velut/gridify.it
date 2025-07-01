@@ -43,7 +43,7 @@
 	"devDependencies": {
 		"@iconify-json/twemoji": "^1.2.2",
 		"@sveltejs/adapter-static": "^3.0.8",
-		"@sveltejs/kit": "^2.17.3",
+		"@sveltejs/kit": "^2.22.2",
 		"@sveltejs/vite-plugin-svelte": "^3.1.2",
 		"@tailwindcss/typography": "^0.5.16",
 		"@types/file-saver": "^2.0.7",
