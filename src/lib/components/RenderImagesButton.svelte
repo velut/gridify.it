@@ -18,11 +18,11 @@
 <button
 	type="submit"
 	form="render-options-form"
-	class="btn btn-primary w-full"
+	class="btn"
 	disabled={!images.hasInputImages()}
 	bind:this={button}
 	title="Render images [Ctrl+Enter]"
 >
-	<MaterialSymbolsAnimatedImagesRounded class="size-6" />
+	<MaterialSymbolsAnimatedImagesRounded class="size-4" />
 	Render images
 </button>

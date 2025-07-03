@@ -7,10 +7,10 @@
 
 <button
 	type="button"
-	class="btn btn-error btn-outline w-full"
+	class="btn-destructive"
 	onclick={() => opts.reset()}
 	disabled={opts.isDefault()}
 >
-	<MaterialSymbolsResetWrenchRounded class="size-6" />
+	<MaterialSymbolsResetWrenchRounded class="size-4" />
 	Reset render options
 </button>

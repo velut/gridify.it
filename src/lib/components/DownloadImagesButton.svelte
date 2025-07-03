@@ -7,10 +7,10 @@
 
 <button
 	type="button"
-	class="btn btn-primary w-full"
+	class="btn"
 	onclick={() => images.download()}
 	disabled={!images.hasOutputImages()}
 >
-	<MaterialSymbolsDownloadRounded class="size-6" />
+	<MaterialSymbolsDownloadRounded class="size-4" />
 	Download images
 </button>

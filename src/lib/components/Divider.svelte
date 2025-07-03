@@ -1,1 +1,1 @@
-<div class="divider my-0"></div>
+<div class="bg-border h-[1px]"></div>

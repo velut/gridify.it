@@ -14,8 +14,8 @@
 
 <svelte:window ondragover={(e) => e.preventDefault()} ondrop={handleImagesUpload} />
 
-<button type="button" class="btn btn-primary w-full" onclick={() => fileInput.click()}>
-	<MaterialSymbolsImageArrowUpRounded class="size-6" />
+<button type="button" class="btn" onclick={() => fileInput.click()}>
+	<MaterialSymbolsImageArrowUpRounded class="size-4" />
 	Upload images
 </button>
 

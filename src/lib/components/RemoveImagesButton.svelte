@@ -7,10 +7,10 @@
 
 <button
 	type="button"
-	class="btn btn-error btn-outline w-full"
+	class="btn-destructive"
 	onclick={() => images.reset()}
 	disabled={!images.hasInputImages()}
 >
-	<MaterialSymbolsHideImageRounded class="size-6" />
+	<MaterialSymbolsHideImageRounded class="size-4" />
 	Remove images
 </button>

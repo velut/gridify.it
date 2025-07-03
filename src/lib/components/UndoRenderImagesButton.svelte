@@ -17,12 +17,12 @@
 
 <button
 	type="button"
-	class="btn btn-error btn-outline w-full"
+	class="btn-destructive"
 	onclick={() => images.undoRender()}
 	disabled={!images.hasInputImages() || !images.hasRenderedImages()}
 	bind:this={button}
 	title="Undo render images [Ctrl+Z]"
 >
-	<MaterialSymbolsResetImageRounded class="size-6" />
+	<MaterialSymbolsResetImageRounded class="size-4" />
 	Undo render images
 </button>
