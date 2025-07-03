@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getAppStateContext } from '$lib/app-state.svelte';
+	import InputWithUnit from '$lib/components/InputWithUnit.svelte';
 	import MaterialSymbolsBackToTabRounded from '~icons/material-symbols/back-to-tab-rounded';
 	import MaterialSymbolsColorsRounded from '~icons/material-symbols/colors-rounded';
 	import MaterialSymbolsCropRounded from '~icons/material-symbols/crop-rounded';
@@ -17,39 +18,38 @@
 	}
 </script>
 
-<form id="render-options-form" onsubmit={handleSubmit}>
-	<fieldset class="fieldset text-sm">
-		<legend class="fieldset-legend pt-0">
-			<MaterialSymbolsGrid3x3Rounded class="size-6" />
+<form id="render-options-form" onsubmit={handleSubmit} class="form grid gap-6">
+	<div class="grid gap-2">
+		<label for="grid-type">
+			<MaterialSymbolsGrid3x3Rounded class="size-4" />
 			Grid type
-		</legend>
-		<label for="grid-type" class="sr-only">Grid type</label>
-		<select id="grid-type" class="select w-full" bind:value={opts.grid.type}>
+		</label>
+		<select id="grid-type" class="w-full" bind:value={opts.grid.type}>
 			<option value="full">Full grid (Grid lines and outer border)</option>
 			<option value="lines">Grid lines only</option>
 			<option value="border">Outer border only</option>
 			<option value="none">None</option>
 		</select>
-	</fieldset>
+	</div>
 
-	<fieldset class="fieldset text-sm">
-		<legend class="fieldset-legend">
-			<MaterialSymbolsColorsRounded class="size-6" />
+	<div class="grid gap-2">
+		<label for="grid-color">
+			<MaterialSymbolsColorsRounded class="size-4" />
 			Grid color
-		</legend>
-		<label class="input w-full">
-			<input type="color" bind:value={opts.grid.color} />
-			<span class="sr-only">Grid color</span>
 		</label>
-	</fieldset>
+		<div class="bg-input/30 border-input grid place-items-center rounded-md border p-1">
+			<input id="grid-color" class="w-full" type="color" bind:value={opts.grid.color} />
+		</div>
+	</div>
 
-	<fieldset class="fieldset text-sm">
-		<legend class="fieldset-legend">
-			<MaterialSymbolsLineWeightRounded class="size-6" />
+	<div class="grid gap-2">
+		<label for="grid-lines-size">
+			<MaterialSymbolsLineWeightRounded class="size-4" />
 			Grid lines size
-		</legend>
-		<label class="input w-full">
+		</label>
+		<InputWithUnit unit="px">
 			<input
+				id="grid-lines-size"
 				type="text"
 				inputMode="numeric"
 				pattern="[0-9]*"
@@ -57,103 +57,102 @@
 				bind:value={opts.grid.lines.size}
 				disabled={opts.isGridTypeNone()}
 			/>
-			<span class="label">px</span>
-		</label>
-	</fieldset>
+		</InputWithUnit>
+	</div>
 
-	<fieldset class="fieldset text-sm">
-		<legend class="fieldset-legend">
-			<MaterialSymbolsCropRounded class="size-6" />
+	<div class="grid gap-2">
+		<label for="grid-cell-shape">
+			<MaterialSymbolsCropRounded class="size-4" />
 			Grid cell shape
-		</legend>
-		<label for="grid-cell-shape" class="sr-only">Grid cell shape</label>
-		<select id="grid-cell-shape" class="select w-full" bind:value={opts.grid.cell.shape}>
+		</label>
+		<select id="grid-cell-shape" class="w-full" bind:value={opts.grid.cell.shape}>
 			<option value="square">Square (Same width and height)</option>
 			<option value="rectangle">Rectangle (Different width and height)</option>
 		</select>
-	</fieldset>
+	</div>
 
-	<fieldset class="fieldset text-sm">
-		<legend class="fieldset-legend">
-			<MaterialSymbolsExpandRounded class="size-6 rotate-90" />
+	<div class="grid gap-2">
+		<label for="grid-cell-width">
+			<MaterialSymbolsExpandRounded class="size-4 rotate-90" />
 			Grid cell width
-		</legend>
-		<label class="input w-full">
+		</label>
+		<InputWithUnit unit="px">
 			<input
+				id="grid-cell-width"
 				type="text"
 				inputMode="numeric"
 				pattern="[0-9]*"
 				title="Use 1 or a bigger integer number of pixels"
 				bind:value={opts.grid.cell.width}
 			/>
-			<span class="label">px</span>
-		</label>
-	</fieldset>
+		</InputWithUnit>
+	</div>
 
-	<fieldset class="fieldset text-sm">
-		<legend class="fieldset-legend">
-			<MaterialSymbolsExpandRounded class="size-6" />
+	<div class="grid gap-2">
+		<label for="grid-cell-height">
+			<MaterialSymbolsExpandRounded class="size-4" />
 			Grid cell height
-		</legend>
-		<label class="input w-full">
-			{#if opts.grid.cell.shape === 'rectangle'}
+		</label>
+		{#if opts.grid.cell.shape === 'rectangle'}
+			<InputWithUnit unit="px">
 				<input
+					id="grid-cell-height"
 					type="text"
 					inputMode="numeric"
 					pattern="[0-9]*"
 					title="Use 1 or a bigger integer number of pixels"
 					bind:value={opts.grid.cell.height}
 				/>
-			{:else}
-				<input type="text" value={opts.grid.cell.width} disabled />
-			{/if}
-			<span class="label">px</span>
-		</label>
-	</fieldset>
+			</InputWithUnit>
+		{:else}
+			<InputWithUnit unit="px" disabled>
+				<input id="grid-cell-height" type="text" value={opts.grid.cell.width} disabled />
+			</InputWithUnit>
+		{/if}
+	</div>
 
-	<fieldset class="fieldset text-sm">
-		<legend class="fieldset-legend">
-			<MaterialSymbolsBackToTabRounded class="size-6 -scale-x-100" />
+	<div class="grid gap-2">
+		<label for="grid-cell-scale">
+			<MaterialSymbolsBackToTabRounded class="size-4 -scale-x-100" />
 			Grid cell scale
-		</legend>
-		<label class="input w-full">
+		</label>
+		<InputWithUnit unit="x">
 			<input
+				id="grid-cell-scale"
 				type="text"
 				inputMode="numeric"
 				pattern="[0-9]*"
 				title="Use 1 or a bigger integer number of pixels"
 				bind:value={opts.grid.cell.scale}
 			/>
-			<span class="label">x</span>
-		</label>
-	</fieldset>
+		</InputWithUnit>
+	</div>
 
-	<fieldset class="fieldset text-sm">
-		<legend class="fieldset-legend">
-			<MaterialSymbolsRoundedCornerRounded class="size-6" />
+	<div class="grid gap-2">
+		<label for="grid-cell-corner-radius">
+			<MaterialSymbolsRoundedCornerRounded class="size-4" />
 			Grid cell corner radius
-		</legend>
-		<label class="input w-full">
+		</label>
+		<InputWithUnit unit="px">
 			<input
+				id="grid-cell-corner-radius"
 				type="text"
 				inputMode="numeric"
 				pattern="[0-9]*"
 				title="Use 0 or a bigger integer number of pixels"
 				bind:value={opts.grid.cell.cornerRadius}
 			/>
-			<span class="label">px</span>
-		</label>
-	</fieldset>
+		</InputWithUnit>
+	</div>
 
-	<fieldset class="fieldset text-sm">
-		<legend class="fieldset-legend">
-			<MaterialSymbolsTextureRounded class="size-6" />
+	<div class="grid gap-2">
+		<label for="opacity">
+			<MaterialSymbolsTextureRounded class="size-4" />
 			Transparent pixels
-		</legend>
-		<label for="opacity" class="sr-only">Transparent pixels</label>
-		<select id="opacity" class="select w-full" bind:value={opts.opacity}>
+		</label>
+		<select id="opacity" class="w-full" bind:value={opts.opacity}>
 			<option value="preserve">Preserve transparency</option>
 			<option value="opaque">Make fully opaque</option>
 		</select>
-	</fieldset>
+	</div>
 </form>
