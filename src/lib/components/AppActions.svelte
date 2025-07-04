@@ -8,7 +8,7 @@
 	import UploadImagesButton from '$lib/components/UploadImagesButton.svelte';
 </script>
 
-<div class="card">
+<div class="card overflow-y-auto">
 	<section>
 		<div class="grid gap-4">
 			<UploadImagesButton />
