@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { cn } from '$lib/cn';
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import '../app.css';
@@ -43,9 +44,14 @@
 	<meta name="twitter:creator" content="@EdoardoScibona" />
 </svelte:head>
 
-<div class="grid min-h-screen grid-rows-[auto_1fr_auto]">
+<div
+	class={cn(
+		'grid min-h-screen grid-rows-[auto_minmax(0,1fr)_auto]',
+		page.route.id === '/app' && 'lg:h-screen lg:min-h-auto'
+	)}
+>
 	<Header />
-	<main>
+	<main class="p-6">
 		{@render children?.()}
 	</main>
 	<Footer />
