@@ -1,10 +1,21 @@
 <script lang="ts">
-	import Card from '$lib/components/Card.svelte';
+	import { getAppStateContext } from '$lib/app-state.svelte';
 	import PreviewGallery from '$lib/components/PreviewGallery.svelte';
 	import PreviewMode from '$lib/components/PreviewMode.svelte';
+	import PreviewPlaceholder from '$lib/components/PreviewPlaceholder.svelte';
+
+	let { images } = getAppStateContext();
 </script>
 
-<Card class="grid grid-rows-[auto_minmax(0,1fr)] gap-4">
-	<PreviewMode />
-	<PreviewGallery />
-</Card>
+<div class="card overflow-y-auto">
+	<section class="h-full">
+		{#if images.hasOutputImages()}
+			<div class="grid h-full grid-rows-[auto_minmax(0,1fr)] gap-6">
+				<PreviewMode />
+				<PreviewGallery />
+			</div>
+		{:else}
+			<PreviewPlaceholder />
+		{/if}
+	</section>
+</div>
