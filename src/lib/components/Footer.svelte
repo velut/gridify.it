@@ -6,7 +6,7 @@
 
 <footer class="border-t">
 	<div
-		class="text-muted-foreground flex flex-col justify-between gap-4 p-4 text-xs md:flex-row md:items-center"
+		class="text-muted-foreground flex flex-col justify-between gap-4 p-4 text-xs sm:flex-row sm:items-center"
 	>
 		<div>
 			Made by
@@ -14,7 +14,7 @@
 				>Edoardo Scibona</a
 			>
 		</div>
-		<nav class="flex flex-col gap-2 md:flex-row md:items-center">
+		<nav class="flex flex-col gap-2 sm:flex-row sm:items-center">
 			<a href={ghCommitUrl} class="underline-offset-4 hover:underline">{commitShort}</a>
 			<a href={ghUrl} class="underline-offset-4 hover:underline">GitHub</a>
 			<a href="/third-party-licenses.txt" class="underline-offset-4 hover:underline">OSS licenses</a
