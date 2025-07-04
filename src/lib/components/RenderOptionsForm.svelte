@@ -37,7 +37,9 @@
 			<MaterialSymbolsColorsRounded class="size-4" />
 			Grid color
 		</label>
-		<div class="bg-input/30 border-input grid place-items-center rounded-md border p-1">
+		<div
+			class="dark:bg-input/30 border-input grid place-items-center rounded-md border bg-transparent p-1"
+		>
 			<input id="grid-color" class="w-full" type="color" bind:value={opts.grid.color} />
 		</div>
 	</div>

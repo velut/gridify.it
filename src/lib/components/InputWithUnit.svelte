@@ -11,7 +11,7 @@
 	{@render children()}
 	<div
 		class={cn(
-			'bg-input/30 border-input text-muted-foreground grid h-9 min-w-11 place-items-center rounded-r-md border-y border-r px-3 py-1 text-sm',
+			'dark:bg-input/30 border-input text-muted-foreground grid h-9 min-w-11 place-items-center rounded-r-md border-y border-r bg-transparent px-3 py-1 text-sm',
 			disabled && 'opacity-50'
 		)}
 	>
