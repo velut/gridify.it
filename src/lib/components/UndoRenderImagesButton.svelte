@@ -17,7 +17,7 @@
 
 <button
 	type="button"
-	class="btn-destructive"
+	class="btn-secondary"
 	onclick={() => images.undoRender()}
 	disabled={!images.hasInputImages() || !images.hasRenderedImages()}
 	bind:this={button}

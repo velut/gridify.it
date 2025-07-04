@@ -7,7 +7,7 @@
 
 <button
 	type="button"
-	class="btn-destructive"
+	class="btn-secondary"
 	onclick={() => opts.reset()}
 	disabled={opts.isDefault()}
 >
