@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getAppStateContext } from '$lib/app-state.svelte';
+	import { cn } from '$lib/cn';
 
 	let { images, preview } = getAppStateContext();
 </script>
@@ -13,10 +14,10 @@
 			<img
 				src={image.url}
 				alt={image.file.name}
-				class={[
+				class={cn(
 					'max-h-full w-full object-contain object-top-left lg:snap-center',
 					preview.isPixelArt() && '[image-rendering:pixelated]'
-				]}
+				)}
 			/>
 		</a>
 	{/each}
