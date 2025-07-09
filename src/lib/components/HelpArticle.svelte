@@ -367,8 +367,8 @@
 		<h3>Are the original colors exactly preserved in the rendered images?</h3>
 		<p>
 			<strong>Probably not.</strong> Depending on the browser that you are using, you should expect some
-			slight differences between the colors in a rendered image and the original image colors. In general,
-			rendering images should be considered a lossy operation.
+			slight differences between the colors in a rendered image and the ones in the original image. In
+			general, rendering images should be considered a lossy operation.
 		</p>
 
 		<h3>Why is the app becoming slow and unresponsive?</h3>
