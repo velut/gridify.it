@@ -2,6 +2,8 @@
 	let { children } = $props();
 </script>
 
-<section class="bg-base-100 prose border-base-content/30 rounded-md border p-8">
-	{@render children?.()}
-</section>
+<div class="card">
+	<section class="prose">
+		{@render children?.()}
+	</section>
+</div>

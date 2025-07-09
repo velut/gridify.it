@@ -2,6 +2,6 @@
 	let { children } = $props();
 </script>
 
-<article class="grid gap-4">
+<article class="**:text-card-foreground grid gap-6">
 	{@render children?.()}
 </article>
