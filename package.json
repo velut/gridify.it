@@ -39,7 +39,6 @@
 		"attr-accept": "^2.2.5",
 		"basecoat-css": "^0.2.8",
 		"clsx": "^2.1.1",
-		"daisyui": "^5.0.46",
 		"file-selector": "^2.1.2",
 		"p-map": "^7.0.3",
 		"prettier": "^3.6.2",
