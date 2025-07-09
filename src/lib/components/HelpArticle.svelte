@@ -137,10 +137,10 @@
 					Use this if you want the grid to have both the outer border and the inner grid lines
 					between the cells as shown below.
 				</p>
-				<div class="grid place-items-start">
-					<div class="bg-base-content grid grid-cols-3 grid-rows-3 gap-[1px] p-[1px]">
+				<div class="not-prose grid place-items-start">
+					<div class="bg-card-foreground grid grid-cols-3 grid-rows-3 gap-[1px] p-[1px]">
 						{#each { length: 9 }}
-							<div class="bg-base-100 size-8"></div>
+							<div class="bg-card size-8"></div>
 						{/each}
 					</div>
 				</div>
@@ -151,10 +151,10 @@
 					Use this if you want only the inner grid lines between the cells without the outer grid
 					border as shown below.
 				</p>
-				<div class="grid place-items-start">
-					<div class="bg-base-content grid grid-cols-3 grid-rows-3 gap-[1px]">
+				<div class="not-prose grid place-items-start">
+					<div class="bg-card-foreground grid grid-cols-3 grid-rows-3 gap-[1px]">
 						{#each { length: 9 }}
-							<div class="bg-base-100 size-8"></div>
+							<div class="bg-card size-8"></div>
 						{/each}
 					</div>
 				</div>
@@ -165,10 +165,10 @@
 					Use this if you want only the outer grid border without the inner grid lines as shown
 					below.
 				</p>
-				<div class="grid place-items-start">
-					<div class="bg-base-content grid grid-cols-3 grid-rows-3 p-[1px]">
+				<div class="not-prose grid place-items-start">
+					<div class="bg-card-foreground grid grid-cols-3 grid-rows-3 p-[1px]">
 						{#each { length: 9 }}
-							<div class="bg-base-100 size-8"></div>
+							<div class="bg-card size-8"></div>
 						{/each}
 					</div>
 				</div>
@@ -179,10 +179,10 @@
 					Use this if you do not want any type of grid lines. This can be useful when you only want
 					to round the corners of cells as shown below.
 				</p>
-				<div class="grid place-items-start">
+				<div class="not-prose grid place-items-start">
 					<div class="grid grid-cols-3 grid-rows-3 p-[1px]">
 						{#each { length: 9 }}
-							<div class="bg-base-content size-8 rounded-lg"></div>
+							<div class="bg-card-foreground size-8 rounded-lg"></div>
 						{/each}
 					</div>
 				</div>
@@ -212,9 +212,9 @@
 		</p>
 
 		<div class="not-prose grid place-items-start">
-			<div class="bg-base-content grid grid-cols-3 grid-rows-3 gap-[1px] p-[1px]">
+			<div class="bg-card-foreground grid grid-cols-3 grid-rows-3 gap-[1px] p-[1px]">
 				{#each { length: 9 }, i}
-					<div class="bg-base-100 grid size-8 place-items-center">{i + 1}</div>
+					<div class="bg-card grid size-8 place-items-center">{i + 1}</div>
 				{/each}
 			</div>
 		</div>
@@ -227,19 +227,19 @@
 			<strong>Rectangle</strong> to freely choose the grid cell sizes (shown below on the right).
 		</p>
 
-		<div class="flex items-center gap-8">
+		<div class="not-prose flex items-center gap-8">
 			<div class="grid place-items-start">
-				<div class="bg-base-content grid grid-cols-3 grid-rows-3 gap-[1px] p-[1px]">
+				<div class="bg-card-foreground grid grid-cols-3 grid-rows-3 gap-[1px] p-[1px]">
 					{#each { length: 9 }}
-						<div class="bg-base-100 size-8"></div>
+						<div class="bg-card size-8"></div>
 					{/each}
 				</div>
 			</div>
 
 			<div class="grid place-items-start">
-				<div class="bg-base-content grid grid-cols-3 grid-rows-3 gap-[1px] p-[1px]">
+				<div class="bg-card-foreground grid grid-cols-3 grid-rows-3 gap-[1px] p-[1px]">
 					{#each { length: 9 }}
-						<div class="bg-base-100 h-8 w-16"></div>
+						<div class="bg-card h-8 w-16"></div>
 					{/each}
 				</div>
 			</div>
@@ -266,12 +266,10 @@
 			and only fill the remaining space on the right.
 		</p>
 
-		<div class="grid place-items-start">
-			<div class="bg-base-content grid grid-cols-[2fr_2fr_1fr] grid-rows-3 gap-[1px] p-[1px]">
+		<div class="not-prose grid place-items-start">
+			<div class="bg-card-foreground grid grid-cols-[2fr_2fr_1fr] grid-rows-3 gap-[1px] p-[1px]">
 				{#each { length: 9 }, i}
-					<div
-						class={['bg-base-100 grid h-8 place-items-center', (i + 1) % 3 === 0 ? 'w-8' : 'w-16']}
-					>
+					<div class={['bg-card grid h-8 place-items-center', (i + 1) % 3 === 0 ? 'w-8' : 'w-16']}>
 						{i + 1}
 					</div>
 				{/each}
