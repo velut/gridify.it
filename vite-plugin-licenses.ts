@@ -22,11 +22,13 @@ export async function licenses() {
 			url: 'https://github.com/tailwindlabs/tailwindcss-typography'
 		},
 		{
-			name: 'daisyui',
-			version: packageJson.devDependencies['daisyui'].replace('^', ''),
+			name: 'basecoat-css',
+			version: packageJson.devDependencies['basecoat-css'].replace('^', ''),
 			license: 'MIT',
-			licenseText: await fs.readFile('./node_modules/daisyui/LICENSE', { encoding: 'utf-8' }),
-			url: 'https://daisyui.com'
+			licenseText: await fs.readFile('./third-party-licenses/basecoat-css/license.txt', {
+				encoding: 'utf-8'
+			}),
+			url: 'https://github.com/hunvreus/basecoat'
 		},
 		{
 			name: 'tailwindcss',
