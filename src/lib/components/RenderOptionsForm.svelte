@@ -124,7 +124,7 @@
 				type="text"
 				inputMode="numeric"
 				pattern="[0-9]*"
-				title="Use 1 or a bigger integer number of pixels"
+				title="Use 1 or a bigger integer number for scaling"
 				bind:value={opts.grid.cell.scale}
 			/>
 		</InputWithUnit>
