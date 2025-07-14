@@ -51,7 +51,7 @@
 	)}
 >
 	<Header />
-	<main class="p-6">
+	<main>
 		{@render children?.()}
 	</main>
 	<Footer />

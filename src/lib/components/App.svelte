@@ -7,7 +7,7 @@
 	setAppStateContext(new AppState());
 </script>
 
-<div class="grid h-full gap-6 overflow-y-auto lg:grid-cols-[auto_minmax(0,1fr)]">
+<div class="grid h-full gap-6 overflow-y-auto p-6 lg:grid-cols-[auto_minmax(0,1fr)]">
 	<div class="grid gap-6 overflow-y-auto sm:grid-cols-[auto_auto]">
 		<AppActions />
 		<AppRenderOptions />
