@@ -72,7 +72,7 @@
 				<section>
 					<div class="flex flex-col gap-2 text-sm">
 						<a href={t.url} class="text-muted-foreground hover:underline">{t.name}</a>
-						<p class="_max-w-[65ch] _text-balance">{t.text}</p>
+						<p>{t.text}</p>
 					</div>
 				</section>
 			</div>
