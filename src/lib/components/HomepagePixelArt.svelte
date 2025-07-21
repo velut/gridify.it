@@ -47,12 +47,22 @@
 		<div>
 			<div class="flex flex-col gap-6 dark:hidden">
 				<a href={screenshots[index]} target="_blank" class="contents">
-					<img loading="lazy" class="card p-0" src={screenshots[index]} alt="App screenshot" />
+					<img
+						loading="lazy"
+						class="card p-0"
+						src={screenshots[index]}
+						alt="Screenshot of the grid editor used for pixel art"
+					/>
 				</a>
 				<div class="grid grid-cols-4 gap-6">
 					{#each screenshots as s}
 						<a href={s} target="_blank" class="contents">
-							<img loading="lazy" class="card p-0" src={s} alt="App screenshot" />
+							<img
+								loading="lazy"
+								class="card p-0"
+								src={s}
+								alt="Screenshot of the grid editor used for pixel art"
+							/>
 						</a>
 					{/each}
 				</div>
@@ -65,7 +75,7 @@
 							loading="lazy"
 							class="card p-0"
 							src={darkScreenshots[index]}
-							alt="App screenshot"
+							alt="Screenshot of the grid editor used for pixel art"
 						/>
 					</a>
 				</div>
@@ -73,7 +83,12 @@
 				<div class="grid grid-cols-4 gap-6">
 					{#each darkScreenshots as s}
 						<a href={s} target="_blank" class="contents">
-							<img loading="lazy" class="card p-0" src={s} alt="App screenshot" />
+							<img
+								loading="lazy"
+								class="card p-0"
+								src={s}
+								alt="Screenshot of the grid editor used for pixel art"
+							/>
 						</a>
 					{/each}
 				</div>
