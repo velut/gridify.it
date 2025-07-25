@@ -3,17 +3,17 @@
 	import { useInterval } from 'runed';
 
 	let screenshots = $state([
-		'/screenshots/pixel-art/light/1.jpg',
-		'/screenshots/pixel-art/light/2.jpg',
-		'/screenshots/pixel-art/light/3.jpg',
-		'/screenshots/pixel-art/light/4.jpg'
+		'/screenshots/pixel-art/light/1.avif',
+		'/screenshots/pixel-art/light/2.avif',
+		'/screenshots/pixel-art/light/3.avif',
+		'/screenshots/pixel-art/light/4.avif'
 	]);
 
 	let darkScreenshots = $state([
-		'/screenshots/pixel-art/dark/1.jpg',
-		'/screenshots/pixel-art/dark/2.jpg',
-		'/screenshots/pixel-art/dark/3.jpg',
-		'/screenshots/pixel-art/dark/4.jpg'
+		'/screenshots/pixel-art/dark/1.avif',
+		'/screenshots/pixel-art/dark/2.avif',
+		'/screenshots/pixel-art/dark/3.avif',
+		'/screenshots/pixel-art/dark/4.avif'
 	]);
 
 	let index = $state(0);
