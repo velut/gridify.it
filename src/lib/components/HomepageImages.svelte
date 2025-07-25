@@ -25,6 +25,26 @@
 
 <div class="grid place-items-center border-t px-6 py-12">
 	<div class="grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-2">
+		<div class="block md:hidden">
+			<div class="card">
+				<section>
+					<div class="flex flex-col gap-6">
+						<div class="prose **:text-foreground">
+							<h2>For photos</h2>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore debitis at magnam
+								voluptates voluptatibus eligendi atque. Ipsum dolorem corporis laborum, voluptatum
+								id non tempore obcaecati, natus reiciendis fuga nemo? Impedit!
+							</p>
+						</div>
+						<div>
+							<OpenAppButton />
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+
 		<div>
 			<div class="flex flex-col gap-6 dark:hidden">
 				<a href={screenshots[index]} target="_blank" class="contents">
@@ -61,23 +81,24 @@
 			</div>
 		</div>
 
-		<div class="card">
-			<section>
-				<div class="flex flex-col gap-6">
-					<div class="prose **:text-foreground">
-						<h2>For photos</h2>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore debitis at magnam
-							voluptates voluptatibus eligendi atque. Ipsum dolorem corporis laborum, voluptatum id
-							non tempore obcaecati, natus reiciendis fuga nemo? Impedit!
-						</p>
+		<div class="hidden md:block">
+			<div class="card h-full">
+				<section>
+					<div class="flex flex-col gap-6">
+						<div class="prose **:text-foreground">
+							<h2>For photos</h2>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore debitis at magnam
+								voluptates voluptatibus eligendi atque. Ipsum dolorem corporis laborum, voluptatum
+								id non tempore obcaecati, natus reiciendis fuga nemo? Impedit!
+							</p>
+						</div>
+						<div>
+							<OpenAppButton />
+						</div>
 					</div>
-
-					<div>
-						<OpenAppButton />
-					</div>
-				</div>
-			</section>
+				</section>
+			</div>
 		</div>
 	</div>
 </div>
