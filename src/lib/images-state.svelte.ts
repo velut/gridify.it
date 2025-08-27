@@ -46,7 +46,7 @@ export class ImagesState {
 
 	async upload(event: Event) {
 		this.reset();
-		let images = (await fromEvent(event))
+		const images = (await fromEvent(event))
 			.filter((res) => res instanceof File)
 			.filter((file) => accept(file, 'image/*'))
 			.map((file) => ({ file, url: URL.createObjectURL(file) }));
@@ -58,7 +58,7 @@ export class ImagesState {
 	async download() {
 		if (!this.hasOutputImages()) return;
 		if (this.outputImages.length === 1) {
-			let image = this.outputImages[0];
+			const image = this.outputImages[0];
 			downloadBlob(image.file, image.file.name);
 		} else {
 			downloadBlob(await zipImages(this.outputImages), 'gridify-it-images.zip');

@@ -43,14 +43,14 @@ async function renderImage(image: Image, { grid, opacity }: RenderOptions): Prom
 }
 
 async function imageToCanvas(image: Image): Promise<HTMLCanvasElement> {
-	let img = await loadImage(image);
-	let [canvas, ctx] = createCanvas(img.width, img.height);
+	const img = await loadImage(image);
+	const [canvas, ctx] = createCanvas(img.width, img.height);
 	ctx.drawImage(img, 0, 0);
 	return canvas;
 }
 
 async function loadImage(image: Image): Promise<HTMLImageElement> {
-	let img = document.createElement('img');
+	const img = document.createElement('img');
 	img.src = image.url;
 	await img.decode();
 	return img;
@@ -60,8 +60,8 @@ function createCanvas(
 	width: number,
 	height: number
 ): [HTMLCanvasElement, CanvasRenderingContext2D] {
-	let canvas = document.createElement('canvas');
-	let ctx = canvas.getContext('2d')!;
+	const canvas = document.createElement('canvas');
+	const ctx = canvas.getContext('2d')!;
 	canvas.width = width;
 	canvas.height = height;
 	ctx.imageSmoothingEnabled = false; // Disable smoothing for pixel art.
@@ -69,12 +69,12 @@ function createCanvas(
 }
 
 function opacify(canvas: HTMLCanvasElement): HTMLCanvasElement {
-	let ctx = canvas.getContext('2d')!;
+	const ctx = canvas.getContext('2d')!;
 
 	// NOTE: Browsers don't return the exact original pixel colors.
 	// See https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-getimagedata.
-	let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-	let pixels = imageData.data;
+	const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+	const pixels = imageData.data;
 
 	// Set each pixel to full alpha.
 	// See https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas.
@@ -86,24 +86,24 @@ function opacify(canvas: HTMLCanvasElement): HTMLCanvasElement {
 	ctx.putImageData(imageData, 0, 0);
 
 	// Copy the image to a new canvas to prevent slower software rendering caused by `getImageData`.
-	let [opaqueCanvas, opaqueCtx] = createCanvas(canvas.width, canvas.height);
+	const [opaqueCanvas, opaqueCtx] = createCanvas(canvas.width, canvas.height);
 	opaqueCtx.drawImage(canvas, 0, 0);
 	return opaqueCanvas;
 }
 
 function scale(canvas: HTMLCanvasElement, scale: number): HTMLCanvasElement {
-	let [scaledCanvas, scaledCtx] = createCanvas(scale * canvas.width, scale * canvas.height);
+	const [scaledCanvas, scaledCtx] = createCanvas(scale * canvas.width, scale * canvas.height);
 	scaledCtx.scale(scale, scale);
 	scaledCtx.drawImage(canvas, 0, 0);
 	return scaledCanvas;
 }
 
 function gridify(canvas: HTMLCanvasElement, grid: RenderOptionsGrid): HTMLCanvasElement {
-	let [gridCanvas, gridCtx] = createCanvas(...gridCanvasDimensions(canvas, grid));
-	let [srcCellWidth, srcCellHeight] = srcCellDimensions(canvas, grid);
-	let [dstCellWidth, dstCellHeight] = dstCellDimensions(canvas, grid);
-	let [lineSize, borderSize] = gridLineAndBorderSizes(grid);
-	let cornersCanvas = roundCorners(dstCellWidth, dstCellHeight, grid);
+	const [gridCanvas, gridCtx] = createCanvas(...gridCanvasDimensions(canvas, grid));
+	const [srcCellWidth, srcCellHeight] = srcCellDimensions(canvas, grid);
+	const [dstCellWidth, dstCellHeight] = dstCellDimensions(canvas, grid);
+	const [lineSize, borderSize] = gridLineAndBorderSizes(grid);
+	const cornersCanvas = roundCorners(dstCellWidth, dstCellHeight, grid);
 
 	// Fill canvas with grid color.
 	gridCtx.fillStyle = grid.color;
@@ -115,8 +115,8 @@ function gridify(canvas: HTMLCanvasElement, grid: RenderOptionsGrid): HTMLCanvas
 			// (sx, sy) are the top left corner coordinates of a source cell on the input canvas.
 			// (dx, dy) are the top left corner coordinates of a destination cell on the grid canvas.
 			// (dx, dy) = (cell index) * (full destination cell size) + border size.
-			let dx = (sx / srcCellWidth) * (dstCellWidth + lineSize) + borderSize;
-			let dy = (sy / srcCellHeight) * (dstCellHeight + lineSize) + borderSize;
+			const dx = (sx / srcCellWidth) * (dstCellWidth + lineSize) + borderSize;
+			const dy = (sy / srcCellHeight) * (dstCellHeight + lineSize) + borderSize;
 
 			// Transfer source cell to destination cell.
 			gridCtx.drawImage(
@@ -145,17 +145,17 @@ function gridCanvasDimensions(
 	canvas: HTMLCanvasElement,
 	grid: RenderOptionsGrid
 ): [number, number] {
-	let [imageWidth, imageHeight] = gridImageDimensions(canvas, grid.cell.scale);
-	let [borderWidth, borderHeight] = gridBorderDimensions(grid);
-	let [linesWidth, linesHeight] = gridLinesDimensions(canvas, grid);
-	let width = imageWidth + borderWidth + linesWidth;
-	let height = imageHeight + borderHeight + linesHeight;
+	const [imageWidth, imageHeight] = gridImageDimensions(canvas, grid.cell.scale);
+	const [borderWidth, borderHeight] = gridBorderDimensions(grid);
+	const [linesWidth, linesHeight] = gridLinesDimensions(canvas, grid);
+	const width = imageWidth + borderWidth + linesWidth;
+	const height = imageHeight + borderHeight + linesHeight;
 	return [width, height];
 }
 
 function gridImageDimensions(canvas: HTMLCanvasElement, scale: number): [number, number] {
-	let width = scale * canvas.width;
-	let height = scale * canvas.height;
+	const width = scale * canvas.width;
+	const height = scale * canvas.height;
 	return [width, height];
 }
 
@@ -167,7 +167,7 @@ function gridBorderDimensions(grid: RenderOptionsGrid): [number, number] {
 		case 'border':
 		case 'full':
 			// Top and bottom, left and right borders.
-			let size = 2 * grid.lines.size;
+			const size = 2 * grid.lines.size;
 			return [size, size];
 	}
 }
@@ -179,8 +179,8 @@ function gridLinesDimensions(canvas: HTMLCanvasElement, grid: RenderOptionsGrid)
 			return [0, 0];
 		case 'lines':
 		case 'full':
-			let width = gridLinesCount(canvas.width, grid.cell.width) * grid.lines.size;
-			let height = gridLinesCount(canvas.height, grid.cell.height) * grid.lines.size;
+			const width = gridLinesCount(canvas.width, grid.cell.width) * grid.lines.size;
+			const height = gridLinesCount(canvas.height, grid.cell.height) * grid.lines.size;
 			return [width, height];
 	}
 }
@@ -239,7 +239,7 @@ function roundCorners(
 	if (grid.cell.cornerRadius === 0) return undefined;
 
 	// Paint whole canvas with grid color.
-	let [canvas, ctx] = createCanvas(width, height);
+	const [canvas, ctx] = createCanvas(width, height);
 	ctx.fillStyle = grid.color;
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -255,8 +255,8 @@ function roundCorners(
 }
 
 async function canvasToImage(canvas: HTMLCanvasElement, image: Image): Promise<Image> {
-	let blob = await canvasToBlob(canvas);
-	let file = new File([blob], pngFilename(image.file.name), {
+	const blob = await canvasToBlob(canvas);
+	const file = new File([blob], pngFilename(image.file.name), {
 		type: 'image/png',
 		lastModified: image.file.lastModified
 	});

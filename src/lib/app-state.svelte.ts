@@ -3,7 +3,7 @@ import { PreviewState } from '$lib/preview-state.svelte';
 import { RenderOptionsState } from '$lib/render-options-state.svelte';
 import { getContext, setContext } from 'svelte';
 
-let key = Symbol('app-state');
+const key = Symbol('app-state');
 
 export function setAppStateContext(state: AppState) {
 	setContext(key, state);

@@ -1,5 +1,5 @@
 export function downloadBlob(blob: Blob, name: string) {
-	let a = document.createElement('a');
+	const a = document.createElement('a');
 	a.href = URL.createObjectURL(blob);
 	a.download = name;
 	a.rel = 'noopener';

@@ -2,7 +2,7 @@ import { getContext, setContext } from 'svelte';
 
 export type Theme = 'light' | 'dark';
 
-let key = Symbol('theme-state');
+const key = Symbol('theme-state');
 
 export function setThemeStateContext(state: ThemeState) {
 	setContext(key, state);

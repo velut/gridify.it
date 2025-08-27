@@ -3,7 +3,7 @@ import pMap, { pMapSkip } from 'p-map';
 import type { Image } from './types';
 
 export async function zipImages(images: Image[]): Promise<Blob> {
-	let zip = new ZipWriter(new BlobWriter('application/zip'));
+	const zip = new ZipWriter(new BlobWriter('application/zip'));
 	await pMap(
 		images,
 		async (image) => {
