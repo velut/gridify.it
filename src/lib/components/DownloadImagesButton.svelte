@@ -2,7 +2,7 @@
 	import { getAppStateContext } from '$lib/app-state.svelte';
 	import MaterialSymbolsDownloadRounded from '~icons/material-symbols/download-rounded';
 
-	let { images } = getAppStateContext();
+	const { images } = getAppStateContext();
 </script>
 
 <button

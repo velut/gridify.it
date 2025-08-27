@@ -2,7 +2,7 @@
 	import { getThemeStateContext } from '$lib/theme-state.svelte';
 	import MaterialSymbolsContrast from '~icons/material-symbols/contrast';
 
-	let theme = getThemeStateContext();
+	const theme = getThemeStateContext();
 </script>
 
 <button

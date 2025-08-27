@@ -2,7 +2,7 @@
 	import { getAppStateContext } from '$lib/app-state.svelte';
 	import MaterialSymbolsAnimatedImagesRounded from '~icons/material-symbols/animated-images-rounded';
 
-	let { images } = getAppStateContext();
+	const { images } = getAppStateContext();
 	let button: HTMLButtonElement;
 
 	function handleHotkey(e: KeyboardEvent) {

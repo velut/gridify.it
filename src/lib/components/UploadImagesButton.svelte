@@ -2,7 +2,7 @@
 	import { getAppStateContext } from '$lib/app-state.svelte';
 	import MaterialSymbolsImageArrowUpRounded from '~icons/material-symbols/image-arrow-up-rounded';
 
-	let { images } = getAppStateContext();
+	const { images } = getAppStateContext();
 	let fileInput: HTMLInputElement;
 
 	async function handleImagesUpload(e: Event) {

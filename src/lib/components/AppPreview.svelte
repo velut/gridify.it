@@ -4,7 +4,7 @@
 	import PreviewMode from '$lib/components/PreviewMode.svelte';
 	import PreviewPlaceholder from '$lib/components/PreviewPlaceholder.svelte';
 
-	let { images } = getAppStateContext();
+	const { images } = getAppStateContext();
 </script>
 
 <div class="card overflow-y-auto">

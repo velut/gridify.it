@@ -2,7 +2,7 @@
 	import { getAppStateContext } from '$lib/app-state.svelte';
 	import { cn } from '$lib/cn';
 
-	let { images, preview } = getAppStateContext();
+	const { images, preview } = getAppStateContext();
 </script>
 
 <div class="overflow-y-auto lg:snap-y lg:snap-mandatory">

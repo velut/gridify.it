@@ -2,7 +2,7 @@
 	import { getAppStateContext } from '$lib/app-state.svelte';
 	import MaterialSymbolsHideImageRounded from '~icons/material-symbols/hide-image-rounded';
 
-	let { images } = getAppStateContext();
+	const { images } = getAppStateContext();
 </script>
 
 <button

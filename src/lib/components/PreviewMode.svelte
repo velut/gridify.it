@@ -2,7 +2,7 @@
 	import { getAppStateContext } from '$lib/app-state.svelte';
 	import MaterialSymbolsGalleryThumbnailRounded from '~icons/material-symbols/gallery-thumbnail-rounded';
 
-	let { preview } = getAppStateContext();
+	const { preview } = getAppStateContext();
 </script>
 
 <div class="grid gap-2">
