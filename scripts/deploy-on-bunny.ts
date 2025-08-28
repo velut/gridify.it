@@ -61,7 +61,7 @@ async function uploadFiles(buildDir: string, endpoint: string, password: string)
 		const res = await fetch(storagePath, {
 			method: 'PUT',
 			headers: { Checksum: hash, 'content-type': 'application/octet-stream', AccessKey: password },
-			body: data
+			body: data as any
 		});
 		if (res.status >= 400) throw new Error(`uploadFiles: failed to upload file: ${relativePath}`);
 		console.log(`uploadFiles: uploaded: ${relativePath}`);
