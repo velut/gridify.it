@@ -1,6 +1,6 @@
 import { BlobReader, BlobWriter, ZipWriter } from '@zip.js/zip.js';
 import pMap, { pMapSkip } from 'p-map';
-import type { Image } from './types';
+import type { Image } from '$lib/types';
 
 export async function zipImages(images: Image[]): Promise<Blob> {
 	const zip = new ZipWriter(new BlobWriter('application/zip'));

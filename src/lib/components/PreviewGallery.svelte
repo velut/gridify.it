@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { getAppStateContext } from '$lib/app-state.svelte';
-	import { cn } from '$lib/cn';
+	import { getAppStateContext } from '$lib/state/app-state.svelte';
+	import { cn } from '$lib/utils/cn';
 
 	const { images, preview } = getAppStateContext();
 </script>

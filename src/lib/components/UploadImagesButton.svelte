@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getAppStateContext } from '$lib/app-state.svelte';
+	import { getAppStateContext } from '$lib/state/app-state.svelte';
 	import MaterialSymbolsImageArrowUpRounded from '~icons/material-symbols/image-arrow-up-rounded';
 
 	const { images } = getAppStateContext();

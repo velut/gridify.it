@@ -1,9 +1,9 @@
-import { cloneImages } from '$lib/clone-images';
-import { downloadBlob } from '$lib/download-blob';
+import { cloneImages } from '$lib/utils/clone-images';
+import { downloadBlob } from '$lib/utils/download-blob';
 import { renderImages } from '$lib/render-images';
-import { revokeObjectUrls } from '$lib/revoke-object-urls';
+import { revokeObjectUrls } from '$lib/utils/revoke-object-urls';
 import { type Image, type ImagesRenderState, type RenderOptions } from '$lib/types';
-import { zipImages } from '$lib/zip-images';
+import { zipImages } from '$lib/utils/zip-images';
 import accept from 'attr-accept';
 import { fromEvent } from 'file-selector';
 

@@ -1,4 +1,4 @@
-import { toInt } from '$lib/to-int';
+import { toInt } from '$lib/utils/to-int';
 import type { GridCellShape, GridType, PixelOpacity, RenderOptions } from '$lib/types';
 
 export class RenderOptionsState {

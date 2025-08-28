@@ -1,6 +1,6 @@
-import { ImagesState } from '$lib/images-state.svelte';
-import { PreviewState } from '$lib/preview-state.svelte';
-import { RenderOptionsState } from '$lib/render-options-state.svelte';
+import { ImagesState } from '$lib/state/images-state.svelte';
+import { PreviewState } from '$lib/state/preview-state.svelte';
+import { RenderOptionsState } from '$lib/state/render-options-state.svelte';
 import { getContext, setContext } from 'svelte';
 
 const key = Symbol('app-state');

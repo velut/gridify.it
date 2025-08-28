@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AppState, setAppStateContext } from '$lib/app-state.svelte';
+	import { AppState, setAppStateContext } from '$lib/state/app-state.svelte';
 	import AppActions from '$lib/components/AppActions.svelte';
 	import AppPreview from '$lib/components/AppPreview.svelte';
 	import AppRenderOptions from '$lib/components/AppRenderOptions.svelte';

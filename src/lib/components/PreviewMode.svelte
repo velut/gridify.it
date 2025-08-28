@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getAppStateContext } from '$lib/app-state.svelte';
+	import { getAppStateContext } from '$lib/state/app-state.svelte';
 	import MaterialSymbolsGalleryThumbnailRounded from '~icons/material-symbols/gallery-thumbnail-rounded';
 
 	const { preview } = getAppStateContext();

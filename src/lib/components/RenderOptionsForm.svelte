@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getAppStateContext } from '$lib/app-state.svelte';
+	import { getAppStateContext } from '$lib/state/app-state.svelte';
 	import InputWithUnit from '$lib/components/InputWithUnit.svelte';
 	import MaterialSymbolsBackToTabRounded from '~icons/material-symbols/back-to-tab-rounded';
 	import MaterialSymbolsColorsRounded from '~icons/material-symbols/colors-rounded';

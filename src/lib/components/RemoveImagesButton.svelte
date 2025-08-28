@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getAppStateContext } from '$lib/app-state.svelte';
+	import { getAppStateContext } from '$lib/state/app-state.svelte';
 	import MaterialSymbolsHideImageRounded from '~icons/material-symbols/hide-image-rounded';
 
 	const { images } = getAppStateContext();

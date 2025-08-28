@@ -1,4 +1,4 @@
-import { cloneImages } from '$lib/clone-images';
+import { cloneImages } from '$lib/utils/clone-images';
 import type { Image, RenderOptions, RenderOptionsGrid } from '$lib/types';
 import pMap, { pMapSkip } from 'p-map';
 
