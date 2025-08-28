@@ -44,9 +44,7 @@ async function clearStorageZone(endpoint: string, password: string) {
 	});
 	const data = await res.json();
 	const isEmptyArray = Array.isArray(data) && data.length === 0;
-	if (!isEmptyArray) {
-		throw new Error('clearStorageZone: failed to clear storage zone');
-	}
+	if (!isEmptyArray) throw new Error('clearStorageZone: failed to clear storage zone');
 	console.log('clearStorageZone: cleared storage zone');
 }
 
@@ -65,9 +63,7 @@ async function uploadFiles(buildDir: string, endpoint: string, password: string)
 			headers: { Checksum: hash, 'content-type': 'application/octet-stream', AccessKey: password },
 			body: data
 		});
-		if (res.status >= 400) {
-			throw new Error(`uploadFiles: failed to upload file: ${relativePath}`);
-		}
+		if (res.status >= 400) throw new Error(`uploadFiles: failed to upload file: ${relativePath}`);
 		console.log(`uploadFiles: uploaded: ${relativePath}`);
 		uploadedFilesCount += 1;
 	}
@@ -79,8 +75,6 @@ async function purgePullZoneCache(pullZoneId: string, apiKey: string) {
 		method: 'POST',
 		headers: { 'content-type': 'application/json', AccessKey: apiKey }
 	});
-	if (res.status >= 400) {
-		throw new Error('purgePullZoneCache: failed to purge pull zone cache');
-	}
+	if (res.status >= 400) throw new Error('purgePullZoneCache: failed to purge pull zone cache');
 	console.log('purgePullZoneCache: purged pull zone cache');
 }
