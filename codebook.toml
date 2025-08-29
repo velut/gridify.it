@@ -1,5 +1,7 @@
 words = [
     "gridify",
+    "noopener",
     "sveltekit",
     "unplugin",
+    "zod",
 ]
