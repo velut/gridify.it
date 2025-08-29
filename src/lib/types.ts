@@ -3,6 +3,10 @@ import * as z from 'zod';
 export const Image = z.object({ file: z.file(), url: z.string() });
 export type Image = z.infer<typeof Image>;
 
+export const OriginalFilter = z.object({
+	kind: z.literal('original')
+});
+
 export const GridFilter = z.object({
 	kind: z.literal('grid'),
 	opts: z.object({
@@ -24,8 +28,15 @@ export const GridFilter = z.object({
 });
 export type GridFilter = z.infer<typeof GridFilter>;
 
-export const Filter = z.union([GridFilter]);
+export const Filter = z.union([OriginalFilter, GridFilter]);
 export type Filter = z.infer<typeof Filter>;
+
+export const RenderItem = z.object({
+	active: z.boolean(),
+	filter: Filter,
+	images: z.array(Image)
+});
+export type RenderItem = z.infer<typeof RenderItem>;
 
 export type RenderOptions = {
 	grid: {
