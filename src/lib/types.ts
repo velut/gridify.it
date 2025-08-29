@@ -11,13 +11,13 @@ export const GridFilter = z.object({
 			.string()
 			.regex(/^#(?:[0-9a-f]{3}){1,2}$/i)
 			.catch('#000000'),
-		lines: z.object({ size: z.int().positive().catch(1) }),
+		lines: z.object({ size: z.coerce.number().int().positive().catch(1) }),
 		cell: z.object({
 			shape: z.literal(['square', 'rectangle']).catch('square'),
-			width: z.int().positive().catch(1),
-			height: z.int().positive().catch(1),
-			scale: z.int().positive().catch(1),
-			cornerRadius: z.int().nonnegative().catch(0)
+			width: z.coerce.number().int().positive().catch(1),
+			height: z.coerce.number().int().positive().catch(1),
+			scale: z.coerce.number().int().positive().catch(1),
+			cornerRadius: z.coerce.number().int().nonnegative().catch(0)
 		}),
 		opacity: z.literal(['preserve', 'opaque'])
 	})
