@@ -1,6 +1,8 @@
 words = [
+    "bundler",
     "gridify",
     "noopener",
+    "runed",
     "sveltekit",
     "unplugin",
     "zod",
