@@ -1,7 +1,7 @@
 import type { Image } from '$lib/types';
 
 export function revokeImageUrls(images: Image[]) {
-	if (images.length === 0) return;
+	if (!images.length) return;
 	const urls = images.map(({ url }) => url);
 	setTimeout(() => {
 		for (const url of urls) {
