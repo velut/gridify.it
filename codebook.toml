@@ -2,6 +2,7 @@ words = [
     "bundler",
     "gridify",
     "gzip",
+    "minmax",
     "noopener",
     "onsubmit",
     "runed",
