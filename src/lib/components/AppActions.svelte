@@ -6,23 +6,22 @@
 	import ResetRenderOptionsButton from '$lib/components/ResetRenderOptionsButton.svelte';
 	import UndoRenderImagesButton from '$lib/components/UndoRenderImagesButton.svelte';
 	import UploadImagesButton from '$lib/components/UploadImagesButton.svelte';
+	import AppColumn from '$lib/components/AppColumn.svelte';
 </script>
 
-<div class="card overflow-y-auto">
-	<section>
-		<div class="grid gap-4">
-			<UploadImagesButton />
-			<RemoveImagesButton />
+<AppColumn>
+	<div class="grid gap-4">
+		<UploadImagesButton />
+		<RemoveImagesButton />
 
-			<Divider />
+		<Divider />
 
-			<RenderImagesButton />
-			<UndoRenderImagesButton />
-			<ResetRenderOptionsButton />
+		<RenderImagesButton />
+		<UndoRenderImagesButton />
+		<ResetRenderOptionsButton />
 
-			<Divider />
+		<Divider />
 
-			<DownloadImagesButton />
-		</div>
-	</section>
-</div>
+		<DownloadImagesButton />
+	</div>
+</AppColumn>
