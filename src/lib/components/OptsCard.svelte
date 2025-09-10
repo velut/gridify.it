@@ -10,7 +10,7 @@
 </script>
 
 <div class="rounded-xl border">
-	<div class="border-b flex items-center justify-center text-sm px-6 py-3 font-medium">
+	<div class="flex items-center justify-center border-b px-6 py-3 text-sm font-medium">
 		{title}
 	</div>
 	<div class="grid gap-4 p-6">
