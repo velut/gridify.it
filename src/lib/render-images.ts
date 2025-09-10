@@ -1,8 +1,8 @@
 import { cloneImages } from '$lib/utils/clone-images';
-import type { Image, RenderOptions, RenderOptionsGrid } from '$lib/types';
+import type { GridOpts, Image, RenderOpts } from '$lib/types';
 import pMap, { pMapSkip } from 'p-map';
 
-export async function renderImages(images: Image[], opts: RenderOptions): Promise<Image[]> {
+export async function renderImages(images: Image[], opts: RenderOpts): Promise<Image[]> {
 	if (skipRender(opts)) return cloneImages(images);
 	return await pMap(
 		images,
@@ -17,21 +17,19 @@ export async function renderImages(images: Image[], opts: RenderOptions): Promis
 	);
 }
 
-function skipRender({ grid, opacity }: RenderOptions): boolean {
+function skipRender({ grid }: RenderOpts): boolean {
 	// With these options the image is not modified.
 	return (
-		grid.type === 'none' &&
-		grid.cell.scale === 1 &&
-		grid.cell.cornerRadius === 0 &&
-		opacity === 'preserve'
+		grid.type === 'none' && grid.cell.scale === 1 && grid.cell.cornerRadius === 0
+		// opacity === 'preserve'
 	);
 }
 
-async function renderImage(image: Image, { grid, opacity }: RenderOptions): Promise<Image> {
+async function renderImage(image: Image, { grid }: RenderOpts): Promise<Image> {
 	let canvas = await imageToCanvas(image);
-	if (opacity === 'opaque') {
-		canvas = opacify(canvas);
-	}
+	// if (opacity === 'opaque') {
+	// 	canvas = opacify(canvas);
+	// }
 	if (grid.cell.scale > 1 && grid.type === 'none' && grid.cell.cornerRadius === 0) {
 		// Can use faster canvas scaling since other grid features are not needed.
 		canvas = scale(canvas, grid.cell.scale);
@@ -98,7 +96,7 @@ function scale(canvas: HTMLCanvasElement, scale: number): HTMLCanvasElement {
 	return scaledCanvas;
 }
 
-function gridify(canvas: HTMLCanvasElement, grid: RenderOptionsGrid): HTMLCanvasElement {
+function gridify(canvas: HTMLCanvasElement, grid: GridOpts): HTMLCanvasElement {
 	const [gridCanvas, gridCtx] = createCanvas(...gridCanvasDimensions(canvas, grid));
 	const [srcCellWidth, srcCellHeight] = srcCellDimensions(canvas, grid);
 	const [dstCellWidth, dstCellHeight] = dstCellDimensions(canvas, grid);
@@ -141,10 +139,7 @@ function gridify(canvas: HTMLCanvasElement, grid: RenderOptionsGrid): HTMLCanvas
 	return gridCanvas;
 }
 
-function gridCanvasDimensions(
-	canvas: HTMLCanvasElement,
-	grid: RenderOptionsGrid
-): [number, number] {
+function gridCanvasDimensions(canvas: HTMLCanvasElement, grid: GridOpts): [number, number] {
 	const [imageWidth, imageHeight] = gridImageDimensions(canvas, grid.cell.scale);
 	const [borderWidth, borderHeight] = gridBorderDimensions(grid);
 	const [linesWidth, linesHeight] = gridLinesDimensions(canvas, grid);
@@ -159,7 +154,7 @@ function gridImageDimensions(canvas: HTMLCanvasElement, scale: number): [number,
 	return [width, height];
 }
 
-function gridBorderDimensions(grid: RenderOptionsGrid): [number, number] {
+function gridBorderDimensions(grid: GridOpts): [number, number] {
 	switch (grid.type) {
 		case 'none':
 		case 'lines':
@@ -172,7 +167,7 @@ function gridBorderDimensions(grid: RenderOptionsGrid): [number, number] {
 	}
 }
 
-function gridLinesDimensions(canvas: HTMLCanvasElement, grid: RenderOptionsGrid): [number, number] {
+function gridLinesDimensions(canvas: HTMLCanvasElement, grid: GridOpts): [number, number] {
 	switch (grid.type) {
 		case 'none':
 		case 'border':
@@ -198,7 +193,7 @@ function gridLinesCount(imageSize: number, cellSize: number): number {
 	return Math.floor(imageSize / cellSize) - Number(imageSize % cellSize === 0);
 }
 
-function srcCellDimensions(canvas: HTMLCanvasElement, grid: RenderOptionsGrid): [number, number] {
+function srcCellDimensions(canvas: HTMLCanvasElement, grid: GridOpts): [number, number] {
 	// Rounding corners always requires source cells to be created.
 	if (grid.cell.cornerRadius > 0) return [grid.cell.width, grid.cell.height];
 	switch (grid.type) {
@@ -213,11 +208,11 @@ function srcCellDimensions(canvas: HTMLCanvasElement, grid: RenderOptionsGrid): 
 	}
 }
 
-function dstCellDimensions(canvas: HTMLCanvasElement, grid: RenderOptionsGrid): [number, number] {
+function dstCellDimensions(canvas: HTMLCanvasElement, grid: GridOpts): [number, number] {
 	return srcCellDimensions(canvas, grid).map((size) => size * grid.cell.scale) as [number, number];
 }
 
-function gridLineAndBorderSizes(grid: RenderOptionsGrid): [number, number] {
+function gridLineAndBorderSizes(grid: GridOpts): [number, number] {
 	// Pair is [line, border] stroke sizes.
 	switch (grid.type) {
 		case 'none':
@@ -234,7 +229,7 @@ function gridLineAndBorderSizes(grid: RenderOptionsGrid): [number, number] {
 function roundCorners(
 	width: number,
 	height: number,
-	grid: RenderOptionsGrid
+	grid: GridOpts
 ): HTMLCanvasElement | undefined {
 	if (grid.cell.cornerRadius === 0) return undefined;
 
