@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getAppState } from '$lib/state/app-state.svelte';
-	import GridOpts from './GridOpts.svelte';
-	import PaletteOpts from './PaletteOpts.svelte';
+	import GridOpts from '$lib/components/GridOpts.svelte';
+	import PaletteOpts from '$lib/components/PaletteOpts.svelte';
 
 	const { renderOpts, images } = getAppState();
 

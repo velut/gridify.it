@@ -3,7 +3,7 @@
 	import PreviewGallery from '$lib/components/PreviewGallery.svelte';
 	import PreviewMode from '$lib/components/PreviewMode.svelte';
 	import PreviewPlaceholder from '$lib/components/PreviewPlaceholder.svelte';
-	import AppColumn from './AppColumn.svelte';
+	import AppColumn from '$lib/components/AppColumn.svelte';
 
 	const { images } = getAppState();
 </script>
