@@ -5,7 +5,7 @@
 	const { images } = getAppState();
 	let fileInput: HTMLInputElement;
 
-	async function handleImagesUpload(e: Event) {
+	async function handleImagesUpload(e: DragEvent) {
 		e.preventDefault();
 		await images.upload(e);
 		fileInput.value = '';
