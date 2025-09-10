@@ -2,7 +2,7 @@ import { cloneImages } from '$lib/utils/clone-images';
 import { downloadBlob } from '$lib/utils/download-blob';
 import { renderImages } from '$lib/render-images';
 import { revokeObjectUrls } from '$lib/utils/revoke-object-urls';
-import { type Image, type ImagesRenderState, type RenderOptions } from '$lib/types';
+import { RenderOpts, type Image } from '$lib/types';
 import { zipImages } from '$lib/utils/zip-images';
 import accept from 'attr-accept';
 import { fromEvent } from 'file-selector';
@@ -10,7 +10,7 @@ import { fromEvent } from 'file-selector';
 export class ImagesState {
 	#inputImages = $state<Image[]>([]);
 	#outputImages = $state<Image[]>([]);
-	renderState = $state<ImagesRenderState>('original');
+	renderState = $state<'original' | 'rendered'>('original');
 
 	get inputImages() {
 		return this.#inputImages;
@@ -65,7 +65,7 @@ export class ImagesState {
 		}
 	}
 
-	async render(opts: RenderOptions) {
+	async render(opts: RenderOpts) {
 		if (!this.hasInputImages()) return;
 		this.outputImages = await renderImages(this.inputImages, opts);
 		this.renderState = 'rendered';
