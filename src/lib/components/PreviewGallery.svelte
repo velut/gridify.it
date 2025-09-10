@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { getAppStateContext } from '$lib/state/app-state.svelte';
+	import { getAppState } from '$lib/state/app-state.svelte';
 	import { cn } from '$lib/utils/cn';
 
-	const { images, preview } = getAppStateContext();
+	const { images, preview } = getAppState();
 </script>
 
 <div class="overflow-y-auto lg:snap-y lg:snap-mandatory">

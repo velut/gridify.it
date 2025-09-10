@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { getAppStateContext } from '$lib/state/app-state.svelte';
+	import { getAppState } from '$lib/state/app-state.svelte';
 	import MaterialSymbolsPaletteOutline from '~icons/material-symbols/palette-outline';
 	import FormField from '$lib/components/FormField.svelte';
 	import OptsCard from '$lib/components/OptsCard.svelte';
 
 	const {
 		renderOpts: { opts }
-	} = getAppStateContext();
+	} = getAppState();
 </script>
 
 <OptsCard title="Palette options">

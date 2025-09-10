@@ -5,11 +5,11 @@ import { getContext, setContext } from 'svelte';
 
 const key = Symbol('app-state');
 
-export function setAppStateContext(state: AppState) {
+export function setAppState(state: AppState) {
 	setContext(key, state);
 }
 
-export function getAppStateContext(): AppState {
+export function getAppState(): AppState {
 	return getContext(key);
 }
 

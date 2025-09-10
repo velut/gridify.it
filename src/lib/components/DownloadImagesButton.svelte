@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { getAppStateContext } from '$lib/state/app-state.svelte';
+	import { getAppState } from '$lib/state/app-state.svelte';
 	import MaterialSymbolsDownloadRounded from '~icons/material-symbols/download-rounded';
 
-	const { images } = getAppStateContext();
+	const { images } = getAppState();
 </script>
 
 <button

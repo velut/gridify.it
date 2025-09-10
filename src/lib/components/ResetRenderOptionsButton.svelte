@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { getAppStateContext } from '$lib/state/app-state.svelte';
+	import { getAppState } from '$lib/state/app-state.svelte';
 	import MaterialSymbolsResetWrenchRounded from '~icons/material-symbols/reset-wrench-rounded';
 
-	const { renderOpts } = getAppStateContext();
+	const { renderOpts } = getAppState();
 </script>
 
 <button

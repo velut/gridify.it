@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getAppStateContext } from '$lib/state/app-state.svelte';
+	import { getAppState } from '$lib/state/app-state.svelte';
 	import InputWithUnit from '$lib/components/InputWithUnit.svelte';
 	import MaterialSymbolsBackToTabRounded from '~icons/material-symbols/back-to-tab-rounded';
 	import MaterialSymbolsColorsRounded from '~icons/material-symbols/colors-rounded';
@@ -13,7 +13,7 @@
 
 	const {
 		renderOpts: { opts }
-	} = getAppStateContext();
+	} = getAppState();
 	let isGridTypeNone = $derived(opts.grid.type === 'none');
 </script>
 

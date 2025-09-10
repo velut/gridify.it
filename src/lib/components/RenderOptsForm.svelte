@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { getAppStateContext } from '$lib/state/app-state.svelte';
+	import { getAppState } from '$lib/state/app-state.svelte';
 	import GridOpts from './GridOpts.svelte';
 	import PaletteOpts from './PaletteOpts.svelte';
 
-	const { renderOpts, images } = getAppStateContext();
+	const { renderOpts, images } = getAppState();
 
 	async function handleSubmit(e: SubmitEvent) {
 		e.preventDefault();

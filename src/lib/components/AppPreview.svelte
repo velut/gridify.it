@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { getAppStateContext } from '$lib/state/app-state.svelte';
+	import { getAppState } from '$lib/state/app-state.svelte';
 	import PreviewGallery from '$lib/components/PreviewGallery.svelte';
 	import PreviewMode from '$lib/components/PreviewMode.svelte';
 	import PreviewPlaceholder from '$lib/components/PreviewPlaceholder.svelte';
 	import AppColumn from './AppColumn.svelte';
 
-	const { images } = getAppStateContext();
+	const { images } = getAppState();
 </script>
 
 <AppColumn>
