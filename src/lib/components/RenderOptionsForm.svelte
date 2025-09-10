@@ -10,11 +10,13 @@
 	import MaterialSymbolsRoundedCornerRounded from '~icons/material-symbols/rounded-corner-rounded';
 	import MaterialSymbolsTextureRounded from '~icons/material-symbols/texture-rounded';
 
-	const { renderOptions: opts, images } = getAppStateContext();
+	const { renderOpts, images } = getAppStateContext();
+	const { opts } = renderOpts;
+	let isGridTypeNone = $derived(opts.grid.type === 'none');
 
 	async function handleSubmit(e: SubmitEvent) {
 		e.preventDefault();
-		await images.render(opts.toRenderOptions());
+		await images.render(renderOpts.toRenderOpts());
 	}
 </script>
 
@@ -57,7 +59,7 @@
 				pattern="[0-9]*"
 				title="Use 1 or a bigger integer number of pixels"
 				bind:value={opts.grid.lines.size}
-				disabled={opts.isGridTypeNone()}
+				disabled={isGridTypeNone}
 			/>
 		</InputWithUnit>
 	</div>
@@ -147,6 +149,7 @@
 		</InputWithUnit>
 	</div>
 
+	<!--
 	<div class="grid gap-2">
 		<label for="opacity">
 			<MaterialSymbolsTextureRounded class="size-4" />
@@ -157,4 +160,5 @@
 			<option value="opaque">Make fully opaque</option>
 		</select>
 	</div>
+	-->
 </form>

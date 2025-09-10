@@ -3,6 +3,7 @@ words = [
     "gridify",
     "gzip",
     "noopener",
+    "onsubmit",
     "runed",
     "sveltekit",
     "unplugin",

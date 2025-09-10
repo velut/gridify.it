@@ -27,8 +27,4 @@ export class RenderOptsState {
 	isDefault(): boolean {
 		return deepEqual($state.snapshot(this.opts), defaultOpts);
 	}
-
-	isGridTypeNone(): boolean {
-		return this.opts.grid.type === 'none';
-	}
 }
