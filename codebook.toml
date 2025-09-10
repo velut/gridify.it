@@ -1,6 +1,7 @@
 words = [
     "bundler",
     "gridify",
+    "gzip",
     "noopener",
     "runed",
     "sveltekit",

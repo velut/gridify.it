@@ -5,6 +5,7 @@ import Icons from 'unplugin-icons/vite';
 import { defineConfig, perEnvironmentPlugin } from 'vite';
 import devtoolsJson from 'vite-plugin-devtools-json';
 import { licenses } from './vite-plugin-licenses';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig({
 	plugins: [
@@ -15,7 +16,8 @@ export default defineConfig({
 		perEnvironmentPlugin('vite-plugin-licenses', (environment) => {
 			if (environment.name !== 'client') return false;
 			return licenses() as any;
-		})
+		}),
+		visualizer({ emitFile: true, filename: 'stats.html', template: 'sunburst', gzipSize: true })
 	],
 	define: {
 		__GIT_COMMIT: JSON.stringify(execSync('git rev-parse HEAD').toString().trim())
