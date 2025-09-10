@@ -1,6 +1,6 @@
 import { ImagesState } from '$lib/state/images-state.svelte';
 import { PreviewState } from '$lib/state/preview-state.svelte';
-import { RenderOptionsState } from '$lib/state/render-options-state.svelte';
+import { RenderOptsState } from '$lib/state/render-opts-state.svelte';
 import { getContext, setContext } from 'svelte';
 
 const key = Symbol('app-state');
@@ -15,6 +15,6 @@ export function getAppStateContext(): AppState {
 
 export class AppState {
 	images = new ImagesState();
-	renderOptions = new RenderOptionsState();
+	renderOpts = new RenderOptsState();
 	preview = new PreviewState();
 }
