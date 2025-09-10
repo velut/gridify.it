@@ -11,7 +11,7 @@
 	}
 </script>
 
-<form id="render-options-form" onsubmit={handleSubmit} class="form grid gap-4">
+<form id="render-opts-form" onsubmit={handleSubmit} class="form grid gap-4">
 	<PaletteOpts />
 	<GridOpts />
 </form>
