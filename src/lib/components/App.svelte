@@ -2,15 +2,17 @@
 	import { AppState, setAppStateContext } from '$lib/state/app-state.svelte';
 	import AppActions from '$lib/components/AppActions.svelte';
 	import AppPreview from '$lib/components/AppPreview.svelte';
-	import AppRenderOptions from '$lib/components/AppRenderOptions.svelte';
+	import AppRenderOpts from '$lib/components/AppRenderOpts.svelte';
 
 	setAppStateContext(new AppState());
 </script>
 
-<div class="grid h-full gap-6 overflow-y-auto p-6 lg:grid-cols-[auto_minmax(0,1fr)]">
-	<div class="grid gap-6 overflow-y-auto sm:grid-cols-[auto_auto]">
+<div
+	class="grid h-full divide-y overflow-y-auto lg:grid-cols-[auto_minmax(0,1fr)] lg:divide-x lg:divide-y-0"
+>
+	<div class="grid divide-y overflow-y-auto sm:grid-cols-[auto_auto] sm:divide-x sm:divide-y-0">
 		<AppActions />
-		<AppRenderOptions />
+		<AppRenderOpts />
 	</div>
 	<AppPreview />
 </div>
