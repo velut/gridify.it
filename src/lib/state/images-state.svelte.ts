@@ -55,16 +55,6 @@ export class ImagesState {
 		this.renderState = 'original';
 	}
 
-	async download() {
-		if (!this.hasOutputImages()) return;
-		if (this.outputImages.length === 1) {
-			const image = this.outputImages[0];
-			downloadBlob(image.file, image.file.name);
-		} else {
-			downloadBlob(await zipImages(this.outputImages), 'gridify-it-images.zip');
-		}
-	}
-
 	async render(opts: RenderOpts) {
 		if (!this.hasInputImages()) return;
 		this.outputImages = await renderImages(this.inputImages, opts);
