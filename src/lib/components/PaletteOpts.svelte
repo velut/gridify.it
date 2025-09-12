@@ -5,7 +5,7 @@
 	import OptsCard from '$lib/components/OptsCard.svelte';
 
 	const {
-		renderOpts: { opts }
+		render: { opts }
 	} = getAppState();
 </script>
 

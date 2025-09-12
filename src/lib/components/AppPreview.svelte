@@ -5,12 +5,12 @@
 	import PreviewPlaceholder from '$lib/components/PreviewPlaceholder.svelte';
 	import AppColumn from '$lib/components/AppColumn.svelte';
 
-	const { images } = getAppState();
+	const { render } = getAppState();
 </script>
 
 <AppColumn>
 	<div class="h-full">
-		{#if images.hasOutputImages()}
+		{#if render.currentImages.length}
 			<div class="grid h-full grid-rows-[auto_minmax(0,1fr)] gap-6">
 				<PreviewMode />
 				<PreviewGallery />

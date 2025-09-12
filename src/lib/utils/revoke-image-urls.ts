@@ -1,6 +1,6 @@
-import type { Image } from '$lib/types';
+import type { AppImage } from '$lib/types';
 
-export function revokeImageUrls(images: Image[]) {
+export function revokeImageUrls(images: AppImage[]) {
 	if (!images.length) return;
 	const urls = images.map(({ url }) => url);
 	setTimeout(() => {

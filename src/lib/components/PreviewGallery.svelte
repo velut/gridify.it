@@ -2,11 +2,11 @@
 	import { getAppState } from '$lib/state/app-state.svelte';
 	import { cn } from '$lib/utils/cn';
 
-	const { images, preview } = getAppState();
+	const { render, preview } = getAppState();
 </script>
 
 <div class="overflow-y-auto lg:snap-y lg:snap-mandatory">
-	{#each images.outputImages as image, index (image.url)}
+	{#each render.currentImages as image, index (image.url)}
 		{#if index > 0}
 			<div class="bg-border my-6 h-[1px] w-full"></div>
 		{/if}

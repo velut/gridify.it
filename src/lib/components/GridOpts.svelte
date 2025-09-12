@@ -12,7 +12,7 @@
 	import OptsCard from '$lib/components/OptsCard.svelte';
 
 	const {
-		renderOpts: { opts }
+		render: { opts }
 	} = getAppState();
 	let isGridTypeNone = $derived(opts.grid.type === 'none');
 </script>

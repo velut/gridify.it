@@ -3,6 +3,9 @@ import * as z from 'zod';
 export const Image = z.object({ file: z.file(), url: z.string() });
 export type Image = z.infer<typeof Image>;
 
+export const AppImage = z.object({ file: z.file(), url: z.string() });
+export type AppImage = z.infer<typeof Image>;
+
 export const PaletteOpts = z.object({
 	type: z.literal(['original', 'opaque', 'binary', 'grayscale']).catch('original')
 });
