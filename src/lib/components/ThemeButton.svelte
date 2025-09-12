@@ -9,7 +9,9 @@
 	type="button"
 	class="btn-sm-icon-outline"
 	title="Change theme"
-	onclick={() => theme.toggle()}
+	onclick={() => {
+		theme.toggle();
+	}}
 >
 	<MaterialSymbolsContrast class="size-4" />
 	<span class="sr-only">Change theme</span>
