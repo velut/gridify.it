@@ -4,9 +4,8 @@
 	import FormField from '$lib/components/FormField.svelte';
 	import OptsCard from '$lib/components/OptsCard.svelte';
 
-	const {
-		render: { opts }
-	} = getAppState();
+	const { render } = getAppState();
+	let opts = $derived(render.opts);
 </script>
 
 <OptsCard title="Palette options">

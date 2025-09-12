@@ -11,10 +11,9 @@
 	import FormField from '$lib/components/FormField.svelte';
 	import OptsCard from '$lib/components/OptsCard.svelte';
 
-	const {
-		render: { opts }
-	} = getAppState();
-	let isGridTypeNone = $derived(opts.grid.type === 'none');
+	const { render } = getAppState();
+	let opts = $derived(render.opts);
+	let isGridTypeNone = $derived(render.opts.grid.type === 'none');
 </script>
 
 <OptsCard title="Grid options">
