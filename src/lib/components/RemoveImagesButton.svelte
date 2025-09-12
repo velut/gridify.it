@@ -3,13 +3,16 @@
 	import MaterialSymbolsHideImageRounded from '~icons/material-symbols/hide-image-rounded';
 
 	const { render } = getAppState();
-
-	function resetImages() {
-		render.resetImages();
-	}
 </script>
 
-<button type="button" class="btn-secondary" onclick={resetImages} disabled={!render.hasImages()}>
+<button
+	type="button"
+	class="btn-secondary"
+	onclick={() => {
+		render.resetImages();
+	}}
+	disabled={!render.hasImages()}
+>
 	<MaterialSymbolsHideImageRounded class="size-4" />
 	Remove images
 </button>
