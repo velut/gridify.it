@@ -27,7 +27,7 @@ export class RenderState {
 		return this.#inputImages;
 	}
 
-	load(images: AppImage[]) {
+	loadImages(images: AppImage[]) {
 		if (!images.length) return;
 		revokeImageUrls(this.#inputImages);
 		revokeImageUrls(this.#outputImages);

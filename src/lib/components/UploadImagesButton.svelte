@@ -13,7 +13,7 @@
 
 	async function handleChangeOrDrop(event: Event) {
 		event.preventDefault();
-		render.load(await getImages(event));
+		render.loadImages(await getImages(event));
 		resetFileInput();
 	}
 
