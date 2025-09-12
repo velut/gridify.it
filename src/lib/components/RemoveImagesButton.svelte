@@ -2,15 +2,14 @@
 	import { getAppState } from '$lib/state/app-state.svelte';
 	import MaterialSymbolsHideImageRounded from '~icons/material-symbols/hide-image-rounded';
 
-	const { images } = getAppState();
+	const { render } = getAppState();
+
+	function resetImages() {
+		render.resetImages();
+	}
 </script>
 
-<button
-	type="button"
-	class="btn-secondary"
-	onclick={() => images.reset()}
-	disabled={!images.hasInputImages()}
->
+<button type="button" class="btn-secondary" onclick={resetImages} disabled={!render.hasImages()}>
 	<MaterialSymbolsHideImageRounded class="size-4" />
 	Remove images
 </button>

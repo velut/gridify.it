@@ -29,10 +29,19 @@ export class RenderState {
 
 	loadImages(images: AppImage[]) {
 		if (!images.length) return;
+		this.resetImages();
+		this.#inputImages = images;
+	}
+
+	resetImages() {
 		revokeImageUrls(this.#inputImages);
 		revokeImageUrls(this.#outputImages);
-		this.#inputImages = images;
+		this.#inputImages = [];
 		this.#outputImages = [];
+	}
+
+	hasImages(): boolean {
+		return this.currentImages.length > 0;
 	}
 
 	// resetOpts() {

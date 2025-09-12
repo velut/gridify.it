@@ -10,7 +10,7 @@
 
 <AppColumn>
 	<div class="h-full">
-		{#if render.currentImages.length}
+		{#if render.hasImages()}
 			<div class="grid h-full grid-rows-[auto_minmax(0,1fr)] gap-6">
 				<PreviewMode />
 				<PreviewGallery />
