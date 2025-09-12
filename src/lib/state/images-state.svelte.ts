@@ -1,11 +1,8 @@
 import { cloneImages } from '$lib/utils/clone-images';
-import { downloadBlob } from '$lib/utils/download-blob';
 import { renderImages } from '$lib/render-images';
 import { revokeObjectUrls } from '$lib/utils/revoke-object-urls';
 import { RenderOpts, type Image } from '$lib/types';
-import { zipImages } from '$lib/utils/zip-images';
-import accept from 'attr-accept';
-import { fromEvent } from 'file-selector';
+import { getImages } from '$lib/utils/get-images';
 
 export class ImagesState {
 	#inputImages = $state<Image[]>([]);
@@ -46,10 +43,7 @@ export class ImagesState {
 
 	async upload(event: Event) {
 		this.reset();
-		const images = (await fromEvent(event))
-			.filter((res) => res instanceof File)
-			.filter((file) => accept(file, 'image/*'))
-			.map((file) => ({ file, url: URL.createObjectURL(file) }));
+		const images = await getImages(event);
 		this.inputImages = images;
 		this.outputImages = cloneImages(images);
 		this.renderState = 'original';
