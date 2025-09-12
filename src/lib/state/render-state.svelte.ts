@@ -44,15 +44,15 @@ export class RenderState {
 		return this.currentImages.length > 0;
 	}
 
-	// resetOpts() {
-	// 	this.opts = structuredClone(defaultOpts);
-	// }
+	resetOpts() {
+		this.opts = structuredClone(defaultOpts);
+	}
+
+	isDefaultOpts(): boolean {
+		return deepEqual(this.opts, defaultOpts);
+	}
 
 	// toRenderOpts(): RenderOpts {
 	// 	return RenderOpts.parse($state.snapshot(this.opts));
-	// }
-
-	// isDefaultOpts(): boolean {
-	// 	return deepEqual($state.snapshot(this.opts), defaultOpts);
 	// }
 }
