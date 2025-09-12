@@ -1,13 +1,9 @@
-import type { Image } from '$lib/types';
-import { downloadBlob } from '$lib/utils/download-blob';
-import { zipImages } from '$lib/utils/zip-images';
+import type { AppImage } from '$lib/types';
+import { downloadFiles } from './download-files';
 
-export async function downloadImages(images: Image[]) {
-	if (!images.length) return;
-	if (images.length === 1) {
-		const image = images[0];
-		downloadBlob(image.file, image.file.name);
-	} else {
-		downloadBlob(await zipImages(images), 'gridify-it-images.zip');
-	}
+export async function downloadImages(images: AppImage[]) {
+	return await downloadFiles(
+		images.map(({ file }) => file),
+		'gridify-it-images.zip'
+	);
 }

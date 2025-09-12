@@ -1,20 +1,19 @@
 <script lang="ts">
 	import { getAppState } from '$lib/state/app-state.svelte';
-	import { downloadFiles } from '$lib/utils/download-files';
+	import { downloadImages } from '$lib/utils/download-images';
 	import MaterialSymbolsDownloadRounded from '~icons/material-symbols/download-rounded';
 
-	const { images } = getAppState();
-
-	async function downloadImages() {
-		await downloadFiles(
-			// TODO:
-			images.outputImages.map(({ file }) => file),
-			'gridify-it-images.zip'
-		);
-	}
+	const { render } = getAppState();
 </script>
 
-<button type="button" class="btn" onclick={downloadImages} disabled={!images.hasOutputImages()}>
+<button
+	type="button"
+	class="btn"
+	onclick={async () => {
+		await downloadImages(render.currentImages);
+	}}
+	disabled={!render.hasImages()}
+>
 	<MaterialSymbolsDownloadRounded class="size-4" />
 	Download images
 </button>
