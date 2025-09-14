@@ -36,6 +36,7 @@ export const RenderOpts = z.object({
 	grid: GridOpts
 });
 export type RenderOpts = z.infer<typeof RenderOpts>;
+export type RenderOptsInput = z.input<typeof RenderOpts>;
 
 export const PreviewMode = z.literal(['pixel-art', 'high-res']);
 export type PreviewMode = z.infer<typeof PreviewMode>;
