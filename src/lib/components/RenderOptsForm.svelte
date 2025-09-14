@@ -3,15 +3,17 @@
 	import GridOpts from '$lib/components/GridOpts.svelte';
 	import PaletteOpts from '$lib/components/PaletteOpts.svelte';
 
-	const { renderOpts, images } = getAppState();
-
-	async function handleSubmit(e: SubmitEvent) {
-		e.preventDefault();
-		await images.render(renderOpts.toRenderOpts());
-	}
+	const { render } = getAppState();
 </script>
 
-<form id="render-opts-form" onsubmit={handleSubmit} class="form grid gap-4">
+<form
+	id="render-opts-form"
+	class="form grid gap-4"
+	onsubmit={async (event) => {
+		event.preventDefault();
+		await render.render();
+	}}
+>
 	<PaletteOpts />
 	<GridOpts />
 </form>
