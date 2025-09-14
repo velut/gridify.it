@@ -4,9 +4,9 @@
 	import RemoveImagesButton from '$lib/components/RemoveImagesButton.svelte';
 	import RenderImagesButton from '$lib/components/RenderImagesButton.svelte';
 	import ResetRenderOptionsButton from '$lib/components/ResetRenderOptionsButton.svelte';
-	import UndoRenderImagesButton from '$lib/components/UndoRenderImagesButton.svelte';
 	import UploadImagesButton from '$lib/components/UploadImagesButton.svelte';
 	import AppColumn from '$lib/components/AppColumn.svelte';
+	import UndoRedoRenderButtons from '$lib/components/UndoRedoRenderButtons.svelte';
 </script>
 
 <AppColumn>
@@ -17,7 +17,7 @@
 		<Divider />
 
 		<RenderImagesButton />
-		<UndoRenderImagesButton />
+		<UndoRedoRenderButtons />
 		<ResetRenderOptionsButton />
 
 		<Divider />
