@@ -60,7 +60,4 @@ export class RenderState {
 		return !deepEqual(this.opts, defaultRenderOpts);
 	}
 
-	// toRenderOpts(): RenderOpts {
-	// 	return RenderOpts.parse($state.snapshot(this.opts));
-	// }
 }
