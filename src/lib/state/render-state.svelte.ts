@@ -1,16 +1,24 @@
-import { type AppImage, RenderOpts } from '$lib/types';
+import { type AppImage, RenderOpts, type RenderOptsInput } from '$lib/types';
 import { revokeImageUrls } from '$lib/utils/revoke-image-urls';
 import { deepEqual } from 'fast-equals';
 
-const defaultOpts = {
+const defaultRenderOpts: RenderOptsInput = {
 	palette: {
 		type: 'original'
 	},
 	grid: {
 		type: 'full',
 		color: '#000000',
-		lines: { size: '1' },
-		cell: { shape: 'square', width: '1', height: '1', scale: '1', cornerRadius: '0' }
+		lines: {
+			size: '1'
+		},
+		cell: {
+			shape: 'square',
+			width: '1',
+			height: '1',
+			scale: '1',
+			cornerRadius: '0'
+		}
 	}
 };
 
@@ -18,7 +26,7 @@ export class RenderState {
 	#inputImages = $state<AppImage[]>([]);
 	#outputImages = $state<AppImage[]>([]);
 
-	opts = $state(structuredClone(defaultOpts));
+	opts = $state<RenderOptsInput>(structuredClone(defaultRenderOpts));
 	undo = $state<RenderOpts[]>();
 	redo = $state<RenderOpts[]>();
 
@@ -45,11 +53,11 @@ export class RenderState {
 	}
 
 	resetOpts() {
-		this.opts = structuredClone(defaultOpts);
+		this.opts = structuredClone(defaultRenderOpts);
 	}
 
 	isDefaultOpts(): boolean {
-		return deepEqual(this.opts, defaultOpts);
+		return deepEqual(this.opts, defaultRenderOpts);
 	}
 
 	// toRenderOpts(): RenderOpts {
