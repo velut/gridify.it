@@ -17,7 +17,7 @@
 
 <button
 	type="submit"
-	form="render-options-form"
+	form="render-opts-form"
 	class="btn"
 	title="Render images [Ctrl+Enter]"
 	bind:this={button}
