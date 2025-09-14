@@ -11,7 +11,7 @@
 	onclick={() => {
 		render.resetOpts();
 	}}
-	disabled={render.isDefaultOpts()}
+	disabled={!render.canResetOpts()}
 >
 	<MaterialSymbolsResetWrenchRounded class="size-4" />
 	Reset render options

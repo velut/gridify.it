@@ -56,8 +56,8 @@ export class RenderState {
 		this.opts = structuredClone(defaultRenderOpts);
 	}
 
-	isDefaultOpts(): boolean {
-		return deepEqual(this.opts, defaultRenderOpts);
+	canResetOpts(): boolean {
+		return !deepEqual(this.opts, defaultRenderOpts);
 	}
 
 	// toRenderOpts(): RenderOpts {
