@@ -1,4 +1,4 @@
-import { type AppImage, RenderOpts, type RenderOptsInput } from '$lib/types';
+import { type AppImage, type RenderOptsInput } from '$lib/types';
 import { revokeImageUrls } from '$lib/utils/revoke-image-urls';
 import { deepEqual } from 'fast-equals';
 
@@ -26,9 +26,12 @@ export class RenderState {
 	#inputImages = $state<AppImage[]>([]);
 	#outputImages = $state<AppImage[]>([]);
 
+	// Undo and redo stacks.
+	#prevOpts = $state<RenderOptsInput[]>([]);
+	#nextOpts = $state<RenderOptsInput[]>([]);
+
+	// Current render opts bound in the form.
 	opts = $state<RenderOptsInput>(structuredClone(defaultRenderOpts));
-	undo = $state<RenderOpts[]>();
-	redo = $state<RenderOpts[]>();
 
 	get currentImages(): AppImage[] {
 		if (this.#outputImages.length) return this.#outputImages;
@@ -46,6 +49,7 @@ export class RenderState {
 		revokeImageUrls(this.#outputImages);
 		this.#inputImages = [];
 		this.#outputImages = [];
+		this.resetUndoRedo();
 	}
 
 	hasImages(): boolean {
@@ -60,4 +64,37 @@ export class RenderState {
 		return !deepEqual(this.opts, defaultRenderOpts);
 	}
 
+	resetUndoRedo() {
+		this.#prevOpts = [];
+		this.#nextOpts = [];
+	}
+
+	canUndo(): boolean {
+		return this.#prevOpts.length > 0;
+	}
+
+	canRedo(): boolean {
+		return this.#nextOpts.length > 0;
+	}
+
+	undo() {
+		const opts = this.#prevOpts.pop();
+		if (!opts) return;
+		this.#nextOpts.push(opts);
+	}
+
+	redo() {
+		const opts = this.#nextOpts.pop();
+		if (!opts) return;
+		this.#prevOpts.push(opts);
+	}
+
+	pushUndo() {
+		this.#prevOpts.push(this.opts);
+		this.#nextOpts = [];
+	}
+
+	async render() {
+		this.pushUndo();
+	}
 }
