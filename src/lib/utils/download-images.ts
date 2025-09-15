@@ -1,5 +1,5 @@
 import type { AppImage } from '$lib/types';
-import { downloadFiles } from './download-files';
+import { downloadFiles } from '$lib/utils/download-files';
 
 export async function downloadImages(images: AppImage[]) {
 	return await downloadFiles(
