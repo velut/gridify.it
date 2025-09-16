@@ -1,8 +1,10 @@
 import {
+	AppImageBuffer,
 	RenderOpts,
 	RenderWorkerInput,
 	RenderWorkerOutput,
 	RenderWorkerOutputData,
+	type AppBitmap,
 	type AppImage,
 	type RenderOptsInput
 } from '$lib/types';
@@ -14,23 +16,20 @@ const worker = new Worker(new URL('./render.worker.ts', import.meta.url), {
 });
 
 export async function render(images: AppImage[], optsInput: RenderOptsInput): Promise<AppImage[]> {
-	const { bitmaps } = await renderOnWorker({
-		bitmaps: await createImageBitmaps(images),
-		opts: RenderOpts.parse(optsInput)
-	});
-	// return await createOutputImages(bitmaps);
-	console.time('coi');
-	const a = await createOutputImages(bitmaps);
-	console.timeEnd('coi');
-	return a;
+	const bitmaps = await imagesToBitmaps(images);
+	const opts = RenderOpts.parse(optsInput);
+	const { buffers } = await renderOnWorker({ bitmaps, opts });
+	return await buffersToImages(buffers);
 }
 
-async function createImageBitmaps(images: AppImage[]): Promise<ImageBitmap[]> {
+async function imagesToBitmaps(images: AppImage[]): Promise<AppBitmap[]> {
 	return await pMap(
 		images,
-		async (image) => {
+		async ({ id, file }) => {
 			try {
-				return await window.createImageBitmap(image.file);
+				const filename = file.name;
+				const bitmap = await window.createImageBitmap(file);
+				return { id, filename, bitmap };
 			} catch (err) {
 				console.error(err);
 				return pMapSkip;
@@ -44,11 +43,11 @@ async function renderOnWorker(workerInput: RenderWorkerInput): Promise<RenderWor
 	return await new Promise((resolve, reject) => {
 		// Use channels to enable async/await communication with worker.
 		// See https://advancedweb.hu/how-to-use-async-await-with-postmessage/.
-		const channel = new MessageChannel();
+		const { port1, port2 } = new MessageChannel();
 
 		// Received message back from worker.
-		channel.port1.onmessage = ({ data }) => {
-			channel.port1.close();
+		port1.onmessage = ({ data }) => {
+			port1.close();
 			const result = RenderWorkerOutput.parse(data);
 			if (result.status === 'ok') {
 				resolve(result.data);
@@ -57,26 +56,21 @@ async function renderOnWorker(workerInput: RenderWorkerInput): Promise<RenderWor
 			}
 		};
 
-		// Send message to worker and transfer port for response and bitmaps for rendering.
-		worker.postMessage(workerInput, [channel.port2, ...workerInput.bitmaps]);
+		// Send message to worker.
+		const transferBitmaps = workerInput.bitmaps.map(({ bitmap }) => bitmap);
+		worker.postMessage(workerInput, [port2, ...transferBitmaps]);
 	});
 }
 
-async function createOutputImages(bitmaps: ImageBitmap[]): Promise<AppImage[]> {
+async function buffersToImages(buffers: AppImageBuffer[]): Promise<AppImage[]> {
 	return await pMap(
-		bitmaps,
-		async (bitmap) => {
+		buffers,
+		async ({ id, filename, buffer }) => {
 			try {
-				const canvas = new OffscreenCanvas(bitmap.width, bitmap.height);
-				const ctx = canvas.getContext('bitmaprenderer')!;
-				ctx.transferFromImageBitmap(bitmap);
-				const blob = await canvas.convertToBlob({ type: 'image/png', quality: 1 });
-				const file = new File([blob], 'foo.png', {
-					type: 'image/png'
-					// lastModified: image.file.lastModified
-				});
+				const name = `${filename}_${id}.png`;
+				const file = new File([buffer], name, { type: 'image/png' });
 				const url = URL.createObjectURL(file);
-				return { file, url };
+				return { id, file, url };
 			} catch (err) {
 				console.error(err);
 				return pMapSkip;

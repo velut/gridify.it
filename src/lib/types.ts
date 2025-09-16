@@ -8,6 +8,22 @@ export const AppImage = z.object({
 });
 export type AppImage = z.infer<typeof AppImage>;
 
+export const AppBitmap = z.object({
+	id: z.nanoid(),
+	filename: z.string(),
+
+	// Need to disable `ssr` in `+page.ts` as `ImageBitmap` is not available on the server.
+	bitmap: z.instanceof(ImageBitmap)
+});
+export type AppBitmap = z.infer<typeof AppBitmap>;
+
+export const AppImageBuffer = z.object({
+	id: z.nanoid(),
+	filename: z.string(),
+	buffer: z.instanceof(ArrayBuffer)
+});
+export type AppImageBuffer = z.infer<typeof AppImageBuffer>;
+
 export const PaletteOpts = z.object({
 	type: z.literal(['original', 'opaque', 'binary', 'grayscale']).catch('original')
 });
@@ -45,15 +61,13 @@ export type PreviewMode = z.infer<typeof PreviewMode>;
 
 // Render worker types.
 export const RenderWorkerInput = z.object({
-	// Need to disable `ssr` in `+page.ts` as `ImageBitmap` is not available on the server.
-	bitmaps: z.array(z.instanceof(ImageBitmap)),
+	bitmaps: z.array(AppBitmap),
 	opts: RenderOpts
 });
 export type RenderWorkerInput = z.infer<typeof RenderWorkerInput>;
 
 export const RenderWorkerOutputData = z.object({
-	// Need to disable `ssr` in `+page.ts` as `ImageBitmap` is not available on the server.
-	bitmaps: z.array(z.instanceof(ImageBitmap))
+	buffers: z.array(AppImageBuffer)
 });
 export type RenderWorkerOutputData = z.infer<typeof RenderWorkerOutputData>;
 
