@@ -68,7 +68,9 @@ function applyPalette(canvas: OffscreenCanvas, palette: PaletteOpts): OffscreenC
 
 	// NOTE: Browsers don't return the exact original pixel colors.
 	// See https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-getimagedata.
-	const imageData = tmpCtx.getImageData(0, 0, tmpCanvas.width, tmpCanvas.height);
+	const imageData = tmpCtx.getImageData(0, 0, tmpCanvas.width, tmpCanvas.height, {
+		colorSpace: 'srgb'
+	});
 	const pixels = imageData.data;
 
 	// Apply palette.

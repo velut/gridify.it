@@ -12,6 +12,7 @@ words = [
     "ondrop",
     "onsubmit",
     "runed",
+    "srgb",
     "sveltekit",
     "unplugin",
     "zod",
