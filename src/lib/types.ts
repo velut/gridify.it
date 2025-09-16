@@ -1,10 +1,12 @@
 import * as z from 'zod';
 
-export const Image = z.object({ file: z.file(), url: z.string() });
-export type Image = z.infer<typeof Image>;
-
-export const AppImage = z.object({ file: z.file(), url: z.string() });
-export type AppImage = z.infer<typeof Image>;
+// Use `AppImage` name to prevent conflict with the `Image` constructor of `HTMLImageElement`.
+export const AppImage = z.object({
+	id: z.nanoid(),
+	file: z.file(),
+	url: z.string()
+});
+export type AppImage = z.infer<typeof AppImage>;
 
 export const PaletteOpts = z.object({
 	type: z.literal(['original', 'opaque', 'binary', 'grayscale']).catch('original')
