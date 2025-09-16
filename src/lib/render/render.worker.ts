@@ -1,16 +1,11 @@
-import {
-	RenderWorkerInput,
-	AppBitmap,
-	AppImageBuffer,
-	type RenderWorkerOutputData
-} from '$lib/types';
-import pMap, { pMapSkip } from 'p-map';
+import { RenderWorkerInput, type RenderWorkerOutputData } from '$lib/types';
+import { renderBitmaps } from './render-bitmaps';
 
 self.addEventListener('message', async (event) => {
 	const port = event.ports[0]!;
 	try {
 		console.time('worker-render');
-		const data = await render(RenderWorkerInput.parse(event.data));
+		const data = await work(RenderWorkerInput.parse(event.data));
 		console.timeEnd('worker-render');
 		const transferBuffers = data.buffers.map(({ buffer }) => buffer);
 		port.postMessage({ status: 'ok', data }, [...transferBuffers]);
@@ -19,27 +14,7 @@ self.addEventListener('message', async (event) => {
 	}
 });
 
-async function render({ bitmaps, opts }: RenderWorkerInput): Promise<RenderWorkerOutputData> {
-	const buffers = await bitmapsToBuffers(bitmaps);
+async function work(workerInput: RenderWorkerInput): Promise<RenderWorkerOutputData> {
+	const buffers = await renderBitmaps(workerInput);
 	return { buffers };
-}
-
-async function bitmapsToBuffers(bitmaps: AppBitmap[]): Promise<AppImageBuffer[]> {
-	return await pMap(
-		bitmaps,
-		async ({ id, filename, bitmap }) => {
-			try {
-				const canvas = new OffscreenCanvas(bitmap.width, bitmap.height);
-				const ctx = canvas.getContext('bitmaprenderer')!;
-				ctx.transferFromImageBitmap(bitmap);
-				const blob = await canvas.convertToBlob({ type: 'image/png', quality: 1 });
-				const buffer = await blob.arrayBuffer();
-				return { id, filename, buffer };
-			} catch (err) {
-				console.error(err);
-				return pMapSkip;
-			}
-		},
-		{ concurrency: 4 }
-	);
 }

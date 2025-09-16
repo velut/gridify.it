@@ -4,6 +4,7 @@ words = [
     "dragover",
     "gridify",
     "gzip",
+    "luma",
     "minmax",
     "noopener",
     "onchange",
