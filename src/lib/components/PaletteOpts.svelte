@@ -17,6 +17,7 @@
 		<select id="palette-type" class="w-full" bind:value={opts.palette.type}>
 			<option value="original">Original colors</option>
 			<option value="opaque">Original colors with full opacity</option>
+			<option value="invert">Invert colors</option>
 			<option value="binary">Black and white</option>
 			<option value="grayscale">Grayscale</option>
 		</select>

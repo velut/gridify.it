@@ -25,7 +25,7 @@ export const AppImageBuffer = z.object({
 export type AppImageBuffer = z.infer<typeof AppImageBuffer>;
 
 export const PaletteOpts = z.object({
-	type: z.literal(['original', 'opaque', 'binary', 'grayscale']).catch('original')
+	type: z.literal(['original', 'opaque', 'invert', 'binary', 'grayscale']).catch('original')
 });
 export type PaletteOpts = z.infer<typeof PaletteOpts>;
 
