@@ -40,3 +40,29 @@ export type RenderOptsInput = z.input<typeof RenderOpts>;
 
 export const PreviewMode = z.literal(['pixel-art', 'high-res']);
 export type PreviewMode = z.infer<typeof PreviewMode>;
+
+// Render worker types.
+export const RenderWorkerInput = z.object({
+	// Need to disable `ssr` in `+page.ts` as `ImageBitmap` is not available on the server.
+	bitmaps: z.array(z.instanceof(ImageBitmap)),
+	opts: RenderOpts
+});
+export type RenderWorkerInput = z.infer<typeof RenderWorkerInput>;
+
+export const RenderWorkerOutputData = z.object({
+	// Need to disable `ssr` in `+page.ts` as `ImageBitmap` is not available on the server.
+	bitmaps: z.array(z.instanceof(ImageBitmap))
+});
+export type RenderWorkerOutputData = z.infer<typeof RenderWorkerOutputData>;
+
+export const RenderWorkerOutput = z.discriminatedUnion('status', [
+	z.object({
+		status: z.literal('ok'),
+		data: RenderWorkerOutputData
+	}),
+	z.object({
+		status: z.literal('err'),
+		error: z.unknown()
+	})
+]);
+export type RenderWorkerOutput = z.infer<typeof RenderWorkerOutput>;

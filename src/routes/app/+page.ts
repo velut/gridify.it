@@ -1,5 +1,8 @@
 import type { PageLoad } from './$types';
 
+// Disable `ssr` for `Worker` and `ImageBitmap` to be used at modules top-level.
+export const ssr = false;
+
 export const load: PageLoad = () => ({
 	title: 'Grid editor',
 	description:
