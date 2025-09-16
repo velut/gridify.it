@@ -1,6 +1,6 @@
 import type { AppImage } from '$lib/types';
 import { getFiles } from 'event-to-files';
-import { nanoid } from 'nanoid';
+import { nanoid } from '$lib/utils/nanoid';
 
 export async function getImages(event: Event): Promise<AppImage[]> {
 	return (await getFiles(event))
