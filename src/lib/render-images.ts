@@ -1,8 +1,8 @@
 import { cloneImages } from '$lib/utils/clone-images';
-import type { GridOpts, Image, RenderOpts } from '$lib/types';
+import type { GridOpts, AppImage, RenderOpts } from '$lib/types';
 import pMap, { pMapSkip } from 'p-map';
 
-export async function renderImages(images: Image[], opts: RenderOpts): Promise<Image[]> {
+export async function renderImages(images: AppImage[], opts: RenderOpts): Promise<AppImage[]> {
 	if (skipRender(opts)) return cloneImages(images);
 	return await pMap(
 		images,
@@ -25,7 +25,7 @@ function skipRender({ grid }: RenderOpts): boolean {
 	);
 }
 
-async function renderImage(image: Image, { grid }: RenderOpts): Promise<Image> {
+async function renderImage(image: AppImage, { grid }: RenderOpts): Promise<AppImage> {
 	let canvas = await imageToCanvas(image);
 	// if (opacity === 'opaque') {
 	// 	canvas = opacify(canvas);
@@ -40,14 +40,14 @@ async function renderImage(image: Image, { grid }: RenderOpts): Promise<Image> {
 	return await canvasToImage(canvas, image);
 }
 
-async function imageToCanvas(image: Image): Promise<HTMLCanvasElement> {
+async function imageToCanvas(image: AppImage): Promise<HTMLCanvasElement> {
 	const img = await loadImage(image);
 	const [canvas, ctx] = createCanvas(img.width, img.height);
 	ctx.drawImage(img, 0, 0);
 	return canvas;
 }
 
-async function loadImage(image: Image): Promise<HTMLImageElement> {
+async function loadImage(image: AppImage): Promise<HTMLImageElement> {
 	const img = document.createElement('img');
 	img.src = image.url;
 	await img.decode();
@@ -249,13 +249,14 @@ function roundCorners(
 	return canvas;
 }
 
-async function canvasToImage(canvas: HTMLCanvasElement, image: Image): Promise<Image> {
+async function canvasToImage(canvas: HTMLCanvasElement, image: AppImage): Promise<AppImage> {
 	const blob = await canvasToBlob(canvas);
 	const file = new File([blob], pngFilename(image.file.name), {
 		type: 'image/png',
 		lastModified: image.file.lastModified
 	});
-	return { file, url: URL.createObjectURL(file) };
+	// TODO: different id?
+	return { id: image.id, file, url: URL.createObjectURL(file) };
 }
 
 async function canvasToBlob(canvas: HTMLCanvasElement): Promise<Blob> {

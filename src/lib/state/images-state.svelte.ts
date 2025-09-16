@@ -1,12 +1,12 @@
 import { cloneImages } from '$lib/utils/clone-images';
 import { renderImages } from '$lib/render-images';
 import { revokeObjectUrls } from '$lib/utils/revoke-object-urls';
-import { RenderOpts, type Image } from '$lib/types';
+import { RenderOpts, type AppImage } from '$lib/types';
 import { getImages } from '$lib/utils/get-images';
 
 export class ImagesState {
-	#inputImages = $state<Image[]>([]);
-	#outputImages = $state<Image[]>([]);
+	#inputImages = $state<AppImage[]>([]);
+	#outputImages = $state<AppImage[]>([]);
 	renderState = $state<'original' | 'rendered'>('original');
 
 	get inputImages() {

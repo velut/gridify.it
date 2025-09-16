@@ -1,12 +1,12 @@
-import type { Image } from '$lib/types';
+import type { AppImage } from '$lib/types';
 
-export function cloneImages(images: Image[]): Image[] {
+export function cloneImages(images: AppImage[]): AppImage[] {
 	// Clone the images to prevent revoking the original object URLs.
 	return images.map((image) => {
 		const file = new File([image.file], image.file.name, {
 			type: image.file.type,
 			lastModified: image.file.lastModified
 		});
-		return { file, url: URL.createObjectURL(file) };
+		return { id: image.id, file, url: URL.createObjectURL(file) };
 	});
 }
