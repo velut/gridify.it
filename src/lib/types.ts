@@ -2,14 +2,14 @@ import * as z from 'zod';
 
 // Use `AppImage` name to prevent conflict with the `Image` constructor of `HTMLImageElement`.
 export const AppImage = z.object({
-	id: z.nanoid(),
+	id: z.string(),
 	file: z.file(),
 	url: z.string()
 });
 export type AppImage = z.infer<typeof AppImage>;
 
 export const AppBitmap = z.object({
-	id: z.nanoid(),
+	id: z.string(),
 	filename: z.string(),
 
 	// Need to disable `ssr` in `+page.ts` as `ImageBitmap` is not available on the server.
@@ -18,7 +18,7 @@ export const AppBitmap = z.object({
 export type AppBitmap = z.infer<typeof AppBitmap>;
 
 export const AppImageBuffer = z.object({
-	id: z.nanoid(),
+	id: z.string(),
 	filename: z.string(),
 	buffer: z.instanceof(ArrayBuffer)
 });
