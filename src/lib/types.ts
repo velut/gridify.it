@@ -1,4 +1,5 @@
 import * as z from 'zod';
+import { clampRgb } from '$lib/utils/clamp';
 
 // Use `AppImage` name to prevent conflict with the `Image` constructor of `HTMLImageElement`.
 export const AppImage = z.object({
@@ -25,7 +26,13 @@ export const AppImageBuffer = z.object({
 export type AppImageBuffer = z.infer<typeof AppImageBuffer>;
 
 export const PaletteOpts = z.object({
-	type: z.literal(['original', 'opaque', 'invert', 'binary', 'grayscale']).catch('original')
+	type: z.literal(['original', 'opaque', 'invert', 'binary', 'grayscale']).catch('original'),
+	binary: z.object({
+		threshold: z.coerce
+			.number<string>()
+			.int()
+			.transform((val) => clampRgb(val))
+	})
 });
 export type PaletteOpts = z.infer<typeof PaletteOpts>;
 

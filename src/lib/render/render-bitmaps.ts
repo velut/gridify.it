@@ -82,7 +82,7 @@ function applyPalette(canvas: OffscreenCanvas, palette: PaletteOpts): OffscreenC
 			applyInvertPalette(pixels);
 			break;
 		case 'binary':
-			applyBinaryPalette(pixels);
+			applyBinaryPalette(pixels, palette);
 			break;
 		case 'grayscale':
 			applyGrayscalePalette(pixels);
@@ -114,12 +114,13 @@ function applyInvertPalette(pixels: ImageDataArray) {
 	}
 }
 
-function applyBinaryPalette(pixels: ImageDataArray) {
+function applyBinaryPalette(pixels: ImageDataArray, palette: PaletteOpts) {
+	const threshold = palette.binary.threshold;
 	for (let i = 0; i < pixels.length; i += 4) {
 		const red = pixels[i];
 		const green = pixels[i + 1];
 		const blue = pixels[i + 2];
-		const value = luma709(red, green, blue) < 128 ? 0 : 255;
+		const value = luma709(red, green, blue) < threshold ? 0 : 255;
 		pixels[i] = value;
 		pixels[i + 1] = value;
 		pixels[i + 2] = value;

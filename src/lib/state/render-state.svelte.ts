@@ -4,7 +4,8 @@ import { deepEqual } from 'fast-equals';
 
 const defaultRenderOpts: RenderOptsInput = {
 	palette: {
-		type: 'original'
+		type: 'original',
+		binary: { threshold: '128' }
 	},
 	grid: {
 		type: 'full',
