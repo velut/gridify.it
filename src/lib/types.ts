@@ -26,7 +26,20 @@ export const AppImageBuffer = z.object({
 export type AppImageBuffer = z.infer<typeof AppImageBuffer>;
 
 export const PaletteOpts = z.object({
-	type: z.literal(['original', 'opaque', 'invert', 'binary', 'grayscale']).catch('original'),
+	type: z
+		.literal([
+			'original',
+			'opaque',
+			'invert',
+			'binary',
+			'grayscale',
+			'rgb',
+			'cmyk',
+			'pico-8',
+			'wplace-free',
+			'wplace-full'
+		])
+		.catch('original'),
 	binary: z.object({
 		threshold: z.coerce
 			.number<string>()
@@ -89,3 +102,10 @@ export const RenderWorkerOutput = z.discriminatedUnion('status', [
 	})
 ]);
 export type RenderWorkerOutput = z.infer<typeof RenderWorkerOutput>;
+
+export const RgbColor = z.object({
+	r: z.int().transform((val) => clampRgb(val)),
+	g: z.int().transform((val) => clampRgb(val)),
+	b: z.int().transform((val) => clampRgb(val))
+});
+export type RgbColor = z.infer<typeof RgbColor>;

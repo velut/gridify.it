@@ -21,6 +21,11 @@
 			<option value="invert">Invert colors</option>
 			<option value="binary">Black and white</option>
 			<option value="grayscale">Grayscale</option>
+			<option value="rgb">RGB (Red, Green, Blue)</option>
+			<option value="cmyk">CMYK (Cyan, Magenta, Yellow, Black)</option>
+			<option value="pico-8">PICO-8</option>
+			<option value="wplace-free">Wplace free colors</option>
+			<option value="wplace-full">Wplace all colors</option>
 		</select>
 	</FormField>
 

@@ -1,7 +1,9 @@
 words = [
     "bitmaprenderer",
     "bundler",
+    "cmyk",
     "dragover",
+    "ggg",
     "gridify",
     "gzip",
     "luma",
@@ -11,9 +13,12 @@ words = [
     "ondragover",
     "ondrop",
     "onsubmit",
+    "pico",
+    "rrr",
     "runed",
     "srgb",
     "sveltekit",
     "unplugin",
+    "wplace",
     "zod",
 ]
