@@ -103,9 +103,17 @@ export const RenderWorkerOutput = z.discriminatedUnion('status', [
 ]);
 export type RenderWorkerOutput = z.infer<typeof RenderWorkerOutput>;
 
-export const RgbColor = z.object({
-	r: z.int().transform((val) => clampRgb(val)),
-	g: z.int().transform((val) => clampRgb(val)),
-	b: z.int().transform((val) => clampRgb(val))
-});
+export const RgbColor = z.tuple([
+	z.int().transform((val) => clampRgb(val)),
+	z.int().transform((val) => clampRgb(val)),
+	z.int().transform((val) => clampRgb(val))
+]);
 export type RgbColor = z.infer<typeof RgbColor>;
+
+export const RgbaColor = z.tuple([
+	z.int().transform((val) => clampRgb(val)),
+	z.int().transform((val) => clampRgb(val)),
+	z.int().transform((val) => clampRgb(val)),
+	z.int().transform((val) => clampRgb(val))
+]);
+export type RgbaColor = z.infer<typeof RgbaColor>;
