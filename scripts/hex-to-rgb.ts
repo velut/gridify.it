@@ -31,16 +31,20 @@ ec1f80
 f38da9
 684634
 95682a
-f8b277`;
+f8b277
+`;
 
-await Bun.write(
-	'palette.txt',
-	palette
+await Bun.write('palette.txt', importPalette(palette));
+
+function importPalette(palette: string): string {
+	return palette
+		.trim()
 		.split('\n')
+		.map((line) => line.trim())
 		.filter((line) => line.length === 6)
 		.map((hex) => {
-			const { red: r, green: g, blue: b } = hexRgb(hex);
-			return `{ r: ${r}, g: ${g}, b: ${b} },`;
+			const { red, green, blue } = hexRgb(hex);
+			return `[${red}, ${green}, ${blue}],`;
 		})
-		.join('\n')
-);
+		.join('\n');
+}
