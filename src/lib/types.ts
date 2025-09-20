@@ -117,3 +117,5 @@ export const RgbaColor = z.tuple([
 	z.int().transform((val) => clampRgb(val))
 ]);
 export type RgbaColor = z.infer<typeof RgbaColor>;
+
+export type PaletteFn = (c: RgbaColor) => RgbaColor;
