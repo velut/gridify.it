@@ -23,13 +23,13 @@ export function findClosestPaletteColor(
 	return closestColor;
 }
 
-function colorsDistance(color1: RgbColor, color2: RgbColor): number {
+function colorsDistance([r1, g1, b1]: RgbColor, [r2, g2, b2]: RgbColor): number {
 	// See https://www.compuphase.com/cmetric.htm
 	// and https://en.wikipedia.org/wiki/Color_difference.
-	const redMean = (color1.r + color2.r) / 2;
-	const dR = color1.r - color2.r;
-	const dG = color1.g - color2.g;
-	const dB = color1.b - color2.b;
+	const redMean = (r1 + r2) / 2;
+	const dR = r1 - r2;
+	const dG = g1 - g2;
+	const dB = b1 - b2;
 	return Math.sqrt(
 		(((512 + redMean) * Math.pow(dR, 2)) >> 8) +
 			4 * Math.pow(dG, 2) +
