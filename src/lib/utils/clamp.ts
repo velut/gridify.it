@@ -3,5 +3,5 @@ export function clamp(val: number, min: number, max: number): number {
 }
 
 export function clampRgb(val: number): number {
-	return clamp(val, 0, 255);
+	return clamp(Math.round(val), 0, 255);
 }
