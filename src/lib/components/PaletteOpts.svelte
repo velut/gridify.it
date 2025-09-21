@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { getAppState } from '$lib/state/app-state.svelte';
 	import MaterialSymbolsPaletteOutline from '~icons/material-symbols/palette-outline';
+	import MaterialSymbolsBackgroundDotSmallOutline from '~icons/material-symbols/background-dot-small-outline';
 	import MaterialSymbolsElevationOutlineRounded from '~icons/material-symbols/elevation-outline-rounded';
 	import FormField from '$lib/components/FormField.svelte';
 	import OptsCard from '$lib/components/OptsCard.svelte';
@@ -19,8 +20,8 @@
 			<option value="original">Original colors</option>
 			<option value="opaque">Original colors with full opacity</option>
 			<option value="invert">Invert colors</option>
-			<option value="binary">Black and white</option>
 			<option value="grayscale">Grayscale</option>
+			<option value="binary">Black and white</option>
 			<option value="rgb">RGB (Red, Green, Blue)</option>
 			<option value="cmyk">CMYK (Cyan, Magenta, Yellow, Black)</option>
 			<option value="pico-8">PICO-8</option>
@@ -43,6 +44,20 @@
 				title="Use an integer number between 0 and 255 for the threshold"
 				bind:value={palette.binary.threshold}
 			/>
+		</FormField>
+	{/if}
+
+	{#if !['original', 'opaque', 'invert', 'grayscale'].includes(palette.type)}
+		<FormField>
+			<label for="palette-dither-type">
+				<MaterialSymbolsBackgroundDotSmallOutline class="size-4" />
+				Dithering
+			</label>
+			<select id="palette-dither-type" class="w-full" bind:value={palette.dither.type}>
+				<option value="none">None</option>
+				<option value="atkinson">Atkinson (Better contrast)</option>
+				<option value="floyd">Floyd–Steinberg (More details)</option>
+			</select>
 		</FormField>
 	{/if}
 </OptsCard>
