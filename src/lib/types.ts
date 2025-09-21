@@ -31,8 +31,8 @@ export const PaletteOpts = z.object({
 			'original',
 			'opaque',
 			'invert',
-			'binary',
 			'grayscale',
+			'binary',
 			'rgb',
 			'cmyk',
 			'pico-8',
@@ -45,6 +45,9 @@ export const PaletteOpts = z.object({
 			.number<string>()
 			.int()
 			.transform((val) => clampRgb(val))
+	}),
+	dither: z.object({
+		type: z.literal(['none', 'floyd', 'atkinson']).catch('none')
 	})
 });
 export type PaletteOpts = z.infer<typeof PaletteOpts>;
@@ -119,3 +122,9 @@ export const RgbaColor = z.tuple([
 export type RgbaColor = z.infer<typeof RgbaColor>;
 
 export type PaletteFn = (c: RgbaColor) => RgbaColor;
+
+export const DitherError = z.tuple([z.number(), z.number(), z.number()]);
+export type DitherError = z.infer<typeof DitherError>;
+
+export const DitherFilter = z.array(z.tuple([z.number(), z.number(), z.number()]));
+export type DitherFilter = z.infer<typeof DitherFilter>;
