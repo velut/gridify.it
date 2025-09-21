@@ -6,6 +6,7 @@ const defaultRenderOpts: RenderOptsInput = {
 	palette: {
 		type: 'original',
 		binary: { threshold: '128' },
+		custom: { palette: '' },
 		dither: { type: 'none' }
 	},
 	grid: {

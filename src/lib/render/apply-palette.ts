@@ -10,6 +10,7 @@ import { luma709 } from '$lib/render/luma-709';
 import { findClosestPaletteColor } from '$lib/render/find-closest-palette-color';
 import { cmykPalette, pico8, rgbPalette, wplaceFree, wplaceFull } from '$lib/render/palettes';
 import { clampRgb } from '$lib/utils/clamp';
+import { importPalette } from './import-palette';
 
 export function applyPalette(canvas: OffscreenCanvas, palette: PaletteOpts): OffscreenCanvas {
 	// Nothing to do.
@@ -161,5 +162,12 @@ function getPaletteFn(palette: PaletteOpts): PaletteFn {
 				const color = findClosestPaletteColor([r, g, b], wplaceFull, cache);
 				return [...color, 255];
 			};
+		case 'custom': {
+			const customPalette = importPalette(palette.custom.palette);
+			return ([r, g, b]) => {
+				const color = findClosestPaletteColor([r, g, b], customPalette, cache);
+				return [...color, 255];
+			};
+		}
 	}
 }

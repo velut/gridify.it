@@ -37,7 +37,8 @@ export const PaletteOpts = z.object({
 			'cmyk',
 			'pico-8',
 			'wplace-free',
-			'wplace-full'
+			'wplace-full',
+			'custom'
 		])
 		.catch('original'),
 	binary: z.object({
@@ -45,6 +46,9 @@ export const PaletteOpts = z.object({
 			.number<string>()
 			.int()
 			.transform((val) => clampRgb(val))
+	}),
+	custom: z.object({
+		palette: z.string()
 	}),
 	dither: z.object({
 		type: z.literal(['none', 'floyd', 'atkinson']).catch('none')

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getAppState } from '$lib/state/app-state.svelte';
+	import MaterialSymbolsTextSnippetOutlineRounded from '~icons/material-symbols/text-snippet-outline-rounded';
 	import MaterialSymbolsPaletteOutline from '~icons/material-symbols/palette-outline';
 	import MaterialSymbolsBackgroundDotSmallOutline from '~icons/material-symbols/background-dot-small-outline';
 	import MaterialSymbolsElevationOutlineRounded from '~icons/material-symbols/elevation-outline-rounded';
@@ -27,6 +28,7 @@
 			<option value="pico-8">PICO-8</option>
 			<option value="wplace-free">Wplace free colors</option>
 			<option value="wplace-full">Wplace all colors</option>
+			<option value="custom">Custom palette</option>
 		</select>
 	</FormField>
 
@@ -45,6 +47,21 @@
 				title="Use an integer number between 0 and 255 for the threshold"
 				bind:value={palette.binary.threshold}
 			/>
+		</FormField>
+	{/if}
+
+	{#if palette.type === 'custom'}
+		<FormField>
+			<label for="palette-custom-palette">
+				<MaterialSymbolsTextSnippetOutlineRounded class="size-4" />
+				Palette colors [One hex color per line]
+			</label>
+			<textarea
+				id="palette-custom-palette"
+				spellcheck="false"
+				required
+				bind:value={palette.custom.palette}
+			></textarea>
 		</FormField>
 	{/if}
 
