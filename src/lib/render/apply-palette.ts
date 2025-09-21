@@ -1,9 +1,15 @@
-import type { PaletteFn, PaletteOpts, RgbaColor, RgbColor } from '$lib/types';
+import type {
+	DitherError,
+	DitherFilter,
+	PaletteFn,
+	PaletteOpts,
+	RgbaColor,
+	RgbColor
+} from '$lib/types';
 import { luma709 } from '$lib/render/luma-709';
 import { findClosestPaletteColor } from '$lib/render/find-closest-palette-color';
 import { cmykPalette, pico8, rgbPalette, wplaceFree, wplaceFull } from '$lib/render/palettes';
 import { clampRgb } from '$lib/utils/clamp';
-import type { number } from 'zod';
 
 export function applyPalette(canvas: OffscreenCanvas, palette: PaletteOpts): OffscreenCanvas {
 	// Nothing to do.
@@ -21,6 +27,7 @@ export function applyPalette(canvas: OffscreenCanvas, palette: PaletteOpts): Off
 	});
 	const pixels = imageData.data;
 
+	// Utility functions to get and set pixels, inlined to capture `imageData` and `pixels`.
 	const pixelIndex = (x: number, y: number): number => {
 		// See https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas#the_imagedata_object.
 		return y * (imageData.width * 4) + x * 4;
@@ -43,17 +50,19 @@ export function applyPalette(canvas: OffscreenCanvas, palette: PaletteOpts): Off
 		pixels[i + 3] = a;
 	};
 
-	const diffuseError = (
-		[errR, errG, errB]: [number, number, number],
-		x: number,
-		y: number,
-		bias: number
-	) => {
-		const [r1, g1, b1] = getPixel(x, y);
-		const r2 = clampRgb(r1 + Math.round(errR * bias));
-		const g2 = clampRgb(g1 + Math.round(errG * bias));
-		const b2 = clampRgb(b1 + Math.round(errB * bias));
-		setPixel(x, y, [r2, g2, b2, 255]);
+	const ditherFilter = getDitherFilter(palette);
+
+	const diffuseError = ([rE, gE, bE]: DitherError, x: number, y: number) => {
+		if (!ditherFilter) return;
+		for (const [offX, offY, bias] of ditherFilter) {
+			const x1 = x + offX;
+			const y1 = y + offY;
+			const [r1, g1, b1] = getPixel(x1, y1);
+			const r2 = clampRgb(r1 + rE * bias);
+			const g2 = clampRgb(g1 + gE * bias);
+			const b2 = clampRgb(b1 + bE * bias);
+			setPixel(x1, y1, [r2, g2, b2, 255]);
+		}
 	};
 
 	// Get the pixel transformation function for this palette type.
@@ -66,20 +75,8 @@ export function applyPalette(canvas: OffscreenCanvas, palette: PaletteOpts): Off
 			const [r2, g2, b2, a2] = paletteFn([r1, g1, b1, a1]);
 			setPixel(x, y, [r2, g2, b2, a2]);
 
-			// Apply dithering.
-			const err: [number, number, number] = [r1 - r2, g1 - g2, b1 - b2];
-
-			// diffuseError(err, x + 1, y, 7 / 16);
-			// diffuseError(err, x - 1, y + 1, 3 / 16);
-			// diffuseError(err, x, y + 1, 5 / 16);
-			// diffuseError(err, x + 1, y + 1, 1 / 16);
-
-			diffuseError(err, x + 1, y, 1 / 8);
-			diffuseError(err, x + 2, y, 1 / 8);
-			diffuseError(err, x - 1, y + 1, 1 / 8);
-			diffuseError(err, x, y + 1, 1 / 8);
-			diffuseError(err, x + 1, y + 1, 1 / 8);
-			diffuseError(err, x, y + 2, 1 / 8);
+			// Apply dithering if required.
+			if (ditherFilter) diffuseError([r1 - r2, g1 - g2, b1 - b2], x, y);
 		}
 	}
 
@@ -89,6 +86,33 @@ export function applyPalette(canvas: OffscreenCanvas, palette: PaletteOpts): Off
 	// Copy back temporary canvas with new palette to original canvas.
 	canvas.getContext('2d')!.drawImage(tmpCanvas, 0, 0);
 	return canvas;
+}
+
+function getDitherFilter(palette: PaletteOpts): DitherFilter | undefined {
+	// Don't apply dither to these palettes.
+	if (['original', 'opaque', 'invert', 'grayscale'].includes(palette.type)) return undefined;
+
+	// Return a dither filter as a list of `[xOffset, yOffset, bias]` tuples.
+	switch (palette.dither.type) {
+		case 'none':
+			return undefined;
+		case 'atkinson':
+			return [
+				[1, 0, 1 / 8],
+				[2, 0, 1 / 8],
+				[-1, 1, 1 / 8],
+				[0, 1, 1 / 8],
+				[1, 1, 1 / 8],
+				[0, 2, 1 / 8]
+			];
+		case 'floyd':
+			return [
+				[1, 0, 7 / 16],
+				[-1, 1, 3 / 16],
+				[0, 1, 5 / 16],
+				[1, 1, 1 / 16]
+			];
+	}
 }
 
 function getPaletteFn(palette: PaletteOpts): PaletteFn {
