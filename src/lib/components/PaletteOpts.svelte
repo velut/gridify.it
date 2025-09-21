@@ -41,6 +41,7 @@
 				type="text"
 				inputMode="numeric"
 				pattern="[0-9]*"
+				required
 				title="Use an integer number between 0 and 255 for the threshold"
 				bind:value={palette.binary.threshold}
 			/>
