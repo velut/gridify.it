@@ -6,6 +6,10 @@ export function findClosestPaletteColor(
 	palette: RgbColor[],
 	cache: Map<number, RgbColor>
 ): RgbColor {
+	// No palette colors, return original color.
+	if (!palette.length) return color;
+
+	// Get closest color from cache.
 	const id = rgbColorId(color);
 	if (cache.has(id)) return cache.get(id)!;
 
