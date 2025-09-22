@@ -29,14 +29,26 @@ function ensureWorker() {
 async function imagesToBitmaps(images: AppImage[]): Promise<AppBitmap[]> {
 	return await pMap(
 		images,
-		async ({ id, file }) => {
+		async ({ id, file, url }) => {
+			const filename = file.name;
 			try {
-				const filename = file.name;
 				const bitmap = await window.createImageBitmap(file);
 				return { id, filename, bitmap };
-			} catch (err) {
-				console.error(err);
-				return pMapSkip;
+			} catch {
+				// Workaround as `createImageBitmap` doesn't support some image types like SVG.
+				try {
+					const img = new Image();
+					img.src = url;
+					await img.decode();
+					const canvas = new OffscreenCanvas(img.width, img.height);
+					const ctx = canvas.getContext('2d')!;
+					ctx.drawImage(img, 0, 0);
+					const bitmap = canvas.transferToImageBitmap();
+					return { id, filename, bitmap };
+				} catch (err) {
+					console.error(err);
+					return pMapSkip;
+				}
 			}
 		},
 		{ concurrency: 4 }
