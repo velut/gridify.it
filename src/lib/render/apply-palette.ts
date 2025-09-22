@@ -1,11 +1,4 @@
-import type {
-	DitherError,
-	DitherFilter,
-	PaletteFn,
-	PaletteOpts,
-	RgbaColor,
-	RgbColor
-} from '$lib/types';
+import type { DitherError, DitherFilter, PaletteFn, PaletteOpts, RgbaColor } from '$lib/types';
 import { luma709 } from '$lib/render/luma-709';
 import { findClosestPaletteColor } from '$lib/render/find-closest-palette-color';
 import { cmykPalette, pico8, rgbPalette, wplaceFree, wplaceFull } from '$lib/render/palettes';
@@ -117,7 +110,7 @@ function getDitherFilter(palette: PaletteOpts): DitherFilter | undefined {
 }
 
 function getPaletteFn(palette: PaletteOpts): PaletteFn {
-	const cache = new Map<number, RgbColor>();
+	const cache = new Map<number, number>();
 	switch (palette.type) {
 		case 'original':
 			return (c) => c;
