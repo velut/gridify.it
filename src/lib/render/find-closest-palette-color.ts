@@ -9,6 +9,9 @@ export function findClosestPaletteColor(
 	// No palette colors, return original color.
 	if (!palette.length) return color;
 
+	// With only one color, it must be the closest one.
+	if (palette.length === 1) return palette[0];
+
 	// Get closest color from cache.
 	const id = rgbColorId(color);
 	if (cache.has(id)) return cache.get(id)!;
