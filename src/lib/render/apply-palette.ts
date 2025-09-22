@@ -3,7 +3,7 @@ import { luma709 } from '$lib/render/luma-709';
 import { findClosestPaletteColor } from '$lib/render/find-closest-palette-color';
 import { cmykPalette, pico8, rgbPalette, wplaceFree, wplaceFull } from '$lib/render/palettes';
 import { clampRgb } from '$lib/utils/clamp';
-import { importPalette } from './import-palette';
+import { importPalette } from '$lib/render/import-palette';
 
 export function applyPalette(canvas: OffscreenCanvas, palette: PaletteOpts): OffscreenCanvas {
 	// Nothing to do.
