@@ -1,5 +1,5 @@
-import type { RgbColor } from '$lib/types';
 import { importPalette } from '$lib/render/import-palette';
+import type { RgbColor } from '$lib/types';
 
 export const rgbPalette: RgbColor[] = [
 	[255, 0, 0],

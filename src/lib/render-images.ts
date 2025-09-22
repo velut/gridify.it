@@ -1,5 +1,5 @@
+import type { AppImage, GridOpts, RenderOpts } from '$lib/types';
 import { cloneImages } from '$lib/utils/clone-images';
-import type { GridOpts, AppImage, RenderOpts } from '$lib/types';
 import pMap, { pMapSkip } from 'p-map';
 
 export async function renderImages(images: AppImage[], opts: RenderOpts): Promise<AppImage[]> {

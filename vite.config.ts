@@ -1,11 +1,11 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import tailwindcss from '@tailwindcss/vite';
 import { execSync } from 'node:child_process';
+import { visualizer } from 'rollup-plugin-visualizer';
 import Icons from 'unplugin-icons/vite';
 import { defineConfig, perEnvironmentPlugin } from 'vite';
 import devtoolsJson from 'vite-plugin-devtools-json';
 import { licenses } from './vite-plugin-licenses';
-import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig({
 	plugins: [

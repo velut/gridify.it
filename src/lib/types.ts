@@ -1,5 +1,5 @@
-import * as z from 'zod';
 import { clampRgb } from '$lib/utils/clamp';
+import * as z from 'zod';
 
 // Use `AppImage` name to prevent conflict with the `Image` constructor of `HTMLImageElement`.
 export const AppImage = z.object({

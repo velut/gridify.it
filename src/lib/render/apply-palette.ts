@@ -1,9 +1,9 @@
-import type { DitherError, DitherFilter, PaletteFn, PaletteOpts, RgbaColor } from '$lib/types';
-import { luma709 } from '$lib/render/luma-709';
 import { findClosestPaletteColor } from '$lib/render/find-closest-palette-color';
-import { cmykPalette, pico8, rgbPalette, wplaceFree, wplaceFull } from '$lib/render/palettes';
-import { clampRgb } from '$lib/utils/clamp';
 import { importPalette } from '$lib/render/import-palette';
+import { luma709 } from '$lib/render/luma-709';
+import { cmykPalette, pico8, rgbPalette, wplaceFree, wplaceFull } from '$lib/render/palettes';
+import type { DitherError, DitherFilter, PaletteFn, PaletteOpts, RgbaColor } from '$lib/types';
+import { clampRgb } from '$lib/utils/clamp';
 
 export function applyPalette(canvas: OffscreenCanvas, palette: PaletteOpts): OffscreenCanvas {
 	// Nothing to do.

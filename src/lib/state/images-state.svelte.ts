@@ -1,8 +1,8 @@
-import { cloneImages } from '$lib/utils/clone-images';
 import { renderImages } from '$lib/render-images';
-import { revokeObjectUrls } from '$lib/utils/revoke-object-urls';
 import { RenderOpts, type AppImage } from '$lib/types';
+import { cloneImages } from '$lib/utils/clone-images';
 import { getImages } from '$lib/utils/get-images';
+import { revokeObjectUrls } from '$lib/utils/revoke-object-urls';
 
 export class ImagesState {
 	#inputImages = $state<AppImage[]>([]);

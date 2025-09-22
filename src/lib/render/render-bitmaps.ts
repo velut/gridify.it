@@ -1,5 +1,5 @@
-import type { RenderOpts, RenderWorkerInput, AppImageBuffer } from '$lib/types';
 import { applyPalette } from '$lib/render/apply-palette';
+import type { AppImageBuffer, RenderOpts, RenderWorkerInput } from '$lib/types';
 import pMap, { pMapSkip } from 'p-map';
 
 export async function renderBitmaps({

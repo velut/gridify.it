@@ -1,5 +1,5 @@
-import type { RgbColor } from '$lib/types';
 import { rgbColorId } from '$lib/render/rgb-color-id';
+import type { RgbColor } from '$lib/types';
 
 export function findClosestPaletteColor(
 	color: RgbColor,

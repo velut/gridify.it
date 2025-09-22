@@ -1,5 +1,5 @@
-import { RenderWorkerInput, type RenderWorkerOutputData } from '$lib/types';
 import { renderBitmaps } from '$lib/render/render-bitmaps';
+import { RenderWorkerInput, type RenderWorkerOutputData } from '$lib/types';
 
 self.addEventListener('message', async (event) => {
 	const port = event.ports[0]!;
