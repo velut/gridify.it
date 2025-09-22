@@ -44,8 +44,13 @@ export function applyPalette(canvas: OffscreenCanvas, palette: PaletteOpts): Off
 		pixels[i + 3] = a;
 	};
 
+	// Get the pixel transformation function for this palette type.
+	const paletteFn = getPaletteFn(palette);
+
+	// Get dither filter with offsets and bias.
 	const ditherFilter = getDitherFilter(palette);
 
+	// Diffuse the given error to the neighbors of pixel [x,y].
 	const diffuseError = ([rE, gE, bE]: DitherError, x: number, y: number) => {
 		if (!ditherFilter) return;
 		for (const [offX, offY, bias] of ditherFilter) {
@@ -58,9 +63,6 @@ export function applyPalette(canvas: OffscreenCanvas, palette: PaletteOpts): Off
 			setPixel(x1, y1, [r2, g2, b2, 255]);
 		}
 	};
-
-	// Get the pixel transformation function for this palette type.
-	const paletteFn = getPaletteFn(palette);
 
 	for (let y = 0; y < imageData.height; y++) {
 		for (let x = 0; x < imageData.width; x++) {
