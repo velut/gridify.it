@@ -1,5 +1,5 @@
 import { applyPalette } from '$lib/render/apply-palette';
-import type { AppImageBuffer, RenderOpts, RenderWorkerInput } from '$lib/types';
+import type { AppImageBuffer, RenderWorkerInput } from '$lib/types';
 import pMap, { pMapSkip } from 'p-map';
 
 export async function renderBitmaps({
@@ -10,7 +10,9 @@ export async function renderBitmaps({
 		bitmaps,
 		async ({ id, filename, bitmap }) => {
 			try {
-				const buffer = await renderBitmap(bitmap, opts);
+				let canvas = bitmapToCanvas(bitmap);
+				canvas = applyPalette(canvas, opts.palette);
+				const buffer = await canvasToBuffer(canvas);
 				return { id, filename, buffer };
 			} catch (err) {
 				console.error(err);
@@ -19,15 +21,6 @@ export async function renderBitmaps({
 		},
 		{ concurrency: 4 }
 	);
-}
-
-async function renderBitmap(
-	bitmap: ImageBitmap,
-	{ palette, grid }: RenderOpts
-): Promise<ArrayBuffer> {
-	let canvas = bitmapToCanvas(bitmap);
-	canvas = applyPalette(canvas, palette);
-	return await canvasToBuffer(canvas);
 }
 
 function bitmapToCanvas(bitmap: ImageBitmap): OffscreenCanvas {
