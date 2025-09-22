@@ -10,16 +10,20 @@ import {
 } from '$lib/types';
 import pMap, { pMapSkip } from 'p-map';
 
-// Need to disable `ssr` in `+page.ts` as `Worker` is not available on the server.
-const worker = new Worker(new URL('./render.worker.ts', import.meta.url), {
-	type: 'module'
-});
+// Create worker later to prevent using DOM-only `Worker` on the server.
+let worker: Worker | undefined = undefined;
 
 export async function render(images: AppImage[], optsInput: RenderOptsInput): Promise<AppImage[]> {
+	ensureWorker();
 	const bitmaps = await imagesToBitmaps(images);
 	const opts = RenderOpts.parse(optsInput);
 	const { buffers } = await renderOnWorker({ bitmaps, opts });
 	return await buffersToImages(buffers);
+}
+
+function ensureWorker() {
+	if (worker) return;
+	worker = new Worker(new URL('./render.worker.ts', import.meta.url), { type: 'module' });
 }
 
 async function imagesToBitmaps(images: AppImage[]): Promise<AppBitmap[]> {
@@ -58,7 +62,7 @@ async function renderOnWorker(workerInput: RenderWorkerInput): Promise<RenderWor
 
 		// Send message to worker.
 		const transferBitmaps = workerInput.bitmaps.map(({ bitmap }) => bitmap);
-		worker.postMessage(workerInput, [port2, ...transferBitmaps]);
+		worker!.postMessage(workerInput, [port2, ...transferBitmaps]);
 	});
 }
 

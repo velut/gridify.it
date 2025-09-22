@@ -13,8 +13,9 @@ export const AppBitmap = z.object({
 	id: z.string(),
 	filename: z.string(),
 
-	// Need to disable `ssr` in `+page.ts` as `ImageBitmap` is not available on the server.
-	bitmap: z.instanceof(ImageBitmap)
+	// Use z.lazy() to prevent using DOM-only `ImageBitmap`
+	// on the server when the types module is imported.
+	bitmap: z.lazy(() => z.instanceof(ImageBitmap))
 });
 export type AppBitmap = z.infer<typeof AppBitmap>;
 
