@@ -4,7 +4,7 @@ import { rgbColorId } from '$lib/render/rgb-color-id';
 export function findClosestPaletteColor(
 	color: RgbColor,
 	palette: RgbColor[],
-	cache: Map<number, RgbColor>
+	cache: Map<number, number>
 ): RgbColor {
 	// No palette colors, return original color.
 	if (!palette.length) return color;
@@ -14,20 +14,20 @@ export function findClosestPaletteColor(
 
 	// Get closest color from cache.
 	const id = rgbColorId(color);
-	if (cache.has(id)) return cache.get(id)!;
+	if (cache.has(id)) return palette[cache.get(id)!];
 
 	// Compute distances and find closest palette color.
-	let closestColor = palette[0];
+	let closestColorIndex = 0;
 	let minDistance = Infinity;
-	for (const paletteColor of palette) {
-		const distance = colorsDistance(color, paletteColor);
+	for (let i = 0; i < palette.length; i++) {
+		const distance = colorsDistance(color, palette[i]);
 		if (distance < minDistance) {
+			closestColorIndex = i;
 			minDistance = distance;
-			closestColor = paletteColor;
 		}
 	}
-	cache.set(id, closestColor);
-	return closestColor;
+	cache.set(id, closestColorIndex);
+	return palette[closestColorIndex];
 }
 
 function colorsDistance([r1, g1, b1]: RgbColor, [r2, g2, b2]: RgbColor): number {
