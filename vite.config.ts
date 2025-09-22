@@ -17,7 +17,7 @@ export default defineConfig({
 			if (environment.name !== 'client') return false;
 			return licenses() as any;
 		}),
-		visualizer({ emitFile: true, filename: 'stats.html', template: 'sunburst', gzipSize: true })
+		visualizer({ emitFile: true, filename: 'stats.html' })
 	],
 	define: {
 		__GIT_COMMIT: JSON.stringify(execSync('git rev-parse HEAD').toString().trim())
