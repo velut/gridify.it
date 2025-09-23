@@ -64,14 +64,14 @@ export const GridOpts = z.object({
 		.regex(/^#(?:[0-9a-f]{3}){1,2}$/i)
 		.catch('#000000'),
 	lines: z.object({
-		size: z.coerce.number<string>().int().positive().catch(1)
+		size: z.coerce.number<string>().int().min(1).catch(1)
 	}),
 	cell: z.object({
 		shape: z.literal(['square', 'rectangle']).catch('square'),
-		width: z.coerce.number<string>().int().positive().catch(1),
-		height: z.coerce.number<string>().int().positive().catch(1),
-		scale: z.coerce.number<string>().int().positive().catch(1),
-		cornerRadius: z.coerce.number<string>().int().nonnegative().catch(0)
+		width: z.coerce.number<string>().int().min(1).catch(1),
+		height: z.coerce.number<string>().int().min(1).catch(1),
+		scale: z.coerce.number<string>().int().min(1).catch(1),
+		cornerRadius: z.coerce.number<string>().int().min(0).catch(0)
 	})
 });
 export type GridOpts = z.infer<typeof GridOpts>;
