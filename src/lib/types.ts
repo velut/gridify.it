@@ -140,3 +140,6 @@ export type DitherError = z.infer<typeof DitherError>;
 
 export const DitherFilter = z.array(z.tuple([z.number(), z.number(), z.number()]));
 export type DitherFilter = z.infer<typeof DitherFilter>;
+
+export const Dimensions = z.tuple([z.number(), z.number()]);
+export type Dimensions = z.infer<typeof Dimensions>;

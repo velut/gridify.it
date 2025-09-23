@@ -1,3 +1,4 @@
+import { applyGrid } from '$lib/render/apply-grid';
 import { applyPalette } from '$lib/render/apply-palette';
 import type { AppImageBuffer, RenderWorkerInput } from '$lib/types';
 import pMap, { pMapSkip } from 'p-map';
@@ -12,6 +13,7 @@ export async function renderBitmaps({
 			try {
 				let canvas = bitmapToCanvas(bitmap);
 				canvas = applyPalette(canvas, opts.palette);
+				canvas = applyGrid(canvas, opts.grid);
 				const buffer = await canvasToBuffer(canvas);
 				return { id, filename, buffer };
 			} catch (err) {
