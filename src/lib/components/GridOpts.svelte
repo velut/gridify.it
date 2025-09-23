@@ -23,10 +23,10 @@
 			Grid type
 		</label>
 		<select id="grid-type" class="w-full" bind:value={opts.grid.type}>
+			<option value="none">No grid</option>
 			<option value="full">Full grid (Grid lines and outer border)</option>
 			<option value="lines">Grid lines only</option>
 			<option value="border">Outer border only</option>
-			<option value="none">None</option>
 		</select>
 	</FormField>
 

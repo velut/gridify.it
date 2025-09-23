@@ -72,7 +72,7 @@
 				Dithering
 			</label>
 			<select id="palette-dither-type" class="w-full" bind:value={palette.dither.type}>
-				<option value="none">None</option>
+				<option value="none">No dithering</option>
 				<option value="atkinson">Atkinson (Better contrast)</option>
 				<option value="floyd">Floyd–Steinberg (More details)</option>
 			</select>

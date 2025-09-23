@@ -10,7 +10,7 @@ const defaultRenderOpts: RenderOptsInput = {
 		dither: { type: 'none' }
 	},
 	grid: {
-		type: 'full',
+		type: 'none',
 		color: '#000000',
 		lines: {
 			size: '1'

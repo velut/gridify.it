@@ -58,7 +58,7 @@ export const PaletteOpts = z.object({
 export type PaletteOpts = z.infer<typeof PaletteOpts>;
 
 export const GridOpts = z.object({
-	type: z.literal(['full', 'lines', 'border', 'none']).catch('full'),
+	type: z.literal(['none', 'full', 'lines', 'border']).catch('none'),
 	color: z
 		.string()
 		.regex(/^#(?:[0-9a-f]{3}){1,2}$/i)
