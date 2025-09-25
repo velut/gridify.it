@@ -1,3 +1,4 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 @import 'basecoat-css';
+@import './bprogress.css';

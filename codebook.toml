@@ -1,6 +1,7 @@
 words = [
     "basecoat",
     "bitmaprenderer",
+    "bprogress",
     "bundler",
     "cmyk",
     "dragover",

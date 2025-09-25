@@ -1,0 +1,6 @@
+@import '@bprogress/core/css';
+
+:root {
+	--bprogress-height: 4px;
+	--bprogress-color: var(--foreground);
+}

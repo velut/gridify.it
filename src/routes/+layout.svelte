@@ -5,8 +5,16 @@
 	import Header from '$lib/components/Header.svelte';
 	import { setThemeState, ThemeState } from '$lib/state/theme-state.svelte';
 	import '../app.css';
+	import { onMount } from 'svelte';
+	import { BProgress } from '@bprogress/core';
 
 	setThemeState(new ThemeState());
+
+	onMount(() => {
+		BProgress.configure({
+			showSpinner: false
+		});
+	});
 
 	let { children } = $props();
 

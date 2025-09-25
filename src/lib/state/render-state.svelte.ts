@@ -2,6 +2,7 @@ import { render } from '$lib/render/render';
 import { RenderOptsState } from '$lib/state/render-opts-state.svelte';
 import { RenderStackState } from '$lib/state/render-stack-state.svelte';
 import type { AppImage } from '$lib/types';
+import { BProgress } from '@bprogress/core';
 
 export class RenderState {
 	opts = new RenderOptsState();
@@ -52,7 +53,9 @@ export class RenderState {
 		const originalImages = $state.snapshot(this.#stack.original?.images);
 		if (!originalImages) return;
 		const opts = $state.snapshot(this.opts.opts);
+		BProgress.start();
 		const images = await render(originalImages, opts);
+		BProgress.done();
 		this.#stack.push({ opts, images });
 	}
 }
