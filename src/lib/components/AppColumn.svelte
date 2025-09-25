@@ -9,7 +9,7 @@
 </script>
 
 <div
-	class="overflow-y-auto p-4 [scrollbar-color:_var(--scrollbar-thumb)_var(--scrollbar-track)] [scrollbar-width:thin]"
+	class="overflow-y-auto p-4 [scrollbar-color:_var(--scrollbar-thumb)_var(--scrollbar-track)] [scrollbar-gutter:stable]"
 >
 	{@render children()}
 </div>
