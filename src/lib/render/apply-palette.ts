@@ -54,21 +54,36 @@ export function applyPalette(canvas: OffscreenCanvas, palette: PaletteOpts): Off
 	const diffuseError = ([rE, gE, bE]: DitherError, x: number, y: number) => {
 		if (!ditherFilter) return;
 		for (const [offX, offY, bias] of ditherFilter) {
+			// Get neighbor pixel.
 			const x1 = x + offX;
 			const y1 = y + offY;
-			const [r1, g1, b1] = getPixel(x1, y1);
+			const [r1, g1, b1, a1] = getPixel(x1, y1);
+
+			// Ignore fully transparent pixels.
+			if (a1 === 0) continue;
+
+			// Diffuse error.
 			const r2 = clampRgb(r1 + rE * bias);
 			const g2 = clampRgb(g1 + gE * bias);
 			const b2 = clampRgb(b1 + bE * bias);
-			setPixel(x1, y1, [r2, g2, b2, 255]);
+			setPixel(x1, y1, [r2, g2, b2, a1]);
 		}
 	};
 
 	for (let y = 0; y < imageData.height; y++) {
 		for (let x = 0; x < imageData.width; x++) {
-			// Change palette pixel by pixel.
+			// Compute new pixel color.
 			const [r1, g1, b1, a1] = getPixel(x, y);
 			const [r2, g2, b2, a2] = paletteFn([r1, g1, b1, a1]);
+
+			// Ignore fully transparent pixels.
+			// This checks for `a2` and not `a1` to account for the `opaque` palette.
+			if (a2 === 0) continue;
+
+			// Pixel didn't change.
+			if (r1 === r2 && g1 === g2 && b1 === b2 && a1 === a2) continue;
+
+			// Replace pixel.
 			setPixel(x, y, [r2, g2, b2, a2]);
 
 			// Apply dithering if required.
@@ -119,49 +134,60 @@ function getPaletteFn(palette: PaletteOpts): PaletteFn {
 		case 'opaque':
 			return ([r, g, b]) => [r, g, b, 255];
 		case 'invert':
-			return ([r, g, b]) => [255 - r, 255 - g, 255 - b, 255];
+			return ([r, g, b, a]) => {
+				if (a === 0) return [r, g, b, a];
+				return [255 - r, 255 - g, 255 - b, a];
+			};
 		case 'binary': {
 			const threshold = palette.binary.threshold;
-			return ([r, g, b]) => {
+			return ([r, g, b, a]) => {
+				if (a === 0) return [r, g, b, a];
 				const value = luma709([r, g, b]) < threshold ? 0 : 255;
-				return [value, value, value, 255];
+				return [value, value, value, a];
 			};
 		}
 		case 'grayscale':
-			return ([r, g, b]) => {
+			return ([r, g, b, a]) => {
+				if (a === 0) return [r, g, b, a];
 				const value = luma709([r, g, b]);
-				return [value, value, value, 255];
+				return [value, value, value, a];
 			};
 		case 'rgb':
-			return ([r, g, b]) => {
+			return ([r, g, b, a]) => {
+				if (a === 0) return [r, g, b, a];
 				const color = findClosestPaletteColor([r, g, b], rgbPalette, cache);
-				return [...color, 255];
+				return [...color, a];
 			};
 		case 'cmyk':
-			return ([r, g, b]) => {
+			return ([r, g, b, a]) => {
+				if (a === 0) return [r, g, b, a];
 				const color = findClosestPaletteColor([r, g, b], cmykPalette, cache);
-				return [...color, 255];
+				return [...color, a];
 			};
 		case 'pico-8':
-			return ([r, g, b]) => {
+			return ([r, g, b, a]) => {
+				if (a === 0) return [r, g, b, a];
 				const color = findClosestPaletteColor([r, g, b], pico8, cache);
-				return [...color, 255];
+				return [...color, a];
 			};
 		case 'wplace-free':
-			return ([r, g, b]) => {
+			return ([r, g, b, a]) => {
+				if (a === 0) return [r, g, b, a];
 				const color = findClosestPaletteColor([r, g, b], wplaceFree, cache);
-				return [...color, 255];
+				return [...color, a];
 			};
 		case 'wplace-full':
-			return ([r, g, b]) => {
+			return ([r, g, b, a]) => {
+				if (a === 0) return [r, g, b, a];
 				const color = findClosestPaletteColor([r, g, b], wplaceFull, cache);
-				return [...color, 255];
+				return [...color, a];
 			};
 		case 'custom': {
 			const customPalette = importPalette(palette.custom.palette);
-			return ([r, g, b]) => {
+			return ([r, g, b, a]) => {
+				if (a === 0) return [r, g, b, a];
 				const color = findClosestPaletteColor([r, g, b], customPalette, cache);
-				return [...color, 255];
+				return [...color, a];
 			};
 		}
 	}
