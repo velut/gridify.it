@@ -1,8 +1,8 @@
-import type { RenderOptsInput } from '$lib/types';
+import type { RenderOptsRaw } from '$lib/types';
 import { deepEqual } from 'fast-equals';
 
 export class RenderOptsState {
-	static default(): RenderOptsInput {
+	static default(): RenderOptsRaw {
 		return structuredClone({
 			palette: {
 				type: 'original',
@@ -26,7 +26,7 @@ export class RenderOptsState {
 	}
 
 	// Current opts used in the form.
-	opts = $state<RenderOptsInput>(RenderOptsState.default());
+	opts = $state<RenderOptsRaw>(RenderOptsState.default());
 
 	isDefault(): boolean {
 		return deepEqual($state.snapshot(this.opts), RenderOptsState.default());

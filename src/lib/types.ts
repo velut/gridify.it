@@ -92,7 +92,7 @@ export const RenderOpts = z.object({
 	grid: GridOpts
 });
 export type RenderOpts = z.infer<typeof RenderOpts>;
-export type RenderOptsInput = z.input<typeof RenderOpts>;
+export type RenderOptsRaw = z.input<typeof RenderOpts>;
 
 export const RenderStackItem = z.object({
 	opts: RenderOpts,
