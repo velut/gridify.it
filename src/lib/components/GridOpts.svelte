@@ -46,7 +46,7 @@
 			<MaterialSymbolsLineWeightRounded class="size-4" />
 			Grid lines size
 		</label>
-		<InputWithUnit unit="px">
+		<InputWithUnit unit="px" disabled={grid.type === 'none'}>
 			<input
 				id="grid-lines-size"
 				type="text"
