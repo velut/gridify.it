@@ -21,7 +21,7 @@
 	class="btn"
 	title="Render images [Ctrl+Enter]"
 	bind:this={button}
-	disabled={!render.hasImages()}
+	disabled={!render.canRender()}
 >
 	<MaterialSymbolsAnimatedImagesRounded class="size-4" />
 	Render images

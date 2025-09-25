@@ -7,8 +7,14 @@ import { BProgress } from '@bprogress/core';
 export class RenderState {
 	opts = new RenderOptsState();
 	#stack = new RenderStackState();
+	#isBusy = $state(false);
+
+	canLoadImages(): boolean {
+		return !this.#isBusy;
+	}
 
 	loadImages(images: AppImage[]) {
+		if (!this.canLoadImages()) return;
 		if (!images.length) return;
 		this.#stack.reset();
 		const opts = RenderOptsState.default();
@@ -23,12 +29,17 @@ export class RenderState {
 		return this.#stack.current?.images ?? [];
 	}
 
+	canResetImages() {
+		return !this.#isBusy && this.hasImages();
+	}
+
 	resetImages() {
+		if (!this.canResetImages()) return;
 		this.#stack.reset();
 	}
 
 	canUndo(): boolean {
-		return this.#stack.canUndo();
+		return !this.#isBusy && this.#stack.canUndo();
 	}
 
 	undo() {
@@ -39,7 +50,7 @@ export class RenderState {
 	}
 
 	canRedo(): boolean {
-		return this.#stack.canRedo();
+		return !this.#isBusy && this.#stack.canRedo();
 	}
 
 	redo() {
@@ -49,13 +60,20 @@ export class RenderState {
 		this.opts.opts = item.opts;
 	}
 
+	canRender(): boolean {
+		return !this.#isBusy && this.hasImages();
+	}
+
 	async render() {
+		if (!this.canRender()) return;
 		const originalImages = $state.snapshot(this.#stack.original?.images);
 		if (!originalImages) return;
 		const opts = $state.snapshot(this.opts.opts);
+		this.#isBusy = true;
 		BProgress.start();
 		const images = await render(originalImages, opts);
-		BProgress.done();
 		this.#stack.push({ opts, images });
+		BProgress.done();
+		this.#isBusy = false;
 	}
 }

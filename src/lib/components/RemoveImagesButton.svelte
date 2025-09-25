@@ -11,7 +11,7 @@
 	onclick={() => {
 		render.resetImages();
 	}}
-	disabled={!render.hasImages()}
+	disabled={!render.canResetImages()}
 >
 	<MaterialSymbolsHideImageRounded class="size-4" />
 	Remove images
