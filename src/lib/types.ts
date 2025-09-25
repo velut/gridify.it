@@ -1,6 +1,10 @@
 import { clampRgb } from '$lib/utils/clamp';
 import * as z from 'zod';
 
+// Global theme.
+export const Theme = z.literal(['light', 'dark']);
+export type Theme = z.infer<typeof Theme>;
+
 // Use `AppImage` name to prevent conflict with the `Image` constructor of `HTMLImageElement`.
 export const AppImage = z.object({
 	id: z.string(),

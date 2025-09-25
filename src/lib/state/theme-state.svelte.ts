@@ -1,6 +1,5 @@
+import type { Theme } from '$lib/types';
 import { getContext, setContext } from 'svelte';
-
-export type Theme = 'light' | 'dark';
 
 const key = Symbol('theme-state');
 
