@@ -86,7 +86,6 @@ export const GridOpts = z.object({
 		}))
 });
 export type GridOpts = z.infer<typeof GridOpts>;
-export type GridOptsInput = z.input<typeof GridOpts>;
 
 export const RenderOpts = z.object({
 	palette: PaletteOpts,
