@@ -21,7 +21,7 @@ export async function renderBitmaps({
 				return pMapSkip;
 			}
 		},
-		{ concurrency: 4 }
+		{ concurrency: 1 }
 	);
 }
 
