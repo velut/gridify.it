@@ -12,8 +12,7 @@
 	import OptsCard from '$lib/components/OptsCard.svelte';
 
 	const { render } = getAppState();
-	let opts = $derived(render.opts);
-	let isGridTypeNone = $derived(render.opts.grid.type === 'none');
+	let grid = $derived(render.opts.opts.grid);
 </script>
 
 <OptsCard title="Grid options">
@@ -22,7 +21,7 @@
 			<MaterialSymbolsGrid3x3Rounded class="size-4" />
 			Grid type
 		</label>
-		<select id="grid-type" class="w-full" bind:value={opts.grid.type}>
+		<select id="grid-type" class="w-full" bind:value={grid.type}>
 			<option value="none">No grid</option>
 			<option value="full">Full grid (Grid lines and outer border)</option>
 			<option value="lines">Grid lines only</option>
@@ -38,7 +37,7 @@
 		<div
 			class="dark:bg-input/30 border-input grid place-items-center rounded-md border bg-transparent p-1"
 		>
-			<input id="grid-color" class="w-full" type="color" bind:value={opts.grid.color} />
+			<input id="grid-color" class="w-full" type="color" bind:value={grid.color} />
 		</div>
 	</FormField>
 
@@ -54,8 +53,8 @@
 				inputMode="numeric"
 				pattern="[0-9]*"
 				title="Use 1 or a bigger integer number of pixels"
-				bind:value={opts.grid.lines.size}
-				disabled={isGridTypeNone}
+				bind:value={grid.lines.size}
+				disabled={grid.type === 'none'}
 			/>
 		</InputWithUnit>
 	</FormField>
@@ -65,7 +64,7 @@
 			<MaterialSymbolsCropRounded class="size-4" />
 			Grid cell shape
 		</label>
-		<select id="grid-cell-shape" class="w-full" bind:value={opts.grid.cell.shape}>
+		<select id="grid-cell-shape" class="w-full" bind:value={grid.cell.shape}>
 			<option value="square">Square (Same width and height)</option>
 			<option value="rectangle">Rectangle (Different width and height)</option>
 		</select>
@@ -83,7 +82,7 @@
 				inputMode="numeric"
 				pattern="[0-9]*"
 				title="Use 1 or a bigger integer number of pixels"
-				bind:value={opts.grid.cell.width}
+				bind:value={grid.cell.width}
 			/>
 		</InputWithUnit>
 	</FormField>
@@ -93,7 +92,7 @@
 			<MaterialSymbolsExpandRounded class="size-4" />
 			Grid cell height
 		</label>
-		{#if opts.grid.cell.shape === 'rectangle'}
+		{#if grid.cell.shape === 'rectangle'}
 			<InputWithUnit unit="px">
 				<input
 					id="grid-cell-height"
@@ -101,12 +100,12 @@
 					inputMode="numeric"
 					pattern="[0-9]*"
 					title="Use 1 or a bigger integer number of pixels"
-					bind:value={opts.grid.cell.height}
+					bind:value={grid.cell.height}
 				/>
 			</InputWithUnit>
 		{:else}
 			<InputWithUnit unit="px" disabled>
-				<input id="grid-cell-height" type="text" value={opts.grid.cell.width} disabled />
+				<input id="grid-cell-height" type="text" value={grid.cell.width} disabled />
 			</InputWithUnit>
 		{/if}
 	</FormField>
@@ -123,7 +122,7 @@
 				inputMode="numeric"
 				pattern="[0-9]*"
 				title="Use 1 or a bigger integer number for scaling"
-				bind:value={opts.grid.cell.scale}
+				bind:value={grid.cell.scale}
 			/>
 		</InputWithUnit>
 	</FormField>
@@ -140,7 +139,7 @@
 				inputMode="numeric"
 				pattern="[0-9]*"
 				title="Use 0 or a bigger integer number of pixels"
-				bind:value={opts.grid.cell.cornerRadius}
+				bind:value={grid.cell.cornerRadius}
 			/>
 		</InputWithUnit>
 	</FormField>

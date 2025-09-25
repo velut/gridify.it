@@ -91,6 +91,12 @@ export const RenderOpts = z.object({
 export type RenderOpts = z.infer<typeof RenderOpts>;
 export type RenderOptsInput = z.input<typeof RenderOpts>;
 
+export const RenderStackItem = z.object({
+	opts: RenderOpts,
+	images: z.array(AppImage)
+});
+export type RenderStackItem = z.input<typeof RenderStackItem>;
+
 export const PreviewMode = z.literal(['pixel-art', 'high-res']);
 export type PreviewMode = z.infer<typeof PreviewMode>;
 

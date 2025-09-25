@@ -10,7 +10,7 @@
 	type="button"
 	class="btn"
 	onclick={async () => {
-		await downloadImages(render.currentImages);
+		await downloadImages(render.images);
 	}}
 	disabled={!render.hasImages()}
 >

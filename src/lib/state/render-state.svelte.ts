@@ -1,103 +1,58 @@
-import { type AppImage, type RenderOptsInput } from '$lib/types';
-import { revokeImageUrls } from '$lib/utils/revoke-image-urls';
-import { deepEqual } from 'fast-equals';
-
-const defaultRenderOpts: RenderOptsInput = {
-	palette: {
-		type: 'original',
-		binary: { threshold: '128' },
-		custom: { palette: '' },
-		dither: { type: 'none' }
-	},
-	grid: {
-		type: 'none',
-		color: '#000000',
-		lines: {
-			size: '1'
-		},
-		cell: {
-			shape: 'square',
-			width: '1',
-			height: '1',
-			scale: '1',
-			cornerRadius: '0'
-		}
-	}
-};
+import { render } from '$lib/render/render';
+import { RenderOptsState } from '$lib/state/render-opts-state.svelte';
+import { RenderStackState } from '$lib/state/render-stack-state.svelte';
+import type { AppImage } from '$lib/types';
 
 export class RenderState {
-	#inputImages = $state<AppImage[]>([]);
-	#outputImages = $state<AppImage[]>([]);
-
-	// Undo and redo stacks.
-	#prevOpts = $state<RenderOptsInput[]>([]);
-	#nextOpts = $state<RenderOptsInput[]>([]);
-
-	// Current render opts bound in the form.
-	opts = $state<RenderOptsInput>(structuredClone(defaultRenderOpts));
-
-	get currentImages(): AppImage[] {
-		if (this.#outputImages.length) return this.#outputImages;
-		return this.#inputImages;
-	}
+	opts = new RenderOptsState();
+	#stack = new RenderStackState();
 
 	loadImages(images: AppImage[]) {
 		if (!images.length) return;
-		this.resetImages();
-		this.#inputImages = images;
-	}
-
-	resetImages() {
-		revokeImageUrls(this.#inputImages);
-		revokeImageUrls(this.#outputImages);
-		this.#inputImages = [];
-		this.#outputImages = [];
-		this.resetUndoRedo();
+		this.#stack.reset();
+		const opts = RenderOptsState.default();
+		this.#stack.push({ opts, images });
 	}
 
 	hasImages(): boolean {
-		return this.currentImages.length > 0;
+		return this.images.length > 0;
 	}
 
-	resetOpts() {
-		this.opts = structuredClone(defaultRenderOpts);
+	get images(): AppImage[] {
+		return this.#stack.current?.images ?? [];
 	}
 
-	canResetOpts(): boolean {
-		return !deepEqual(this.opts, defaultRenderOpts);
-	}
-
-	resetUndoRedo() {
-		this.#prevOpts = [];
-		this.#nextOpts = [];
+	resetImages() {
+		this.#stack.reset();
 	}
 
 	canUndo(): boolean {
-		return this.#prevOpts.length > 0;
-	}
-
-	canRedo(): boolean {
-		return this.#nextOpts.length > 0;
+		return this.#stack.canUndo();
 	}
 
 	undo() {
-		const opts = this.#prevOpts.pop();
-		if (!opts) return;
-		this.#nextOpts.push(opts);
+		if (!this.canUndo()) return;
+		const item = this.#stack.undo();
+		if (!item) return;
+		this.opts.opts = item.opts;
+	}
+
+	canRedo(): boolean {
+		return this.#stack.canRedo();
 	}
 
 	redo() {
-		const opts = this.#nextOpts.pop();
-		if (!opts) return;
-		this.#prevOpts.push(opts);
-	}
-
-	pushUndo() {
-		this.#prevOpts.push(this.opts);
-		this.#nextOpts = [];
+		if (!this.canRedo()) return;
+		const item = this.#stack.redo();
+		if (!item) return;
+		this.opts.opts = item.opts;
 	}
 
 	async render() {
-		this.pushUndo();
+		const originalImages = $state.snapshot(this.#stack.original?.images);
+		if (!originalImages) return;
+		const opts = $state.snapshot(this.opts.opts);
+		const images = await render(originalImages, opts);
+		this.#stack.push({ opts, images });
 	}
 }

@@ -8,7 +8,7 @@
 	import OptsCard from '$lib/components/OptsCard.svelte';
 
 	const { render } = getAppState();
-	let palette = $derived(render.opts.palette);
+	let palette = $derived(render.opts.opts.palette);
 </script>
 
 <OptsCard title="Palette options">

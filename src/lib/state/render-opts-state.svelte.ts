@@ -1,30 +1,38 @@
-import { RenderOpts } from '$lib/types';
+import type { RenderOptsInput } from '$lib/types';
 import { deepEqual } from 'fast-equals';
 
-const defaultOpts = {
-	palette: {
-		type: 'original'
-	},
-	grid: {
-		type: 'full',
-		color: '#000000',
-		lines: { size: '1' },
-		cell: { shape: 'square', width: '1', height: '1', scale: '1', cornerRadius: '0' }
-	}
-};
-
 export class RenderOptsState {
-	opts = $state(structuredClone(defaultOpts));
+	static default(): RenderOptsInput {
+		return structuredClone({
+			palette: {
+				type: 'original',
+				binary: { threshold: '128' },
+				custom: { palette: '' },
+				dither: { type: 'none' }
+			},
+			grid: {
+				type: 'none',
+				color: '#000000',
+				lines: { size: '1' },
+				cell: {
+					shape: 'square',
+					width: '1',
+					height: '1',
+					scale: '1',
+					cornerRadius: '0'
+				}
+			}
+		});
+	}
 
-	toRenderOpts(): RenderOpts {
-		return RenderOpts.parse($state.snapshot(this.opts));
+	// Current opts used in the form.
+	opts = $state<RenderOptsInput>(RenderOptsState.default());
+
+	isDefault(): boolean {
+		return deepEqual($state.snapshot(this.opts), RenderOptsState.default());
 	}
 
 	reset() {
-		this.opts = structuredClone(defaultOpts);
-	}
-
-	isDefault(): boolean {
-		return deepEqual($state.snapshot(this.opts), defaultOpts);
+		this.opts = RenderOptsState.default();
 	}
 }

@@ -3,10 +3,11 @@
 	import { cn } from '$lib/utils/cn';
 
 	const { render, preview } = getAppState();
+	let images = $derived(render.images);
 </script>
 
 <div class="overflow-y-auto lg:snap-y lg:snap-mandatory">
-	{#each render.currentImages as image, index (image.url)}
+	{#each images as image, index (image.url)}
 		{#if index > 0}
 			<div class="bg-border my-6 h-[1px] w-full"></div>
 		{/if}
