@@ -1,22 +1,20 @@
 import {
 	AppImageBuffer,
-	RenderOpts,
 	RenderWorkerInput,
 	RenderWorkerOutput,
 	RenderWorkerOutputData,
 	type AppBitmap,
 	type AppImage,
-	type RenderOptsInput
+	type RenderOpts
 } from '$lib/types';
 import pMap, { pMapSkip } from 'p-map';
 
 // Create worker later to prevent using DOM-only `Worker` on the server.
 let worker: Worker | undefined = undefined;
 
-export async function render(images: AppImage[], optsInput: RenderOptsInput): Promise<AppImage[]> {
+export async function render(images: AppImage[], opts: RenderOpts): Promise<AppImage[]> {
 	ensureWorker();
 	const bitmaps = await imagesToBitmaps(images);
-	const opts = RenderOpts.parse(optsInput);
 	const { buffers } = await renderOnWorker({ bitmaps, opts });
 	return await buffersToImages(buffers);
 }

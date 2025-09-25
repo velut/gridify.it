@@ -1,7 +1,7 @@
 import { render } from '$lib/render/render';
 import { RenderOptsState } from '$lib/state/render-opts-state.svelte';
 import { RenderStackState } from '$lib/state/render-stack-state.svelte';
-import type { AppImage } from '$lib/types';
+import { RenderOpts, type AppImage } from '$lib/types';
 import { BProgress } from '@bprogress/core';
 
 export class RenderState {
@@ -71,7 +71,7 @@ export class RenderState {
 		const opts = $state.snapshot(this.opts.opts);
 		this.#isBusy = true;
 		BProgress.start();
-		const images = await render(originalImages, opts);
+		const images = await render(originalImages, RenderOpts.parse(opts));
 		this.#stack.push({ opts, images });
 		BProgress.done();
 		this.#isBusy = false;
