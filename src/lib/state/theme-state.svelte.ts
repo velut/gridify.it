@@ -4,11 +4,11 @@ export type Theme = 'light' | 'dark';
 
 const key = Symbol('theme-state');
 
-export function setThemeStateContext(state: ThemeState) {
+export function setThemeState(state: ThemeState) {
 	setContext(key, state);
 }
 
-export function getThemeStateContext(): ThemeState {
+export function getThemeState(): ThemeState {
 	return getContext(key);
 }
 

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { getThemeStateContext } from '$lib/state/theme-state.svelte';
+	import { getThemeState } from '$lib/state/theme-state.svelte';
 	import MaterialSymbolsContrast from '~icons/material-symbols/contrast';
 
-	const theme = getThemeStateContext();
+	const theme = getThemeState();
 </script>
 
 <button

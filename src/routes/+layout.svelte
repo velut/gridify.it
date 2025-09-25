@@ -3,10 +3,10 @@
 	import { cn } from '$lib/utils/cn';
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
-	import { setThemeStateContext, ThemeState } from '$lib/state/theme-state.svelte';
+	import { setThemeState, ThemeState } from '$lib/state/theme-state.svelte';
 	import '../app.css';
 
-	setThemeStateContext(new ThemeState());
+	setThemeState(new ThemeState());
 
 	let { children } = $props();
 
