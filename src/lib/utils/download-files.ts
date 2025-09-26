@@ -1,5 +1,5 @@
 import { downloadBlob } from '$lib/utils/download-blob';
-import { zipFiles } from '$lib/utils/zip-files';
+import { zip } from '$lib/zip/zip';
 
 export async function downloadFiles(files: File[], zipName: string) {
 	if (!files.length) return;
@@ -7,6 +7,6 @@ export async function downloadFiles(files: File[], zipName: string) {
 		const file = files[0];
 		downloadBlob(file, file.name);
 	} else {
-		downloadBlob(await zipFiles(files), zipName);
+		downloadBlob(await zip(files), zipName);
 	}
 }

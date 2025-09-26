@@ -152,3 +152,26 @@ export type DitherFilter = z.infer<typeof DitherFilter>;
 
 export const Dimensions = z.tuple([z.number(), z.number()]);
 export type Dimensions = z.infer<typeof Dimensions>;
+
+// Zip worker types.
+export const ZipWorkerInput = z.object({
+	files: z.array(z.file())
+});
+export type ZipWorkerInput = z.infer<typeof ZipWorkerInput>;
+
+export const ZipWorkerOutputData = z.object({
+	blob: z.instanceof(Blob)
+});
+export type ZipWorkerOutputData = z.infer<typeof ZipWorkerOutputData>;
+
+export const ZipWorkerOutput = z.discriminatedUnion('status', [
+	z.object({
+		status: z.literal('ok'),
+		data: ZipWorkerOutputData
+	}),
+	z.object({
+		status: z.literal('err'),
+		error: z.unknown()
+	})
+]);
+export type ZipWorkerOutput = z.infer<typeof ZipWorkerOutput>;
