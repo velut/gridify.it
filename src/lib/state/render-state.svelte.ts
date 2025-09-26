@@ -30,12 +30,8 @@ export class RenderState {
 		return this.#stack.current?.images ?? [];
 	}
 
-	canResetImages() {
-		return this.hasImages();
-	}
-
 	async resetImages() {
-		if (!this.canResetImages()) return;
+		if (!this.hasImages()) return;
 		await this.#queue.add(() => {
 			this.#stack.reset();
 		});
