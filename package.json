@@ -44,6 +44,7 @@
 		"hex-rgb": "^5.0.0",
 		"nanoid": "^5.1.6",
 		"p-map": "^7.0.3",
+		"p-queue": "^8.1.1",
 		"prettier": "^3.6.2",
 		"prettier-plugin-organize-imports": "^4.3.0",
 		"prettier-plugin-svelte": "^3.4.0",
