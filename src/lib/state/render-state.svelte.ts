@@ -18,7 +18,7 @@ export class RenderState {
 			const renderPromise = render({ files, opts: RenderOpts.parse(opts) });
 			BProgress.promise(renderPromise);
 			const images = await renderPromise;
-			this.#stack.push({ images, opts });
+			this.#stack.push({ opts, images });
 		});
 	}
 
@@ -74,7 +74,7 @@ export class RenderState {
 			const renderPromise = render({ opts: RenderOpts.parse(opts) });
 			BProgress.promise(renderPromise);
 			const images = await renderPromise;
-			this.#stack.push({ images, opts });
+			this.#stack.push({ opts, images });
 		});
 	}
 }
