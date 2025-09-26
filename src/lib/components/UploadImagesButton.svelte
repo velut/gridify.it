@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getAppState } from '$lib/state/app-state.svelte';
-	import { getImages } from '$lib/utils/get-images';
+	import { getImageFiles } from '$lib/utils/get-image-files';
 	import MaterialSymbolsImageArrowUpRounded from '~icons/material-symbols/image-arrow-up-rounded';
 
 	const { render } = getAppState();
@@ -8,7 +8,8 @@
 
 	async function handleChangeOrDrop(event: Event) {
 		event.preventDefault();
-		render.loadImages(await getImages(event));
+		const files = await getImageFiles(event);
+		await render.loadImages(files);
 		fileInput.value = '';
 	}
 </script>
