@@ -15,9 +15,9 @@ export class RenderState {
 		await this.#queue.add(async () => {
 			this.#stack.reset();
 			const opts = RenderOptsState.default();
-			const renderPromise = render({ files, opts: RenderOpts.parse(opts) });
-			BProgress.promise(renderPromise);
-			const images = await renderPromise;
+			BProgress.start();
+			const images = await render({ files, opts: RenderOpts.parse(opts) });
+			BProgress.done();
 			this.#stack.push({ opts, images });
 		});
 	}
@@ -71,9 +71,9 @@ export class RenderState {
 		if (!this.canRender()) return;
 		const opts = $state.snapshot(this.opts.opts);
 		await this.#queue.add(async () => {
-			const renderPromise = render({ opts: RenderOpts.parse(opts) });
-			BProgress.promise(renderPromise);
-			const images = await renderPromise;
+			BProgress.start();
+			const images = await render({ opts: RenderOpts.parse(opts) });
+			BProgress.done();
 			this.#stack.push({ opts, images });
 		});
 	}
