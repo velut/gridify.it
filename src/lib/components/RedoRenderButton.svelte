@@ -20,8 +20,8 @@
 	class="btn-secondary grow"
 	title="Redo rendering [Ctrl+Y]"
 	bind:this={button}
-	onclick={() => {
-		render.redo();
+	onclick={async () => {
+		await render.redo();
 	}}
 	disabled={!render.canRedo()}
 >

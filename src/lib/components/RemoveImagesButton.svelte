@@ -8,10 +8,10 @@
 <button
 	type="button"
 	class="btn-secondary"
-	onclick={() => {
-		render.resetImages();
+	onclick={async () => {
+		await render.resetImages();
 	}}
-	disabled={!render.canResetImages()}
+	disabled={!render.hasImages()}
 >
 	<MaterialSymbolsHideImageRounded class="size-4" />
 	Remove images

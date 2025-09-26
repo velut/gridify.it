@@ -27,7 +27,6 @@
 	onclick={() => {
 		fileInput.click();
 	}}
-	disabled={!render.canLoadImages()}
 >
 	<MaterialSymbolsImageArrowUpRounded class="size-4" />
 	Upload images

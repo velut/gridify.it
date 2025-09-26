@@ -20,8 +20,8 @@
 	class="btn-secondary grow"
 	title="Undo rendering [Ctrl+Z]"
 	bind:this={button}
-	onclick={() => {
-		render.undo();
+	onclick={async () => {
+		await render.undo();
 	}}
 	disabled={!render.canUndo()}
 >
