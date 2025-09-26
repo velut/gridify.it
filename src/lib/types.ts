@@ -5,30 +5,19 @@ import * as z from 'zod';
 export const Theme = z.literal(['light', 'dark']);
 export type Theme = z.infer<typeof Theme>;
 
-// Use `AppImage` name to prevent conflict with the `Image` constructor of `HTMLImageElement`.
+// Gallery preview mode.
+export const PreviewMode = z.literal(['pixel-art', 'high-res']);
+export type PreviewMode = z.infer<typeof PreviewMode>;
+
+// Use `AppImage` to prevent naming conflict with the `Image` constructor of `HTMLImageElement`.
 export const AppImage = z.object({
 	id: z.string(),
 	file: z.file(),
-	url: z.string()
+	url: z.string(),
+	width: z.int().min(1),
+	height: z.int().min(1)
 });
 export type AppImage = z.infer<typeof AppImage>;
-
-export const AppBitmap = z.object({
-	id: z.string(),
-	filename: z.string(),
-
-	// Use z.lazy() to prevent using DOM-only `ImageBitmap`
-	// on the server when the types module is imported.
-	bitmap: z.lazy(() => z.instanceof(ImageBitmap))
-});
-export type AppBitmap = z.infer<typeof AppBitmap>;
-
-export const AppImageBuffer = z.object({
-	id: z.string(),
-	filename: z.string(),
-	buffer: z.instanceof(ArrayBuffer)
-});
-export type AppImageBuffer = z.infer<typeof AppImageBuffer>;
 
 export const PaletteOpts = z.object({
 	type: z
@@ -100,18 +89,15 @@ export const RenderStackItem = z.object({
 });
 export type RenderStackItem = z.input<typeof RenderStackItem>;
 
-export const PreviewMode = z.literal(['pixel-art', 'high-res']);
-export type PreviewMode = z.infer<typeof PreviewMode>;
-
 // Render worker types.
 export const RenderWorkerInput = z.object({
-	bitmaps: z.array(AppBitmap),
-	opts: RenderOpts
+	opts: RenderOpts,
+	files: z.optional(z.array(z.file()))
 });
 export type RenderWorkerInput = z.infer<typeof RenderWorkerInput>;
 
 export const RenderWorkerOutputData = z.object({
-	buffers: z.array(AppImageBuffer)
+	images: z.array(AppImage)
 });
 export type RenderWorkerOutputData = z.infer<typeof RenderWorkerOutputData>;
 
@@ -126,6 +112,14 @@ export const RenderWorkerOutput = z.discriminatedUnion('status', [
 	})
 ]);
 export type RenderWorkerOutput = z.infer<typeof RenderWorkerOutput>;
+
+export const RenderWorkerCache = z.array(
+	z.object({
+		file: z.instanceof(File),
+		canvas: z.lazy(() => z.instanceof(OffscreenCanvas))
+	})
+);
+export type RenderWorkerCache = z.infer<typeof RenderWorkerCache>;
 
 export const RgbColor = z.tuple([
 	z.int().transform((val) => clampRgb(val)),
