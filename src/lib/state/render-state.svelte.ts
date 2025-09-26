@@ -11,8 +11,8 @@ export class RenderState {
 	#queue = new PQueue({ concurrency: 1 });
 
 	async loadImages(files: File[]) {
-		if (!files.length) return;
 		await this.#queue.add(async () => {
+			if (!files.length) return;
 			this.#stack.reset();
 			const opts = RenderOptsState.default();
 			BProgress.start();
@@ -31,8 +31,8 @@ export class RenderState {
 	}
 
 	async resetImages() {
-		if (!this.hasImages()) return;
 		await this.#queue.add(() => {
+			if (!this.hasImages()) return;
 			this.#stack.reset();
 		});
 	}
@@ -42,8 +42,8 @@ export class RenderState {
 	}
 
 	async undo() {
-		if (!this.canUndo()) return;
 		await this.#queue.add(() => {
+			if (!this.canUndo()) return;
 			const item = this.#stack.undo();
 			if (!item) return;
 			this.opts.opts = item.opts;
@@ -55,8 +55,8 @@ export class RenderState {
 	}
 
 	async redo() {
-		if (!this.canRedo()) return;
 		await this.#queue.add(() => {
+			if (!this.canRedo()) return;
 			const item = this.#stack.redo();
 			if (!item) return;
 			this.opts.opts = item.opts;
@@ -68,9 +68,9 @@ export class RenderState {
 	}
 
 	async render() {
-		if (!this.canRender()) return;
 		const opts = $state.snapshot(this.opts.opts);
 		await this.#queue.add(async () => {
+			if (!this.canRender()) return;
 			BProgress.start();
 			const images = await render({ opts: RenderOpts.parse(opts) });
 			BProgress.done();
