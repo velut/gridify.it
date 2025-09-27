@@ -12,6 +12,7 @@ export function applyPalette(canvas: OffscreenCanvas, palette: PaletteOpts): Off
 	// Copy canvas to a temporary canvas to prevent slower software rendering caused by `getImageData`.
 	const tmpCanvas = new OffscreenCanvas(canvas.width, canvas.height);
 	const tmpCtx = tmpCanvas.getContext('2d')!;
+	tmpCtx.imageSmoothingEnabled = false;
 	tmpCtx.drawImage(canvas, 0, 0);
 
 	// NOTE: Browsers don't return the exact original pixel colors.
@@ -94,9 +95,12 @@ export function applyPalette(canvas: OffscreenCanvas, palette: PaletteOpts): Off
 	// Replace original image data with updated data.
 	tmpCtx.putImageData(imageData, 0, 0);
 
-	// Copy back temporary canvas with new palette to original canvas.
-	canvas.getContext('2d')!.drawImage(tmpCanvas, 0, 0);
-	return canvas;
+	// Copy back temporary canvas with new palette to a new canvas.
+	const paletteCanvas = new OffscreenCanvas(tmpCanvas.width, tmpCanvas.height);
+	const paletteCtx = paletteCanvas.getContext('2d')!;
+	paletteCtx.imageSmoothingEnabled = false;
+	paletteCtx.drawImage(tmpCanvas, 0, 0);
+	return paletteCanvas;
 }
 
 function getDitherFilter(palette: PaletteOpts): DitherFilter | undefined {
