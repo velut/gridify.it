@@ -52,6 +52,7 @@ export const PaletteOpts = z.object({
 		threshold: z.coerce
 			.number<string>()
 			.int()
+			.catch(128)
 			.transform((val) => clampRgb(val))
 	}),
 	custom: z.object({
