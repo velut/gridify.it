@@ -19,6 +19,19 @@ export const AppImage = z.object({
 });
 export type AppImage = z.infer<typeof AppImage>;
 
+export const ScaleOpts = z
+	.object({
+		type: z.literal(['same', 'different']).catch('same'),
+		x: z.coerce.number<string>().catch(1),
+		y: z.coerce.number<string>().catch(1)
+	})
+	.transform(({ type, x, y }) => ({
+		type,
+		x,
+		y: type === 'same' ? x : y
+	}));
+export type ScaleOpts = z.infer<typeof ScaleOpts>;
+
 export const PaletteOpts = z.object({
 	type: z
 		.literal([
@@ -77,6 +90,7 @@ export const GridOpts = z.object({
 export type GridOpts = z.infer<typeof GridOpts>;
 
 export const RenderOpts = z.object({
+	scale: ScaleOpts,
 	palette: PaletteOpts,
 	grid: GridOpts
 });
