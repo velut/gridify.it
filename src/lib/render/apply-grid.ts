@@ -40,7 +40,7 @@ export function applyGrid(canvas: OffscreenCanvas, grid: GridOpts): OffscreenCan
 			const dy = (sy / srcCellHeight) * (dstCellHeight + lineSize) + borderSize;
 
 			// Clear the grid space where the destination cell will be
-			// to preserve transparent pixels.
+			// drawn to preserve transparent pixels.
 			gridCtx.clearRect(dx, dy, dstCellWidth, dstCellHeight);
 
 			// Transfer source cell to destination cell.
