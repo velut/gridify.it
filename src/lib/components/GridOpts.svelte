@@ -23,124 +23,134 @@
 		</label>
 		<select id="grid-type" class="w-full" bind:value={grid.type}>
 			<option value="none">No grid</option>
-			<option value="full">Full grid (Grid lines and outer border)</option>
-			<option value="lines">Grid lines only</option>
-			<option value="border">Outer border only</option>
+			<option value="full">Full grid (Border and grid lines)</option>
+			<option value="lines">Only grid lines</option>
+			<option value="border">Only outer border</option>
+			<option value="invisible">Invisible grid</option>
 		</select>
 	</FormField>
 
-	<FormField>
-		<label for="grid-color">
-			<MaterialSymbolsColorsRounded class="size-4" />
-			Grid color
-		</label>
-		<div
-			class="dark:bg-input/30 border-input grid place-items-center rounded-md border bg-transparent p-1"
-		>
-			<input id="grid-color" class="w-full" type="color" bind:value={grid.color} />
-		</div>
-	</FormField>
+	{#if grid.type !== 'none'}
+		<FormField>
+			<label for="grid-color">
+				<MaterialSymbolsColorsRounded class="size-4" />
+				Grid color
+			</label>
+			<div
+				class="dark:bg-input/30 border-input grid place-items-center rounded-md border bg-transparent p-1"
+			>
+				<input id="grid-color" class="w-full" type="color" bind:value={grid.color} />
+			</div>
+		</FormField>
 
-	<FormField>
-		<label for="grid-lines-size">
-			<MaterialSymbolsLineWeightRounded class="size-4" />
-			Grid lines size
-		</label>
-		<InputWithUnit unit="px" disabled={grid.type === 'none'}>
-			<input
-				id="grid-lines-size"
-				type="text"
-				inputMode="numeric"
-				pattern="[0-9]*"
-				title="Use 1 or a bigger integer number of pixels"
-				bind:value={grid.lines.size}
-				disabled={grid.type === 'none'}
-			/>
-		</InputWithUnit>
-	</FormField>
+		{#if grid.type !== 'invisible'}
+			<FormField>
+				<label for="grid-lines-size">
+					<MaterialSymbolsLineWeightRounded class="size-4" />
+					{#if grid.type === 'full'}
+						Grid border and lines size
+					{:else if grid.type === 'lines'}
+						Grid lines size
+					{:else if grid.type === 'border'}
+						Grid border size
+					{/if}
+				</label>
+				<InputWithUnit unit="px">
+					<input
+						id="grid-lines-size"
+						type="text"
+						inputMode="numeric"
+						pattern="[0-9]*"
+						title="Use 1 or a bigger integer number of pixels"
+						bind:value={grid.lines.size}
+					/>
+				</InputWithUnit>
+			</FormField>
+		{/if}
 
-	<FormField>
-		<label for="grid-cell-shape">
-			<MaterialSymbolsCropRounded class="size-4" />
-			Grid cell shape
-		</label>
-		<select id="grid-cell-shape" class="w-full" bind:value={grid.cell.shape}>
-			<option value="square">Square (Same width and height)</option>
-			<option value="rectangle">Rectangle (Different width and height)</option>
-		</select>
-	</FormField>
+		<FormField>
+			<label for="grid-cell-shape">
+				<MaterialSymbolsCropRounded class="size-4" />
+				Grid cell shape
+			</label>
+			<select id="grid-cell-shape" class="w-full" bind:value={grid.cell.shape}>
+				<option value="square">Square (Same width and height)</option>
+				<option value="rectangle">Rectangle (Different width and height)</option>
+			</select>
+		</FormField>
 
-	<FormField>
-		<label for="grid-cell-width">
-			<MaterialSymbolsExpandRounded class="size-4 rotate-90" />
-			Grid cell width
-		</label>
-		<InputWithUnit unit="px">
-			<input
-				id="grid-cell-width"
-				type="text"
-				inputMode="numeric"
-				pattern="[0-9]*"
-				title="Use 1 or a bigger integer number of pixels"
-				bind:value={grid.cell.width}
-			/>
-		</InputWithUnit>
-	</FormField>
-
-	<FormField>
-		<label for="grid-cell-height">
-			<MaterialSymbolsExpandRounded class="size-4" />
-			Grid cell height
-		</label>
-		{#if grid.cell.shape === 'rectangle'}
+		<FormField>
+			<label for="grid-cell-width">
+				<MaterialSymbolsExpandRounded class="size-4 rotate-90" />
+				Grid cell width
+			</label>
 			<InputWithUnit unit="px">
 				<input
-					id="grid-cell-height"
+					id="grid-cell-width"
 					type="text"
 					inputMode="numeric"
 					pattern="[0-9]*"
 					title="Use 1 or a bigger integer number of pixels"
-					bind:value={grid.cell.height}
+					bind:value={grid.cell.width}
 				/>
 			</InputWithUnit>
-		{:else}
-			<InputWithUnit unit="px" disabled>
-				<input id="grid-cell-height" type="text" value={grid.cell.width} disabled />
+		</FormField>
+
+		<FormField>
+			<label for="grid-cell-height">
+				<MaterialSymbolsExpandRounded class="size-4" />
+				Grid cell height
+			</label>
+			{#if grid.cell.shape === 'rectangle'}
+				<InputWithUnit unit="px">
+					<input
+						id="grid-cell-height"
+						type="text"
+						inputMode="numeric"
+						pattern="[0-9]*"
+						title="Use 1 or a bigger integer number of pixels"
+						bind:value={grid.cell.height}
+					/>
+				</InputWithUnit>
+			{:else}
+				<InputWithUnit unit="px" disabled>
+					<input id="grid-cell-height" type="text" value={grid.cell.width} disabled />
+				</InputWithUnit>
+			{/if}
+		</FormField>
+
+		<FormField>
+			<label for="grid-cell-scale">
+				<MaterialSymbolsBackToTabRounded class="size-4 -scale-x-100" />
+				Grid cell scale
+			</label>
+			<InputWithUnit unit="x">
+				<input
+					id="grid-cell-scale"
+					type="text"
+					inputMode="numeric"
+					pattern="[0-9]*"
+					title="Use 1 or a bigger integer number for scaling"
+					bind:value={grid.cell.scale}
+				/>
 			</InputWithUnit>
-		{/if}
-	</FormField>
+		</FormField>
 
-	<FormField>
-		<label for="grid-cell-scale">
-			<MaterialSymbolsBackToTabRounded class="size-4 -scale-x-100" />
-			Grid cell scale
-		</label>
-		<InputWithUnit unit="x">
-			<input
-				id="grid-cell-scale"
-				type="text"
-				inputMode="numeric"
-				pattern="[0-9]*"
-				title="Use 1 or a bigger integer number for scaling"
-				bind:value={grid.cell.scale}
-			/>
-		</InputWithUnit>
-	</FormField>
-
-	<FormField>
-		<label for="grid-cell-corner-radius">
-			<MaterialSymbolsRoundedCornerRounded class="size-4" />
-			Grid cell corner radius
-		</label>
-		<InputWithUnit unit="px">
-			<input
-				id="grid-cell-corner-radius"
-				type="text"
-				inputMode="numeric"
-				pattern="[0-9]*"
-				title="Use 0 or a bigger integer number of pixels"
-				bind:value={grid.cell.cornerRadius}
-			/>
-		</InputWithUnit>
-	</FormField>
+		<FormField>
+			<label for="grid-cell-corner-radius">
+				<MaterialSymbolsRoundedCornerRounded class="size-4" />
+				Grid cell corner radius
+			</label>
+			<InputWithUnit unit="px">
+				<input
+					id="grid-cell-corner-radius"
+					type="text"
+					inputMode="numeric"
+					pattern="[0-9]*"
+					title="Use 0 or a bigger integer number of pixels"
+					bind:value={grid.cell.cornerRadius}
+				/>
+			</InputWithUnit>
+		</FormField>
+	{/if}
 </OptsCard>

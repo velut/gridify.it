@@ -2,12 +2,13 @@ import type { Dimensions, GridOpts } from '$lib/types';
 
 export function applyGrid(canvas: OffscreenCanvas, grid: GridOpts): OffscreenCanvas {
 	// Nothing to do.
-	if (grid.type === 'none' && grid.cell.scale === 1 && grid.cell.cornerRadius === 0) {
+	if (grid.type === 'none') return canvas;
+	if (grid.type === 'invisible' && grid.cell.scale === 1 && grid.cell.cornerRadius === 0) {
 		return canvas;
 	}
 
 	// Use faster canvas scaling since other grid features are not enabled.
-	if (grid.type === 'none' && grid.cell.scale > 1 && grid.cell.cornerRadius === 0) {
+	if (grid.type === 'invisible' && grid.cell.scale > 1 && grid.cell.cornerRadius === 0) {
 		return applyScale(canvas, grid.cell.scale);
 	}
 
@@ -91,6 +92,7 @@ function gridBorderDimensions(grid: GridOpts): Dimensions {
 	switch (grid.type) {
 		case 'none':
 		case 'lines':
+		case 'invisible':
 			return [0, 0];
 		case 'border':
 		case 'full':
@@ -104,6 +106,7 @@ function gridLinesDimensions(canvas: OffscreenCanvas, grid: GridOpts): Dimension
 	switch (grid.type) {
 		case 'none':
 		case 'border':
+		case 'invisible':
 			return [0, 0];
 		case 'lines':
 		case 'full':
@@ -132,7 +135,9 @@ function srcCellDimensions(canvas: OffscreenCanvas, grid: GridOpts): Dimensions 
 	switch (grid.type) {
 		case 'none':
 		case 'border':
-			// No need to create source cells as there are no grid lines; just use one cell for the canvas.
+		case 'invisible':
+			// No need to create source cells as there are no grid lines.
+			// Just use one cell for the whole canvas.
 			return [canvas.width, canvas.height];
 		case 'lines':
 		case 'full':
@@ -150,6 +155,7 @@ function gridLineAndBorderSizes(grid: GridOpts): Dimensions {
 	// Tuple is [line, border] stroke sizes.
 	switch (grid.type) {
 		case 'none':
+		case 'invisible':
 			return [0, 0];
 		case 'border':
 			return [0, grid.lines.size];
