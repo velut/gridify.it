@@ -18,6 +18,7 @@
 			Scale type
 		</label>
 		<select id="scale-type" class="w-full" bind:value={scale.type}>
+			<option value="original">Original scale</option>
 			<option value="same">Same scale for x and y axis</option>
 			<option value="different">Different scales for x and y axis</option>
 		</select>
@@ -33,7 +34,7 @@
 				<input id="scale-x" type="text" bind:value={scale.x} />
 			</InputWithUnit>
 		</FormField>
-	{:else}
+	{:else if scale.type === 'different'}
 		<FormField>
 			<label for="scale-x">
 				<MaterialSymbolsHeightRounded class="size-4 rotate-90" />

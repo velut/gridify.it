@@ -5,7 +5,7 @@ export class RenderOptsState {
 	static default(): RenderOptsRaw {
 		return structuredClone({
 			scale: {
-				type: 'same',
+				type: 'original',
 				x: '1',
 				y: '1'
 			},

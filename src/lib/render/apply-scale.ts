@@ -2,6 +2,7 @@ import type { ScaleOpts } from '$lib/types';
 
 export function applyScale(canvas: OffscreenCanvas, scale: ScaleOpts): OffscreenCanvas {
 	// Nothing to do.
+	if (scale.type === 'original') return canvas;
 	if (scale.x === 1 && scale.y === 1) return canvas;
 
 	// Scale the original image dimensions to find the closest scaled integer dimensions

@@ -21,7 +21,7 @@ export type AppImage = z.infer<typeof AppImage>;
 
 export const ScaleOpts = z
 	.object({
-		type: z.literal(['same', 'different']).catch('same'),
+		type: z.literal(['original', 'same', 'different']).catch('original'),
 		x: z.coerce.number<string>().catch(1),
 		y: z.coerce.number<string>().catch(1)
 	})
