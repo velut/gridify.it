@@ -75,16 +75,16 @@ export const GridOpts = z.object({
 	}),
 	cell: z
 		.object({
-			shape: z.literal(['square', 'rectangle']).catch('square'),
+			type: z.literal(['square', 'rectangle']).catch('square'),
 			width: z.coerce.number<string>().int().min(1).catch(1),
 			height: z.coerce.number<string>().int().min(1).catch(1),
 			scale: z.coerce.number<string>().int().min(1).catch(1),
 			cornerRadius: z.coerce.number<string>().int().min(0).catch(0)
 		})
-		.transform(({ shape, width, height, ...rest }) => ({
-			shape,
+		.transform(({ type, width, height, ...rest }) => ({
+			type,
 			width,
-			height: shape === 'square' ? width : height,
+			height: type === 'square' ? width : height,
 			...rest
 		}))
 });

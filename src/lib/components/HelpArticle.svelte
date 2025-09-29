@@ -219,9 +219,9 @@
 			</div>
 		</div>
 
-		<h3>How do I change the shape of grid cells?</h3>
+		<h3>How do I change the type of grid cells?</h3>
 		<p>
-			Click on the <strong>Grid cell shape</strong> setting and select between
+			Click on the <strong>Grid cell type</strong> setting and select between
 			<strong>Square</strong> to have grid cells with the same width and height (shown below on the
 			left) and
 			<strong>Rectangle</strong> to freely choose the grid cell sizes (shown below on the right).
@@ -249,12 +249,12 @@
 		<p>
 			Click on the <strong>Grid cell width</strong> setting and type a value in pixels to choose how
 			wide you want the grid cells to be. This value will also be used for the height of grid cells
-			if the <strong>Grid cell shape</strong> is set to <strong>Square</strong>.
+			if the <strong>Grid cell type</strong> is set to <strong>Square</strong>.
 		</p>
 
 		<h3>How do I change the height of grid cells?</h3>
 		<p>
-			Click on the <strong>Grid cell shape</strong> setting and select the
+			Click on the <strong>Grid cell type</strong> setting and select the
 			<strong>Rectangle</strong> option, then click on the <strong>Grid cell height</strong> setting
 			and type a value in pixels to choose how tall you want the grid cells to be.
 		</p>
@@ -316,7 +316,7 @@
 		<h3>Use square, 1x1 pixels grid cells</h3>
 		<p>
 			If you want every pixel in the original pixel art image to be its own grid cell, use the
-			<strong>Square</strong> cell shape and set the <strong>Grid cell width</strong> to be 1 pixel.
+			<strong>Square</strong> cell type and set the <strong>Grid cell width</strong> to be 1 pixel.
 			These are the default rendering options.
 		</p>
 

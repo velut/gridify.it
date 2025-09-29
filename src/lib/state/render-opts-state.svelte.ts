@@ -20,7 +20,7 @@ export class RenderOptsState {
 				color: '#000000',
 				lines: { size: '1' },
 				cell: {
-					shape: 'square',
+					type: 'square',
 					width: '1',
 					height: '1',
 					scale: '1',

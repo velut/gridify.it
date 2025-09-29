@@ -69,11 +69,11 @@
 		{/if}
 
 		<FormField>
-			<label for="grid-cell-shape">
+			<label for="grid-cell-type">
 				<MaterialSymbolsCropRounded class="size-4" />
-				Grid cell shape
+				Grid cell type
 			</label>
-			<select id="grid-cell-shape" class="w-full" bind:value={grid.cell.shape}>
+			<select id="grid-cell-type" class="w-full" bind:value={grid.cell.type}>
 				<option value="square">Square (Same width and height)</option>
 				<option value="rectangle">Rectangle (Different width and height)</option>
 			</select>
@@ -101,7 +101,7 @@
 				<MaterialSymbolsExpandRounded class="size-4" />
 				Grid cell height
 			</label>
-			{#if grid.cell.shape === 'rectangle'}
+			{#if grid.cell.type === 'rectangle'}
 				<InputWithUnit unit="px">
 					<input
 						id="grid-cell-height"
