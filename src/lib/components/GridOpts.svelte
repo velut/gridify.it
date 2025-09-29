@@ -26,7 +26,7 @@
 			<option value="full">Full grid (Border and grid lines)</option>
 			<option value="lines">Only grid lines</option>
 			<option value="border">Only outer border</option>
-			<option value="invisible">Invisible grid</option>
+			<option value="invisible">Invisible grid (No border, no grid lines)</option>
 		</select>
 	</FormField>
 
