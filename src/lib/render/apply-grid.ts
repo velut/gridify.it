@@ -39,8 +39,9 @@ export function applyGrid(canvas: OffscreenCanvas, grid: GridOpts): OffscreenCan
 			const dx = (sx / srcCellWidth) * (dstCellWidth + lineSize) + borderSize;
 			const dy = (sy / srcCellHeight) * (dstCellHeight + lineSize) + borderSize;
 
-			// Clear the grid space where the destination cell will be
-			// drawn to preserve transparent pixels.
+			// Preserve transparent pixels by clearing the grid space
+			// where the destination cell will be drawn.
+			// This messes up the right and bottom borders by clearing them too.
 			gridCtx.clearRect(dx, dy, dstCellWidth, dstCellHeight);
 
 			// Transfer source cell to destination cell.
@@ -59,6 +60,13 @@ export function applyGrid(canvas: OffscreenCanvas, grid: GridOpts): OffscreenCan
 			// Apply round corners mask to the destination cell.
 			if (cornersMask) gridCtx.drawImage(cornersMask, dx, dy);
 		}
+	}
+
+	if (['full', 'border'].includes(grid.type)) {
+		// Fix right and bottom borders.
+		const borderSize = grid.lines.size;
+		gridCtx.fillRect(0, gridCanvas.height - borderSize, gridCanvas.width, borderSize);
+		gridCtx.fillRect(gridCanvas.width - borderSize, 0, borderSize, gridCanvas.height);
 	}
 
 	return gridCanvas;
