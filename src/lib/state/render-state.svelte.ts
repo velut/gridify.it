@@ -26,6 +26,10 @@ export class RenderState {
 		return this.#active;
 	}
 
+	canLoadImages(): boolean {
+		return !this.#active;
+	}
+
 	async loadImages(files: File[]) {
 		await this.#queue.add(async () => {
 			if (!files.length) return;
@@ -44,6 +48,10 @@ export class RenderState {
 		return this.#stack.current?.images ?? [];
 	}
 
+	canResetImages(): boolean {
+		return !this.#active && this.hasImages();
+	}
+
 	async resetImages() {
 		await this.#queue.add(() => {
 			if (!this.hasImages()) return;
@@ -52,12 +60,12 @@ export class RenderState {
 	}
 
 	canUndo(): boolean {
-		return this.#stack.canUndo();
+		return !this.#active && this.#stack.canUndo();
 	}
 
 	async undo() {
 		await this.#queue.add(() => {
-			if (!this.canUndo()) return;
+			if (!this.#stack.canUndo()) return;
 			const item = this.#stack.undo();
 			if (!item) return;
 			this.opts.opts = item.opts;
@@ -65,12 +73,12 @@ export class RenderState {
 	}
 
 	canRedo(): boolean {
-		return this.#stack.canRedo();
+		return !this.#active && this.#stack.canRedo();
 	}
 
 	async redo() {
 		await this.#queue.add(() => {
-			if (!this.canRedo()) return;
+			if (!this.#stack.canRedo()) return;
 			const item = this.#stack.redo();
 			if (!item) return;
 			this.opts.opts = item.opts;
@@ -78,13 +86,13 @@ export class RenderState {
 	}
 
 	canRender(): boolean {
-		return this.hasImages();
+		return !this.#active && this.hasImages();
 	}
 
 	async render() {
 		const opts = $state.snapshot(this.opts.opts);
 		await this.#queue.add(async () => {
-			if (!this.canRender()) return;
+			if (!this.hasImages()) return;
 			const images = await render({ opts: RenderOpts.parse(opts) });
 			this.#stack.push({ opts, images });
 		});

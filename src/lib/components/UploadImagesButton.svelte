@@ -8,6 +8,7 @@
 
 	async function handleChangeOrDrop(event: Event) {
 		event.preventDefault();
+		if (!render.canLoadImages()) return;
 		const files = await getImageFiles(event);
 		await render.loadImages(files);
 		fileInput.value = '';
@@ -29,6 +30,7 @@
 	onclick={() => {
 		fileInput.click();
 	}}
+	disabled={!render.canLoadImages()}
 >
 	<MaterialSymbolsImageArrowUpRounded class="size-4" />
 	Upload images
