@@ -40,4 +40,17 @@ export class RenderOptsState {
 	reset() {
 		this.opts = RenderOptsState.default();
 	}
+
+	setPixelArtPreset() {
+		this.reset();
+		this.opts.grid.type = 'full';
+		this.opts.grid.cell.scale = '8';
+	}
+
+	setPhotoPreset() {
+		this.reset();
+		this.opts.grid.type = 'full';
+		this.opts.grid.lines.size = '2';
+		this.opts.grid.cell.width = '100';
+	}
 }
