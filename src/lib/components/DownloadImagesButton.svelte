@@ -9,6 +9,7 @@
 <button
 	type="button"
 	class="btn"
+	title="Download rendered images"
 	onclick={async () => {
 		await downloadImages(render.images);
 	}}

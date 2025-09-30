@@ -25,6 +25,7 @@
 <button
 	type="button"
 	class="btn"
+	title="Choose images to upload"
 	onclick={() => {
 		fileInput.click();
 	}}

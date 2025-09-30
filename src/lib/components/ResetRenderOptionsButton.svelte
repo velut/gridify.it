@@ -10,6 +10,7 @@
 <button
 	type="button"
 	class="btn-secondary"
+	title="Reset render options to their default values"
 	onclick={() => {
 		opts.reset();
 	}}

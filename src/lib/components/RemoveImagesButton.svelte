@@ -8,6 +8,7 @@
 <button
 	type="button"
 	class="btn-secondary"
+	title="Remove uploaded images"
 	onclick={async () => {
 		await render.resetImages();
 	}}
