@@ -9,6 +9,20 @@ export class RenderState {
 	opts = new RenderOptsState();
 	#stack = new RenderStackState();
 	#queue = new PQueue({ concurrency: 1 });
+	#active = $state(false);
+
+	constructor() {
+		this.#queue.on('active', () => {
+			this.#active = true;
+		});
+		this.#queue.on('idle', () => {
+			this.#active = false;
+		});
+	}
+
+	get active() {
+		return this.#active;
+	}
 
 	async loadImages(files: File[]) {
 		await this.#queue.add(async () => {
