@@ -9,6 +9,7 @@
 	import UndoRedoRenderButtons from '$lib/components/UndoRedoRenderButtons.svelte';
 	import PresetPixelArtButton from '$lib/components/PresetPixelArtButton.svelte';
 	import PresetPhotoButton from '$lib/components/PresetPhotoButton.svelte';
+	import PresetWplaceButton from '$lib/components/PresetWplaceButton.svelte';
 </script>
 
 <AppColumn>
@@ -26,6 +27,7 @@
 
 		<PresetPixelArtButton />
 		<PresetPhotoButton />
+		<PresetWplaceButton />
 
 		<Divider />
 

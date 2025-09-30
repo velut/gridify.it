@@ -53,4 +53,9 @@ export class RenderOptsState {
 		this.opts.grid.lines.size = '2';
 		this.opts.grid.cell.width = '100';
 	}
+
+	setWplacePreset() {
+		this.reset();
+		this.opts.palette.type = 'wplace-free';
+	}
 }
