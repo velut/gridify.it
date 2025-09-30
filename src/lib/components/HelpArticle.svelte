@@ -316,8 +316,8 @@
 		<h3>Use square, 1x1 pixels grid cells</h3>
 		<p>
 			If you want every pixel in the original pixel art image to be its own grid cell, use the
-			<strong>Square</strong> cell type and set the <strong>Grid cell width</strong> to be 1 pixel.
-			These are the default rendering options.
+			<strong>Square</strong> cell type and set the <strong>Grid cell width</strong> to be 1 pixel. These
+			are the default rendering options.
 		</p>
 
 		<h3>Scale up grid cells to distinguish them from grid lines</h3>
