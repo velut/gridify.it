@@ -14,9 +14,11 @@ export class RenderState {
 	constructor() {
 		this.#queue.on('active', () => {
 			this.#active = true;
+			BProgress.start();
 		});
 		this.#queue.on('idle', () => {
 			this.#active = false;
+			BProgress.done();
 		});
 	}
 
@@ -29,9 +31,7 @@ export class RenderState {
 			if (!files.length) return;
 			this.#stack.reset();
 			const opts = RenderOptsState.default();
-			BProgress.start();
 			const images = await render({ files, opts: RenderOpts.parse(opts) });
-			BProgress.done();
 			this.#stack.push({ opts, images });
 		});
 	}
@@ -85,9 +85,7 @@ export class RenderState {
 		const opts = $state.snapshot(this.opts.opts);
 		await this.#queue.add(async () => {
 			if (!this.canRender()) return;
-			BProgress.start();
 			const images = await render({ opts: RenderOpts.parse(opts) });
-			BProgress.done();
 			this.#stack.push({ opts, images });
 		});
 	}
