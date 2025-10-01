@@ -14,7 +14,4 @@
 		<option value="pixel-art">Pixel art</option>
 		<option value="high-res">High resolution images</option>
 	</select>
-	<p class="text-muted-foreground text-sm">
-		Previews may contain visual artifacts, click on an image to see it at full size
-	</p>
 </div>
