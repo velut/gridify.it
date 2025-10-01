@@ -6,7 +6,7 @@ export const Theme = z.literal(['light', 'dark']);
 export type Theme = z.infer<typeof Theme>;
 
 // Gallery preview mode.
-export const PreviewMode = z.literal(['pixel-art', 'high-res']);
+export const PreviewMode = z.literal(['pixel-art', 'hi-res']);
 export type PreviewMode = z.infer<typeof PreviewMode>;
 
 // Use `AppImage` to prevent naming conflict with the `Image` constructor of `HTMLImageElement`.
