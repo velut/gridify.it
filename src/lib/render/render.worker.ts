@@ -65,7 +65,7 @@ async function render(opts: RenderOpts): Promise<AppImage[]> {
 				const file = new File([blob], name, { type: 'image/png' });
 				const url = URL.createObjectURL(file);
 				const { width, height } = canvas;
-				return { id, file, url, width, height };
+				return { id, file, url, width, height, originalFile };
 			} catch (err) {
 				console.error(err);
 				return pMapSkip;

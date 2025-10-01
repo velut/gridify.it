@@ -15,7 +15,8 @@ export const AppImage = z.object({
 	file: z.file(),
 	url: z.string(),
 	width: z.int().min(1),
-	height: z.int().min(1)
+	height: z.int().min(1),
+	originalFile: z.file()
 });
 export type AppImage = z.infer<typeof AppImage>;
 
