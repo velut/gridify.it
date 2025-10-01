@@ -12,6 +12,6 @@
 	</label>
 	<select id="preview-mode" class="select w-full sm:w-fit" bind:value={preview.mode}>
 		<option value="pixel-art">Pixel art</option>
-		<option value="high-res">High resolution images</option>
+		<option value="hi-res">High resolution images</option>
 	</select>
 </div>
