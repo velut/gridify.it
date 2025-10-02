@@ -27,12 +27,13 @@ async function updateCache(files?: File[]) {
 		files,
 		async (file) => {
 			try {
+				const id = nanoid();
 				const bitmap = await self.createImageBitmap(file);
 				const canvas = new OffscreenCanvas(bitmap.width, bitmap.height);
 				const ctx = canvas.getContext('2d')!;
 				ctx.imageSmoothingEnabled = false;
 				ctx.drawImage(bitmap, 0, 0);
-				return { file, canvas };
+				return { id, file, canvas };
 			} catch (err) {
 				console.error(err);
 				return pMapSkip;
@@ -45,7 +46,7 @@ async function updateCache(files?: File[]) {
 async function render(opts: RenderOpts): Promise<AppImage[]> {
 	return await pMap(
 		cache,
-		async ({ file: originalFile, canvas: originalCanvas }) => {
+		async ({ id, file: originalFile, canvas: originalCanvas }) => {
 			try {
 				// Copy original canvas.
 				let canvas = new OffscreenCanvas(originalCanvas.width, originalCanvas.height);
@@ -60,7 +61,6 @@ async function render(opts: RenderOpts): Promise<AppImage[]> {
 
 				// Return image.
 				const blob = await canvas.convertToBlob({ type: 'image/png', quality: 1 });
-				const id = nanoid();
 				const name = `${originalFile.name}_${id}.png`;
 				const file = new File([blob], name, { type: 'image/png' });
 				const url = URL.createObjectURL(file);

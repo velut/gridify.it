@@ -131,6 +131,7 @@ export type RenderWorkerOutput = z.infer<typeof RenderWorkerOutput>;
 
 export const RenderWorkerCache = z.array(
 	z.object({
+		id: z.string(),
 		file: z.instanceof(File),
 		canvas: z.lazy(() => z.instanceof(OffscreenCanvas))
 	})
