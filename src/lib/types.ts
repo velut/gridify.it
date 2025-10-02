@@ -5,7 +5,7 @@ import * as z from 'zod';
 export const Theme = z.literal(['light', 'dark']);
 export type Theme = z.infer<typeof Theme>;
 
-// Gallery preview mode.
+// Image preview mode.
 export const PreviewMode = z.literal(['pixel-art', 'hi-res']);
 export type PreviewMode = z.infer<typeof PreviewMode>;
 
