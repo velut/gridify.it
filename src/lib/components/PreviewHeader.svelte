@@ -2,18 +2,15 @@
 	import { getAppState } from '$lib/state/app-state.svelte';
 	import prettyBytes from 'pretty-bytes';
 
-	// TODO: sync state with image display
-	const { render, preview } = getAppState();
-	let images = $derived(render.images);
-	let index = $state(0);
-	let image = $derived(images[index]);
-	let id = $derived(images[index].id);
+	const { preview } = getAppState();
+	let images = $derived(preview.images);
+	let image = $derived(preview.image);
 </script>
 
 <div class="flex flex-col gap-4 xl:flex-row">
 	<div>
 		<label for="preview-image-id" class="sr-only">Select an image to display</label>
-		<select id="preview-image-id" class="select w-full" bind:value={id}>
+		<select id="preview-image-id" class="select w-full" bind:value={preview.imageId}>
 			{#each images as image (image.id)}
 				<option value={image.id}>{image.originalFile.name}</option>
 			{/each}

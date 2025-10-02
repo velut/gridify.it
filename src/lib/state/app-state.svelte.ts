@@ -14,6 +14,5 @@ export function getAppState(): AppState {
 
 export class AppState {
 	render = new RenderState();
-
-	preview = new PreviewState();
+	preview = new PreviewState(this.render);
 }
