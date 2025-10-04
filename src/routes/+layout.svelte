@@ -4,16 +4,14 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import { setThemeState, ThemeState } from '$lib/state/theme-state.svelte';
-	import '../app.css';
 	import { onMount } from 'svelte';
 	import { BProgress } from '@bprogress/core';
+	import '../app.css';
 
 	setThemeState(new ThemeState());
 
 	onMount(() => {
-		BProgress.configure({
-			showSpinner: false
-		});
+		BProgress.configure({ showSpinner: false });
 	});
 
 	let { children } = $props();
