@@ -9,11 +9,13 @@
 	let { title, children }: Props = $props();
 </script>
 
-<div class="rounded-xl border">
-	<div class="flex items-center justify-center border-b px-6 py-3 text-sm font-medium">
-		{title}
-	</div>
-	<div class="grid gap-4 p-6">
-		{@render children()}
-	</div>
+<div class="card">
+	<header class="grid-rows-1">
+		<h2>{title}</h2>
+	</header>
+	<section>
+		<div class="grid gap-4">
+			{@render children()}
+		</div>
+	</section>
 </div>
