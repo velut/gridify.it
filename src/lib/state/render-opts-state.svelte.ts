@@ -4,10 +4,10 @@ import { deepEqual } from 'fast-equals';
 export class RenderOptsState {
 	static default(): RenderOptsRaw {
 		return structuredClone({
-			scale: {
+			size: {
 				type: 'original',
-				x: '1',
-				y: '1'
+				scale: { x: '1', y: '1' },
+				dimensions: { width: '1', height: '1' }
 			},
 			palette: {
 				type: 'original',

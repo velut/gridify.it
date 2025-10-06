@@ -2,7 +2,7 @@
 	import { getAppState } from '$lib/state/app-state.svelte';
 	import GridOpts from '$lib/components/GridOpts.svelte';
 	import PaletteOpts from '$lib/components/PaletteOpts.svelte';
-	import ScaleOpts from '$lib/components/ScaleOpts.svelte';
+	import SizeOpts from '$lib/components/SizeOpts.svelte';
 
 	const { render } = getAppState();
 </script>
@@ -15,7 +15,7 @@
 		await render.render();
 	}}
 >
-	<ScaleOpts />
+	<SizeOpts />
 	<PaletteOpts />
 	<GridOpts />
 </form>

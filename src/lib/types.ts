@@ -20,18 +20,33 @@ export const AppImage = z.object({
 });
 export type AppImage = z.infer<typeof AppImage>;
 
-export const ScaleOpts = z
+export const SizeOpts = z
 	.object({
-		type: z.literal(['original', 'same', 'different']).catch('original'),
-		x: z.coerce.number<string>().catch(1),
-		y: z.coerce.number<string>().catch(1)
+		type: z
+			.literal([
+				'original',
+				'scale-linked',
+				'scale-independent',
+				'dimensions-width',
+				'dimensions-height',
+				'dimensions-both'
+			])
+			.catch('original'),
+		scale: z.object({
+			x: z.coerce.number<string>().catch(1),
+			y: z.coerce.number<string>().catch(1)
+		}),
+		dimensions: z.object({
+			width: z.coerce.number<string>().int().min(1).catch(1),
+			height: z.coerce.number<string>().int().min(1).catch(1)
+		})
 	})
-	.transform(({ type, x, y }) => ({
+	.transform(({ type, scale, dimensions }) => ({
 		type,
-		x,
-		y: type === 'same' ? x : y
+		scale: { x: scale.x, y: type === 'scale-linked' ? scale.x : scale.y },
+		dimensions
 	}));
-export type ScaleOpts = z.infer<typeof ScaleOpts>;
+export type SizeOpts = z.infer<typeof SizeOpts>;
 
 export const PaletteOpts = z.object({
 	type: z
@@ -92,7 +107,7 @@ export const GridOpts = z.object({
 export type GridOpts = z.infer<typeof GridOpts>;
 
 export const RenderOpts = z.object({
-	scale: ScaleOpts,
+	size: SizeOpts,
 	palette: PaletteOpts,
 	grid: GridOpts
 });

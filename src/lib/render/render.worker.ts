@@ -1,6 +1,6 @@
 import { applyGrid } from '$lib/render/apply-grid';
 import { applyPalette } from '$lib/render/apply-palette';
-import { applyScale } from '$lib/render/apply-scale';
+import { applySize } from '$lib/render/apply-size';
 import { AppImage, RenderOpts, RenderWorkerCache, RenderWorkerInput } from '$lib/types';
 import { nanoid } from '$lib/utils/nanoid';
 import pMap, { pMapSkip } from 'p-map';
@@ -55,7 +55,7 @@ async function render(opts: RenderOpts): Promise<AppImage[]> {
 				ctx.drawImage(originalCanvas, 0, 0);
 
 				// Apply opts.
-				canvas = applyScale(canvas, opts.scale);
+				canvas = applySize(canvas, opts.size);
 				canvas = applyPalette(canvas, opts.palette);
 				canvas = applyGrid(canvas, opts.grid);
 
