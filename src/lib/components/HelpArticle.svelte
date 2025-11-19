@@ -138,7 +138,7 @@
 					between the cells as shown below.
 				</p>
 				<div class="not-prose grid place-items-start">
-					<div class="bg-card-foreground grid grid-cols-3 grid-rows-3 gap-[1px] p-[1px]">
+					<div class="bg-card-foreground grid grid-cols-3 grid-rows-3 gap-px p-px">
 						{#each { length: 9 }}
 							<div class="bg-card size-8"></div>
 						{/each}
@@ -152,7 +152,7 @@
 					border as shown below.
 				</p>
 				<div class="not-prose grid place-items-start">
-					<div class="bg-card-foreground grid grid-cols-3 grid-rows-3 gap-[1px]">
+					<div class="bg-card-foreground grid grid-cols-3 grid-rows-3 gap-px">
 						{#each { length: 9 }}
 							<div class="bg-card size-8"></div>
 						{/each}
@@ -166,7 +166,7 @@
 					below.
 				</p>
 				<div class="not-prose grid place-items-start">
-					<div class="bg-card-foreground grid grid-cols-3 grid-rows-3 p-[1px]">
+					<div class="bg-card-foreground grid grid-cols-3 grid-rows-3 p-px">
 						{#each { length: 9 }}
 							<div class="bg-card size-8"></div>
 						{/each}
@@ -180,7 +180,7 @@
 					to round the corners of cells as shown below.
 				</p>
 				<div class="not-prose grid place-items-start">
-					<div class="grid grid-cols-3 grid-rows-3 p-[1px]">
+					<div class="grid grid-cols-3 grid-rows-3 p-px">
 						{#each { length: 9 }}
 							<div class="bg-card-foreground size-8 rounded-lg"></div>
 						{/each}
@@ -212,7 +212,7 @@
 		</p>
 
 		<div class="not-prose grid place-items-start">
-			<div class="bg-card-foreground grid grid-cols-3 grid-rows-3 gap-[1px] p-[1px]">
+			<div class="bg-card-foreground grid grid-cols-3 grid-rows-3 gap-px p-px">
 				{#each { length: 9 }, i}
 					<div class="bg-card grid size-8 place-items-center">{i + 1}</div>
 				{/each}
@@ -229,7 +229,7 @@
 
 		<div class="not-prose flex items-center gap-8">
 			<div class="grid place-items-start">
-				<div class="bg-card-foreground grid grid-cols-3 grid-rows-3 gap-[1px] p-[1px]">
+				<div class="bg-card-foreground grid grid-cols-3 grid-rows-3 gap-px p-px">
 					{#each { length: 9 }}
 						<div class="bg-card size-8"></div>
 					{/each}
@@ -237,7 +237,7 @@
 			</div>
 
 			<div class="grid place-items-start">
-				<div class="bg-card-foreground grid grid-cols-3 grid-rows-3 gap-[1px] p-[1px]">
+				<div class="bg-card-foreground grid grid-cols-3 grid-rows-3 gap-px p-px">
 					{#each { length: 9 }}
 						<div class="bg-card h-8 w-16"></div>
 					{/each}
@@ -267,7 +267,7 @@
 		</p>
 
 		<div class="not-prose grid place-items-start">
-			<div class="bg-card-foreground grid grid-cols-[2fr_2fr_1fr] grid-rows-3 gap-[1px] p-[1px]">
+			<div class="bg-card-foreground grid grid-cols-[2fr_2fr_1fr] grid-rows-3 gap-px p-px">
 				{#each { length: 9 }, i}
 					<div class={['bg-card grid h-8 place-items-center', (i + 1) % 3 === 0 ? 'w-8' : 'w-16']}>
 						{i + 1}

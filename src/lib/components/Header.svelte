@@ -13,7 +13,7 @@
 		<div class="flex items-center gap-4">
 			<ThemeButton />
 
-			<div class="bg-border h-8 w-[1px]"></div>
+			<div class="bg-border h-8 w-px"></div>
 
 			{#if page.route.id === '/app'}
 				<HelpButton />
