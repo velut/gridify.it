@@ -4,14 +4,14 @@
 	import MaterialSymbolsImageArrowUpRounded from '~icons/material-symbols/image-arrow-up-rounded';
 
 	const { render } = getAppState();
-	let fileInput: HTMLInputElement;
+	let fileInput: HTMLInputElement | undefined = undefined;
 
 	async function handleChangeOrDrop(event: Event) {
 		event.preventDefault();
 		if (!render.canLoadImages()) return;
 		const files = await getImageFiles(event);
 		await render.loadImages(files);
-		fileInput.value = '';
+		if (fileInput) fileInput.value = '';
 	}
 </script>
 
@@ -28,7 +28,7 @@
 	class="btn"
 	title="Choose images to upload"
 	onclick={() => {
-		fileInput.click();
+		fileInput?.click();
 	}}
 	disabled={!render.canLoadImages()}
 >
