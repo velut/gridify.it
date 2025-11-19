@@ -21,7 +21,7 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --check .",
+		"lint": "prettier --check . && oxlint --type-aware",
 		"format": "prettier --write .",
 		"bunny:deploy": "bun run scripts/deploy-on-bunny.ts",
 		"pre-push": "bun i && bun run lint && bun run check && bun run build"
@@ -43,6 +43,8 @@
 		"fast-equals": "^5.3.3",
 		"hex-rgb": "^5.0.0",
 		"nanoid": "^5.1.6",
+		"oxlint": "^1.29.0",
+		"oxlint-tsgolint": "^0.7.3",
 		"p-map": "^7.0.4",
 		"p-queue": "^9.0.1",
 		"prettier": "^3.6.2",
