@@ -65,6 +65,7 @@
 		"zod": "^4.1.12"
 	},
 	"trustedDependencies": [
-		"@tailwindcss/oxide"
+		"@tailwindcss/oxide",
+		"esbuild"
 	]
 }
