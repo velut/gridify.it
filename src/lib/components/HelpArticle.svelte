@@ -208,7 +208,7 @@
 		<h3>What are grid cells?</h3>
 		<p>
 			A grid divides an image into cells that are separated by grid lines. For example, in the 3x3
-			grid below there are nine grid cells labelled from 1 to 9.
+			grid below there are nine grid cells labeled from 1 to 9.
 		</p>
 
 		<div class="not-prose grid place-items-start">

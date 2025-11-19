@@ -11,6 +11,7 @@ words = [
     "gridify",
     "gzip",
     "iconify",
+    "lossy",
     "luma",
     "minmax",
     "noopener",
