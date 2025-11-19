@@ -18,9 +18,11 @@
 
 	let index = $state(0);
 
-	useInterval(() => {
-		index = (index + 1) % screenshots.length;
-	}, 2500);
+	useInterval(2500, {
+		callback: () => {
+			index = (index + 1) % screenshots.length;
+		}
+	});
 </script>
 
 <div class="grid place-items-center border-t px-6 py-12">
