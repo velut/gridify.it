@@ -20,8 +20,8 @@
 		<p>
 			You can use gridify.it to add grids to your photos, drawings, pictures, pixel art, or game
 			sprites. People use gridify.it for illustration, game development, crocheting, knitting,
-			cross-stitching, Hama and Perler beads designs, and other crafts and activities where precise
-			grids are required.
+			cross-stitching, Hama and Perler beads designs, Wplace art, and other crafts and activities
+			where precise grids are required.
 		</p>
 
 		<h3>Can I use gridify.it for free?</h3>
