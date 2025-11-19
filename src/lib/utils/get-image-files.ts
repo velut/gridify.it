@@ -5,8 +5,11 @@ export async function getImageFiles(event: Event): Promise<File[]> {
 		.map(({ file }) => file)
 		.filter((file) => {
 			const type = file.type.trim().toLowerCase();
-			const isImage = type.startsWith('image/');
-			const isSvg = type === 'image/svg+xml';
-			return isImage && !isSvg;
+
+			// SVG images are unsupported by the `createImageBitmap` API.
+			if (type === 'image/svg+xml') return false;
+
+			// Accept other image types.
+			return type.startsWith('image/');
 		});
 }
