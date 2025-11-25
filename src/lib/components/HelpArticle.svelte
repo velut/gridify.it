@@ -14,6 +14,7 @@
 			<li><a href="#previewing-images">Previewing images</a></li>
 			<li><a href="#rendering-images">Rendering images</a></li>
 			<li><a href="#rendering-options">Rendering options</a></li>
+			<li><a href="#rendering-options-size">Rendering options: Size</a></li>
 			<li><a href="#rendering-options-grid">Rendering options: Grid</a></li>
 			<li><a href="#rendering-options-grid-cells">Rendering options: Grid cells</a></li>
 			<li><a href="#tips-for-pixel-art">Tips for pixel art</a></li>
@@ -140,6 +141,63 @@
 			You can click on the <strong>Reset render options</strong> button to restore the rendering options
 			to their default values.
 		</p>
+
+		<h3>How are the rendering options used to render an image?</h3>
+		<p>
+			To render an image, the rendering options are applied in the following order: first the image
+			is resized using the size options, then the colors are changed using the palette options, and
+			finally the grid is drawn using the grid options.
+		</p>
+	</ArticleSection>
+
+	<ArticleSection>
+		<h2 id="rendering-options-size">Rendering options: Size</h2>
+
+		<h3>Which size type should I choose?</h3>
+		<p>You can choose between six different size types:</p>
+		<ul>
+			<li>
+				<p><strong>Original size</strong></p>
+				<p>Use this if you want to keep the original size of the image.</p>
+			</li>
+			<li>
+				<p><strong>Set scale</strong></p>
+				<p>
+					Use this if you want to scale up or down the whole image by a given multiplier. For
+					example, scaling a 64x64 pixels image by 2 will result in a 128x128 pixels image while
+					scaling it by 0.5 will result in a 32x32 pixels image.
+				</p>
+			</li>
+			<li>
+				<p><strong>Set horizontal and vertical scales</strong></p>
+				<p>
+					Use this if you want to scale up or down the width and/or the height of the image by
+					different multipliers. This works like <strong>Set scale</strong> but for each dimension. You
+					can also use negative scale values to flip the image.
+				</p>
+			</li>
+			<li>
+				<p><strong>Set width</strong></p>
+				<p>
+					Use this if you want to set the width to a specific value in pixels. The height will be
+					automatically set to preserve the original aspect ratio.
+				</p>
+			</li>
+			<li>
+				<p><strong>Set height</strong></p>
+				<p>
+					Use this if you want to set the height to a specific value in pixels. The width will be
+					automatically set to preserve the original aspect ratio.
+				</p>
+			</li>
+			<li>
+				<p><strong>Set width and height</strong></p>
+				<p>
+					Use this if you want to set the width and the height to any value in pixels. The original
+					aspect ratio will not be automatically preserved.
+				</p>
+			</li>
+		</ul>
 	</ArticleSection>
 
 	<ArticleSection>
@@ -229,8 +287,8 @@
 
 		<h3>What are grid cells?</h3>
 		<p>
-			A grid divides an image into cells that are separated by grid lines. For example, in the 3x3
-			grid below there are nine grid cells labeled from 1 to 9.
+			A grid divides an image into grid cells that are separated by grid lines. For example, in the
+			3x3 grid below there are nine grid cells labeled from 1 to 9.
 		</p>
 
 		<div class="not-prose grid place-items-start">
@@ -281,11 +339,11 @@
 			and type a value in pixels to choose how tall you want the grid cells to be.
 		</p>
 
-		<h3>Are all the grid cells the exact same size?</h3>
+		<h3>Do all grid cells have the exact same size?</h3>
 		<p>
 			All grid cells have the exact same size except for the ones that do not fit in the image at
-			the right and bottom edges. Fox example, in the grid below the cells 3, 6, and 9 are smaller
-			and only fill the remaining space on the right border of the image.
+			the right and bottom edges. Fox example, in the grid below the grid cells 3, 6, and 9 are
+			smaller and only fill the remaining space on the right border of the image.
 		</p>
 
 		<div class="not-prose grid place-items-start">
@@ -317,6 +375,13 @@
 	<ArticleSection>
 		<h2 id="tips-for-pixel-art">Tips for pixel art</h2>
 
+		<h3>Try using the pixel art preset</h3>
+		<p>
+			If you want to quickly add a grid to a pixel art image, you can click on the
+			<strong>Pixel art preset</strong> button and then on the <strong>Render images</strong> button.
+			This preset offers a good starting point for smaller sized images.
+		</p>
+
 		<h3>Use square, 1x1 pixels grid cells</h3>
 		<p>
 			If you want every pixel in the original pixel art image to be its own grid cell, you should
@@ -344,6 +409,13 @@
 	<ArticleSection>
 		<h2 id="tips-for-high-resolution-images">Tips for high resolution images</h2>
 
+		<h3>Try using the hi-res photo preset</h3>
+		<p>
+			If you want to quickly add a grid to a photo, you can click on the
+			<strong>Hi-res photo preset</strong> button and then on the <strong>Render images</strong> button.
+			This preset offers a good starting point for larger sized images.
+		</p>
+
 		<h3>Use larger grid cells</h3>
 		<p>
 			If you are adding a grid to a high resolution image, you can try setting the
@@ -353,13 +425,13 @@
 
 		<h3>Use thicker grid lines</h3>
 		<p>
-			If you are using larger cell sizes, you may also need to increase the
+			If you are using larger grid cell sizes, you may also need to increase the
 			<strong>Grid lines size</strong> value to better see the grid lines in the rendered images.
 		</p>
 
 		<h3>Render fewer images at a time</h3>
 		<p>
-			Adding grids to high resolution images, especially with smaller cell sizes, is a resource
+			Adding grids to high resolution images, especially with smaller grid cell sizes, is a resource
 			intensive operation which may cause the app to become slow and unresponsive. When processing
 			many high resolution images, you should try rendering them in smaller batches or one by one.
 		</p>
@@ -367,6 +439,9 @@
 
 	<ArticleSection>
 		<h2 id="other-questions">Other questions</h2>
+
+		<h3>Can I use gridify.it for free?</h3>
+		<p><strong>Yes!</strong> You can use gridify.it completely for free.</p>
 
 		<h3>Are the original colors exactly preserved in the rendered images?</h3>
 		<p>
