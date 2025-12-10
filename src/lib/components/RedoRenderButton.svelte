@@ -10,9 +10,12 @@
 	onkeydown={(event) => {
 		if (button.disabled) return;
 
-		// Ctrl+Y or ⌘+Shift+Z keyboard shortcut.
+		// Ctrl+Y, ⌘+Y, or ⌘+Shift+Z keyboard shortcut.
 		const key = event.key.toLowerCase();
-		if ((event.ctrlKey && key === 'y') || (event.metaKey && event.shiftKey && key === 'z')) {
+		if (
+			((event.ctrlKey || event.metaKey) && key === 'y') ||
+			(event.metaKey && event.shiftKey && key === 'z')
+		) {
 			event.preventDefault();
 			button.click();
 		}
