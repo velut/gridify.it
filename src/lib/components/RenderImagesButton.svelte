@@ -8,7 +8,10 @@
 
 <svelte:window
 	onkeydown={(event) => {
-		if (event.ctrlKey && event.key === 'Enter' && !button.disabled) {
+		if (button.disabled) return;
+
+		// Ctrl+Enter or ⌘+Enter keyboard shortcut.
+		if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
 			event.preventDefault();
 			button.click();
 		}

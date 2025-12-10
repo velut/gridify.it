@@ -8,7 +8,11 @@
 
 <svelte:window
 	onkeydown={(event) => {
-		if (event.ctrlKey && event.key.toLowerCase() === 'y' && !button.disabled) {
+		if (button.disabled) return;
+
+		// Ctrl+Y or ⌘+Shift+Z keyboard shortcut.
+		const key = event.key.toLowerCase();
+		if ((event.ctrlKey && key === 'y') || (event.metaKey && event.shiftKey && key === 'z')) {
 			event.preventDefault();
 			button.click();
 		}

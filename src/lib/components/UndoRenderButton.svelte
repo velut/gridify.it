@@ -8,7 +8,11 @@
 
 <svelte:window
 	onkeydown={(event) => {
-		if (event.ctrlKey && event.key.toLowerCase() === 'z' && !button.disabled) {
+		if (button.disabled) return;
+
+		// Ctrl+Z or ⌘+Z keyboard shortcut.
+		const key = event.key.toLowerCase();
+		if ((event.ctrlKey || event.metaKey) && key === 'z') {
 			event.preventDefault();
 			button.click();
 		}
