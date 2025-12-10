@@ -26,8 +26,8 @@
 		<h3>First-party cookies</h3>
 		<p>
 			We save your theme preference locally in <code>localStorage.theme</code> with a value of
-			<code>light</code> or <code>dark</code> when you explicitly click on the theme switcher button
-			present in the header. This data is never sent to us.
+			<code>light</code> or <code>dark</code> when you explicitly click on the theme switcher button present
+			in the header. This data is never sent to us.
 		</p>
 	</ArticleSection>
 
