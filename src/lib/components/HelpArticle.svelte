@@ -105,19 +105,21 @@
 		<h3>How do I render images?</h3>
 		<p>
 			You can click on the <strong>Render images</strong> button. You can also use the
-			<kbd class="kbd">Ctrl + Enter</kbd> keyboard shortcut.
+			<kbd class="kbd">Ctrl+Enter</kbd> or <kbd class="kbd">⌘↩</kbd> keyboard shortcuts.
 		</p>
 
 		<h3>How do I undo the images render?</h3>
 		<p>
 			You can click on the <strong>Undo</strong> button to restore images to their previous
-			appearance. You can also use the <kbd class="kbd">Ctrl + Z</kbd> keyboard shortcut.
+			appearance. You can also use the <kbd class="kbd">Ctrl+Z</kbd> or <kbd class="kbd">⌘Z</kbd> keyboard
+			shortcuts.
 		</p>
 
 		<h3>How do I redo the images render?</h3>
 		<p>
 			You can click on the <strong>Redo</strong> button to repeat a previously undone render. You
-			can also use the <kbd class="kbd">Ctrl + Y</kbd> keyboard shortcut.
+			can also use the <kbd class="kbd">Ctrl+Y</kbd>, <kbd class="kbd">⌘Y</kbd>, or
+			<kbd class="kbd">⇧⌘Z</kbd> keyboard shortcuts.
 		</p>
 
 		<h3>Why have the images been rendered incorrectly?</h3>
