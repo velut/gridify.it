@@ -15,6 +15,7 @@
 			<li><a href="#rendering-images">Rendering images</a></li>
 			<li><a href="#rendering-options">Rendering options</a></li>
 			<li><a href="#rendering-options-size">Rendering options: Size</a></li>
+			<li><a href="#rendering-options-palette">Rendering options: Palette</a></li>
 			<li><a href="#rendering-options-grid">Rendering options: Grid</a></li>
 			<li><a href="#rendering-options-grid-cells">Rendering options: Grid cells</a></li>
 			<li><a href="#tips-for-pixel-art">Tips for pixel art</a></li>
@@ -201,6 +202,75 @@
 	</ArticleSection>
 
 	<ArticleSection>
+		<h2 id="rendering-options-palette">Rendering options: Palette</h2>
+
+		<h3>Which palette type should I choose?</h3>
+		<p>You can choose between many different palette types:</p>
+		<ul>
+			<li>
+				<p><strong>Original colors</strong></p>
+				<p>Use this if you want to keep the original colors of the image.</p>
+			</li>
+			<li>
+				<p><strong>Original colors with full opacity</strong></p>
+				<p>
+					Use this if you want to keep the original colors of the image while turning transparent
+					pixels into fully opaque ones.
+				</p>
+			</li>
+			<li>
+				<p><strong>Invert colors</strong></p>
+				<p>Use this if you want to turn the original image into its negative image.</p>
+			</li>
+			<li>
+				<p><strong>Grayscale</strong></p>
+				<p>Use this if you want to turn the original image into a grayscale image.</p>
+			</li>
+			<li>
+				<p><strong>Black and white</strong></p>
+				<p>
+					Use this if you want to turn the original image into a binary, black and white image. You
+					can use the <strong>Threshold</strong> setting to adjust the ratio between black and white pixels.
+					A lower threshold makes the image appear lighter while a higher threshold makes the image appear
+					darker.
+				</p>
+			</li>
+			<li>
+				<p><strong>RGB, CMYK, PICO-8, Wplace, ...</strong></p>
+				<p>
+					Use these built-in palettes if you want to change the colors of the original image into
+					the ones provided by a palette. Each original color will be substituted with the closest
+					matching palette color.
+				</p>
+			</li>
+			<li>
+				<p><strong>Custom palette</strong></p>
+				<p>
+					Use this if you want to change the colors of the original image into your personal
+					palette. You should use the <strong>Palette colors</strong> setting to list one color per
+					line in hex format (for example, <span class="font-mono">4B0082</span> or
+					<span class="font-mono">#4B0082</span>). Invalid colors will result in a full pink/magenta
+					image.
+				</p>
+			</li>
+		</ul>
+
+		<h3>Which dithering type should I choose?</h3>
+		<p>
+			With some palettes, you can optionally choose a dithering style. You can use dithering to
+			improve the look of images when using a palette with limited colors by adding noise to images.
+		</p>
+
+		<h3>Why are the original colors different after rendering?</h3>
+		<p>
+			Depending on the browser that you are using, you should expect some slight differences between
+			the colors in a rendered image and the ones in the original image, even when using the
+			<strong>Original colors</strong> setting. In general, rendering images should be considered a lossy
+			operation.
+		</p>
+	</ArticleSection>
+
+	<ArticleSection>
 		<h2 id="rendering-options-grid">Rendering options: Grid</h2>
 
 		<h3>Which grid type should I choose?</h3>
@@ -270,8 +340,8 @@
 		<h3>How do I change the color of the grid?</h3>
 		<p>
 			You can click on the <strong>Grid color</strong> setting to choose a different color for the
-			grid. The selected color applies to the outer border and grid lines and is also used to round
-			the corners of grid cells when the grid type is
+			grid. The selected color applies to the outer border and to the grid lines. The same color is
+			also used to round the corners of grid cells when the grid type is
 			<strong>Invisible grid</strong>.
 		</p>
 
@@ -335,8 +405,8 @@
 		<h3>How do I change the height of grid cells?</h3>
 		<p>
 			You can click on the <strong>Grid cell type</strong> setting and select the
-			<strong>Rectangle</strong> option, then click on the <strong>Grid cell height</strong> setting
-			and type a value in pixels to choose how tall you want the grid cells to be.
+			<strong>Rectangle</strong> option, then click on the <strong>Grid cell height</strong> setting and
+			type a value in pixels to choose how tall you want the grid cells to be.
 		</p>
 
 		<h3>Do all grid cells have the exact same size?</h3>
@@ -385,16 +455,16 @@
 		<h3>Use square, 1x1 pixels grid cells</h3>
 		<p>
 			If you want every pixel in the original pixel art image to be its own grid cell, you should
-			use the <strong>Square</strong> grid cell type and set the <strong>Grid cell width</strong> to
-			be 1 pixel. These are the default values when rendering an image.
+			use the <strong>Square</strong> grid cell type and set the <strong>Grid cell width</strong> to be
+			1 pixel. These are the default values when rendering an image.
 		</p>
 
 		<h3>Scale up grid cells to distinguish them from grid lines</h3>
 		<p>
 			If every pixel is its own grid cell and the grid lines size is also 1 pixel, the rendered
-			image can look confusing. To avoid this, you can set the <strong>Grid cell scale</strong> to 10
-			for example. This causes the grid cells to become 10x10 pixels in the rendered image while the
-			grid lines remain 1 pixel thick.
+			image can look confusing. To avoid this, you can set, for example, the
+			<strong>Grid cell scale</strong> to 10. This causes the grid cells to become 10x10 pixels in the
+			rendered image while the grid lines remain 1 pixel thick.
 		</p>
 
 		<h3>Scale up grid cells to round their corners</h3>
@@ -442,13 +512,6 @@
 
 		<h3>Can I use gridify.it for free?</h3>
 		<p><strong>Yes!</strong> You can use gridify.it completely for free.</p>
-
-		<h3>Are the original colors exactly preserved in the rendered images?</h3>
-		<p>
-			<strong>Probably not.</strong> Depending on the browser that you are using, you should expect some
-			slight differences between the colors in a rendered image and the ones in the original image. In
-			general, rendering images should be considered a lossy operation.
-		</p>
 
 		<h3>Why is the app becoming slow and unresponsive?</h3>
 		<p>
