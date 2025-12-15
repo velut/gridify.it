@@ -7,7 +7,7 @@
 </script>
 
 {#if horizontal}
-	<div class="bg-border w-[1px]"></div>
+	<div class="bg-border w-px"></div>
 {:else}
-	<div class="bg-border h-[1px]"></div>
+	<div class="bg-border h-px"></div>
 {/if}
