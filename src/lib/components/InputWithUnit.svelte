@@ -2,7 +2,11 @@
 	import { cn } from '$lib/utils/cn';
 	import type { Snippet } from 'svelte';
 
-	type Props = { unit: string; disabled?: boolean; children: Snippet };
+	interface Props {
+		unit: string;
+		disabled?: boolean;
+		children: Snippet;
+	}
 
 	let { unit, disabled, children }: Props = $props();
 </script>

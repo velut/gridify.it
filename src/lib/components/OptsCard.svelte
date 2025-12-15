@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
-	type Props = {
+	interface Props {
 		title: string;
 		children: Snippet;
-	};
+	}
 
 	let { title, children }: Props = $props();
 </script>

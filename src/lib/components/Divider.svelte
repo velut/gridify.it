@@ -1,7 +1,7 @@
 <script lang="ts">
-	type Props = {
+	interface Props {
 		horizontal?: boolean;
-	};
+	}
 
 	let { horizontal }: Props = $props();
 </script>
