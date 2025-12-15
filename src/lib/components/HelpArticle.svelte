@@ -217,7 +217,7 @@
 				<p><strong>Original colors with full opacity</strong></p>
 				<p>
 					Use this if you want to keep the original colors of the image while turning transparent
-					pixels into fully opaque ones.
+					pixels into opaque ones.
 				</p>
 			</li>
 			<li>
