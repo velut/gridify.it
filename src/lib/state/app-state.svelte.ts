@@ -1,16 +1,8 @@
 import { PreviewState } from '$lib/state/preview-state.svelte';
 import { RenderState } from '$lib/state/render-state.svelte';
-import { getContext, setContext } from 'svelte';
+import { createContext } from 'svelte';
 
-const key = Symbol('app-state');
-
-export function setAppState(state: AppState) {
-	setContext(key, state);
-}
-
-export function getAppState(): AppState {
-	return getContext(key);
-}
+export const [getAppState, setAppState] = createContext<AppState>();
 
 export class AppState {
 	render = new RenderState();

@@ -1,15 +1,7 @@
 import type { Theme } from '$lib/types';
-import { getContext, setContext } from 'svelte';
+import { createContext } from 'svelte';
 
-const key = Symbol('theme-state');
-
-export function setThemeState(state: ThemeState) {
-	setContext(key, state);
-}
-
-export function getThemeState(): ThemeState {
-	return getContext(key);
-}
+export const [getThemeState, setThemeState] = createContext<ThemeState>();
 
 export class ThemeState {
 	#theme = $state<Theme>('light');
