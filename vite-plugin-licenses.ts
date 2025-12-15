@@ -2,13 +2,13 @@ import fs from 'node:fs/promises';
 import rollupPluginLicense from 'rollup-plugin-license';
 import packageJson from './package.json' with { type: 'json' };
 
-type License = {
+interface License {
 	name: string;
 	version: string;
 	license: string;
 	licenseText: string;
 	url: string;
-};
+}
 
 export async function licenses() {
 	const manualDeps: License[] = [
