@@ -5,10 +5,6 @@
 	import HomepageTestimonials from '$lib/components/HomepageTestimonials.svelte';
 </script>
 
-{#if false}
-	<!-- content here -->
-{/if}
-
 <HomepageHero />
 <HomepagePixelArt />
 <HomepageImages />
