@@ -36,7 +36,7 @@
 		<p>
 			Hello! I'm <a href="https://github.com/velut">Edoardo Scibona</a>, a software developer from
 			Italy. I initially created gridify.it for my own use related to pixel art and nonogram
-			puzzles, and I continue to maintain it as it has become a
+			puzzles. I still continue to maintain it as it has become a
 			<a
 				href="https://old.reddit.com/r/webdev/comments/14nx8p5/i_made_a_website_to_add_grids_to_images_and_pixel/"
 				>useful tool for many people</a
