@@ -34,9 +34,8 @@
 						<div class="prose **:text-foreground">
 							<h2>For photos</h2>
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore debitis at magnam
-								voluptates voluptatibus eligendi atque. Ipsum dolorem corporis laborum, voluptatum
-								id non tempore obcaecati, natus reiciendis fuga nemo? Impedit!
+								Add a grid overlay to your photos and drawings with ease. Resize your images, change
+								colors, create tiles, or apply a dithering effect for unique results.
 							</p>
 						</div>
 						<div>
@@ -90,9 +89,8 @@
 						<div class="prose **:text-foreground">
 							<h2>For photos</h2>
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore debitis at magnam
-								voluptates voluptatibus eligendi atque. Ipsum dolorem corporis laborum, voluptatum
-								id non tempore obcaecati, natus reiciendis fuga nemo? Impedit!
+								Add a grid overlay to your photos and drawings with ease. Resize your images, change
+								colors, create tiles, or apply a dithering effect for unique results.
 							</p>
 						</div>
 						<div>

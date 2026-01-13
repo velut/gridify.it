@@ -33,9 +33,8 @@
 					<div class="prose **:text-foreground">
 						<h2>For pixel art</h2>
 						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore debitis at magnam
-							voluptates voluptatibus eligendi atque. Ipsum dolorem corporis laborum, voluptatum id
-							non tempore obcaecati, natus reiciendis fuga nemo? Impedit!
+							Add a pixel perfect grid to your pixel art designs and game sprites. Swap palette
+							colors, change grid styles, and round pixels to create unique images.
 						</p>
 					</div>
 
