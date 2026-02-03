@@ -3,10 +3,10 @@
 </script>
 
 <div class="grid place-items-center border-b px-4 py-6 md:py-12">
-	<div class="grid gap-6 place-items-center max-w-7xl">
-		<div class="grid grid-cols-1 gap-3 place-items-center">
+	<div class="grid max-w-7xl place-items-center gap-6">
+		<div class="grid grid-cols-1 place-items-center gap-3">
 			<h1
-				class="text-4xl text-center text-balance font-bold md:text-5xl max-w-[10ch] md:max-w-none"
+				class="max-w-[10ch] text-center text-4xl font-bold text-balance md:max-w-none md:text-5xl"
 			>
 				Free online grid maker
 			</h1>
